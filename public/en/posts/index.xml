@@ -1,0 +1,2373 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Posts on Cole World</title>
+		<link>https://hicole.me/en/posts/</link>
+		<description>Recent content in Posts on Cole World</description>
+		<generator>Hugo -- gohugo.io</generator>
+		<language>en-us</language>
+		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+		<lastBuildDate>Wed, 17 Jul 2024 15:31:50 +1000</lastBuildDate>
+		<atom:link href="https://hicole.me/en/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>New features in Blog 2.0</title>
+			<link>https://hicole.me/en/posts/new-features-in-blog-2.0/</link>
+			<pubDate>Wed, 17 Jul 2024 15:31:50 +1000</pubDate>
+			
+			<guid>https://hicole.me/en/posts/new-features-in-blog-2.0/</guid>
+			<description><![CDATA[This explains some implementation details of new features]]></description>
+			<content type="html"><![CDATA[<h1 id="new-comment-system">New Comment System</h1>
+<p>A comments system powered by <a href="https://docs.github.com/en/discussions">GitHub Discussions</a>. Let visitors leave comments and reactions on your website via GitHub! Heavily inspired by <a href="https://github.com/utterance/utterances">utterances</a>.</p>
+<ul>
+<li><a href="https://github.com/giscus/giscus">Open source</a>. 🌏</li>
+<li>No tracking, no ads, always free. 📡 🚫</li>
+<li>No database needed. All data is stored in GitHub Discussions. 💬</li>
+<li>Supports <a href="https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#data-theme">custom themes</a>! 🌗</li>
+<li>Supports <a href="https://github.com/giscus/giscus/blob/main/CONTRIBUTING.md#adding-localizations">multiple languages</a>. 🌐</li>
+<li><a href="https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md">Extensively configurable</a>. 🔧</li>
+<li>Automatically fetches new comments and edits from GitHub. 🔃</li>
+<li><a href="https://github.com/giscus/giscus/blob/main/SELF-HOSTING.md">Can be self-hosted</a>! 🤳</li>
+</ul>
+<h1 id="admonition-shortcode">Admonition Shortcode</h1>
+
+    <aside class="admonition tip">
+        <div class="admonition-title">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+   </svg></div><b>This is a tip</b>
+        </div>
+        <div class="admonition-content">A <strong>tip</strong> banner</div>
+    </aside>
+
+    <aside class="admonition note">
+        <div class="admonition-title">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2">
+      <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+   </svg></div><b>This is a note</b>
+        </div>
+        <div class="admonition-content">A <strong>note</strong> banner</div>
+    </aside>
+
+    <aside class="admonition info">
+        <div class="admonition-title">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info">
+      <circle cx="12" cy="12" r="10"></circle>
+      <line x1="12" y1="16" x2="12" y2="12"></line>
+      <line x1="12" y1="8" x2="12.01" y2="8"></line>
+   </svg></div><b>This is a info</b>
+        </div>
+        <div class="admonition-content">A <strong>info</strong> banner</div>
+    </aside>
+
+    <aside class="admonition success">
+        <div class="admonition-title">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+   </svg></div><b>This is a success</b>
+        </div>
+        <div class="admonition-content">A <strong>success</strong> banner</div>
+    </aside>
+
+    <aside class="admonition warning">
+        <div class="admonition-title">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle">
+      <circle cx="12" cy="12" r="10"></circle>
+      <line x1="12" y1="8" x2="12" y2="12"></line>
+      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+   </svg></div><b>This is a warning</b>
+        </div>
+        <div class="admonition-content">A <strong>warning</strong> banner</div>
+    </aside>
+
+    <aside class="admonition failure">
+        <div class="admonition-title">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
+      <circle cx="12" cy="12" r="10"></circle>
+      <line x1="15" y1="9" x2="9" y2="15"></line>
+      <line x1="9" y1="9" x2="15" y2="15"></line>
+   </svg></div><b>This is a failure</b>
+        </div>
+        <div class="admonition-content">A <strong>failure</strong> banner</div>
+    </aside>
+
+    <aside class="admonition danger">
+        <div class="admonition-title">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle">
+      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+      <line x1="12" y1="9" x2="12" y2="13"></line>
+      <line x1="12" y1="17" x2="12.01" y2="17"></line>
+   </svg></div><b>This is a danger</b>
+        </div>
+        <div class="admonition-content">A <strong>danger</strong> banner</div>
+    </aside>
+
+    <aside class="admonition bug">
+        <div class="admonition-title">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-octagon">
+      <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon>
+      <line x1="12" y1="8" x2="12" y2="12"></line>
+      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+   </svg></div><b>This is a bug</b>
+        </div>
+        <div class="admonition-content">A <strong>bug</strong> banner</div>
+    </aside>
+<h1 id="mathjax-support-demo">MathJax Support Demo</h1>
+<p>\begin{equation}
+\int_{0}^{1} \int_{0}^{1} \int_{0}^{1} \int_{0}^{1} \frac{1}{1 + x_1 x_2 x_3 x_4} , dx_4 , dx_3 , dx_2 , dx_1
+\end{equation}</p>
+<p>\begin{equation}
+\mathcal{L}{f(t)} = \int_{0}^{\infty} e^{-st} f(t) , dt = F(s)
+\end{equation}</p>
+<p>\begin{align}
+\nabla \cdot \mathbf{E} &amp;= \frac{\rho}{\epsilon_0} \
+\nabla \cdot \mathbf{B} &amp;= 0 \
+\nabla \times \mathbf{E} &amp;= -\frac{\partial \mathbf{B}}{\partial t} \
+\nabla \times \mathbf{B} &amp;= \mu_0 \mathbf{J} + \mu_0 \epsilon_0 \frac{\partial \mathbf{E}}{\partial t}
+\end{align}</p>
+<p>\begin{equation}
+f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} \left( a_n \cos \frac{n \pi x}{L} + b_n \sin \frac{n \pi x}{L} \right)
+\end{equation}</p>
+<p>\begin{equation}
+f(a) = \frac{1}{2\pi i} \oint_{\gamma} \frac{f(z)}{z-a} , dz
+\end{equation}</p>
+<p>\begin{equation}
+x^n + y^n = z^n \quad \text{for} \quad n &gt; 2 \quad \text{has no non-zero integer solutions}
+\end{equation}</p>
+<p>\begin{equation}
+R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R + g_{\mu\nu}\Lambda = \frac{8\pi G}{c^4}T_{\mu\nu}
+\end{equation}</p>
+<p>\begin{equation}
+P(A|B) = \frac{P(B|A)P(A)}{P(B)}
+\end{equation}</p>
+<p>\begin{equation}
+\rho \left( \frac{\partial \mathbf{u}}{\partial t} + (\mathbf{u} \cdot \nabla) \mathbf{u} \right) = -\nabla p + \mu \nabla^2 \mathbf{u} + \mathbf{f}
+\end{equation}</p>
+<p>\begin{equation}
+A = U \Lambda U^*
+\end{equation}</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Trips|North of Xinjiang 7.15-7.17</title>
+			<link>https://hicole.me/en/posts/tripsnorth-of-xinjiang-7.15-7.17/</link>
+			<pubDate>Mon, 15 Jan 2024 15:47:31 +0800</pubDate>
+			
+			<guid>https://hicole.me/en/posts/tripsnorth-of-xinjiang-7.15-7.17/</guid>
+			<description><![CDATA[The fifth in a series]]></description>
+			<content type="html"><![CDATA[
+    <aside class="admonition tip">
+        <div class="admonition-title">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+   </svg></div><b>This is a tip</b>
+        </div>
+        <div class="admonition-content">本文是北疆之行系列的第五篇</div>
+    </aside>
+<h1 id="hahahugoshortcode16s1hbhb">
+
+<p style="text-align:center">Day15</p>
+</h1>
+<h2 id="715">7.15</h2>
+<blockquote>
+<p>巴音布鲁克 → 独库南段 → 库车</p>
+</blockquote>
+<p>其实早在最初拟定行程计划时，我们就在犹豫两条不同的出入独库公路的路线，一条是由乔尔玛北上，走完独库北段，后接连霍高速返回乌鲁木齐，当时考虑到我们时间比较充裕（后来实际感受也没那么充裕&hellip;）就想走一条更完整的环北疆线路，于是我们采取从乔尔玛南下，走完独库中段和南段至库车，由吐和高速经吐鲁番返回乌鲁木齐的方案，这样可以兼顾博斯腾湖和吐鲁番。</p>
+<p>离开巴音县，就基本代表着伊犁地区的游玩结束了，驶入独库南段，最初道路两旁还是平坦通畅的草原仿佛连通世界的尽头，开出个百来公里，窗外的景色就不太一样了，记得之前看到的某篇攻略分享说“独库南段的景观和伊犁常规景色很不一样，能够中和一路看到的空中草原森里河谷的那种审美上的疲劳感，但在后段数百公里的大片荒漠戈壁景观也比较单调”，我觉得评价的还是比较中肯的。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog16/8E04DC3C-18D3-46AB-AC26-510D2F9CD24D.jpg"alt="image"/><figcaption><p></p></figcaption></figure>
+<h3 id="天山大峡谷">天山大峡谷</h3>
+<p>一路上独库南段周边分布的景点我们都没有做停留，像是“大小龙池”我们也只是放慢了车速，摇下窗户远远地观望了一下。唯一决定停下来好好游览的一处景点就是这里，全称：天山神秘大峡谷。事实证明到也没有那么神秘。</p>
+<p>景区还是值得一去的，设施和管理方面都比较成熟完备，景观也很有的特点。另外相比一路开来受到的暴晒高温，行走在峡谷间只觉得特别清凉舒服，算是避暑了。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog16/85F0398E-E1B6-4BF0-B008-E08DF8D6F3C7.jpg"alt="image"/></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog16/BF3FAAB7-EA1D-42F9-8452-6D2764F1C24D.jpg"alt="image"/></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog16/4C04EAB3-4D4A-4A95-8786-AA3DBBB8D093.jpg"alt="image"/></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog16/3D12AD39-3E60-4951-ADC8-994FCE9E34C6.jpg"alt="image"/><figcaption><p>天山大峡谷</p></figcaption></figure>
+<h3 id="库车王府">库车王府</h3>
+<p>库车市是古龟兹国的所在地，市区里遍布着很多纵横交错的商业街和一些人文景点。我们到库车时天色还早，便拜访了比较有名的库车王府，走马观花，就当是一个迷你博物馆闲逛了一圈，随后便入住宾馆休息了。</p>
+<h1 id="hahahugoshortcode16s7hbhb">
+
+<p style="text-align:center">Day16</p>
+</h1>
+<h2 id="716">7.16</h2>
+<blockquote>
+<p>库车 → 博斯腾湖 → 吐鲁番</p>
+</blockquote>
+<p>17天的行程进入了最后的尾声，我们也踏上了返回乌市的路途。从库车至乌鲁木齐路途遥远，全长大概八九百公里（侧面可见新疆的幅员面积之辽阔），这段路纯开都要近10个小时，于是我们将这段路切分开来，计划16号这天尽可能多开一点，游览博斯腾湖后，晚上在吐鲁番修整。</p>
+<h3 id="博斯腾湖">博斯腾湖</h3>
+<p><a href="https://zh.wikipedia.org/zh/%E5%8D%9A%E6%96%AF%E8%85%BE%E6%B9%96">博斯腾湖</a>，维吾尔语意为绿洲，是中国最大的内陆淡水湖，也是我们拜访的新疆地区的最后一处湖泊。虽说在2014年全国旅游景区质量等级评定委员会批准博斯腾湖景区为国家5A级旅游景区，但是我们一路上循着地图的指引倒是一直没有找到一处真正意义上的景区的入口，没能像之前乌伦古湖那样近到湖边涉水，所以只是沿着道路在博斯腾湖的湖边放慢车速一边行驶一边感受着：古书记载此湖有“鱼、盐、蒲、苇之利”，确实留意到湖边湿地上总停留着几只伺机待发的水鸟，湖区周围也肆意生长着广茂的芦苇丛。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog16/EE91EBE2-C873-4548-A88E-EA484DD3EEF5.jpg"alt="image"/></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog16/00F298CC-A517-4C6F-B6E9-FCEA5BF1AE8F.jpg"alt="image"/><figcaption><p>博斯腾湖</p></figcaption></figure>
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/aSkgRCxnan0?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<h3 id="吐鲁番">吐鲁番</h3>
+<p>时至今日，时隔近半年的时间，我还是能在脑中构想出，在吐鲁番市区内，第一次钻出车舱迎面袭来的那股高温热浪。行走在市区内，我们三个人都一致对吐鲁番的常住人口是怎样忍耐如此高温环境表示诧异和难以置信。</p>
+<p>真的太热了，这是我最直接的感受，打开手机天气证实一下，果然：42度。这还是在七月的中旬，不知道九十月份这里又会是怎样的一种窒息感。本来计划在市区内逛逛，买点儿水果点心什么的，但是吃完饭以后实在是热得难以忍受，就回宾馆吹空调了。</p>
+<h1 id="hahahugoshortcode16s11hbhb">
+
+<p style="text-align:center">Day17</p>
+</h1>
+<h2 id="717">7.17</h2>
+<blockquote>
+<p>吐鲁番 → 乌鲁木齐</p>
+</blockquote>
+<h3 id="乌鲁木齐">乌鲁木齐</h3>
+<p>这天来不及睡个懒觉，因为我们距离乌鲁木齐还有一定的距离，航班是接近下午六点的，但是我们在乌市还有一系列事务要处理：还车，卖露营装备。另外，同行伙伴的一位在新疆的朋友表示要招待我们吃上一顿。</p>
+<p>老实说，这两天的长距离驾驶还是令人非常疲惫的，毕竟经过了15天的消耗，虽说不算是特种兵，但每天行程也都是安排的满满当当，每天在床上躺好准备入睡也都是接近午夜12点、1点左右，大家身体都有点儿高负荷运转着。</p>
+<p>这两天虽说我一直是在后排坐着躺着，这都感觉有点儿累了，除了博斯腾湖和吐鲁番，这八九百公里大部分的路都属于比较无聊，就是普普通通开高速的感觉。所以如果再有机会走独库南段回乌鲁木齐的话，我可能会考虑直接异地还车然后从库车或是库尔勒乘飞机返回乌鲁木齐，或者干脆舍弃掉这一段，走一走这次没有体验到的独库北段的不一样的风景。</p>
+<p>到达乌鲁木齐，一切都还算顺利：只使用了两次的全套露营装备以接近五折的价格卖给了一位妈妈，是我提前好几天在社交平台上发帖找好的接手的买家，希望她和她的两个可爱的女儿可以物尽其用吧；另外提前联系了租车行的老板，在地窝堡机场的停车场完成了交接手续；那顿饭吃的也很好，大家聊的也很开心，时隔三四日，我终于又重新获得了品尝牛羊肉而不至于呕吐的能力。</p>
+<hr>
+<h2 id="epilogue">Epilogue</h2>
+<p>乘上JD5280次由乌鲁木齐地窝堡飞往石家庄正定机场的航班，加速冲刺后，飞机的车轮腾空脱离地面，宣告着17天的北疆之旅的结束，肉体在万米高空，却只觉得一部分灵魂包裹着充盈的记忆碎片留在了那里，留在了喀纳斯，留在了赛里木，留在了恰西，留在了仙女湖，留在了车轮呼啸碾过的每一平方米的土地。</p>
+<p>去年十一月份的时候，留学的相关事务处理地差不多，想带着妈妈一起出去旅游，翻看各种旅游网站上各个推荐景点的资讯和摄影集，便不由自主地与脑海中的、电脑硬盘中的我所亲历的新疆的景色一一比较，旋即只觉得相形见绌，随后就怎么都再也提不起兴致来，遂便一直搁置至今。</p>
+<p>我想，所谓“离疆后遗症”，描述的就是这样一种感觉吧！</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog16/IMG_4056.jpeg"alt="image"/><figcaption><p>Google Map记录的足迹</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog16/a9cb299401fd1c94a3809f0356943bb2.jpg"alt="image"/><figcaption><p>17天的总行驶里程</p></figcaption></figure>
+<hr>
+<p>文中所用图片视频均由以下设备拍摄：</p>
+<ol>
+<li>Canon EOS 70D + 70-200mm  + 18-135mm</li>
+<li>Sony ILCE-6000 + 16-50mm</li>
+<li>DJI Osmo Pocket</li>
+<li>iPhone13 Pro</li>
+</ol>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Trips|North of Xinjiang 7.12-7.14</title>
+			<link>https://hicole.me/en/posts/tripsnorth-of-xinjiang-7.12-7.14/</link>
+			<pubDate>Fri, 12 Jan 2024 20:39:04 +0800</pubDate>
+			
+			<guid>https://hicole.me/en/posts/tripsnorth-of-xinjiang-7.12-7.14/</guid>
+			<description><![CDATA[The fourth in a series]]></description>
+			<content type="html"><![CDATA[
+    <aside class="admonition tip">
+        <div class="admonition-title">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+   </svg></div><b>This is a tip</b>
+        </div>
+        <div class="admonition-content">本文是北疆之行系列的第四篇</div>
+    </aside>
+<h1 id="hahahugoshortcode14s1hbhb">
+
+<p style="text-align:center">Day12</p>
+</h1>
+<h2 id="712">7.12</h2>
+<blockquote>
+<p>伊宁 → 伊昭公路 → 昭苏 → 夏塔 → 特克斯</p>
+</blockquote>
+<p>老实讲，从伊宁开始往后的行程我们并没有像前11天那样有明确的计划和安排，此时行程进入最后三分之一，主要集中在伊犁地区，我们只是在脑海中知道这里都有哪些景点，哪些值得去，大致位置都在哪里，利用每天晚上的洗漱时间做一些简单的讨论，至于怎样最终取舍，怎样把这些景点安插挤入每天的时间线中，我们并没有敲定计划。加上从喀纳斯地区驶出之后，我们的行程安排稍显松散，时间上的限制也是一大隐患，所以后面的行程自然状况百出，也留下了不少遗憾，这个稍后会提到。</p>
+<h3 id="伊昭公路">伊昭公路</h3>
+<p>这天一早起来，没有时间在市区闲逛，从伊宁出发，今天我们的行程计划包括走一走新疆两条最美公路之一的伊昭公路，然后就是夏塔的游览。交通方面，从伊宁经过昭苏至夏塔有大概两条路线，我们选择的是一年中仅有数月开放的伊昭公路，这条公路蜿蜒曲折，翻越乌苏山。不过前一天我们从高德地图上看似乎还是封路状态，不过万幸这天我们得偿所愿。</p>
+<p>前一段路并不好开，属于比较考验驾驶技术的那种临崖盘山路，后面慢慢开阔。一路上都能看到在视野前方隐约的雪山的轮廓，皑皑白雪覆盖的山峰与冰川，让人不禁联想一会儿深入夏塔景区便可以距离它们更近上一步。一路上景色相当漂亮，大片广袤的油菜花田，有些地方还有点在电视纪录片上看到的尼罗河两岸的风光。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/F99AD1C2-5FF6-4AC7-81F5-0EA9BB7CB681.jpg"alt="image"/></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/9946CF20-4837-4523-9FF3-E6114522A79E.jpg"alt="image"/><figcaption><p>伊昭公路</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/5472B34D-F53A-43B1-9238-308E85C1FA60.jpg"alt="image"/><figcaption><p>有点儿像尼罗河</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/C352FA7D-7F40-4667-BEB3-5D042D52B9CC.jpg"alt="image"/></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/C07232F5-87BE-478D-80EA-EF3BCCDAA3E5.jpg"alt="image"/><figcaption><p>油菜花海</p></figcaption></figure>
+<h3 id="夏塔">夏塔</h3>
+<p>到了夏塔景区门口已经是下午三四点的样子了，其实我们一直也没想好今晚是在夏塔住还是当晚奔赴特克斯，结果一打听，发现票卖光了，今天不让进景区了。我们一下傻眼了，进疆以来游览无数景点第一次碰上这种情况，之前刚到新疆的时候倒是有意识每个景点提前买票，但是十多天过去了，已经习惯了到景区门口再买票的方式。售票大厅门口站着一群跟我们一样手足无措的人，不少大哥还在尽力的跟工作人员argue着，有的人决定在停车场搭一晚帐篷明早再进景区，还有人跟着景区内的商户走私道进去了（要价：500一位，夜宿夏塔，晚上需要10个人拼一间蒙古包&hellip;）。</p>
+<p>我们三人开了个简短的小会，最终还是决定放弃了夏塔这个景点，其实我的私心是偏向于在停车场凑活一晚，毕竟之前受社交媒体上分享的夏塔的景色的影响我当真是垂涎已久，但毕竟出来玩是团队行动，多方面考虑后，我们决定前往特克斯，并吸取教训，好好规划一下后续的行程。</p>
+<p>这里额外提上几句，其实伊犁地区景点特别的多，很多景点小又密集，单说北疆地区，如果不是要走大环线，其实伊犁地区玩上个十天半个月的也一点都不过分：赛里木湖、夏塔、喀拉峻、琼库什台、那拉提、恰西、库尔德宁、唐布拉、巴音布鲁克……这还都是能排得上名号，至少在驴友间耳熟能详的名字。我心中比较遗憾的这次没有去到的，一个是刚才说的夏塔，另外就是琼库什台。琼库什台对旅行者的要求更高，一个是它基本只能自驾前往且道路相对原始，另一个是时间成本，单日往返的方案几乎不存在，但是景色也是秀美卓绝（看过一些摄影作品），但是旅行嘛，难免会点缀着些许遗憾，有机会下次再来伊犁了却这些心结！</p>
+<h3 id="特克斯">特克斯</h3>
+<p>这天我们夜宿特克斯，这是一座比较有特色的城市：城市中没有一处红绿灯，靠着一个个环岛来分散和引导车流，在地图上各条街道各个巷口也都对应标注着八卦阵中的位置。暮色降临后俯视整座小城，亮起灯火就瞬间勾勒出八卦图的样子，也因此得名八卦城。</p>
+<p>由于我们没有航拍的设备，加上一天的长距离驾驶舟车劳顿，就没有闲情雅致去看什么夜景了，准备早早吃过东西后入住酒店休息了。</p>
+<p>说起来，也不知道我是不是心中对夏塔念念不忘，思念成疾（当然也有可能是单纯之前吃坏东西了），到了特克斯后我只觉得特别的恶心，什么也不想吃，和伙伴分开后自己去觅食，找了一家馄饨店想吃点儿清淡的，结果&hellip;馄饨汤里漂着红油，一咬：羊肉馅的，嗯，又是羊肉。不吃没辙啊，一天没吃东西了，天知道我那时多想吃一碗大白米饭。硬着头皮吃完，只觉得更不舒服了，在酒店楼下买了一点零食。当天夜里怎么也睡不着，还是恶心，趴着马桶吐了一晚，把我折磨死了。</p>
+<p>第二天早起，朋友带着我上镇上的药店买了健胃消食片和维C泡腾片，我觉得稍好些就继续上路了。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/38DE19B3-AA5E-40D5-97EE-10BE3BB179B7.jpg"alt="image"/><figcaption><p>把胃吃坏了</p></figcaption></figure>
+<h1 id="hahahugoshortcode14s8hbhb">
+
+<p style="text-align:center">Day13</p>
+</h1>
+<h2 id="713">7.13</h2>
+<blockquote>
+<p>特克斯 → 恰西 → 新源</p>
+</blockquote>
+<h3 id="喀拉托海湖">喀拉托海湖</h3>
+<p>从特克斯出发，我们一路向东，最后的目的地是恰西森里公园，走X765县道，一路上的景色同样漂亮，途径一处高地，发现很多车都从一旁的岔路开了下去，我们也跟上了队伍，原来是一片坐落于金黄麦田上的深蓝色湖水。由于此处并没有设立景区，喀拉托海湖的名字还是我从地图上瞥见的，也不知是否就是它的名字。</p>
+<p>北疆地区从不缺少水，也不缺少湖泊，但是这一片水域还是美的很不一样，风吹麦浪，田野金黄，越野车轮碾过扬起尘土飞扬，待黄沙散去，只留下深蓝色的湖水随风荡漾。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/86B0823A-97ED-4F84-9468-EC4EF84F5F12.jpg"alt="image"/></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/C772B1C9-D9D3-43C9-BA22-E309CEF17020.jpg"alt="image"/></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/2978A171-8BF3-4E7C-A3FE-A290C2A37AAE.jpg"alt="image"/><figcaption><p>风吹麦浪，田野金黄</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/EAA1A1ED-ED8A-45BF-A3D9-DB65DF207FE2.jpg"alt="image"/><figcaption><p>高处俯瞰</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/CFBB8F1C-56D6-4CDB-9BCD-4F34BD867627.jpg"alt="image"/><figcaption><p>色彩与线条拼贴交汇</p></figcaption></figure>
+<h3 id="恰西森林公园">恰西森林公园</h3>
+<p>恰西森林公园可以自驾，一个人30元，相比那拉提一人300这里自然要实惠上许多，但是景色却并不打折扣。恰西的游览主要是一条自驾环线，叫恰塔环线，游览路线有一个好听的名字：“恰西画卷”。</p>
+<p>行至第一个观景台上看到的景色就足够震撼，我们把车停在一旁，虽然到此时我们已经看多了各种空中草原，大片的绿色拼盘，但此时眼前展现的图画还是比以往的都更加立体，更富层次。</p>
+<p>随便走一走，路上我们还遇到了一只特别可爱，看上去特别有灵气的小羊，朋友们也是忍不住抱起小羊来合影留念。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/3573AC5B-C069-418D-8B50-F9A7AF3C913B.jpg"alt="image"/><figcaption><p>深邃的眼神</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/888E87D2-602E-4AD6-B656-A184C89577D8.jpg"alt="image"/></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/77FF8DFD-AFAE-4E3E-8B57-295FEF991E5B.jpg"alt="image"/><figcaption><p>恰西画卷</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/05DCF24B-83A7-4F6B-9E3E-047319B23D76.jpg"alt="image"/></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/705FC203-538C-4251-A62C-E1F63E796EE3.jpg"alt="image"/></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/E867CF68-6B4A-4294-BB5F-3BDDF7198151.jpg"alt="image"/><figcaption><p>有灵气的可爱小羊</p></figcaption></figure>
+<p>再往里开，继续深入，周遭从典型的山地和草原慢慢过渡到更清新一些的森林与河谷。</p>
+<p>路线是单行道，基本也只是容纳一辆车的宽度，同时，道路起伏不断，路况条件也是参差不齐，没十足驾驶经验的人还真是开不了，好几处地方包括一些涉水点我们前方都遇到了状况，有动力不足的，有拖了底的，有不敢开的，还好大家互相帮衬照顾着，没有遇到太长时间的停留，我们车上的一位小伙伴倒是表示：这路开的很过瘾！</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/A2035CB3-4100-4A81-BBCA-2DAF24A26A27.jpg"alt="image"/><figcaption><p>森林河谷</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/26D92901-47EB-4528-807A-EFE881C42432.jpg"alt="image"/><figcaption><p>涉水点</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/BBBBCE70-C586-41A0-BB09-40C631EB426E.jpg"alt="image"/><figcaption><p>悠哉悠哉的牛</p></figcaption></figure>
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/jvU8J__IoMs?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<h3 id="新源县">新源县</h3>
+<p>本来我们原计划是这晚在恰西露营的，毕竟买的全套的装备我们只用了两次，其中一次的体验还是相当一般。但实际考察后发现并没有我们想象的那种在森林中席地而坐的条件，露营的话也只能是在景区门口的停车场附近有一些木板营地，没什么意思。后来也没想到此次放弃竟成了绝唱。</p>
+<p>从景区出来，我们决定加快脚步，为后续的行程节约时间，我们就直奔新源县，这是位于特克斯和独库公路中间的一个中转县城，住在这里方便开启我们后一天的行程。</p>
+<p>县城不大，各方面条件在这十几天的行程中算是中等水平，朋友们照顾我残疾的胃，特意先暂时告别了牛羊肉，找了一家川菜馆，吃了点儿简单的，看到老板端上来的我点的青菜、糖醋里脊和雪白雪白的大米饭，我真的差点儿眼泪掉下来。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/BBE0C7DB-128B-4FED-AF82-49A937EF4789.jpg"alt="image"/><figcaption><p>阔别已久的川菜</p></figcaption></figure>
+<h1 id="hahahugoshortcode14s25hbhb">
+
+<p style="text-align:center">Day14</p>
+</h1>
+<h2 id="714">7.14</h2>
+<blockquote>
+<p>新源 → 唐布拉百里画廊 → 独库中段 → 巴音布鲁克</p>
+</blockquote>
+<h3 id="唐布拉百里画廊">唐布拉百里画廊</h3>
+<p>常说的唐布拉百里画廊并不是一个固定的景点，而是一片区域，从功能性来讲，通常是用于填补从特克斯/巩留/新源/等地区出发北上经百里画廊才进入独库公路，在独库公路开放后，算是一个非常棒的连通顺路拜访的景区，基本上游览的时间在半天左右。</p>
+<p>从新源出发一路向北，行至与S315省道交汇的地方右转，从这里一直往东到乔尔玛的这段区域恰好也就是百里画廊最精华的地段。这里说起来并不算小众，因为相比琼库恰西那样的有车型和车流限制的道路，这里的公路算是非常好开，一路上看到不少旅游团的大巴小巴车。</p>
+<p>沿着喀什河由西向东行驶，山谷与河沟从我们身旁延展开，行驶在这样的公路上非常享受。在百里画廊观景台处我们短暂停留，上到平台，呈现出的景色虽不如恰西画卷，但也别有一番姿色。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/B071B27D-F65A-4481-B85D-C0B937263BC6.jpg"alt="image"/><figcaption><p>油菜花田</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/D9A455F2-514D-49BE-A9D5-7EA103E6862C.jpg"alt="image"/><figcaption><p>百里画廊观景台</p></figcaption></figure>
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/4qU4sZZyjZg?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<h3 id="仙女湖">仙女湖</h3>
+<p>在唐布拉百里画廊我们停留的第二站是仙女湖，说实话来之前我们并没有对这里有什么过多的期待，也没曾想会在这里花上那么多的时间，其实这也侧面反映出，如果是第一次玩北疆，做特别详细的行程规划也有利有弊，因为你永远不知道哪处的风景会让你特别想额外驻足多做停留，这只有亲临现场才知道。</p>
+<p>仙女湖就是如此，我们泊好车才从景区马队的小哥得知这里距离仙女湖还有不近的距离，需要骑马过去，200一个人来回。我和一位朋友觉得，来新疆不骑次马总觉得差了点儿什么，另外一位朋友执意想要徒步，大家各有各的想法就也没再多说什么，马队的小哥怕他反悔特意多备了一匹马牵着同行。</p>
+<p>事实上，这段路确实不短，最开始的一段路尤其危险，马队z字型上坡，坡度接近六十度，行至半山坡，与对面下山的马队交汇时，我还亲眼见到一位女士从马背上摔下来，在地上划出了两三米，索性没有大碍，还是非常危险的。我不得不使劲攥住把手，手心都出了汗，手上的那股铁锈味儿几天都没有散掉。</p>
+<p>马匹都走的这么费劲，徒步自然难度也不小，朋友只能借助最边上的铁丝网着力，牵引着身子一点点地往上爬。</p>
+<p>过了这一段路倒是就变得比较平坦了，景色也渐渐开阔美丽动人起来。我因为从小到大也没有骑过两回马，实在是不敢自己操控，便被拴在了头马的后面，同行的朋友倒是真真正正自己骑着马跑了起来，令我好生羡慕。</p>
+<p>一路上翻山越岭，涉水穿过小溪潺潺，最后到达湖边时屁股已经被颠地生疼生疼的。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/0A015945-99E8-4A2A-A190-E7FD4ABF2372.jpg"alt="image"/></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/98A9E410-4205-42DA-85E1-428A222CD209.jpg"alt="image"/><figcaption><p>非常不错的骑马体验</p></figcaption></figure>
+<p>说是仙女湖，其实比我这些日子见到的任何一片湖水都要小，更像是个大些的池塘，不过对于当地居民来说似是意义非凡，听说每逢节日还会遵循习俗在这边举行典礼。这里的景色还是很漂亮的，远处天边雪山轮廓清晰分明，水边开满了茂盛的种类繁多的可爱的野花。</p>
+<p>理论上我们这些骑马上来的游客只能在湖边停留20分钟，马夫就要把我们送下去，马队还要轮转起来接下一班客人呢，但是我们这个马夫小哥比较佛系，特别可爱，说不着急下去，他有点儿困，说完就用草帽遮住脸躺在草地上睡觉了，让我们玩够了再来叫他。</p>
+<p>我和朋友就在仙女湖边拍了好多好多照片，也学着社交媒体上拍了几组比较流行的“游客摆烂照”。玩累了我就躺在湖边的草地上闭上眼睛静静地感受着与周遭一切细微的变化的连结。</p>
+<p>我们收拾好东西准备下山时，另一位朋友这才刚刚艰难抵达，不过倒也确实是完成了整段徒步，现在想想不得不在这里对他表示respect！他表示想在湖边多坐一会儿，想想也是，我们就先下山了。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/A4EE2F20-0B16-4BB1-BA83-109AFC984FC7.jpg"alt="image"/><figcaption><p>仙女湖</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/06816A1F-AF07-41F1-A679-5DF144ED45FC.jpg"alt="image"/><figcaption><p>骑马涉水的人</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/F98DA1A8-831A-4D07-8A12-E2E9B389B28A.jpg"alt="image"/><figcaption><p>湖边绚烂的野花</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/9C1C969A-5A72-46FF-B263-D6F34F245214.jpg"alt="image"/><figcaption><p>另一侧的景色</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/CFC7B9F4-BA76-4583-822B-5718B7048C68.jpg"alt="image"/><figcaption><p>我的摆烂照</p></figcaption></figure>
+<p>下山路同样漫长，不过多了两位同行的朋友，马夫额外牵上来的那匹马倒是派上了用场。一路上马夫给我们介绍起了我们骑乘的这几匹漂亮的马，也顺便讲了些自己的故事（有一匹马因为买的时候花了三万块，因此得名“三万”），在愉快的攀谈闲聊中，我们安全抵达了山脚下。</p>
+<p>总的来说，这200花的我认为还是挺值的，毕竟是一次非常纯粹的骑马体验，区别于在草原或是公园里骑马，这是实打实地把马视为一种不可或缺的交通工具，特别local特别native的一种感觉，而且遇到了特别可爱的马夫小哥哥，把单反交给他让他替我们拍几张照片的时候，他还特别自信地说：不用教，我以前经常去婚礼给人拍照呢！</p>
+<p>另外没有提到的是，这一路烈日当空，我最错误的决定就是穿了短裤，两只白花花的大腿就这么暴晒在阳光下，没等到第二天，我就感觉到被暴晒的那部分皮肤有强烈的灼烧感和微微的疼痛，后来脱皮的程度着实有些吓人，算是切实地被新疆的太阳晒伤了一回。所以还是建议在新疆有骑马打算的朋友做好一切防晒工作。</p>
+<h3 id="独库公路">独库公路</h3>
+<p>等徒步的朋友也下山来，来不及做过多的修整，我们就向独库公路继续前进。</p>
+<p><a href="https://zh.wikipedia.org/zh-cn/217%E5%9B%BD%E9%81%93">独库公路</a>是G217公路独山子到库车的这一段，是伊犁河谷地区最著名的一条自驾路线，每年只开放3个月左右，以多变的景观类型而闻名。据称前身是由中央军委主持修建的国防要道，更多的历史资料就不在这里展开了。于2023年6月18日，独库公路正式通车，我们也算是赶上了！</p>
+<p>这段公路分为北、中、南三段，我们此次行程走了独库的中段和南段。其中北段和南段只允许7座以下的小客车通行。另外独库公路9-20点通行，其余时候只出不进，因此我们不得不加快车速，最后经乔尔玛进入独库中段时已经接近晚上七点。</p>
+<p>行驶在独库公路的中段，虽然窗外也是好看的翠绿深绿拼接起来的空中草原和森林，但与其他公路两旁的景色相比，可能有一些海拔上的原因，这里更多生出来的是一种磅礴恢弘的感觉。</p>
+<p>一路上倒是有几处观景台可供停留，我们找了一处景色最好的，上到了高处，一边俯瞰谷底同时回望刚刚来时的方向：车流不息，人影闪烁，蜿蜒盘踞群山之上的国之大道，此刻也在我心里平添了更多几分重量。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/22061C46-8072-4F28-BACB-DD4D28E97284.jpg"alt="image"/></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/F2A60C4A-331B-4F3D-99EB-64BB4C91B109.jpg"alt="image"/><figcaption><p>独库公路中段</p></figcaption></figure>
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/t6jcGdaHMrM?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<h3 id="巴音布鲁克">巴音布鲁克</h3>
+<p>独库公路中段的尾部就是接近巴音县的位置，行至此处，更多的是平坦广袤的湿地草原，一马平川。</p>
+<p>这里有巴音布鲁克景区，景区里的九曲十八弯上流传着著名的九个太阳的传说。本来这也是我们原计划行程上的一站，但是因为之前在仙女湖花费掉了比较多的时间和精力，巴音布鲁克的景区游览要4个小时左右，加上我们到的时候已经几乎过了日落时分没有机会看到所谓的九个太阳了，另外就是参考以往游客对于该景区的评价一向是喜忧参半，是一个“不来遗憾来了更遗憾”的地方。综合考虑，我们就直奔巴音布鲁克镇落脚歇息。</p>
+<p>感谢同伴的照顾，今天我们同样选择了川菜馆。</p>
+<hr>
+<p>文中所用图片视频均由以下设备拍摄：</p>
+<ol>
+<li>Canon EOS 70D + 70-200mm  + 18-135mm</li>
+<li>Sony ILCE-6000 + 16-50mm</li>
+<li>DJI Osmo Pocket</li>
+<li>iPhone13 Pro</li>
+</ol>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Trips|North of Xinjiang 7.9-7.11</title>
+			<link>https://hicole.me/en/posts/tripsnorth-of-xinjiang-7.9-7.11/</link>
+			<pubDate>Tue, 28 Nov 2023 23:30:44 +0800</pubDate>
+			
+			<guid>https://hicole.me/en/posts/tripsnorth-of-xinjiang-7.9-7.11/</guid>
+			<description><![CDATA[The third in a series]]></description>
+			<content type="html"><![CDATA[
+    <aside class="admonition tip">
+        <div class="admonition-title">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+   </svg></div><b>This is a tip</b>
+        </div>
+        <div class="admonition-content">本文是北疆之行系列的第三篇</div>
+    </aside>
+<h1 id="hahahugoshortcode18s1hbhb">
+
+<p style="text-align:center">Day9</p>
+</h1>
+<h2 id="79">7.9</h2>
+<blockquote>
+<p>克拉玛依 → 塔城</p>
+</blockquote>
+<h3 id="克拉玛依">克拉玛依</h3>
+<p>克拉玛依算是从喀纳斯到塞湖行程区间上的一个比较大的中转站，本身并没有太多景点，更多的是城市中分布着一些人文角落。</p>
+<p>这天我们稍微睡了个懒觉，开车行驶在克市市区中时，我们纷纷感叹，不论是城市规划还是市井风光，这里都要稍强于乌市，不知道是不是我们的刻板印象了。兴起查了查，发现<a href="https://www.163.com/dy/article/HRVMOLAH055603RX.html">克拉玛依人均GDP超过24万元，位居全国第二</a>。</p>
+<p>我们的第一站是大油泡广场，所谓的大油泡，就是一个大型的雕塑艺术装置，像是油井中不断升腾起的气泡的样子，故此得名。雕塑的正下方就是大名鼎鼎的<a href="https://zh.wikipedia.org/zh-hans/%E5%85%8B%E6%8B%89%E7%8E%9B%E4%BE%9D%E4%B8%80%E5%8F%B7%E4%BA%95">克一号井</a>，是克拉玛依油田的第一口井。今天的天还是阴沉沉的，加上工作日白天的原因，广场上少了点儿活力，听说晚上灯光亮起、人流攒动的时候又是另一番景象了。</p>
+<p>和朋友闲聊中得知了<a href="https://zh.wikipedia.org/wiki/%E5%85%8B%E6%8B%89%E7%8E%9B%E4%BE%9D%E5%A4%A7%E7%81%AB">1994.12.8克拉玛依的那场大火</a>，为了解全貌，我去阅读了<a href="https://zhuanlan.zhihu.com/p/24314360">一篇文章</a>，后续又跟进了解了一些相关报道，在为那些孩子感到遗憾的同时，也惊讶于此事销声匿迹之彻底，亦未曾听闻任何与此事有关的纪念活动，事情过去了近三十年，不知那场大火还存在多少人的记忆中呢？心中难免闪回着历史主义的训诫，可惜因为一些原因，我们还是没有去友谊馆看一看。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/88CF62E0-905B-40C5-884C-D973C02C3691.JPG"alt="image"/><figcaption><p>克一号井</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/A6FDEC86-2A3E-4B14-B899-1FAB2324C296.JPG"alt="image"/><figcaption><p>大油泡广场</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/E1E8F828-3EE0-4C1A-8213-21960A0D0928.JPG"alt="image"/><figcaption><p>开拓者石雕</p></figcaption></figure>
+<p>离开广场，我们前往黑油山公园，虽然家里很多长辈都在物探单位工作过，舅舅至今仍经常在新疆地区出工程，这还是我第一次近距离看到原油。景区有大大小小数十口油井，分布在主干的游览步道周围，整个景区比较简陋，空气中充斥着原油的那股臭鸡蛋味儿，一圈走下来，我只发觉鼻腔口腔都是这股味道挥散不去，甚至有点儿头晕恶心，就匆匆离去了。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/DDB77A2C-4F76-413B-9A11-47375CFF140A.JPG"alt="image"/><figcaption><p>黑油山公园</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/C4C8A146-7099-480F-A29F-6575CC1BC666.JPG"alt="image"/><figcaption><p>不断吐着泡泡的原油</p></figcaption></figure>
+<p>总的来说，克拉玛依市区的大多景点，都属于可去可不去的那种类型，没有什么太多特色，只不过我们行程不算紧，就尽量把想去的地方都走一走。</p>
+<p>午饭之前，我们找了家户外用品商店，购置了三把露营椅，替掉了之前坐起来有些憋屈的小马扎，为塞湖的露营做好了十足的准备。在克拉玛依的这顿午饭算得上大餐了：辣子鸡、牛肉乱炖、烤羊腿、过油肉拌面&hellip;算是一家比较高档正规的餐厅。</p>
+<p>酒足饭饱之后，我们直奔塔城驶去。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/228DBBCF-8365-4F76-B4A3-8F6FDF28C41B.JPG"alt="image"/><figcaption><p>棉花绽放·新疆菜</p></figcaption></figure>
+<h3 id="塔城">塔城</h3>
+<p><a href="https://zh.wikipedia.org/wiki/%E5%A1%94%E5%9F%8E%E5%9C%B0%E5%8C%BA">塔城</a>，是一座边境小城，可能本身也是北疆环线上容易被忽视的一站。很多朋友可能从克拉玛依市驶出，就直奔博乐市，然后一路开到塞里木。一方面我们是考虑，从克拉玛依开到赛湖需要开近十个小时，舟车劳顿不说到了也是日落时分，另一方面，如果在博乐市歇脚的话倒不如找一个更具特色的小县城，就这样我们把视角锁定了更贴近国界线的塔城。</p>
+<p>事实证明，这座小城并没有让我们失望，在酒店简单checkin后，我们去了塔城红楼博物馆。整个博物馆不大，几个展厅梳理了这座小城的前世今生，同时也出色的完成了一些红色教育的任务。不过相比之下，更为引人注目的是博物馆主体的这座由俄式建筑风格构成的院落，整片的红墙与碧绿的房顶，点缀上几扇白窗与鲜艳的团簇的花卉，颜色结合得反差又分外融洽。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/486FA6F4-51CA-4E83-B40F-4C4E7CA6E177.JPG"alt="image"/><figcaption><p>塔城红楼博物馆</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/075D31AE-53BC-4640-A7A6-FCFFA5EFB1AE.JPG"alt="image"/><figcaption><p>很漂亮的俄式建筑</p></figcaption></figure>
+<p>在塔城的第二站是巴克图口岸，这里是新疆省内离城市最近的口岸。</p>
+<p>拜访前我们没有作详细的了解准备，倒是差点闯了祸，口岸前设置了检查站，警察招手示意我们停车，我们居然没有看见，差点儿硬闯了，想想都后怕，感觉后视镜里的警察小哥就快招呼弟兄们掏枪了。掉头开回来，赶紧下车接受教育，三个人一声不吭的被数落了十分钟有余，最后在警察同志的指导下按规章申领了边防通行证，这才顺利到了口岸。</p>
+<p>虽然出了点小插曲，但是缓步驶向口岸的时候，看着高大的国门哨所矗立在眼前，心中还是油然而生起一股自豪感与敬畏感。行至道路尽头，在铁栅栏旁拿出手机看了看指南针上的位置数据，更真切地感受了一下与国境线那触手可及的距离。</p>
+<p>从口岸出来，就碰上了大暴雨，我们在口岸附近的特产超市选购了点儿邻国出口的零食备在车上，顺便避了会儿雨。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/34496162-0BF2-402F-900F-80C04FDCAFED.JPG"alt="image"/><figcaption><p>巴克图口岸</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/IMG_3476.jpg"alt="image"/><figcaption><p>手机Compass上显示的实时位置</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/17156094-EA30-46B4-879A-016438719E4B.JPG"alt="image"/><figcaption><p>口岸附近突然下起了暴雨</p></figcaption></figure>
+<p>晚饭前，我们去一家非常有名的算是甜品店（？不太确定怎样定义），店名叫迎宾冷饮。我们尝了尝俄罗斯玛洛什和这边特制的酸梅汁。所谓玛洛什，就是俄语里冰激凌的意思，其制作工艺由俄罗斯人从欧洲带到塔城，经过多年的积淀，现在已经成了塔城地区最流行的夏天冷饮。据说，所用的材料非常简单，仅仅是鸡蛋、牛奶和白糖，味道确实不错。至于那桶酸梅汁有些一言难尽，因为实在是太酸了！</p>
+<p>在塔城可选的美食确实不多，我们在“金骏马哈萨克美食风情园”这家餐厅用了晚餐，刚在大众点评上看到这家餐厅的店名时还以为是那种荒乱的美食街，实际上是一家装修非常得体的二层小阁楼，非常有异域风格。由于当天下大雨，整个饭店都没什么人，主厨也告诉我们只有六道菜可以点，大家都不是很饿，就试了试哈萨克披萨和巴特利特，味道也相当不错。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/80D7B56B-5562-4E57-B829-E99CCE9BE661.jpg"alt="image"/><figcaption><p>哈萨克披萨</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/98D05F63-351B-434F-BA7E-4E35E58714EA.jpg"alt="image"/><figcaption><p>巴特利特</p></figcaption></figure>
+<h1 id="hahahugoshortcode18s15hbhb">
+
+<p style="text-align:center">Day10</p>
+</h1>
+<h2 id="710">7.10</h2>
+<blockquote>
+<p>塔城 → 赛里木湖</p>
+</blockquote>
+<p>与塔城分别后，我们直奔赛湖。前文提到过，我认为喀纳斯的游览是我们行程中的第一个高潮，而身在赛湖经历的这不到二十个小时，就是我们17天行程中的又一个高光时刻。</p>
+<p>虽说塔城是用来分担克市至伊犁地区长距离驾驶的额外一站，但确实是绕了挺远的路，开回G219国道上就花费了我们不少的时间，一路行驶。这是一条起点位于喀纳斯湖（可以在换乘中心看到纪念标志）终点为广西壮族自治区东兴市的一条道路，由于该道路一定程度上就是贴着中国西部的边境线延展开来，蜿蜒曲折，气势磅礴，被驴友们亲切的称为“国之大道”，很多人将其做成贴纸印在自己爱车的尾部。</p>
+<p>行驶过程中，向左侧望去，不时有哨所林立，除了无边的荒野，我们还看到了一大片辽阔的水域。从Google Map上查询得知它有个好听的名字：阿拉湖，这是位于哈萨克斯坦境内的一个椭圆形湖泊。阿拉湖毗邻<a href="https://baike.baidu.com/item/%E5%B7%B4%E5%B0%94%E9%B2%81%E5%85%8B%E5%B1%B1/0?fromModule=lemma_inlink">巴尔鲁克山</a>，隔着空旷的水面遥望可以看到远方被皑皑冰雪覆盖的雪顶。相传，唐代诗人李白的出生地就在阿拉湖湖畔。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/9E170B02-DA6D-4FD3-97B3-2A746EB31B6E.jpg"alt="image"/><figcaption><p>威严的哨所</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/D6E5C035-8F2F-4567-8E3A-F9452C6C1274.jpg"alt="image"/><figcaption><p>阿拉湖</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/9780DBC9-C8ED-4AF7-8344-0F0EA8A5EEB2.jpg"alt="image"/><figcaption><p>辽阔的水域</p></figcaption></figure>
+<p>这天的午饭，我们在博乐市的郊外很多汽修站旁边找了一家面馆，叫“飘香阁拌面馆”。这里的面香极了，也难怪，毕竟是这些经常跑长途的大车司机最常光顾的地方。这次的经历一定程度上也打开了我们后续探店美食的思路。</p>
+<h3 id="赛里木湖">赛里木湖</h3>
+<p>回想起来，我们到达赛湖景区时已接近傍晚6时，好在天色尚早，从东门随着车流涌入景区内，坐在车后排的我扒着前排座椅直起身子探着头试图透过前挡风玻璃贪婪地想要早一点看到赛湖真容的那种冲动我现在仍记忆深刻。</p>
+<p>沿着环湖车道没驶出多远我们就已按耐不住了，将车横在路旁，兴冲冲地向湖边阔步走去。事实上，彼时的赛湖算不上有多美，天空中笼罩着大片的厚厚的云层，湖水还只是蓝的深邃，色彩并不多么动人心魄。而后来证明，虽然都是蓝，但是赛湖每个小时呈现出的蓝色都有所不同，色度与色温受当时的温度，光影，天空，气流多种因素的交互而不断变换调整着。但对于刚刚行车数百公里来到湖边的我们来说，静静地听着湖水不断拍打着岸边的沙砾，远远地眺望着湖对岸连绵的高山，就已足够让我们激动的心得以满足与平复。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/658DEABF-35E6-431D-A9EF-B97CD55B177D.jpg"alt="image"/><figcaption><p>17:50分的赛湖</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/4E2AB386-D040-4774-8B0F-82DBFEA511F7.jpg"alt="image"/><figcaption><p>“转身向大海走去！”</p></figcaption></figure>
+<p>短暂停留后，我们不再贪恋眼前的景色，继续沿着赛湖逆时针前进，路过北门，驶过“金蟾祈福”，左侧是大片的木栈道，我们停下车，带着新装备的露营凳和小桌板找了处视野不错的位置，拿了些零食饮料，决定在湖边多坐一会儿，只是静静地观赏与感受。</p>
+<p>伴着音响里飘传出的温柔声调，我们三人面朝湖面，并无太多言语，每个人的心绪都不知飘向了何方……</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/C9274780-EA5C-4CAE-B3F0-66C24050326A.jpg"alt="image"/><figcaption><p>18:27分的赛湖</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/B1FD992D-0D75-4B0D-AE58-032B7CEA4906.jpg"alt="image"/><figcaption><p>湖边</p></figcaption></figure>
+<p>安静有格调的气氛没持续多久，画风突变，我们支起三脚架，开始了搞怪的造型连拍。一时高兴，我还在湖边扭动起不协调的身子，像是在蹦野迪，好友也抓住了这一上头的瞬间定格下了不少逗得人捧腹的照片，一边路过的小情侣还对我们直言：泰酷辣！不远处叔叔们也直接脱了衣物步入湖中玩水，倒是和旁边“禁止游泳”的标志勾勒出了一副颇为违和的画面。</p>
+<p>我想也只有在这旅行时刻，行至远方，目睹如此景色，人才能这般放肆与自由吧！</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/IMG_20230713.JPEG"alt="image"/><figcaption><p>三连拍！</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/IMG_20230714.JPEG"alt="image"/><figcaption><p>最会扭的一集！</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/BB8E710C-91EA-49C2-B378-98DA09D27CF8.jpg"alt="image"/><figcaption><p>不时有新的车辆停靠</p></figcaption></figure>
+<p>再后来，不只是我们三个人近到湖边，又开出几公里后，我们找到了个合适的岔路口，切换到越野模式，给足马力，把车也开了下去，引擎爆发出的牵引力带着我们上到一座有些高度的丘陵，远眺赛湖：湖的轮廓清晰而分明，云朵、远山、浅草、镜湖，“大西洋的最后一滴眼泪”，诚不我欺。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/IMG_20230712.JPEG"alt="image"/><figcaption><p>开足马力！</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/IMG_20230715.JPEG"alt="image"/><figcaption><p>从一处丘陵上俯瞰赛湖</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/IMG_20230719.JPEG"alt="image"/><figcaption><p>20:36分的赛湖</p></figcaption></figure>
+<p>天色渐渐暗下来，落日的余晖从山峦黑影的另一面散开光晕，已经快是晚上十点，我们决定还是要优先解决一下我们今晚睡哪里的问题。因为今天的原计划就是在赛湖露营，甚至可以说，买的这套齐全的装备也就是为了这一晚，于是先前我们是做了一些功课的。一路驶来，路过了几个备选的营地，因为来的比较晚了，很多位置已经是人满为患。</p>
+<p>驶过“西海草原”，我们最终决定将营地搭在“金花紫卉服务区”附近。这里景色不错，视野开阔，设施完善，也方便看到明早的日出。营地对面还有一个废弃的船坞，报废的游船和灯塔已沦为网红打卡地，丢掉自身原有的功能属性后“退休”的它们与自然融为了一体。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/IMG_20230720.JPEG"alt="image"/><figcaption><p>22:14分的赛湖</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/0F737313-32BA-405A-BA73-E65F910FBBFA.jpg"alt="image"/><figcaption><p>第二次搭帐篷要熟练了许多</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/C44D613C-C3A4-4004-B9F6-378BB06C2DB2.jpg"alt="image"/><figcaption><p>营地所在的水湾</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/4624C7FC-65E0-43EE-AF9A-75CAA74F70B9.jpg"alt="image"/><figcaption><p>露营人抱团取暖</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/60FCB3AD-1FEA-42FF-95BE-5A6DD5575E65.jpg"alt="image"/><figcaption><p>服务区旁漂亮的滨菊</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/E530780A-B25E-43A1-8432-4AC1ACB26995.jpg"alt="image"/><figcaption><p>落日的人像剪影</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/D6648AB6-8A9F-4967-B101-D59A70F5F263.jpg"alt="image"/><figcaption><p>傍晚十一点</p></figcaption></figure>
+<p>奔波了一天后，我们在营地吃了些泡面简餐补充能量，相约明早一起看赛湖的日出。</p>
+<p>接近深夜午时，湖畔的寒气凌人，好友们洗漱后便钻进了温暖的睡袋。我又一次孤身一人回到车内，心想着再等一等，等四周的光线再暗一些，隔绝了光污染便是时候好好欣赏下赛湖的夜空。</p>
+<p>接近凌晨两点，我钻出车，不受控制地倒吸了几口凉气，七月中旬的盛夏夜却寒意刺骨。我插上耳机，在湖边在星空下夜路漫步，周遭四野寂静却并不渗人，抬头一看，已是星河璀璨漫天，拿出手机上的星图app，我旋转起身子对着穹野识别此时遥挂在空中的一片片星座与星云，试图将渺小的我与浩瀚的宇宙相连接。</p>
+<p>此番探索以美的不可言说的赛湖作背景，也确是一种难得又幸运的浪漫。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/IMG_3543.jpeg"alt="image"/><figcaption><p>凌晨两点的星空</p></figcaption></figure>
+<h1 id="hahahugoshortcode18s37hbhb">
+
+<p style="text-align:center">Day11</p>
+</h1>
+<h2 id="711">7.11</h2>
+<blockquote>
+<p>赛里木湖 → 果子沟大桥 → 霍城 → 霍尔果斯 → 伊宁</p>
+</blockquote>
+<p>这一夜睡得相比露营的初体验是要好些的，但是睡得晚起得早还是让我身体上觉察了些许不适。不过还是那句话：“来都来了”，赛湖的日出岂有不看之理，拱起有些僵硬的身体，睁开惺忪的睡眼，我们三人费劲地钻出帐篷，好在日出还未拉开序幕，但是天已经亮了大半。</p>
+<p>沿着曲折的石板小路近到湖边，弯下腰来捧起一把水花，凉嗖嗖的，赛湖的水格外的清澈，肉眼可见的水质优良。</p>
+<p>就这样静静地站在湖边，远眺着湖对岸，专属于晨曦的红日一寸寸地从连绵层叠的山脉的黑影顶端显现出身影与轮廓，燃烧的橘红色侵染着那一部分的天空和云层，时间好像随着湖面上无尽的水波荡漾被压缩了，周遭一切微小的变化都能瞬息间被我敏锐地捕捉与察觉，我心里暗暗地想：日出要开始了。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/C61ECBA3-2039-4E34-96D4-C22DFAA85CF4.jpg"alt="image"/><figcaption><p>日照金山</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/IMG_20230716.JPEG"alt="image"/><figcaption><p>赛湖上的日出</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/02993DC7-79DA-490E-8CB7-A104BDD912D7.jpg"alt="image"/><figcaption><p>广角下的日出</p></figcaption></figure>
+<p>自古以来，人们对于太阳总有一种特别的追求，我不知在赛湖周围其他位置上所观看到的日出景象会不会有什么不同，但我于“金花紫卉”目睹的这一轮完整的日出无疑是震撼的。当我的身体连同我的思绪沐浴在第一抹透射而出的日光下时，就像是一场洗礼。</p>
+<p>所谓“日出江花红胜火”，要不是长时间盯着强光源引起了视力上的些许不适，我真的不愿意将我的视线从橙红又青碧色的湖面上移开分毫，那是一种极温柔又极具质感的调和色。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/A4D50162-D144-4532-B82C-C45869E89491.jpg"alt="image"/><figcaption><p>湖边的剪影</p></figcaption></figure>
+<p>随着整个世界的光影恢复如常，通体的疲惫感席卷而来，我决定回到帐篷钻进睡袋补觉。</p>
+<p>朋友们决定去爬松树头，松树头是位于赛湖景区内的一个观景高台，这里能以清晰的视角看到完整的<a href="https://zh.wikipedia.org/zh-cn/%E6%9E%9C%E5%AD%90%E6%B2%9F%E5%A4%A7%E6%A1%A5">果子沟大桥</a>,刚好也离我们的营地不远。于是我看家（实则睡懒觉），朋友们就出发了，下面的照片也都是出自朋友之手，我并没有亲眼看到，现在看着还是有些遗憾的。不过后来听朋友讲述，攀爬过程还是比较艰难的，步道修的很陡，考虑到当时我的身体状态，没咬牙上去可能也是明智之举，不过景色还是非常值得一爬的！</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/BE59121B-D3EF-421F-B8DD-31FCF92BBD5F.jpg"alt="image"/><figcaption><p>左侧是果子沟大桥</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/DD2AF862-A6B8-4214-9485-416139E82A16.jpg"alt="image"/><figcaption><p>右侧是赛湖全景</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/03B6F411-7FB8-43A1-97F6-D3CB94370B16.jpg"alt="image"/><figcaption><p>果子沟大桥</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/EA35B041-60DA-4854-AABF-233FF612DDA0.jpg"alt="image"/><figcaption><p>果子沟大桥</p></figcaption></figure>
+<p>此时的我，正在营帐里酣睡的正香，三人大的帐篷独躺我一人，这我才意识到，原来睡帐篷也可以很舒服！大概十一点左右，我被一阵从喇叭中传出的警告声吵醒，原来是保安来赶人了：叫我们收帐篷。他几番巡逻下来，发现我们这些人还是按兵不动，保安倒是有些怒火中烧，声音高了八度。倒也不怪保安蛮横，原因是我们把帐篷搭在了停车位上，景区已经开门了，影响其他游客泊车（事实上还有大片的车位）。索性也安稳睡上了两三个小时，于是我一边先行打扫收拾营地，一边招呼朋友们抓紧回来。</p>
+<p>汇合以后，我们继续沿着逆时针的方向环湖行驶，摇下车身左侧的车窗，让湖边清凉的风灌满座舱内。今天无疑是天气更好的一天，天空中只挂着零星几团小云朵，四舍五入算得上万里无云了。</p>
+<p>对应着，此时的赛湖也更美丽动人，湖面呈现的那抹蓝色，可以讲，你只能在这里看到，那是专属于这片土地的“赛里木蓝”。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/9D4EB3D9-78B6-4AAF-A3B2-E2FC68716FA3.jpg"alt="image"/><figcaption><p>12:10分的赛湖</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/59EFC773-D56D-420B-BC1D-49F657F107CE.jpg"alt="image"/><figcaption><p>12:10分的赛湖</p></figcaption></figure>
+<p>说来真的很幸运，在快要接近南门的一畔水湾，我们邂逅了一群可爱的天鹅。真的还从未看到如此美丽又活泼的天鹅，一向比较怕鸟的我也是忍不住凑近仔细地打量。</p>
+<p>考虑到后续行程，我们要在这天结束时入住伊宁，中间还有零星一些其他景点，我们只能悻悻又不舍地从南门驶出，离开了赛湖。</p>
+<p>不仅是真正离开的那一刻，从后视镜里目睹着赛湖一点点消失在视野中，甚至后续的几天行程里，我们三人都像是失恋了一样，久久不能平复，怅然若失，好像一部分的灵魂都留在了赛里木，留在了那日交错的时空内。</p>
+<p>我愿称之为“离开赛里木综合征”。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/IMG_20230717.JPEG"alt="image"/><figcaption><p>天鹅展翅！</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/IMG_20230718.JPEG"alt="image"/><figcaption><p>打起来了！</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/EBEB0C54-3989-4644-B2C7-CFB837716AD5.jpg"alt="image"/><figcaption><p>天鹅比心</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/IMG_20230721.JPEG"alt="image"/><figcaption><p>最后看一眼赛湖吧！</p></figcaption></figure>
+<p>真的，在这里毫不夸张地讲，在赛湖的每分每秒都是一种极致的、纯粹的、立体的对于美的享受，它会让你对美有一种最真切、最原始的感受。这种感受同时还会唤醒你对于一切美好事物的想象，人会变得温柔、可爱、善良，在这里你不会有坏心情：愤懑、烦恼、焦虑通通消失殆尽。久久注视着平静的湖面，偶有水鸟掠过翩翩，你的脑海里会闪烁一些你平日里绝不会有的念头、一些颇具启发式的思考。</p>
+<p>我怀疑，可能在赛里木多住上一些时日，我能得到某种进化也说不定呢！</p>
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/-EM18X6qDnY?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<h3 id="霍城">霍城</h3>
+<p>出了赛里木湖，走连霍高速，会先后途径果子沟大桥的桥上与桥下，很是壮观。再往伊宁方向走不远，就到达了霍城县，这里以薰衣草闻名。这里的薰衣草盛花期在每年6月上旬至7月上旬，农场可能收割的早因此6月中下旬看最佳。我们到访时，觉得这里就像是北京高速路旁边的某座村庄，完全不像是景点，也确实除了一些自驾的游客，鲜有人停留。</p>
+<p>循着村庄内的一些招牌和小红书上的经验帖，我们找到了这家名为“老葛”的薰衣草庄园，拍照不收费，老板也很热情。至于景色嘛，说到底也只是植物的种植园区，远不及一些网红博主拍的照片及配文的那般噱头。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/C210E005-F276-416D-AC7C-69403C2F6E83.jpg"alt="image"/><figcaption><p>LOVE</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/D87A7B6D-B9D7-4A3B-842D-E30B9BAC8040.jpg"alt="image"/><figcaption><p>霍城一家薰衣草庄园</p></figcaption></figure>
+<h3 id="霍尔果斯">霍尔果斯</h3>
+<p>在霍城短暂停留后，我们驱车前往<a href="https://zh.wikipedia.org/zh-hant/%E9%9C%8D%E5%B0%94%E6%9E%9C%E6%96%AF%E5%B8%82">霍尔果斯</a>，这座边境城市位于西北边陲，得名于中国与哈萨克斯坦的界河霍尔果斯河，蒙古语意为“驼队经过的地方”，哈萨克语意为“积累财富的地方”。</p>
+<p>对于常年生活在内陆城市的我们来说，循踪拜访中国边境的口岸一直是穿插我们这趟旅行中的一条暗线。这里有我国的“西大门”——霍尔果斯口岸，自然是我们不想错过的一站，游走于新老国门之间，逛了逛展览馆并打卡界碑后，我们告别了这座看上去有些新潮的城市，动身前往伊宁。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog14/916221C7-2F94-46EF-81F3-39106DAB6F7A.jpg"alt="image"/><figcaption><p>霍尔果斯口岸</p></figcaption></figure>
+<hr>
+<p>文中所用图片视频均由以下设备拍摄：</p>
+<ol>
+<li>Canon EOS 70D + 70-200mm  + 18-135mm</li>
+<li>Sony ILCE-6000 + 16-50mm</li>
+<li>DJI Osmo Pocket</li>
+<li>iPhone13 Pro</li>
+</ol>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Trips|North of Xinjiang 7.4-7.8</title>
+			<link>https://hicole.me/en/posts/tripsnorth-of-xinjiang-7.4-7.8/</link>
+			<pubDate>Mon, 20 Nov 2023 23:22:30 +0800</pubDate>
+			
+			<guid>https://hicole.me/en/posts/tripsnorth-of-xinjiang-7.4-7.8/</guid>
+			<description><![CDATA[The second in a series]]></description>
+			<content type="html"><![CDATA[
+    <aside class="admonition tip">
+        <div class="admonition-title">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+   </svg></div><b>This is a tip</b>
+        </div>
+        <div class="admonition-content">本文是北疆之行系列的第二篇</div>
+    </aside>
+<h1 id="hahahugoshortcode17s1hbhb">
+
+<p style="text-align:center">Day4</p>
+</h1>
+<h2 id="74">7.4</h2>
+<blockquote>
+<p>布尔津休整 → 贾登峪</p>
+</blockquote>
+<p>这天我们决定睡个懒觉，在布尔津住的这家酒店还不错，入疆以后遇到的住宿条件让我们隐隐有一种预感这会是17天中最好的一间房（后来事实证明倒是还好）。因为之前夜间长距离的开车，很多飞虫的尸体黏在挡风玻璃上怪恶心的，还阻挡视野，也不安全，于是我们找了地方把车洗了。</p>
+<p>布尔津这个小镇虽然比较发达，但是吃饭真的一般，普遍比较贵，甚至有一家我们都坐进去了，但是看过菜单后还是撤退了。后来在夜市街上挑了家饭馆简单吃了点儿。没有尝试很有名的冷水鱼，我们都一致认为是噱头。</p>
+<p>吃过饭后，我们分头行动，因为头发有点儿长，我决定试试新疆Tony老师的水平，结果给我剪的一言难尽，直接导致后续几天的行程拍不出好看的照片，发型太重要了！这期间伙伴们准备了晚上露营所需的食物和饮料。</p>
+<p>开车前往贾登峪，走的是232省道，这段路非常好看，但同时也比较考验驾驶技术，道路两侧是大片的空中草原，游荡着牧民和牛群。我们找了个缓冲区把车停在路边，短暂欣赏了下景色。这天还碰到了进疆以来的第一次雨水，气温一下子骤降，不得不掏出羽绒服和冲锋衣等等套在短袖外面，可以看到远远的目的地方向上有成团的雨水往这边压过来，天阴阴的。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/1381EB7B-683B-410F-A661-38F2EC2AFCAF.JPG"alt="image"/><figcaption><p>前往贾登峪途中的空中草原</p></figcaption></figure>
+<h3 id="贾登峪">贾登峪</h3>
+<p>因为今天并没有安排实际的景点游览，到了贾登峪之后的第一件事就是熟悉周围的环境：交通设施的分布，景点的具体位置，以及我们今晚的帐篷搭在哪里呢？因为我们到的算比较早，最大的立体停车场没人搭帐篷，我们找了一块儿地试了试但是土比较浅，地钉打不进去，将就着踉踉跄跄算搭起来了，结果，天降一阵骤雨伴着疾风，直接把我们的帐篷掀翻了&hellip;三个人间的心情瞬间跌落谷底，都打起退堂鼓准备订酒店了。</p>
+<p>等雨停后，我们收拾收拾心情和满地狼藉，前往另一个停车场，在一个风俗园门口，有公共厕所，这里倒是有不少来露营的朋友，不乏一些非常专业的。我们下车后，碰见个新疆小妹妹腼腆又善良可爱，一会儿要离开喀纳斯了，就把营地让给我们了，并且帮助我们一起搭帐篷。</p>
+<p>我们仨都是第一次露营，但集思广益通力合作之下，帐篷天幕都搭建起来了，还挺是那么回事的。</p>
+<p>刚搭好，又下起了暴雨，还好我们天幕比较大，还让旁边营地的一家五口人来天幕里避了避雨。出门在外大家就是要互相帮衬，一个曾当过兵的爷爷带着孙女也来指导我们搭帐篷，提建议，他们从湖南来，已经出来二十多天了，南疆都玩过了。</p>
+<p>九十点钟天刚日落，我们围在小桌子边，吃泡面，喝乌苏，啃烤馕，在车顶上录了两段延时摄影，非常惬意。</p>
+<p>可是惬意是短暂的，天再晚一点儿的时候，换上保暖内衣，小羽绒服，去公厕洗漱准备睡觉。我觉得还不困就去车里暖和了会儿，一点多的时候进帐篷，伙伴们都睡着了，钻进睡袋，但是不太会把帐篷帘子关死，一晚上虽然身体不冷，但是脖子和头特别冷，风不小，加上帐篷睡三个人确实有点儿挤，一晚上基本没怎么睡。</p>
+<p>这里还有个小插曲，早晨六点多的时候，我听到帐篷外有很近的脚步声若隐若现，我本来就睡的轻，以为是有人乱拿东西，就坐起来打开帘子，原来是牛，然后从六点开始哞哞声就不绝于耳了。</p>
+<p>一觉醒来，第一次露营感觉和死了没什么区别，冻的够呛，头发压的又硬又乱，鼻子不通气，在车里吹了暖风才缓过来一些。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/C5F20D57-62E1-40D2-87DB-9DCA88ED027A.JPG"alt="image"/><figcaption><p>第一次搭帐篷以失败告终</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/56EF141D-D969-4E52-9E84-1666C0F86409.JPG"alt="image"/><figcaption><p>干杯！</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/E4CD8E91-3A1F-44A3-B139-5633FF2C8F69.JPG"alt="image"/><figcaption><p>我们的小营地</p></figcaption></figure>
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/MhN2eaRInQk?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<h1 id="hahahugoshortcode17s7hbhb">
+
+<p style="text-align:center">Day5</p>
+</h1>
+<h2 id="75">7.5</h2>
+<blockquote>
+<p>贾登峪 → 喀纳斯 → 贾登峪</p>
+</blockquote>
+<h3 id="喀纳斯">喀纳斯</h3>
+<p>我认为喀纳斯的游玩是我们17天行程的第一个高潮，因为喀纳斯实在是太美了，还是在这两天天气比较差的情况下。</p>
+<p>我们计划将喀纳斯的游览分成两天来安排，第一天是登观鱼台+三湾徒步。</p>
+<p><strong>第一站：</strong></p>
+<p>先是坐区间车到了喀纳斯湖码头，天空中飘着淅淅沥沥的小雨，近观喀纳斯湖景色一般。沿着湖滨栈道走了大概3km至喀纳斯村木桥，然后就乘区间车返回了换乘中心。</p>
+<p>在换乘中心有一家“狐狸书屋”，老板是一个中年女性，店里没什么人，就闲聊起来：她出生在可可托海，以前是做美术编辑，插画师，现在退休了，一年只在喀纳斯这边住上一百多天，盘下这个店面，卖一些工艺品，明信片，地图，照片册，都是她自己以及好友或是偶像的作品。她说她不是为了赚钱，每一个进到店里的游客，她都会很热情的上前介绍，买不买没关系。看得出来，她在乎的是一种对艺术，对喀纳斯，对美的共识与认同。</p>
+<p>在店里，我写了一张白哈巴的油画明信片，亲手贴上了一块二的邮票，与老板道别后，又亲手投进了道路尽头的邮筒内，还蛮有仪式感的。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/0D01FB97-3227-494C-902E-D759BE1D78AC.JPG"alt="image"/><figcaption><p>喀纳斯湖码头</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/9998FDC9-E91F-4DDA-9BE4-BDA75EDE1A5D.JPG"alt="image"/><figcaption><p>沿湖栈道徒步</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/79B32D06-0107-41E5-A98C-CA354FC3C290.JPG"alt="image"/><figcaption><p>一只可爱的小水貂</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/3DF5C49D-7EC6-4933-8877-EFC22683887F.JPG"alt="image"/><figcaption><p>鸬鹚！被我抓到了</p></figcaption></figure>
+<p><strong>第二站：</strong></p>
+<p>在换乘中心购买了前往观鱼台的区间车票，当然也可以选择骑马上山，往返300元，结合距离和一路的风景，倒是不算贵。</p>
+<p>前文提到过，今天的天气不太好，不时有阵雨袭来，凉意和雨水浸湿了衣物和身体。我们决定在半山腰的公厕门口稍微休整了一下，等雨小了点儿的时候才往上走。</p>
+<p>从站点至观鱼台，一共1056级台阶，一路上，左侧是大片的空中草原与遥遥矗立的雪峰山颠，右侧就是镶嵌在群山怀抱中的喀纳斯湖，美不胜收，向上攀爬的过程动力满满。</p>
+<p>到观鱼台顶，一览喀纳斯湖全貌的那一刻，真的无法用语言形容那种色彩的美，好似神明的眼泪，一整块流动着的翡翠。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/65CDCF0F-D9ED-402D-894A-BA72F6CEB77E.JPG"alt="image"/><figcaption><p>前往观鱼台途中</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/84FDA5E4-0226-41B7-BCC3-1EB201A2793D.JPG"alt="image"/><figcaption><p>喀纳斯蓝</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/6306A12A-A065-49DD-92DE-ADDF19524ED6.JPG"alt="image"/><figcaption><p>555/1056，爬一半噜！</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/F3491FAA-BD01-4C15-875F-6E513398551E.JPG"alt="image"/><figcaption><p>绝美的蓝色</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/32FBBC75-9EF8-48DA-8F01-2D9827AE338F.JPG"alt="image"/><figcaption><p>流动的翡翠</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/11571409-D5D7-48F5-B710-38E2744F78DB.JPG"alt="image"/><figcaption><p>神明的眼泪</p></figcaption></figure>
+<p><strong>第三站：</strong></p>
+<p>从换乘中心乘区间车前往神仙湾，下了车后，本来最开始还是在栈道走，后来我们决定开始偏离人群，往深处徒步。</p>
+<p>其实最开始我们并没有徒步的计划，也没有设计过这样一条路线，只是因为越走越深与一颗燃起的探险的心。事实证明，这一段（神仙湾 -&gt; 月亮湾）非常适合徒步，难度不算大，但是也不乏挑战性，有高低起伏，也不时有怪石、横木与淤泥拦路，期间碰到一家人六七口，我们三个打头阵，一路跟随着我们，中间倒是也不乏质疑退缩的时刻。一路上，我眼睛一直盯着Google map屏幕上的指针，耳朵也竖起来，搜索着不远处水源流过的声响。</p>
+<p>开始天空只是飘着毛毛细雨，行至原始森里深处时，突然瓢泼大雨，我们不得不加快了脚步，大概三公里的路，我们走了将近一个小时。</p>
+<p>这里也出了个小插曲，最后重返栈道的时候，我太用力迈腿了，直接把心爱的一条徒步裤扯开档了，简直糗爆了！</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/BEDFFDB4-EAB8-475D-948A-97C2C759AD8A.JPG"alt="image"/><figcaption><p>神仙湾徒步小队-1号队员</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/CADE512C-A945-4E69-8E3B-E1C8ABC81C4F.JPG"alt="image"/><figcaption><p>神仙湾徒步小队-2号队员</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/427A2B19-B7C6-45FE-9CE6-2F9B28AB1413.JPG"alt="image"/><figcaption><p>神仙湾徒步小队-3号队员</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/A722C23D-2DEE-4F7C-9CD5-2C239F62CEB0.JPG"alt="image"/><figcaption><p>树木丛生，水草丰茂</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/F104D9AC-0DD5-4A13-9885-07C4957B31AD.JPG"alt="image"/><figcaption><p>向更深处走去</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/B23AFC35-F4A7-4825-A372-4BD0915CCAE6.JPG"alt="image"/><figcaption><p>不时飘着小雨</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/A0AC76A2-CDE1-4444-8052-FFFD12815E19.JPG"alt="image"/><figcaption><p>原始森林间的一条徒步路线</p></figcaption></figure>
+<p>这天晚饭时，我们特意找了一家餐厅，专门点了很多很多绿叶菜吃来补充，调解了一下膳食平衡。</p>
+<h1 id="hahahugoshortcode17s25hbhb">
+
+<p style="text-align:center">Day6</p>
+</h1>
+<h2 id="76">7.6</h2>
+<blockquote>
+<p>贾登峪→ 喀纳斯（白哈巴村）→ 近禾木</p>
+</blockquote>
+<h3 id="白哈巴">白哈巴</h3>
+<p>在喀纳斯的第二天，我们决定去拜访有着“西北第一村”之名的白哈巴村。</p>
+<p>不过从贾登峪立体停车场算起至白哈巴村，要倒四趟区间车，不论是时间还是精力都是一笔不小的消耗。</p>
+<p>这天我们还赶上了附近原住民的放牧时节，一路上牛羊成群，小巴车被成百上千头羊包围的场景倒是蔚为壮观：可怜了焦头烂额的司机都快把喇叭按坏了，小羊羔们还是不紧不慢的倒腾着小腿，逗的车上乘客们欢声笑语一片。</p>
+<p>推荐所有来白哈巴的朋友们在村口先美餐一顿，价格相对实惠，在新疆吃的所有羊肉串里，这里的最嫩最香。</p>
+<p>登上观景台，看了一眼Google map，我的小人头像距离国境线真的很近，目光所及的另一侧就是哈萨克斯坦。远观整个村落，分为新村和老村，阡陌交通，很安静，毕竟是中国八大最美村庄之一。</p>
+<p>整个村子除了那条主街外，商业化的痕迹不是太重，还是能看到很多居民们的生活痕迹。我们找了间咖啡厅，坐了一下午，商讨并敲定了后续的行程细节。</p>
+<p>在最后一班回贾登峪的区间车上，我隔壁座位上是一个特别有意思的叔叔，今年56岁带着爱人报了旅行团来新疆玩。因为看到了同行团内有人用的大疆云台觉得很感兴趣，我略懂一二，叔叔便要加我微信让我发给他型号和相关链接，后来又是一路闲聊：原来他是中国矿业大学的博士和特聘老师，挺厉害的，一路感叹英雄迟暮并嘱咐告诉我年轻人要奋斗。</p>
+<p>直到今天刘叔叔还经常给我的微信运动点赞！</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/76935F8D-5E76-4F1A-AE52-371533A811C0.JPG"alt="image"/><figcaption><p>西北第一村</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/84016769-86D8-4180-9240-78B7552FE126.JPG"alt="image"/><figcaption><p>新村和老村</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/54BA73E8-CC6B-4144-B48A-C6AE1B5A9E71.jpg"alt="image"/><figcaption><p>Osmo录制中</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/280D7D14-72CC-465C-878C-7F6CC2700560.JPG"alt="image"/><figcaption><p>阡陌交通</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/642AC066-FC9A-42AD-9293-300912697AE0.JPG"alt="image"/><figcaption><p>在建的小木屋</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/9622090A-2C40-42E7-AD2D-6847CC658558.JPG"alt="image"/><figcaption><p>村内的幼儿园</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/C40313A7-16CB-454B-9246-B0CB45BFE88A.JPG"alt="image"/><figcaption><p>盘旋的鸢</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/98CC478F-AC71-4857-92A0-C0AE466D41DB.JPG"alt="image"/><figcaption><p>无限接近边境！</p></figcaption></figure>
+<h1 id="hahahugoshortcode17s34hbhb">
+
+<p style="text-align:center">Day7</p>
+</h1>
+<h2 id="77">7.7</h2>
+<blockquote>
+<p>禾木 → 五彩滩 → 布尔津</p>
+</blockquote>
+<p>话要从7.6日晚上说起，我们结束了喀纳斯的游玩，下一站自然而然就是相隔不远的禾木村了，但贾登峪本身和禾木有一定的距离，且我们的原计划是赶早起去看禾木的晨雾，需要在大概八点前登上观景平台。如此一来，要么就是住在禾木景区内，要么就是在禾木景区的停车场露营一晚。前者高达上千一晚的房费相当劝退，后者在我们实地考察后，结合前一晚并不怎么畅快的露营体验之后，被我们全票打飞了。</p>
+<p>于是，我们采取了折中的方案，开车驶离贾登峪后，小红书上找了一家离禾木不远的房车营地，老板说提供搭帐篷的地方，有饭还提供免费热水。营地本身位置并不好找，加上我们开错了路，在契巴罗伊连绵的山峦弯道上兜了两个来回，到达营地时已接近晚上十一点。这几天的旅途奔波加上长距离的驾驶让我们身体一直在透支运转着，我们都还没吃饭，一致表示不太想搭帐篷了，问了问还有空的三人间房车，老板人特别好，友情价500块钱一晚，我们就吆喝着老板起锅炒上几个菜烤上几个羊肉串，准备饱餐一顿好好休息一晚了。</p>
+<p>后来不知怎么的，吃过饭看到老板正在和两三好友围炉饮酒，我们就也加入了进去，一是感谢老板的收留，二来也是觉得老板是个挺有趣的人，便畅谈起来，听老板和他的好友分享他们儿时以及后来辗转来到新疆闯荡的一些趣事轶闻，谈吐间，三瓶乌苏下肚，我神情有些恍惚，一抬头，一轮明月悬在空中，透过云层微光映散下来笼罩着辽阔的草原，美极了。</p>
+<p>第一次睡房车的愿望就这么误打误撞的在新疆实现了，我们这一间房车很棒，设施很新，内部五脏俱全。</p>
+<p>这么好的环境我们一致表示要多睡一会儿，便索性放弃了晨雾计划，旅行嘛，难免会有遗憾啦。</p>
+<p>不过虽然看不上晨雾，我心里还是有想法看看草原上的日出，早上五点四十被一股神秘的力量唤醒，扯起身子，从房车中起来拍了日出，也就有了如下的照片。</p>
+<p>六点钟的草原上有一股特别的气味，泥土混着水汽夹着花香扑鼻而来，那是一种让人心旷神怡的感觉，浑身疲态一扫而空，日出前的天空是淡淡的粉紫色，脖颈带着头转过180度，此时此刻的我用眼睛、用余光肆意地捕捉着眼前的每一帧光影与细节。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/IMG_3208.jpg"alt="image"/><figcaption><p>围炉夜话，三瓶乌苏下肚</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/DDD58473-8965-48AC-A187-2EA0AAE095A1.JPG"alt="image"/><figcaption><p>早上六点的草原</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/FBF2F721-4297-4193-88CA-F40FA07075A9.JPG"alt="image"/><figcaption><p>朦朦一层粉色</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/885CF3F4-FC88-47D2-9FB9-AA0B8F88651F.JPG"alt="image"/><figcaption><p>房车旁等日出</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/846296E5-4106-48FD-A0A1-B7C1D7B8F154.JPG"alt="image"/><figcaption><p>清澈的天空中残留的月亮</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/EE0E4B2A-46DF-48BE-BDC6-4B2CD184AC1F.JPG"alt="image"/><figcaption><p>静谧的美好</p></figcaption></figure>
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/rWdDMPoZwjg?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<h3 id="禾木">禾木</h3>
+<p>回笼觉睡醒后，用房车内的中央音响播放李志的曲子，我听着逼哥的嘶吼声痛痛快快洗了个热水澡。收拾好行装后，我们出发前往禾木，人不少，到的时候已经快一点了，心心念念的晨雾自然早就消散的无影无踪了。</p>
+<p>下了区间车后，走过禾木桥，穿过白桦林，上到观景平台，就能完整的看到整个村落的轮廓：河水从哪里奔涌汇入，又流过哪几栋宅子；我们从哪里下的车，村内的房屋是如何排列与分布；村子是怎样被翠绿的山峦和树林怀抱&hellip;确实是很美的一处村庄，虽然时值盛夏，但是也不难联想四季他时，村庄的另外几幅样子。</p>
+<p>总的来说，禾木的景色还是要比白哈巴好看的。奈何今天同样天公不做美，在观景台没待多久，突然妖风四起，卷起尘土漫天，我们就匆匆下山了。在村内找了家店面解决了午饭，过油肉拌面炒的很香，现在时隔好几个月都还想回碗再吃一次呢！</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/52B69136-BB22-481A-80FF-9DC57A305056.JPG"alt="image"/><figcaption><p>禾木桥前的薰衣草</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/D0F18A52-1EEF-4369-A5D4-E1E56A91242C.JPG"alt="image"/><figcaption><p>很美的村落</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/3076796E-B429-4DB8-819E-F021D4066136.JPG"alt="image"/><figcaption><p>禾木村</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/11BA0870-E6E5-4A1C-9E74-5BB29263F34E.JPG"alt="image"/><figcaption><p>镜头感！</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/55BAD1B1-757A-4A9B-A8F3-339FBDA0028C.JPG"alt="image"/><figcaption><p>有点儿京都市郊野的感觉</p></figcaption></figure>
+<h3 id="五彩滩">五彩滩</h3>
+<p>今天的行程不是太赶，在禾木待到差不多的时辰，因为五彩滩是要看日落的，所以算好时间我们就动身出发了。到了景区发现人同样不少，可能这里也是众多旅游团规划的一站吧，不过景区还是挺漂亮的，景色挺别致的。</p>
+<p>这几天在喀纳斯满眼都是空中草原，像是不同种的绿色拼盘，有些审美疲劳了，这种雅丹地貌换换口味效果还真是不错。不过景区内蚊虫真的太夸张了，发疯了一样，我们强忍着蚊虫的缠身与叮咬在景区内逛了一圈后，就上到三层的观景台顶楼等待日落，周遭不乏长枪短炮的摄影爱好者们。</p>
+<p>从景区走的时候，日落的余晖还没有散尽，行驶在灿烂的落日晚霞照耀下的高速公路上，让人忍不住点上一首《日落大道》。听着旋律，我们狠踩上几脚油门，向下一站驶去。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/5B644E7A-3102-48D6-9E26-EB852F923EF8.JPG"alt="image"/><figcaption><p>奇特的地貌与色彩</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/1136A107-768E-4086-9AE7-51DD78F4B90A.JPG"alt="image"/><figcaption><p>额尔齐斯河相隔</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/CB7C9D63-3348-427C-B728-F095CE48415D.JPG"alt="image"/><figcaption><p>附近非常多的巨型电力风车</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/7EFE7C36-E7E6-41E8-B333-A18822FD5791.JPG"alt="image"/><figcaption><p>铁索桥</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/IMG_3443.jpg"alt="image"/><figcaption><p>等待日落</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/F2D08F28-3265-4A9D-AADD-0CA752B48576.JPG"alt="image"/><figcaption><p>落日的光辉铺散开来</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/9DD7A64D-B9E2-4163-BF02-62D6A8AC3EA3.JPG"alt="image"/><figcaption><p>太阳从云层中渐渐下沉</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/58B908C7-D941-424C-B9A4-4172F53EE2EB.JPG"alt="image"/><figcaption><p>灯塔</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/118828D6-9CFF-45CD-99D0-CF5FAB6B94C5.JPG"alt="image"/><figcaption><p>层叠的光影</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/1F81166B-3564-468A-AEEE-A3CFC2095ABB.JPG"alt="image"/><figcaption><p>与五彩滩分别</p></figcaption></figure>
+<h1 id="hahahugoshortcode17s57hbhb">
+
+<p style="text-align:center">Day8</p>
+</h1>
+<h2 id="78">7.8</h2>
+<blockquote>
+<p>布尔津 → 魔鬼城 → 克拉玛依</p>
+</blockquote>
+<h3 id="魔鬼城">魔鬼城</h3>
+<p>驶离布尔津，就代表着我们的旅行已经走过了近半，北疆大环线的圆圈在地图上绘制了三分之一。</p>
+<p>这天又是长驾驶的一天，只是在高速路口便利店垫了两口吃的。所谓公路旅行，自然是少不了车载音乐，这些日子几乎听遍了大江南北的曲调，有点听腻了于是今天换了郭德纲和于谦二位老师上场，和朋友一起听相声还真是挺好玩的，很多梗都是心照不宣。</p>
+<p>从布尔津到克拉玛依，魔鬼城是中间的一站，到了景区门口，实在太热了，魔鬼果然名不虚传，雅丹地貌和五彩滩差不多，我们就决定拍了门口标志性的“索伦之眼”就撤退了。</p>
+<p>后来，在距离景区不远处，我们参考小红书找了一处免费的魔鬼城。</p>
+<p>打开越野模式，让车轮陷进松软的土石，碾过零星散落的沙砾，旷野空无一人，想怎么拍就怎么拍，真挺爽的。不过体感温度真是吓人，就差冒烟儿了，原本晒在挡风玻璃下面的那些前一晚还湿漉漉的袜子们，一下就干了。</p>
+<p>到了克拉玛依，我们决定找了一家电竞酒店，一周的旅途让我们仨相当疲惫。到酒店吃吃麦当劳打打游戏，像回家一样，然后再开启后半段的行程也是一种不错的选择。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/F59F6F03-4439-4BAE-BB8D-A56743B8BD86.JPG"alt="image"/><figcaption><p>世界魔鬼城</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/190D2856-F356-4CA0-962A-725F0F24D7CC.JPG"alt="image"/><figcaption><p>大片的油井</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/5215EC96-C2F2-44A8-AAB5-F5ADA58CF2F3.JPG"alt="image"/><figcaption><p>把车开进松软的土石</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/816ED175-3127-4A09-AC5B-76DCE906AAAD.JPG"alt="image"/><figcaption><p>越野模式派上用场咯</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/B73BD85F-8188-4645-B513-0585581FB5AB.JPG"alt="image"/><figcaption><p>无人旷野</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/C0A2674A-85A3-466B-BB3A-5E259F542747.JPG"alt="image"/><figcaption><p>三连拍！</p></figcaption></figure>
+<hr>
+<p>文中所用图片视频均由以下设备拍摄：</p>
+<ol>
+<li>Canon EOS 70D + 70-200mm  + 18-135mm</li>
+<li>Sony ILCE-6000 + 16-50mm</li>
+<li>DJI Osmo Pocket</li>
+<li>iPhone13 Pro</li>
+</ol>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Trips|North of Xinjiang 7.1-7.3</title>
+			<link>https://hicole.me/en/posts/tripsnorth-of-xinjiang-7.1-7.3/</link>
+			<pubDate>Sat, 11 Nov 2023 16:49:29 +0800</pubDate>
+			
+			<guid>https://hicole.me/en/posts/tripsnorth-of-xinjiang-7.1-7.3/</guid>
+			<description><![CDATA[The first in a series]]></description>
+			<content type="html"><![CDATA[
+    <aside class="admonition tip">
+        <div class="admonition-title">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+   </svg></div><b>This is a tip</b>
+        </div>
+        <div class="admonition-content">本文是北疆之行系列的第二篇</div>
+    </aside>
+<h2 id="intro">Intro</h2>
+<p>随着雅思备考的结束，相关事务也处理了七七八八，大体总还算顺利，留学的准备工作算是暂时告一段落。于是，我也终于空出大段的时间可以好好整理一下今年7月份的这趟耗时17天的公路旅行。</p>
+<p>新疆，准确的说是北疆，是我毕业旅行的第二站。从7月1日起至7月17日乘飞机返乡，我与同行的两位朋友驾驶一辆白色的哈佛大狗，穿越了新疆北部的大部分土地。旅行结束之际，从Google Map上回顾，整个itinerary像是画了一个大圆：奔走于山河壮美的同时，我们屡次拜访了祖国的边境与口岸，也屡次深入腹地、荒地。最后还车时，仪表盘上的行驶里程数停在了4701.9km。（我们刚提车时是60多公里）</p>
+<p>这次旅行无疑是令人难忘的，是酣畅淋漓而现在回想起来仍意犹未尽的。尽管充斥着许多始料未及与措手不及，这趟旅程还是带来了太多的体验、太多的第一次：第一次露营、第一次雨中徒步、第一次骑马飞驰穿越溪流与沟壑、第一次住房车、第一次在漫天繁星的草原上喝乌苏&hellip;&hellip;</p>
+<p>于是在此，借blog的形式，我准备将一些比较满意的照片作品在这里作以展示与留念，点缀一些文字寥寥，试图真诚地连结那些并不遥远的记忆。</p>
+<hr>
+<h1 id="hahahugoshortcode13s1hbhb">
+
+<p style="text-align:center">Day1</p>
+</h1>
+<h2 id="71">7.1</h2>
+<blockquote>
+<p>北京 → 正定 → 乌鲁木齐</p>
+</blockquote>
+<h3 id="乌鲁木齐">乌鲁木齐</h3>
+<p>出于一些经济与时间成本上的考量，我们选择了从正定机场出发的方案前往新疆。</p>
+<p>早上从北京西乘高铁前往正定站，后由摆渡车转至正定机场，历时四个小时的飞行到达乌鲁木齐地窝堡机场时已是下午五点多。好在正值盛夏，且新疆由于地理位置等因素日落非常晚，天色还亮。（这点在后续旅程中也屡次被我们讨论道，具体的作息起居如果考虑到尽早适应当地节律的话需整体往后延迟两小时为最适宜）</p>
+<p>这天的剩余时间就主要作了些启程前的准备工作：</p>
+<ol>
+<li>取车、验车、签合同，租的是一辆哈佛大狗，车况良好，车行的服务也不错。（正值旅游旺季，Tank300租金高居不下，于是便退而求其次了）</li>
+<li>先到酒店前台取快递（是我们提前网购的露营装备，直接寄到新疆，省了一些物流成本），后至迪卡侬进行了一番装备上的查漏补缺。</li>
+<li>超市采购。主要是水和一些即食又能补充能量的食品。</li>
+</ol>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_2538.jpeg"alt="image"/><figcaption><p>We&rsquo;re Ready!</p></figcaption></figure>
+<h1 id="hahahugoshortcode13s3hbhb">
+
+<p style="text-align:center">Day2</p>
+</h1>
+<h2 id="72">7.2</h2>
+<blockquote>
+<p>乌鲁木齐 → 天山天池 → 富蕴</p>
+</blockquote>
+<h3 id="天山天池">天山天池</h3>
+<p>天山天池是我们规划的第一站，很多人觉得这是北疆大环线上可以省略的一站。事实上，我们没有在天山脚下过多的停留，在初见被群山怀抱的天池并短暂欣赏后，我们便购买了马牙山索道的票（220元/人），准备前往更高处远观常年被皑皑白雪覆盖的<a href="https://zh.wikipedia.org/zh-hans/%E5%8D%9A%E6%A0%BC%E8%BE%BE%E5%B3%B0">博格达峰</a>。</p>
+<p>可能是周末的缘故，加上天山天池本身距离乌市并不算远，所以当天景区人还是非常多的，不乏很多本地人。不少人决定往上继续走一走。但是事实上，下了索道后，仍然有很长一段阶梯木道要攀登，很多年纪偏大的游客就留在半山腰的位置了。</p>
+<p>总的来说，这一段路程的景色还是非常不错的，难度不大，倒是一向缺乏锻炼的我出现了一些轻微富氧的情况。</p>
+<p>到了最后的观景台，视野开阔，可惜的是由于大面积的云层遮挡住了远处的峰顶。&ldquo;博格达&quot;为蒙古语，是“神山”、“神居之所”的意思，所以到底能否一睹其全部真容也多了层全凭其一旨神意的意思。</p>
+<p>下山后由于时间原因，没能进行环湖的徒步，也没能拜访矗立在湖对岸的西王母庙是一大遗憾。只得在匆匆的不断回眸中，结束了景区的游览。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05092.jpeg"alt="image"/><figcaption><p>初见天池</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05107.jpeg"alt="image"/><figcaption><p>前往博格达峰途中</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05114.jpeg"alt="image"/><figcaption><p>回头俯瞰天池</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05143.jpeg"alt="image"/><figcaption><p>嘿嘿！</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05171.jpeg"alt="image"/><figcaption><p>环草木栈道</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05173.jpeg"alt="image"/><figcaption><p>白白的可爱的云</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05176.jpeg"alt="image"/><figcaption><p>前往博格达峰途中</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05191.jpeg"alt="image"/><figcaption><p>努力出片中</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05193.jpeg"alt="image"/><figcaption><p>爬了很高很高</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05203.jpeg"alt="image"/><figcaption><p>远观博格达峰</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05217.jpeg"alt="image"/><figcaption><p>极目远眺</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05223.jpeg"alt="image"/><figcaption><p>再见天池</p></figcaption></figure>
+<h3 id="富蕴">富蕴</h3>
+<p>富蕴县是我们这天晚上的住宿与修整地点。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_2716.jpeg"alt="image"/><figcaption><p>富蕴县</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_2724.jpeg"alt="image"/><figcaption><p>天价高速费</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_2731.jpeg"alt="image"/><figcaption><p>公路旅行</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_2726.jpeg"alt="image"/><figcaption><p>超香的囊坑肉</p></figcaption></figure>
+<h1 id="hahahugoshortcode13s20hbhb">
+
+<p style="text-align:center">Day3</p>
+</h1>
+<h2 id="73">7.3</h2>
+<blockquote>
+<p>富蕴 → 可可托海 → 三号矿坑 → 北屯 → 乌伦古湖 →  布尔津</p>
+</blockquote>
+<p>一觉醒来，发现车上被贴了条，原来是该地区停车的朝向有讲究，车头要朝向道路一侧，算是一个小插曲吧，索性问过当地人说不要紧，不过第二次可就要被交警锁住车轮了。</p>
+<p>吃过早饭后由富蕴前往可可托海。这是一段不短的路程，先是行走在峡谷间，车身一侧不断交替闪烁而过额尔奇斯河的流水与碎石，后穿越可可苏里时，右边是广袤的草原，目光所及处，波光粼粼的海子口水库的水面不断有光斑掩映着。</p>
+<p>事实上，这一段路比后面可可托海景区内还要漂亮，如果是越野车条件允许的话可以考虑找个隘口直接下去开到草原上玩一会儿。</p>
+<h3 id="可可托海">可可托海</h3>
+<p>到景区门口才知道，原来，可可托海是一个地名，实际的景区叫额尔奇斯大峡谷。</p>
+<p>景区中乘区间车的一段我个人感觉比较适合徒步但距离很长也耗时，循迹额尔齐斯碧绿湍急的河水而漫步应该会很惬意。区间车的目的地景色非常一般，我们在主景点神钟山下驻足了一小会儿，之后往里走了一些，觉得没什么意思，没有深入到最后的卡拉卓勒瀑布。</p>
+<p>总的来说这个峡谷没有太多特色。可能来可可托海更多选择的是去看看矿坑吧。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_3254_edit_443144572089151.jpg"alt="image"/><figcaption><p>额尔齐斯河的水</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_3263_edit_442993852599070.jpg"alt="image"/><figcaption><p>山间小溪</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05240.jpeg"alt="image"/><figcaption><p>小花花</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_3273_edit_443361947443805.jpg"alt="image"/><figcaption><p>界碑</p></figcaption></figure>
+<h3 id="3号矿坑">3号矿坑</h3>
+<p>矿坑公园还是值得一去的。这里曾为我国的航空航天和国防工业发展提供了珍贵原料，可可托海因而被称为“功勋矿”。</p>
+<p>下矿井要穿长裤长袖，倒是不用租大衣，但是我和一个伙伴任性穿着短裤也就下去了，不过确实有挺重的寒气，矿井里还引发了我的幽闭恐惧症。后来都没什么心情听讲解了，一心只想走到队伍最前面赶紧“逃”出去。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_3285_edit_443424638196400.jpg"alt="image"/><figcaption><p>三号矿坑</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05256.jpeg"alt="image"/><figcaption><p>岗位责任制</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05258.jpeg"alt="image"/><figcaption><p>致敬🫡</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_3288.JPG"alt="image"/><figcaption><p>毛主席题字</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_3290.JPG"alt="image"/><figcaption><p>残留的矿坑</p></figcaption></figure>
+<h3 id="乌伦古湖">乌伦古湖</h3>
+<p>从可可托海出来，下一站是布尔津，要开七八个小时的车，路途非常遥远。行至北屯市时，在这里吃了晚饭，补充了能量。</p>
+<p>从北屯市出来，走湖滨路，至s319岔路遥视即可看到<a href="https://zh.wikipedia.org/wiki/%E4%B9%8C%E4%BC%A6%E5%8F%A4%E6%B9%96">乌伦古湖</a>辽阔的水面。</p>
+<p>乌伦古湖虽是新疆地区的第二大湖，但这里算是一个相对小众的地点，我们停留的这一湖侧没有任何旅游开发的痕迹，基本也只有自驾的朋友到访。</p>
+<p>我们第一次启动切换至越野模式，把车驶离高速路，尝试尽可能接近湖的本体。把车停在一处隆起的山体上，我们就带好了拍摄的设备兴奋地前往湖边。当时正值日落即将铺向大地延展开来之前，天空、水岸、湖面的色彩与光影每时每刻都在交替变化着。整体的暖粉色调被调和得分外浪漫而温柔，一层朦朦胧胧的水汽淡去了水天相接的边际。</p>
+<p>湖岸水很浅，水也非常清澈，伸手撩起水花朵朵，嗯，蛮凉的。奈何湖边蚊虫实在肆虐得猖狂，伙伴难以忍受，加上时间比较紧张，担心后续会开大段的夜路便没有做更多的停留。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05268.jpeg"alt="image"/><figcaption><p>近湖</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05270.jpeg"alt="image"/><figcaption><p>辽阔的湖面</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05307.jpeg"alt="image"/><figcaption><p>真的不是摆拍！</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_2899.jpg"alt="image"/><figcaption><p>游泳的勇士</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05323.jpeg"alt="image"/><figcaption><p>把我朋友拍的帅死了！</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05325.jpeg"alt="image"/><figcaption><p>光影的变化</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_3298_edit_442733467530880.jpg"alt="image"/><figcaption><p>长焦拉满</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_3330.JPG"alt="image"/><figcaption><p>乌伦古湖上的落日</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_3314_edit_442312199271049.jpg"alt="image"/><figcaption><p>703</p></figcaption></figure>
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/RAEK18H6lRI?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<h3 id="布尔津">布尔津</h3>
+<p>从乌伦古湖岸重新返回高速，继续走S319省道至布尔津，到达酒店所在的中俄风情街时已接近凌晨一点（中间开了不少夜路，回想起来还是挺危险的，也算是刚到人生地不熟上的第一课，以后的行程规划中需要引以为戒）。但布尔津作为必经的交通中转站，往来喀纳斯的游客络绎不绝，这条主街道仍然熙熙攘攘、灯火通明，很是热闹。</p>
+<hr>
+<p>文中所用图片视频均由以下设备拍摄：</p>
+<ol>
+<li>Canon EOS 70D + 70-200mm  + 18-135mm</li>
+<li>Sony ILCE-6000 + 16-50mm</li>
+<li>DJI Osmo Pocket</li>
+<li>iPhone13 Pro</li>
+</ol>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Recall and Review of the IELTS Test on November 6th</title>
+			<link>https://hicole.me/en/posts/recall-and-review-of-the-ielts-test-on-november-6th/</link>
+			<pubDate>Tue, 07 Nov 2023 14:52:18 +0800</pubDate>
+			
+			<guid>https://hicole.me/en/posts/recall-and-review-of-the-ielts-test-on-november-6th/</guid>
+			<description><![CDATA[]]></description>
+			<content type="html"><![CDATA[
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog11/11.6%20Beijing%20IELTS%20Recap%20%282%29.jpg"alt="image"/><figcaption><p>British Council 北京嘉华世达(崇文门)雅思机考考点</p></figcaption></figure>
+<h2 id="intro">Intro</h2>
+<p>自从10月初拿到了UNSW的offer，过完十一假期后，回到家总算是感受到了一点点timeline上的压迫感，于是我也终于给一直没什么进度，处于吊儿郎当状态的的雅思备考上了点儿强度。从十月中旬开始基本保持一天3-4个小时的学习时间，最后几天能达到5-6个钟（说实话单英语一科学久了确实有点儿烦，不像去年这个时候在准备考研，轻轻松松就一天坐满11、12个小时的）。</p>
+<p>毕竟考一次2170元的报名费，还是要认真对待的，最后也是结合多方面因素最后敲定了报考11.6在BC崇文门的场次。</p>
+<h2 id="memories">Memories</h2>
+<p>这篇blog主要就是对考试内容的一些细节回忆（后面会分享至小红书，也算是接力攒攒人品），文章中每一part的quote部分就是我回忆的考题细节。另外就是借此文对自己的表现和发挥做一个简单的复盘，捎带着一些情绪的记录。</p>
+<h3 id="overview">Overview</h3>
+<p>11.6这天的北京真的太冷了，穿了几乎是适用于去年最冷时候的一身衣服去考试了，但是到了考场确实像网上一些朋友分享的那样，这里太暖和了，外面就算多穿点，但里面贴身的要穿薄点儿，监考老师本身就是一件短袖，以至于老师看我一直问我是不是感冒了，穿这么多还带着口罩。</p>
+<p>上午的口语由于我是第一次考，直接就进了口语考场，前面也没人等着，老师直接让我存包、检录（不需要准考证，身份证即可），然后就连线考官考试了，事实证明procrasination的深度患者有时候确实需要有个人push一下，发挥的自我感觉还算可以。</p>
+<p>我约的是11点的场次（为了睡懒觉，并且下午的考试也不会间隔太长时间），实际十点多我就到了，考完的时候还不到11点。所以这个考点口语机考的模式就是随到随考。实际上，如果觉得刚到考场，还没准备好，需要看看语料 + regain composure的可以和老师说明一下，去隔壁的嘉华的沙发上坐一会儿。</p>
+<p>下午1点15入场准备考其他三科，机考还是老系统，并没有换系统，这点跟网友提供的信息也一致。不过考前自己也新老系统都练了练，熟悉了下操作。考点环境确实很nice（这辈子参加过的环境最好的考试），椅子很舒服，Sennheiser的耳机也很隔音。就是考点的厕所环境确实一般。我带了一瓶宝矿力，撕掉外包装就能带进去了，口罩如果有需要也可以戴。近三个小时的考试全程专注下来确实挺疲惫的，最好还是带瓶水。</p>
+<h3 id="speaking">Speaking</h3>
+<blockquote>
+<ul>
+<li>Part 1</li>
+</ul>
+<ol>
+<li>work or study</li>
+<li>fix things
+<ul>
+<li>Can you fix things?</li>
+<li>Did anybody teach you to fix things when you were a child?</li>
+<li>Do you think it is necessary for people to learn to fix things?</li>
+<li>What do you do when a thing is broken and cannot be fixed?</li>
+</ul>
+</li>
+<li>bag
+<ul>
+<li>Do you usually carry a bag?</li>
+<li>When you were young, did you have a school bag?</li>
+<li>What kind of bags would you use when traveling?</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>Part 2</li>
+</ul>
+<ol>
+<li>Describe an important decision that you made？
+<ul>
+<li>Additional：Do you think make decision is difficult?</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>Part 3</li>
+</ul>
+<ol>
+<li>What important decisions do teenagers need to make?</li>
+<li>Who can children turn to for help when making a decision?</li>
+<li>Prefer to talk to friends or parents？
+<ul>
+<li>Additional：Why young people communicate differently between parents and friends？</li>
+</ul>
+</li>
+<li>What to consider when shopping？
+<ul>
+<li>Additional：So the rich can buy whatever they want?</li>
+</ul>
+</li>
+<li>How advertising affects your shopping？</li>
+</ol>
+</blockquote>
+<p>考官是一个围着头巾的中年女人（不知道是不是中东裔），全程在我说到一些可能比较好的点或者关键信息时有微笑点头，但并没有其他引导，感觉总是一副嫌我说的有点多的样子。</p>
+<p>其实我一直有担心这个问题，考试前一天的模考中就在part3中刻意少说了一些，但是模考老师还是建议我说40-55秒，结果今天感觉part3的问题说了不到30s就总是被打断进入下一个问题，甚至还被怼了，比如她问我人们shopping时应该考虑什么问题，我可能说了20s关于financial situation，避免extravagance的事，其实我还有第二个consideration没说，她就打断我说那是不是有钱人就可以想买什么买什么？我说不是当然要遵守社会法则和规律。其他的问题感觉回答的还可以。</p>
+<p>有一点，part3回答问题一定要先亮明立场，比如她问我关于广告是否影响了我的购物选择，我说了一大堆，然后她问我所以你认为ads的影响是positive？我才说对，当然也有一些negative的部分。观点最好一上来就po出来。</p>
+<p>另外就是part2后面会接一个additional question，这个简答就好了，yes或者no，没必要展开，忘记注意了，甚至用了个idioms在这里，被老师无情打断了，怪尴尬的。</p>
+<p>总之，整个考试虽然感觉答得还可以，前两个part都准备到了，part3问题也都听懂了，但是感觉还是处于一种应试状态，没有进入到自己的zone，也没有做到一种自然的聊天状态。在这里许愿可以有6.5，7就更好辽。</p>
+<h3 id="listening">Listening</h3>
+<blockquote>
+<ul>
+<li>Task1</li>
+<li>survey for visitors to a resort （collect some personal information and feedback）</li>
+<li>Task2</li>
+<li>theater and some show</li>
+<li>Task3</li>
+<li>research about a kind of hawks and some discussion between two students</li>
+<li>Task4</li>
+<li>human’s memory</li>
+</ul>
+</blockquote>
+<p>感觉我抽到的这四道题整体挺简单的，都是平时练习的常规。其中task3的题型挺变态的，三道双选接四道单选，本来慌了一下，因为平时做双选正确率一直不高，不过感觉材料本身还是简单的。</p>
+<p>task1中我能回忆到我填的words有：steps, cook, cinema, coach, apartment, India, meat, noisy</p>
+<p>task4中我能回忆到我填的words有：place, natural, pupils, write</p>
+<p>我留了个小心思，今天自从出了家门以后，在去考场的路上，耳机里就一直播的是英文歌（我最爱的J.Cole），上午考完口语中午休息的时候，在咖啡店做了套剑雅的听力task1为了让耳朵适应一下英音，然后剩余的时间听了会儿自己平常喜欢的英文podcast放松了一下就去考场了。直到下午其他三项考完后，回家路上才敢重新拿出喜欢的孙燕姿开始听。</p>
+<p>我觉得听力考试之前早点儿让大脑进入处理英文语境的状态还是挺重要的。</p>
+<h3 id="reading">Reading</h3>
+<blockquote>
+<ul>
+<li>Text1</li>
+<li>Deception, Liar, Detector for Liars, Facial Expressions</li>
+<li>Text2</li>
+<li>Thylacine, Tasmanian Tiger, an Extinct Species</li>
+<li>Text3</li>
+<li>Desertification and consequences in different areas</li>
+</ul>
+</blockquote>
+<p>阅读平常练习一直都是8.5的水平，所以没有什么特别的感受，除了感觉匹配题额外的多，不光是匹配段落，匹配人名，还有匹配国家，甚至匹配面部特征和情绪。</p>
+<p>然后反而Text1相对来说更棘手一点，花费了更多的时间。</p>
+<p>另外就是总感觉text2似曾相识，好像在剑雅的某篇阅读中见过这个topic，Thylacine。所以今天读到这道题的时候还惊讶了一下，但是题目确实没做过。文章的detail不太记得了，可能就只是撞topic了。</p>
+<p>Text3的那个主题词Desertification，考试的时候可能也是因为紧张的原因吧，没有看出是Desert+tification，只是觉得眼熟，不过好在文章读懂了猜出了是沙漠化的意思。</p>
+<h3 id="writing">Writing</h3>
+<blockquote>
+<ul>
+<li>Task1</li>
+<li>bar chart, percentage of a total expenditure in three categories for five age groups</li>
+<li>clothes, holidays, electronic equipment</li>
+<li>Task2</li>
+<li>the using of social media to contact to other people and access to news.</li>
+<li>advantages outweigh disadvantages</li>
+</ul>
+</blockquote>
+<p>考前大作文和小作文各练了两篇就上场了，中午休息的时候才整理了一些在task1和task2中可以用得上的语料和素材。还好抽到的task比较幸运，都属于比较简单的，task1是常规的bar chart，task2也是比较常见的关于social media的discussion。</p>
+<p>先写了大作文，大概记得是写了330个words，小作文大概凑了220个words。时间真的是刚刚好够用，虽然写完的时候剩了10min，但是有些point和expression越看越别扭，检查修改到了最后一秒。</p>
+<p>task1就用了最常规的四段式，中规中矩。task2不知道怎么想的还临时创新了一下，在Simon的四段结构上，三段和四段间加了个过渡段，感觉有点画蛇添足了&hellip;</p>
+<p>机考确实能够在写作部分上有强烈感受到优势，看题方便，修改方便（不用怕动笔，想到啥写啥，反正随时能改）还自动统计字数，另外就是我本身打字比较快。不过写作部分我确实心里没底，希望能有个6.5吧。</p>
+<h2 id="epilogue">Epilogue</h2>
+<p>雅思机考听说三个自然日就出分了，比如我是6号周一的场次，可能final score在9号的21:00就可以查询了，也有人说是10号的凌晨2点。许愿一个8.5+8.5+7+6.5，哈哈哈哈哈哈哈。</p>
+<p>到时候如果成绩不错的话，就再来写一篇blog分享一下我的喜悦和备考经验。</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Self-host Deployment of RSSHub</title>
+			<link>https://hicole.me/en/posts/self-host-deployment-of-rsshub/</link>
+			<pubDate>Mon, 11 Sep 2023 23:50:36 +0800</pubDate>
+			
+			<guid>https://hicole.me/en/posts/self-host-deployment-of-rsshub/</guid>
+			<description><![CDATA[]]></description>
+			<content type="html"><![CDATA[<h2 id="引言">引言</h2>
+<p>说起来，我采用「RSS信息源 + 一款心仪的多平台阅读器」这样的方式获取信息已经有一年多的时间了。总的来说，它带给了我很不错体验，有效的缓解了我在Daily Input过程中的一些无奈与焦虑：一方面，它使筛选过的优质信息源尽量常驻，另一方面，它使阅读信息的过程尽量纯粹。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog10/Feed-icon.svg.png"alt="image"/><figcaption><p>RSS (Stand For Really Simple Syndication)</p></figcaption></figure>
+<p>其实，RSS背后是由一套挺反商业的逻辑在支持，也因此，很多平台和媒体都并不提供官方的RSS订阅链接，毕竟如果每个人都在自己的一隅空间内，不去访问门户网站页面，那么用户的数据偏好从哪里得到？铺天盖地的广告往哪里投送？</p>
+<p>这样的协议无疑站在了消费主义的对立面。所以，刚才提到的一切想法得以实现的一个理论基底，就是<a href="https://github.com/DIYgod/RSSHub">RSSHub</a>这个伟大的开源项目的存在。关于RSSHub，官方docs中作了如下介绍:</p>
+<blockquote>
+<p>RSSHub 是一个开源、简单易用、易于扩展的 RSS 生成器，可以给任何奇奇怪怪的内容生成 RSS 订阅源。RSSHub 借助于开源社区的力量快速发展中，目前已适配数百家网站的上千项内容</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog10/CleanShot%202023-09-12%20at%2003.08.36%402x.png"alt="image"/><figcaption><p>RSSHub</p></figcaption></figure>
+</blockquote>
+<p>一言以蔽之，很多并没有提供RSS功能的平台与媒体，通过RSSHub的Route(路由)，或者更简单的，利用其Radar插件，可以很方便的生成订阅源。</p>
+<p>更多关于RSS以及RSSHub的介绍就不在这里展开了，下面切入正题：</p>
+<hr>
+<h2 id="无尽的折腾">无尽的折腾</h2>
+<h3 id="1-需求">1. 需求</h3>
+<p>这次折腾之旅的起因是这样的：我经常阅读的一个RSS订阅源-<a href="https://theinitium.com/">端传媒</a>，由于网站的改版与代码重构，原本的源不能获取到文章的全部内容了，需要跳转到原链接去阅读。而网站上的文章文字显示为繁体，且字体看起来不顺眼不说，文章周围还夹杂着很多乱七八糟的内容，很是无奈。</p>
+<p>花着高昂的订阅费，却得不到称心如意的阅读体验，这还得了(也不得不感叹这些对于体验的改造工作居然要消费者来承担)？于是遂至RSSHub docs的相关路由路径下查看，发现如下字样：</p>
+<blockquote>
+<p>付费内容全文可能需要登陆获取，详情见部署页面的配置模块。</p>
+</blockquote>
+<p>也是我第一次了解到原来RSSHub的一整套服务还可以自己部署，至于自建的原因，我是这样理解的：</p>
+<ol>
+<li>由RSSHub的官方域名路径构成的源多数都因被污染、被反制、被滥用等等原由而无法使用。</li>
+<li>随着很多网站的政策更新，获取其内容所需要的条件越来越苛刻，像是API、Cookies、Token等信息需要预配置。</li>
+</ol>
+<p>好在RSSHub的生态还算完整，对于自建这样一个相对小众的需求也有比较详细（当然还不够！不然我也不写这篇blog了）的文档支持。</p>
+<h1 id="hahahugoshortcode3s2hbhb">
+
+<p style="text-align:center">折腾开始！</p>
+</h1>
+<h3 id="2-基本部署">2. 基本部署</h3>
+<p>官方提供的Guideline中有很多种部署方式，我尝试了三种：Docker-Compose部署、HeroKu部署、Vercel部署。最后顺利完成自建是使用的Vercel。</p>
+<ul>
+<li>
+<h4 id="docker-compose">Docker-compose</h4>
+</li>
+</ul>
+<p>9月5日，我开始了第一次尝试。</p>
+<p>由于我这一阵子刚刚学完Mosh的<a href="https://www.bilibili.com/video/BV1pf4y1W7YA/">Ultimate Docker Course</a>，而古人云：一个人刚刚掌握了一项新的工具后，当他发现能将它立马用到解决自己遇到的实际问题，这无疑是一件很令人激动的事情。于是当我看到支持中有Docker字样的instance时，眼睛放出的光芒四射，我毫不犹豫的优先选择了它。</p>
+<p>部署的过程不算困难，只需要在Terminal中零星敲上几个指令，就能在本地端口1200下看到“Welcome to RSSHub”的字样，还蛮顺利的。</p>
+<p>运行docker的相关命令，发现：images成功运行在本地，volumes也没有忘记创建，（嗯，我Docker学的没问题！）但是不知道是不是部署在本地的原因，真正将自建的服务用到订阅源的构建时，基本全是报错。只有少数的一些静态page或是比较简单的网页能够成功的解析。碍于我在网络方面的知识储备相当匮乏，在持续扑腾了两个小时以后，我还是像一只沮丧的旱鸭子一样放弃了，并不甘心的在我的LogSeq的Daily Journal中作了如下记录：</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog10/CleanShot%202023-09-12%20at%2001.33.24%402x.png"alt="image"/><figcaption><p>LogSeq-Journal Page-Sep 5th</p></figcaption></figure>
+<ul>
+<li>
+<h4 id="heroku">HeroKu</h4>
+</li>
+</ul>
+<p>时间来到了9月7日，这天我也是经历了挺疯狂的一晚。</p>
+<p>我千方百计的想要疯狂榨干Github Student Package中的每一滴价值，从下午三点开始把自己埋在电脑前一直到了凌晨三点：从零开始完成了两个Vps的部署（这个有机会也可以另起一篇记录下），申请并注册了个人的第二个domain，学习了使用Termius、浏览了上百个webpage……</p>
+<p>我将在自己身上时有发生的这种好像进入了某种Zone的状态戏称为“Geeky Time”，也算是另一种比较nerd的“Kenja Taimu”吧。</p>
+<p>哈哈哈，好像跑题了。</p>
+<p>话说回来，在Student Package中，我瞥见了Heroku的字样，它也是RSSHub官方支持的一种自建方式，且支持一键部署，但无奈其不提供免费服务，每月的额度也十分有限。这不是和我的学生包中提供的条目完美匹配吗？于是我尝试了注册Heroku，但是倒在了最后一步：没能添加正确的Payment methods，也真是挺奇怪的，我的这张Monai卡陪我注册和订阅过大大小小很多个境外服务，怎么到你这就不行了，无奈作罢。</p>
+<p>后来分析了下，可能Heroku需要的是国外的本地卡作为支付方式吧，而不是我这样一张简单的Mastercard外币卡。</p>
+<ul>
+<li>
+<h4 id="vercel">Vercel</h4>
+</li>
+</ul>
+<p>最后是Vercel，俗话说好饭不怕晚。其实早在部署我的blog时，我就有体验过Vercel的托管服务，但因为一些原因（一切从简与轻量化）还是选择了Github Pages。基于Vercel的部署过程体验下来还算简单，RSSHub的官方Docs中提供了和Heroku一样的一键部署功能，但这里我还是选择了（也更推荐）带有自动更新的部署方式：</p>
+<ol>
+<li>在Github中：将RSSHubFork到自己的repo中。</li>
+<li>在Vercel中：
+<ol>
+<li>完成对Github Account的绑定。</li>
+<li>新建Project，关联Github中的对应repo并导入。</li>
+<li>按需自定义修改相关设置，等待Build完成</li>
+</ol>
+</li>
+</ol>
+<p>更详细的部署教程（step by step）可以参考这篇Guide：<a href="https://www.cnblogs.com/QiuSYan/p/RssHub.html">RssHub + Vercel ：在 Vercel 上免费部署你的RssHub</a>。</p>
+<p>至此，专属于我自己的RSSHub就已经部署在了Vercel为我提供的Domain下，点击visit即可看到Welcome Page。</p>
+<h1 id="hahahugoshortcode3s4hbhb">
+
+<p style="text-align:center">Bingo！</p>
+</h1>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog10/CleanShot%202023-09-12%20at%2003.40.54%402x.png"alt="image"/><figcaption><p>部署成功！</p></figcaption></figure>
+<h3 id="3-自定义配置">3. 自定义配置</h3>
+<p>但是到此我只实现了刚才提到的“为什么要自建”的第一个理由，我获得了一个没有那么多人同时使用的相对私人的带有RSSHub功能的域名服务，可以把相关路由都迁移过来，生成对应的大部分订阅源。但我还是没有办法获取那些需要特定登陆信息才能完成信息提取的网站，像是Youtube、Bilibili、Pixiv、Instagram等等，当然也包括我的issue：端传媒。</p>
+<ul>
+<li>
+<h4 id="配置environment-variables">配置Environment variables</h4>
+</li>
+</ul>
+<p>参考RSSHub的<a href="https://docs.rsshub.app/zh/install#%E9%83%A8%E5%88%86-rss-%E6%A8%A1%E5%9D%97%E9%85%8D%E7%BD%AE">docs</a>和<a href="https://github.com/DIYgod/RSSHub/blob/master/lib/config.js">code</a>，我得知我需要为路由指定那些所需的特殊values。基于我选择的托管服务Vercel，这里可以采取两种方法：</p>
+<ol>
+<li>
+<p>在Github的repo中的根目录下新建一个 <code>.env</code> 文件，每行以 <code>NAME=VALUE</code> 格式添加环境变量，例如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-env" data-lang="env"><span class="line"><span class="cl"><span class="nv">CACHE_TYPE</span><span class="o">=</span>redis
+</span></span><span class="line"><span class="cl"><span class="nv">CACHE_EXPIRE</span><span class="o">=</span><span class="m">600</span>
+</span></span></code></pre></div></li>
+<li>
+<p>在Vercel的Dashboard中，点击settings，在左侧栏目中选择Enviroment variables，填入对应的Keys和Values并Save。</p>
+</li>
+</ol>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog10/CleanShot%202023-09-12%20at%2002.20.58%402x.png"alt="image"/><figcaption><p>成对存在的环境变量-1</p></figcaption></figure>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog10/CleanShot%202023-09-12%20at%2002.21.21@2x.png?raw=true"alt="image"/><figcaption><p>成对存在的环境变量-2</p></figcaption></figure>
+<p>这里我选择的是第二种方法。另外值得注意的是，在每次添加新的或是修改现有的Variables后，都要Redeploy该Project才能使这些参数得以在路由中生效。</p>
+<ul>
+<li>
+<h4 id="配置custom-domains">配置Custom Domains</h4>
+</li>
+</ul>
+<p>如果你觉得Vercel给你分配的域名不太顺眼（且这个xxx.vercel.app好像是被默认墙的），那么你可以将它部署到自己的域名中。上文提到我手里正好有一个闲置的域名（也是从Github Student Package中薅的羊毛 ^o^，来自Name.com的免费一年的.live域名），于是就将Vercel的服务redirect到了我的这个域名上。相关操作非常简单，按部就班follow好vercel上的引导即可：</p>
+<ol>
+<li>添加域名</li>
+<li>在域名的DNS解析服务商（我的是Cloudflare）处添加相应的DNS记录</li>
+<li>等待redirect成功</li>
+</ol>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog10/CleanShot%202023-09-12%20at%2002.32.09%402x.png"alt="image"/><figcaption><p>自定义域名</p></figcaption></figure>
+<h3 id="4-成果">4. 成果</h3>
+<p>至此，已经实现了Self-Host的全部步骤，此时，可以在RSSHub中的官方路由随意挑选几个，将其中域名 <code>https://rsshub.app</code> 的部分替换为我刚才成功自部署的域名，添加到阅读器中看看是否可以正常使用。如果你也同样和我一样使用<strong>RSSHub Radar</strong>的话，别忘了在设置中修改自定义RSSHub域名，像是这样：</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog10/CleanShot%202023-09-12%20at%2002.37.38%402x.png"alt="image"/><figcaption><p>RSSHub Radar</p></figcaption></figure>
+<p>回到我心爱的阅读器Reeder中验证一下，在新的订阅源中，看看端传媒的文章能否完整输出呢？</p>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog10/CleanShot%202023-09-12%20at%2002.43.21.gif?raw=true"alt="video"/><figcaption><p>最后的验证</p></figcaption></figure>
+<p>可以看到，上面的GIF中，我先点击的是自建域名下生成的新订阅中的文章（全文），后点击的是老的订阅源中的文章（部分）</p>
+<h1 id="hahahugoshortcode3s11hbhb">
+
+<p style="text-align:center">Perfect！</p>
+</h1>
+<hr>
+<h2 id="结语">结语</h2>
+<p>这篇blog算是对又一次的折腾之旅的一次小记录，并不能称之为一篇正经的教程，所以更多的记录的是我的一些思辨过程，写一些我想写的而不是简单的step by step的tracking。</p>
+<p>最近这段时间日子过的比较清闲，在做出了可能是人生中的又一个Big Decision后，短暂结束了自己的迷茫与百无聊赖，折腾的频率就也又上来了。</p>
+<p>今天难得心血来潮，洋洋洒洒写成此篇，就借此以最美好的祝愿许给RSS（Really Simple Syndication）这一古老朴素而余温无限的协议和其繁盛的生态以最高的敬意吧！</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Books|The Road to Serfdom</title>
+			<link>https://hicole.me/en/posts/booksthe-road-to-serfdom/</link>
+			<pubDate>Sat, 12 Aug 2023 16:00:32 +0800</pubDate>
+			
+			<guid>https://hicole.me/en/posts/booksthe-road-to-serfdom/</guid>
+			<description><![CDATA[Some Reflections on Liberalism and Insinuations from the Current Reality of Society]]></description>
+			<content type="html"><![CDATA[<h1 id="一些关于自由主义的思考和当下现实社会的影射">一些关于自由主义的思考和当下现实社会的影射</h1>
+<h2 id="preface">Preface</h2>
+<p>现在回想起来，最初了解到这本书并不是瞥见于某个图书网站的Rank List或是源自某个up主的Recommendation，而是从V2EX中的一个帖子里看到的，那个帖子的主题好像是”2022年你读过最棒(最有意义/最振聋发聩/最值得推荐，等等具体的那个形容词我记不清了)的一本书“。</p>
+<p>当时就有注意到，“通往自由之路”这个title呼声相当高，于是就从Z-library上找来了Epub的读本，加入了Apple books的收藏中，期间短暂翻阅过寥寥，但也直到最近才重新拾起来通读一遍。</p>
+<hr>
+<h2 id="the-terrible-translation">The Terrible Translation</h2>
+<p>其实，刚开始读这本被出版方（中国社会科学出版社）定义为“西方现代思想丛书”的前几天，是很痛苦的：这本书的翻译工作实在是太糟糕了，结合书中的思想与当下的社会现实的某些强烈对冲，我不得不怀疑是不是由于一些不可名状的因素才导致翻译家老师们只能把哈耶克的这部作品翻译成这样的水平。因为仅仅凭借我零星的文学造诣，有些句子我也能很明显地看出简单换一换语序即可使理解的难度降低不少。在晦涩崎岖的阅读过程中，我不得不用上了一些类似我阅读英文长难句中的技巧：缩句，抽剥，仅保留句子主谓宾、主系表的骨架结构。有时我甚至萌生出去找英文原版来读的想法（无奈这毕竟是一本nonfiction，难度太大了）。</p>
+<p>上面提到的翻译问题可能真的要亲自去读这版译本才能真切感觉到我的这种痛苦吧，或许细心找找可能会有更好的民间译本（<a href="https://book.douban.com/subject/4016869/">比如殷海光老师1954年版</a>)<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。 不过，换一个角度想，该译本出版于1997年，处在那个我未曾亲临过的世纪交汇之间，可能也是这25年来人们精神和思想世界都比较轻松和悠闲的时代。也难怪这么多年来原作都没有再版的消息，不过至少没有被列为禁书，从读者身份来讲也算是一种幸运吧。</p>
+<hr>
+<h2 id="excerptions-and-notes">Excerptions and Notes</h2>
+<p>从7月27日至8月10日读完，十几天的时间也只是做到浏览一遍，真正能够理解消化其中的思想而并入自己的智识体系还尚远，索性就借着这篇blog，结合当时阅读时做的highlight和notes，重新梳理一下，也以备后时之需。</p>
+<p>「<em>Tips 1：一些原文中比较晦涩拗口的翻译我将结合自己的理解进行调整与修补。</em>」</p>
+<p>「<em>Tips 2：对原文内容的摘录也并不代表我的观点和体现着我的评价（赞同或是否定）</em>」</p>
+<h3 id="第一章-被离弃的道路">第一章 《被离弃的道路》</h3>
+<blockquote>
+<h5 id="个人主义的基本特征就是把个人当作人来尊重相信人应该发展自己的天赋和爱好就是在他自己的范围内承认他的看法和趣味是至高无上的纵然这个范围可能被限制得很狭隘">个人主义的基本特征就是把个人当作人来尊重，相信人应该发展自己的天赋和爱好。就是在他自己的范围内承认他的看法和趣味是<strong>至高无上</strong>的。纵然这个范围可能被限制得很狭隘。</h5>
+</blockquote>
+<ul>
+<li>如何理解个人主义之于个人的尊重与认同。</li>
+</ul>
+<h3 id="第二章-伟大的乌托邦">第二章 《伟大的乌托邦》</h3>
+<blockquote>
+<h5 id="民主扩展个人自由的范围而社会主义却对其加以限制民主尽可能地赋予每一个人价值而社会主义却仅仅使每一个人成为一个工具一个数字民主和社会主义除了平等一词毫无共同之处但请注意这个区别民主在自由之中寻求平等而社会主义则在约束和奴役之中寻求平等">民主扩展个人自由的范围，而社会主义却对其加以限制。民主尽可能地赋予每一个人价值，而社会主义却仅仅使每一个人成为一个工具、一个数字。民主和社会主义除了“平等”一词毫无共同之处。但请注意这个区别：<strong>民主在自由之中寻求平等，而社会主义则在约束和奴役之中寻求平等。</strong></h5>
+</blockquote>
+<ul>
+<li>个体在不同社会制度下的角色变化。</li>
+</ul>
+<blockquote>
+<h5 id="然而虽则这种新自由的允诺常常与社会主义社会中物质财富会大大增加的这样不负责任的允诺相提并论但并非出于这种对自然的吝啬的绝对征服经济自由便指日可待这个允诺实际上指的是不同的人在选择余地上现存的巨大悬殊将被消除因此对这种新自由的要求不过是对平均分配财富旧要求的代名词而已">然而，虽则这种新自由的允诺常常与社会主义社会中物质财富会大大增加的这样不负责任的允诺相提并论，<strong>但并非出于这种对自然的吝啬的绝对征服，经济自由便指日可待</strong>。这个允诺实际上指的是，不同的人在选择余地上现存的巨大悬殊将被消除。因此，对这种新自由的要求，不过是对平均分配财富旧要求的代名词而已。</h5>
+</blockquote>
+<ul>
+<li>“对自然的吝啬”即指我们对自己资产的保护，我们的就是我们自己的。这段话揭示了社会主义所描绘的最终理想背后其实是通过“绝对征服”每个个体的选择权的均一化来实现的。</li>
+</ul>
+<h3 id="第三章-个人主义与集体主义">第三章 《个人主义与集体主义》</h3>
+<blockquote>
+<h5 id="有许多人自称为社会主义者他们热烈地信仰社会主义的终极目标但他们既不关心也不理解这些目标何以才能实现他们确信的仅仅是这些目标一定会实现无论其代价如何">有许多人自称为社会主义者，他们热烈地信仰社会主义的终极目标，但他们既不关心也不理解这些目标何以才能实现，他们确信的仅仅是这些目标一定会实现，无论其代价如何。</h5>
+</blockquote>
+<ul>
+<li>提醒我们每个人，在看到一种思想一种制度的宣传其最终形态时，要去思考至这一最终形态的路上，我们需要付出和牺牲的是什么。</li>
+</ul>
+<blockquote>
+<h5 id="自由主义的论点是赞成尽可能地运用竞争力量作为协调人类各种努力的工具而不是主张让事态放任自流它是以这种信念为基础的只要能创造出有效的竞争就是再好不过的指导个人努力的方法它并不否认甚至还强调为了竞争能有益地运行需要一种精心设想的法律框架而现存的和以往的法律无不具有严重的缺陷它也不否认在不可能创造出使竞争有效的必要条件的地方我们就必须采用其他指导经济活动的方法">自由主义的论点，是赞成尽可能地运用竞争力量作为协调人类各种努力的工具，而不是主张让事态放任自流。它是以这种信念为基础的：只要能创造出有效的竞争，就是再好不过的指导个人努力的方法。它并不否认，甚至还强调，为了竞争能有益地运行，需要一种精心设想的法律框架，而现存的和以往的法律无不具有严重的缺陷。它也不否认，在不可能创造出使竞争有效的必要条件的地方，我们就必须采用其他指导经济活动的方法。</h5>
+</blockquote>
+<ul>
+<li>自由主义并不是让事态放任自流，他需要一定的指导以创造出有效的竞争。</li>
+</ul>
+<blockquote>
+<h5 id="创造条件使竞争尽可能有效在竞争不能行之有效的地方为其提供补充提供那些用亚当斯密的话来说虽则能够在最高的程度上有利于一个伟大的社会但却具有这一性质即对任何个人或少数人来说利润不足以补偿耗费的服务这些任务实际上都为国家提供了广阔的和无可置疑的活动领域在没有那种能被合理地加以维护的制度时国家绝不会袖手旁观一个有效的竞争制度和其他制度一样需要一种明智规划的并不断加以调节的法律框架甚至提供它适当发挥作用所必需的最根本的前提即防止欺诈和诡骗包括利用无知都给立法活动提供了一个伟大的但远未充分实现的目标">创造条件使竞争尽可能有效，在竞争不能行之有效的地方为其提供补充，提供那些用亚当·斯密的话来说“虽则能够在最高的程度上有利于一个伟大的社会，但却具有这一性质，即对任何个人或少数人来说，利润不足以补偿耗费”的服务，这些任务实际上都为国家提供了广阔的和无可置疑的活动领域。在没有那种能被合理地加以维护的制度时，国家绝不会袖手旁观。一个有效的竞争制度和其他制度一样，需要一种明智规划的并不断加以调节的法律框架。甚至提供它适当发挥作用所必需的最根本的前提，即防止欺诈和诡骗（包括利用无知），都给立法活动提供了一个伟大的但远未充分实现的目标。</h5>
+</blockquote>
+<ul>
+<li>这里亚当斯密提到的那种服务，我的理解即是类似于公共服务，基础设施那样的实体，当然也包括立法这样漫长而劳神的工作。</li>
+</ul>
+<h3 id="第四章-计划的不可避免性">第四章 《计划的不可避免性》</h3>
+<blockquote>
+<h5 id="专家们幻想在一个有计划的社会中他最关心的目标将会受到更多的注意有这种幻想的人并不限于专家们在我们所偏爱和关心的事情中某种程度上我们都是专家我们认为我们个人排列各种价值的顺序不仅是个人的排列顺序而且是在有理性的人们的自由讨论中我们会使别人相信我们的顺序是正确的喜欢乡村田舍的人他最希望的就是应当保存它的传统风貌工业在它的美丽面貌上已经造成的污点则应予以清除正如热心于卫生的人希望所有风景如画的但不卫生的古老茅屋都要去除一样或者驱车游览的人之希望全国都有纵横交错的公路迷信效率的人之希望最大可能的专业化和机械化不亚于理想家为了发展个性而希望尽可能保存独立的手艺人所有的人都知道他们的目标只有通过计划才能充分实现并且他们都是为了那个理由而希望制订计划不过采用他们所叫嚣强求的社会计划当然只能把他们的目标之间潜伏的冲突暴露出来">专家们幻想在一个有计划的社会中，他最关心的目标将会受到更多的注意；有这种幻想的人并不限于专家们。在我们所偏爱和关心的事情中，某种程度上我们都是专家。我们认为我们个人排列各种价值的顺序不仅是个人的排列顺序，而且是在有理性的人们的自由讨论中，我们会使别人相信我们的顺序是正确的。喜欢乡村田舍的人，他最希望的就是应当保存它的传统风貌，工业在它的美丽面貌上已经造成的污点则应予以清除；正如热心于卫生的人，希望所有风景如画的但不卫生的古老茅屋都要去除一样；或者驱车游览的人之希望全国都有纵横交错的公路，迷信效率的人之希望最大可能的专业化和机械化，不亚于理想家为了发展个性而希望尽可能保存独立的手艺人。所有的人都知道他们的目标只有通过计划才能充分实现——并且他们都是为了那个理由而希望制订计划。不过，采用他们所叫嚣强求的社会计划，当然只能把他们的目标之间潜伏的冲突暴露出来。</h5>
+</blockquote>
+<ul>
+<li>所有人都认为自己的价值排序是正确的，是利于社会发展的，但是将他变成现实生活只能通过计划的手段，大家都是为了社会更好而想要去计划，而最后难免冲突，进而导致权力的争夺。</li>
+</ul>
+<h3 id="第五章-民主与计划">第五章 《民主与计划》</h3>
+<blockquote>
+<h5 id="迄今为止随着文明的发展个人行动受成规束缚的范围在不断地缩减构成我们共同道德准则的条规为数越来越少而性质上却越来越具一般性原始人几乎在日常生活中的每件事上都受一种复杂仪式的束缚受无可胜数的禁忌的限制几乎想象不出可以按照一种与众不同的方式行事从原始人起道德已越来越倾向于成为只是对个人可以随心所欲的范围的限制采纳一种全面到足以决定一个单一的经济计划的共同伦理准则将意味着与这种趋势背道而驰">迄今为止，随着文明的发展，个人行动受成规束缚的范围在不断地缩减。构成我们共同道德准则的条规，为数越来越少而性质上却越来越具一般性。原始人几乎在日常生活中的每件事上都受一种复杂仪式的束缚，受无可胜数的禁忌的限制，几乎想象不出可以按照一种与众不同的方式行事。从原始人起，道德已越来越倾向于成为只是对个人可以随心所欲的范围的限制。采纳一种全面到足以决定一个单一的经济计划的共同伦理准则，将意味着与这种趋势背道而驰。</h5>
+</blockquote>
+<ul>
+<li>退步：原始的仪式 -&gt; 自由的思想 -&gt; 计划的规程</li>
+</ul>
+<blockquote>
+<h5 id="这就是整个个人主义哲学所根据的基本事实它并不像通常人们所断言的那样假定人是或应该是利己的或自私的它仅仅从这个毫无争议的事实出发即我们想象力的局限使我们只能在我们的价值尺度中包含全社会需要的一部分而且严格地说由于价值尺度仅能存在于个人头脑中除了种种局部的价值尺度没有任何别的可以存在而这些价值尺度不可避免地有所不同并常常相互矛盾由此个人主义者得出结论说在限定的范围内应该允许个人遵循自己的而不是别人的价值和偏好而且在这些领域内个人的目标体系应该至高无上而不屈从于他人的指令就是这种对个人作为其目标的最终决断者的承认对个人应尽可能以自己的意图支配自己的行动的信念构成了个人主义立场的实质">这就是整个个人主义哲学所根据的基本事实。它并不像通常人们所断言的那样，假定人是或应该是利己的或自私的。它仅仅从这个毫无争议的事实出发，即我们想象力的局限，使我们只能在我们的价值尺度中包含全社会需要的一部分，而且严格地说，由于价值尺度仅能存在于个人头脑中，除了种种局部的价值尺度，没有任何别的可以存在，而这些价值尺度不可避免地有所不同并常常相互矛盾。由此，个人主义者得出结论说，在限定的范围内，应该允许个人遵循自己的而不是别人的价值和偏好，而且，在这些领域内，个人的目标体系应该至高无上而不屈从于他人的指令。就是这种对个人作为其目标的最终决断者的承认，对个人应尽可能以自己的意图支配自己的行动的信念，构成了个人主义立场的实质。</h5>
+</blockquote>
+<ul>
+<li>个人主义的本质并不是经常被人断言的那样：利己主义，无处不在的自私。 基于人类个体的局限性，个人主义实际强调的是，个人无论如何也没有办法代表一个广泛社会下所有的价值尺度，于是，在自己的领域与专长内自己的思想和指令才应该至高无上。</li>
+</ul>
+<blockquote>
+<h5 id="就此而言所谓社会目标不过是许多个人的相同目标或者说是个人为了回报他们在满足自身欲望所接受的帮助而愿意有所贡献的那种目标因而共同行动局限于人们对共同目标一致同意的那些领域习以为常的是这些共同目标不会是个人的终极目标而是意味着不同的人可以将其用于不同的意图实际上在共同目标对人们并非一种终极目标而是一种能够用于多种多样意图的手段的地方人们才最可能对共同行动达成共识">就此而言，所谓“社会目标”不过是许多个人的相同目标——或者说，是个人为了回报他们在满足自身欲望所接受的帮助而愿意有所贡献的那种目标。因而，共同行动局限于人们对共同目标一致同意的那些领域。习以为常的是，这些共同目标不会是个人的终极目标，而是意味着不同的人可以将其用于不同的意图。实际上，在共同目标对人们并非一种终极目标而是一种能够用于多种多样意图的手段的地方，人们才最可能对共同行动达成共识。</h5>
+</blockquote>
+<ul>
+<li>社会目标与个人目标的辩证关系。也是社会目标其实服务于个人终极目标的一种解释。</li>
+</ul>
+<blockquote>
+<h5 id="民主本质上是一种手段一种保障国内安定和个人自由的实用装置它本身绝不是一贯正确和可靠无疑的我们绝不能忘记在一个专制统治下往往比在某些民主制度下有更多的文化和精神的自由至少可能想见在一个非常整齐划一和教条主义地推行多数民主的政府统治下民主制度也许和最坏的独裁制度同样暴虐但是我们的要点与其是说独裁必然不可避免地消灭了自由毋宁是说计划导致独裁因为独裁是强制推行各种理想的最有效工具而且集中计划要在很大程度成为可能的话独裁本身是必不可少的计划与民主之间的冲突只不过起因于这样一个事实即对指导经济活动所需的对自由的压制来说后者是个障碍但是只要民主不再是个人自由的保障的话它也可能以某种形式依然存在于极权主义政体之中一个真正的无产阶级专政即使形式上是民主的如果它集中指导经济体系的话可能会和任何专制政体所曾做的一样完全破坏了个人自由">民主本质上是一种手段，一种保障国内安定和个人自由的实用装置。它本身绝不是一贯正确和可靠无疑的。我们绝不能忘记，在一个专制统治下往往比在某些民主制度下有更多的文化和精神的自由——至少可能想见，在一个非常整齐划一和教条主义地推行多数民主的政府统治下，民主制度也许和最坏的独裁制度同样暴虐。但是，我们的要点与其是说独裁必然不可避免地消灭了自由，毋宁是说计划导致独裁，因为<strong>独裁是强制推行各种理想的最有效工具</strong>，而且，集中计划要在很大程度成为可能的话，独裁本身是必不可少的。计划与民主之间的冲突只不过起因于这样一个事实，即对指导经济活动所需的对自由的压制来说，后者是个障碍。但是，只要民主不再是个人自由的保障的话，它也可能以某种形式依然存在于极权主义政体之中。一个真正的“无产阶级专政”，即使形式上是民主的，如果它集中指导经济体系的话，可能会和任何专制政体所曾做的一样，完全破坏了个人自由。</h5>
+</blockquote>
+<ul>
+<li>民主并不等于自由，关键还是社会形态的问题。想到了曾经看到的一句话：“即使民主真的很烂，但它也是我们所能构想出的最优解了。”</li>
+</ul>
+<h3 id="第六章-计划与法治">第六章 《计划与法治》</h3>
+<blockquote>
+<h5 id="但是法治的基本点是很清楚的即留给执掌强制权力的执行机构的行动自由应当减少到最低限度虽则每一条法律通过变动人们可能用以追求其目的的手段而在一定程度上限制了个人自由但是在法治之下却防止了政府采取特别的行动来破坏个人的努力">但是法治的基本点是很清楚的：即留给执掌强制权力的执行机构的行动自由，应当减少到最低限度。虽则每一条法律，通过变动人们可能用以追求其目的的手段而在一定程度上限制了个人自由，但是在法治之下，却防止了政府采取特别的行动来破坏个人的努力。</h5>
+</blockquote>
+<ul>
+<li>法治不只适用于个人，更适用于政府本身。</li>
+</ul>
+<blockquote>
+<h5 id="而且任何旨在实现公平分配的重大理想的政策必定会导致法治的破坏要为不同的人产生同样的结果必须给予他们不同的待遇给予不同的人以同样客观的机会并不等于给予他们以同样主观的机会">而且任何旨在实现公平分配的重大理想的政策，必定会导致法治的破坏。要为不同的人产生同样的结果，必须给予他们不同的待遇。给予不同的人以同样客观的机会并不等于给予他们以同样主观的机会。</h5>
+</blockquote>
+<ul>
+<li>让我联想到了税收，可能是现实社会中一种最不公平的行为之一。</li>
+</ul>
+<blockquote>
+<h5 id="又如在我们这个时代里如果把某些商品的生产和出售的权利由当局指定给某些人这也是一种特权但是私有财产是任何人根据同样的规则都能够获得的因为只有某些人在取得私有财产方面成功了就把私有财产本身称做一种特权那就使特权这个字失去它的意义了">又如在我们这个时代里，如果把某些商品的生产和出售的权利，由当局指定给某些人，这也是一种特权。但是私有财产是任何人根据同样的规则都能够获得的，因为只有某些人在取得私有财产方面成功了，就把私有财产本身称做一种特权，那就使“特权”这个字失去它的意义了。</h5>
+</blockquote>
+<ul>
+<li>前后两种现象很容易引发对于现实社会中的联想与指代。</li>
+</ul>
+<blockquote>
+<h5 id="如果一个人不需要服从任何人只服从法律那么他就是自由的">“如果一个人不需要服从任何人，只服从法律，那么他就是自由的”。</h5>
+</blockquote>
+<ul>
+<li>可以从这个角度上思考一下，我们是否生活在一个自由的社会中。</li>
+</ul>
+<blockquote>
+<h5 id="法治和政府的一切行动是否在司法的意义上合法这一问题没有什么关系它们可能很合法但仍可能不符合法治某些人在法律规定上有权按他的方式去行动但这并没说明法律是否给他权力进而采取专断行为或法律是否明白地规定他必须如何行动很可能希特勒是以严格的合乎宪法的方式获得无限权力的因而在法律的意义上说他的所作所为都是合法的但是谁会因为这种理由而说在德国仍然盛行着法治呢">法治和政府的一切行动是否在司法的意义上合法这一问题没有什么关系——它们可能很合法，但仍可能不符合法治。某些人在法律规定上有权按他的方式去行动，但这并没说明法律是否给他权力进而采取专断行为，或法律是否明白地规定他必须如何行动。很可能，希特勒是以严格的合乎宪法的方式获得无限权力的，因而在法律的意义上说，他的所作所为都是合法的。但是，谁会因为这种理由而说，在德国仍然盛行着法治呢？</h5>
+</blockquote>
+<ul>
+<li>法治与依法办事 的区别。</li>
+</ul>
+<h3 id="第七章-经济控制和极权主义">第七章 《经济控制和极权主义》</h3>
+<blockquote>
+<h5 id="如果我们力求获得金钱那是因为金钱能提供给我们最广泛的选择机会去享受我们努力的成果因为在现代社会里我们是通过货币收入的限制才感到那种由于相对的贫困而仍然强加在我们身上的束缚许多人因此憎恨作为这种束缚象征的货币但这是错把人们感到一种力量存在的媒介当作原因了更正确地说钱是人们所发明的最伟大的实践自由的工具之一在当今社会中只有钱才向穷人开放了一个惊人的选择范围这个范围比没有多少代人之前向富人开放的范围还要大许多社会主义者都主张大量运用非经济激励以代替金钱动机这是他们的一个共同特点如果我们考虑一下这种建议实际上意味着什么我们就能够对货币所起的作用的重要性有比较深刻的了解如果所有报酬不是采取提供货币的形式而是采取提供公开表彰或特权凌驾别人之上的权力地位较好的住宅或较好的食物旅行或受教育机会等形式这只不过是意味着接受报酬者不再可以自行选择而任何决定报酬的那个人不仅决定报酬的大小而且也决定了享用报酬的特定形式">如果我们力求获得金钱，那是因为金钱能提供给我们最广泛的选择机会去享受我们努力的成果。因为在现代社会里，我们是通过货币收入的限制，才感到那种由于相对的贫困而仍然强加在我们身上的束缚，许多人因此憎恨作为这种束缚象征的货币。但这是错把人们感到一种力量存在的媒介当作原因了。更正确地说，钱是人们所发明的最伟大的实践自由的工具之一。在当今社会中，只有钱才向穷人开放了一个惊人的选择范围——这个范围比没有多少代人之前向富人开放的范围还要大。许多社会主义者都主张，大量运用“非经济激励”以代替“金钱动机”。这是他们的一个共同特点。如果我们考虑一下这种建议实际上意味着什么，我们就能够对货币所起的作用的重要性有比较深刻的了解。如果所有报酬，不是采取提供货币的形式，而是采取提供公开表彰或特权、凌驾别人之上的权力地位、较好的住宅或较好的食物、旅行或受教育机会等形式，这只不过是意味着，接受报酬者不再可以自行选择，而任何决定报酬的那个人，不仅决定报酬的大小而且也决定了享用报酬的特定形式。</h5>
+</blockquote>
+<ul>
+<li>非常有趣的观点，其实在我们的现实生活中也有映射，比如当你理应或赚得某些奖励时，我们都更渴望那是实实在在的金钱数额，而不是一句褒奖，一顿饭，一堆优惠券。金钱，也就是这种货币，而不是“非经济激励”，才能给我们选择自己如何生活的机会与行动范畴。<strong>在我们的报酬以非经济激励代替时，我们要意识到这确实是一种不折不扣的经济控制</strong>。</li>
+</ul>
+<h3 id="第八章-谁跟谁">第八章 《谁跟谁？》</h3>
+<blockquote>
+<h5 id="一个富人得势的世界仍比一个只有得势的人才能致富的世界要好些试问谁会否认这一点呢">一个富人得势的世界仍比一个只有得势的人才能致富的世界要好些，试问谁会否认这一点呢？</h5>
+</blockquote>
+<ul>
+<li>似乎是两种社会制度的终极形态。</li>
+</ul>
+<blockquote>
+<h5 id="当每个人意识到他的命运是某些人有意地作出的决定的结果时他对其命运的不满就会同他的这种意识一齐增长">当每个人意识到他的命运是某些人有意地作出的决定的结果时，他对其命运的不满，就会同他的这种意识一齐增长。</h5>
+</blockquote>
+<ul>
+<li>很多社会现象的一种形成原因吧，可能也是伴随着这种意识的觉醒。</li>
+</ul>
+<h3 id="第九章-保障与自由">第九章 《保障与自由》</h3>
+<blockquote>
+<h5 id="给人以地位和身份的不再是自立而是有保障一个青年人拥有领得年薪的确定权利比对他怀有飞黄腾达的信心更是其结婚的资格而无保障则成为贱民的可怕处境那些在青年时就被拒绝于受庇护的领薪阶层之外的人要在这种处境下终其一生">给人以地位和身份的不再是自立，而是有保障，一个青年人拥有领得年薪的确定权利比对他怀有飞黄腾达的信心更是其结婚的资格，而无保障则成为贱民的可怕处境，那些在青年时就被拒绝于受庇护的领薪阶层之外的人，要在这种处境下终其一生。</h5>
+</blockquote>
+<blockquote>
+<h5 id="当我们的青年人喜欢薪水稳定的职位而不喜欢企业的风险的时候我们不能责怪他们因为他们从小就听人说过前者是高级的更不自私和更公平的职业今天这一代的青年是在这样一个世界里成长起来的即无论在学校中或在报纸上都是把商业企业精神看成是不名誉的把赚取利润说成是不道德的把雇用100个人视为剥削却把指挥100个人说成是光荣的年纪大些的人也许认为这种对当前情况的说法未免言过其实但大学教师日常的经验无疑证明由于反资本主义的宣传在英国价值标准的改变远远地走在迄今已发生的制度改变的前面现在的问题是在通过改变制度的方法来满足新的需要的时候我们会不会并非不知不觉地把我们仍然估价较高的那些价值标准毁灭掉呢">当我们的青年人喜欢薪水稳定的职位而不喜欢企业的风险的时候，我们不能责怪他们，因为他们从小就听人说过，前者是高级的、更不自私和更公平的职业。今天这一代的青年是在这样一个世界里成长起来的，即无论在学校中或在报纸上，都是把商业企业精神看成是不名誉的，把赚取利润说成是不道德的，把雇用100个人视为剥削，却把指挥100个人说成是光荣的。年纪大些的人也许认为这种对当前情况的说法未免言过其实，但大学教师日常的经验无疑证明：由于反资本主义的宣传，在英国价值标准的改变远远地走在迄今已发生的制度改变的前面。现在的问题是，在通过改变制度的方法来满足新的需要的时候，我们会不会并非不知不觉地把我们仍然估价较高的那些价值标准毁灭掉呢？</h5>
+</blockquote>
+<blockquote>
+<h5 id="在这种状态下难怪越来越多的人开始感到没有经济保障自由就没有拥有的价值并且都感到情愿牺牲自由来争取保障">在这种状态下，难怪越来越多的人开始感到，没有经济保障，自由就“没有拥有的价值”，并且，都感到情愿牺牲自由来争取保障。</h5>
+</blockquote>
+<ul>
+<li>嗯，情愿牺牲自由来争取保障。这应该算是全书中最能够直接而毫不费力的联系到现实社会的一点了：挤破头的省考与无止境的编制。</li>
+</ul>
+<h3 id="第十章-为什么最坏者当政">第十章 《为什么最坏者当政》</h3>
+<blockquote>
+<h5 id="首先一般说来各个人的教育和知识越高他们的见解和趣味就越不相同而他们赞同某种价值等级制度的可能性就越少这或许是事实其结果必然是如果我们希望找到具有高度一致性和相似性的观念我们必须降格到道德和知识标准比较低级的地方去在那里比较原始的和共同的本能与趣味占统治地位">首先，一般说来，各个人的教育和知识越高，他们的见解和趣味就越不相同，而他们赞同某种价值等级制度的可能性就越少。这或许是事实。其结果必然是：如果我们希望找到具有高度一致性和相似性的观念，我们必须降格到道德和知识标准比较低级的地方去，在那里比较原始的和“共同”的本能与趣味占统治地位。</h5>
+</blockquote>
+<ul>
+<li>一个蛮有趣的推导，每次回老家（一个北方五六线的小县城）就会有类似的感觉。这里的高级与低级并不含有优越的成分，只是从表达或思想的实质来讲，高阶或是低阶。</li>
+</ul>
+<blockquote>
+<h5 id="人们赞同一个消极的纲领即对敌人的憎恨对富人的嫉妒比赞同一项积极的任务要容易些这看来几乎是人性的一个法则若要用一个信条将某个集团牢牢地团结在一起以便共同行动的话那么将我们和他们对立起来即与一个集团以外的人进行共同的斗争则似乎是这个信条中的重要组成部分">人们赞同一个消极的纲领，即对敌人的憎恨、对富人的嫉妒，比赞同一项积极的任务要容易些，这看来几乎是人性的一个法则。若要用一个信条将某个集团牢牢地团结在一起以便共同行动的话，那么，将“我们”和“他们”对立起来，即与一个集团以外的人进行共同的斗争，则似乎是这个信条中的重要组成部分。</h5>
+</blockquote>
+<ul>
+<li>一些关于宣传的技巧性与团结的目的性，这个也很很很容易链接至现实。</li>
+</ul>
+<blockquote>
+<h5 id="以为剥夺了个人主义制度中个人拥有的权力并把它转让给社会他们就能够消灭权力凡是提出这样主张的人都忽略了以下几点为了能够用来为一个单一计划服务的权力的集中不仅是权力的转移并且也使权力得到无限的扩张把从前许多人独立行使的权力集中在某个单个集团的手里会使权力膨胀到前所未有的程度其影响极为深广几乎使它变成了另外一样东西">以为剥夺了个人主义制度中个人拥有的权力，并把它转让给社会，他们就能够消灭权力。凡是提出这样主张的人都忽略了以下几点：为了能够用来为一个单一计划服务的权力的集中，不仅是权力的转移，并且也使权力得到无限的扩张；把从前许多人独立行使的权力集中在某个单个集团的手里，会使权力膨胀到前所未有的程度，其影响极为深广，几乎使它变成了另外一样东西。</h5>
+</blockquote>
+<ul>
+<li>中央集权 -&gt; 权利的无限扩张，这并不是一个1+1 = 2的问题，当无数个体的权利集中在某一个或某个组织上时，权利就会膨胀到难以想象的程度。</li>
+</ul>
+<blockquote>
+<h5 id="原则的区别在很多方面是和我们在讨论有关法治问题时的区别相同的像形式法律一样个人主义道德的规则尽管在很多方面不很精确但都是一般的和绝对的它们规定或禁止一个一般类型的行为不管在某一特定情况下它的最终目标是好的还是坏的欺诈或盗窃歪曲或背弃信任被认为是坏事不管在个别场合里它是否造成危害即使在一个情况之下没有人因此受害或者这样行为可能是为着一个高尚的目标但这两种情况都不能改变它是坏的这个事实虽然我们有时也许会不得不在不同的坏事之间作出选择但它们仍然是坏事用目的说明手段的正当性这个原则在个人主义道德里面被认为是对一切道德的否定而它在集体主义的道德里面却必然成为至高无上的准则坚定彻底的集体主义者绝对不许做的事简直是没有的如果它有助于整体利益的话因为这个整体利益是他判定应当做什么的唯一标准国家利益是集体主义道德最明确的表述它的唯一界限就是利害的权宜一定的行为对于眼前的目标的适宜性凡是国家利益所肯定的国与国之间的关系也适用于集体主义国家里面人与人之间的关系在集体主义国家里不可能有任何限制界定什么是公民一定不要去做的事情他的良心不允许他做的事是没有的只要这是为集体已经确定的目标所需要的或者这是他的上级命令他要达到的目标">原则的区别，在很多方面是和我们在讨论有关法治问题时的区别相同的。像形式法律一样，个人主义道德的规则，尽管在很多方面不很精确，但都是一般的和绝对的，它们规定或禁止一个一般类型的行为，不管在某一特定情况下它的最终目标是好的还是坏的。欺诈或盗窃，歪曲或背弃信任，被认为是坏事，不管在个别场合里它是否造成危害。即使在一个情况之下没有人因此受害，或者，这样行为可能是为着一个高尚的目标，但这两种情况都不能改变它是坏的这个事实。虽然我们有时也许会不得不在不同的坏事之间作出选择，但它们仍然是坏事。用目的说明手段的正当性这个原则，在个人主义道德里面被认为是对一切道德的否定。而它在集体主义的道德里面却必然成为至高无上的准则；坚定彻底的集体主义者绝对不许做的事简直是没有的，如果它有助于“整体利益”的话，因为这个“整体利益”是他判定应当做什么的唯一标准。国家利益是集体主义道德最明确的表述，它的唯一界限就是利害的权宜——一定的行为对于眼前的目标的适宜性。凡是国家利益所肯定的国与国之间的关系，也适用于集体主义国家里面人与人之间的关系。在集体主义国家里，不可能有任何限制界定什么是公民一定不要去做的事情；他的良心不允许他做的事是没有的，只要这是为集体已经确定的目标所需要的，或者这是他的上级命令他要达到的目标。</h5>
+</blockquote>
+<blockquote>
+<h5 id="要做一个集体主义社会里有用的成员他必须具有很明确的品质这些品质又必须通过经常不断的实践来得到加强我们把这些品质称为有用的习惯却很难把它们说成是道德品格这是因为个人绝不可以使这些惯例超越于任何具体命令之上或者说绝不可让这些惯例成为实现该社会的特定目标的障碍它们只适用于填补一切直接的命令或者指定特殊目标所留下的缺口但绝不能成为抵触当局意志的正当理由">要做一个集体主义社会里有用的成员，他必须具有很明确的品质，这些品质又必须通过经常不断的实践来得到加强。我们把这些品质称为“有用的习惯”，却很难把它们说成是道德品格，这是因为个人绝不可以使这些惯例超越于任何具体命令之上，或者说，绝不可让这些惯例成为实现该社会的特定目标的障碍。它们只适用于填补一切直接的命令或者指定特殊目标所留下的缺口，但绝不能成为抵触当局意志的正当理由。</h5>
+</blockquote>
+<blockquote>
+<h5 id="但当几个特定目标支配着整个社会的时候就有下面的情况不可避免地发生残酷有时可以变成责任违反我们情感的行为例如枪毙人质杀害老弱等竟被看成仅仅是权宜之计强迫迁移数万人口竟成为差不多除了受害人以外每个人都赞成的一种政策措施或者像征募妇女以作传宗接代之用之类的建议也会受到认真考虑在集体主义者的眼中总是有一个上述这些行为为之服务的重大目标并且照他看来这一目标使这些行为具有合理性因为对一个社会的共同目标的追求可以无限制地忽略任何个人的任何权利和价值">但当几个特定目标支配着整个社会的时候，就有下面的情况不可避免地发生：残酷有时可以变成责任，违反我们情感的行为，例如枪毙人质、杀害老弱等，竟被看成仅仅是权宜之计；强迫迁移数万人口竟成为差不多除了受害人以外每个人都赞成的一种政策措施；或者像“征募妇女以作传宗接代之用”之类的建议也会受到认真考虑。在集体主义者的眼中，总是有一个上述这些行为为之服务的重大目标，并且，照他看来，这一目标使这些行为具有合理性，因为对一个社会的共同目标的追求，可以无限制地忽略任何个人的任何权利和价值。</h5>
+</blockquote>
+<ul>
+<li>用目的说明手段的正当性这个原则导致的结果可能是最基础的道德伦理体系的崩溃。以上倒是都在试图论证一个观点：哪里存在着一个凌驾一切的共同目标，哪里就没有任何一般的道德或规则的容身之地。</li>
+</ul>
+<h3 id="第十一章-真理的终结">第十一章 《真理的终结》</h3>
+<blockquote>
+<h5 id="据他们说在我们的社会里没有真正的思想自由因为群众的意见和爱好是被宣传广告和上层阶级的榜样以及其他必然强使人民的思想循规蹈矩的环境因素塑造而成的从这一点得出的结论是如果大多数人的理想和爱好都一直是由我们能够控制的环境形成的那我们就应当有意识地运用这个力量来把人民的思想转到我们认为是可取的方向上去">据他们说，在我们的社会里没有真正的思想自由，因为群众的意见和爱好是被宣传、广告和上层阶级的榜样以及其他必然强使人民的思想循规蹈矩的环境因素塑造而成的。从这一点得出的结论是：如果大多数人的理想和爱好都一直是由我们能够控制的环境形成的，那我们就应当有意识地运用这个力量来把人民的思想转到我们认为是可取的方向上去。</h5>
+</blockquote>
+<blockquote>
+<h5 id="在任何社会里思想的自由可能只对很少的人才有直接的意义但这并不是说某些人有资格或者有权力选择一批专门享有这种思想自由的人它决不证明某些人有要求决定人民必须想什么或信仰什么的权利的这个假定是正当的">在任何社会里，思想的自由可能只对很少的人才有直接的意义。但这并不是说，某些人有资格或者有权力选择一批专门享有这种思想自由的人。它决不证明，某些人有要求决定人民必须想什么或信仰什么的权利的这个假定是正当的。</h5>
+</blockquote>
+<ul>
+<li>或许说明了，没有谁的思想是该被谁领导和指导的。</li>
+</ul>
+<blockquote>
+<h5 id="使智识自由对知识的进步起主要推动作用的根本之点不在于每个人都可能有能力思考或写点什么而在于任何人对任何事由或意见都可以争论只要异议不受到禁止就始终会有人对支配着他们同时代人的意见有所疑问并且提出新的意见来接受辩论和宣传的考验">使智识自由对知识的进步起主要推动作用的根本之点，不在于每个人都可能有能力思考或写点什么，而在于任何人对任何事由或意见都可以争论。只要异议不受到禁止，就始终会有人对支配着他们同时代人的意见有所疑问，并且提出新的意见来接受辩论和宣传的考验。</h5>
+</blockquote>
+<ul>
+<li>使思想获得生命的，是具有不同知识和不同见解的个人之间的互动。</li>
+</ul>
+<h3 id="第十四章-物质条件与理想目标">第十四章 《物质条件与理想目标》</h3>
+<blockquote>
+<h5 id="为了将来的自由更有保障而暂时牺牲自由这是可以理解的但是要把这些措施作为一种永久性的制度安排提出来那就是另一回事了">为了将来的自由更有保障而暂时牺牲自由，这是可以理解的；但是，要把这些措施作为一种永久性的制度安排提出来，那就是另一回事了。</h5>
+</blockquote>
+<blockquote>
+<h5 id="在物质环境迫使我们要做出某种选择时有决定自己行动的自由以及对依照自己良心安排自己的生活可以自行负责这两者是道德观念能够赖以培育道德价值在个人的自由决定中赖以逐日再造的唯一氛围">在物质环境迫使我们要做出某种选择时有决定自己行动的自由，以及对依照自己良心安排自己的生活可以自行负责，这两者是道德观念能够赖以培育、道德价值在个人的自由决定中赖以逐日再造的唯一氛围</h5>
+</blockquote>
+<ul>
+<li>也就是说行动的自由和对自身行为的自理是塑造道德观念与培养道德价值的事实基理。</li>
+</ul>
+<h3 id="第十五章-国际秩序的展望">第十五章 《国际秩序的展望》</h3>
+<blockquote>
+<h5 id="在任何地方只要没有很大程度的地方自治管理没有对大众和他们的未来领导人提供一所国民教育学校民主就从未顺利运作过只有可以在大多数人所熟悉的事务中学习和完成承担自身的责任的地方只有在是近邻的觉悟而不是某些有关他人的需要的理论知识在指导行动的地方一个普通人才能真正参与公共事务因为他们关心他所了解的世界如果把政治行动范围搞得过大以至于几乎只有官僚机构才能掌握有关这一政治行动的必要知识那么个人的首创性一定会减弱">在任何地方，只要没有很大程度的地方自治管理，没有对大众和他们的未来领导人提供一所国民教育学校，民主就从未顺利运作过。只有可以在大多数人所熟悉的事务中学习和完成承担自身的责任的地方，只有在是近邻的觉悟而不是某些有关他人的需要的理论知识在指导行动的地方，一个普通人才能真正参与公共事务，因为他们关心他所了解的世界。如果把政治行动范围搞得过大，以至于几乎只有官僚机构才能掌握有关这一政治行动的必要知识，那么个人的首创性一定会减弱，</h5>
+</blockquote>
+<blockquote>
+<h5 id="当时更重要的是清除那些因人类的愚蠢而加诸于我们前进道路上的障碍解放个人的创造力而不是设计更多的机构去指引和指导他们也就是说要创造有利于进步的条件而不是去计划进步">当时更重要的是清除那些因人类的愚蠢而加诸于我们前进道路上的障碍，解放个人的创造力，而不是设计更多的机构去“指引”和“指导”他们——也就是说，要创造有利于进步的条件，而不是去“计划进步”。</h5>
+</blockquote>
+<ul>
+<li>如何引领个体参与到建设公共事务当中？政府要做的是为进步铺设道路，而不是取计划进步本身如何发展。</li>
+</ul>
+<hr>
+<p>至于书籍的具体内容和行文的思维脉络，就不在这篇blog中概括了，可以参考这位读者的<a href="https://book.douban.com/annotation/17542907/">读书笔记</a>，写的客观公正的同时又鞭辟入里。</p>
+<hr>
+<h2 id="opinions">Opinions</h2>
+<p>无论如何，与其说这是一本以经济学为基底的自由主义思想教义，倒不如说它生来就是用来解构、抨击、批判社会主义的檄文。它高声呼唤着社会主义必然会走向极权主义，而社会中的人民必然走向奴役的结局。</p>
+<p>先不谈读下来后我对书整体的看法与对哈耶克思想的评价，我发现了一个有趣的现象，在<a href="https://m.douban.com/subject_collection/EC7Y43HNY">豆瓣热门经济学图书排行榜</a>中，这本书高居第三名，而在其前后将这本书夹在中间的，是亚当斯密的《国富论》和马克斯的《资本论》，而更有趣的是，豆瓣显示有16000多人读过了《通往奴役之路》这本书，而读过资本论的人数还不足这个数字的三分之一甚至是四分之一。</p>
+<p>对于这一现象可以有以下解读：一是豆瓣本来就是国内比较典型的左派互联网社区，无论是书籍的评论区包括影视剧的小组讨论中，都充满了“自由”的气息。所以读过这两本书的实际人数在现实社会（尤其是在我们国家中）的比例肯定并不是这样悬殊的，但是至于能否把这样的比例完全扭转过来也同样是一件不能确定的事情。在刚刚经历的压抑又幽暗的漫长三年中，可能有无数人都对现实的魔幻产生了新的思考：我生活在怎样一片土地之下？从对于Covid下的行政管理方式的质疑映射到对于我们与西方世界的社会制度的差异的好奇。在这样的时间节点下，这本哈耶克于1944年写下的著作进入了人们的视野也就不难理解了。</p>
+<p>毫无疑问，哈耶克这部作品的前瞻性和预示性是被轰鸣碾过的时间列车所证实的。就像我在上一节中的部分views中写到的，确实，哈耶克描绘的许多概念和假说可以让我很自然而然，甚至不需添油加醋地作任何抽象的理解与联想就可以连接到现实社会中的许多事件与现象。但是，我还是不会对我生活的国家所采取和执行的社会制度去做这样那样的评价。毕竟，这本书算是我正经而认真读完的第一部关于思想、关于社会制度的Non-fiction。在这方面，我的知识储备非常有限，最开始我甚至分不清什么是政治生活中的左与右。</p>
+<p>我私以为，一个有独立思考能力的人，是不会因为读完某一本书，就会完成一场自下而上的思想革命而皈依哪一主义派别的土地的。也正因为如此，接下来，我会找来与之对立的新的观点去了解，首选可能就是马克思的《资本论》，去了解在他的框架下计划经济是如何运作的，而资本又为何“来到世间，从头到脚，都流着血和肮脏的东西”。到那时我可能才会真的去输出一些我对于两种制度之比较的见解与看法。</p>
+<p><strong>所以这本书之于我的意义在于：在我的智识体系中构建一片全新的领域，用以对抗某些单一的声音与过度的宣传并作为引发我对现实进行批判性思考的理据。</strong></p>
+<p>毕竟，对这两种思想本身而言，在我生活的这片土地之上，我能接触到的关于二者的思想和信息的源头在数量方面是有巨大差距的。不论我想了解与否，在这22年的生活中，不管是在义务教育还是高等教育中，不管是我走在城市熙熙攘攘的步行街还是穿行在阡陌纵横的村落里，不论是主流官媒的溜须拍马还是家人朋友的觥筹交错间，我都能接受到一致且清晰的主旋律，且最近几年尤甚。而随着我辩证思维的成长和出现的一些发人深省的动荡事件和异见之声不绝于耳，我对于主旋律背后的暗面有着基于智识构建上的渴望。</p>
+<hr>
+<h2 id="epilogue">Epilogue</h2>
+<p>这篇blog无关乎政治，《通往奴役之路》这本书，哈耶克的漫谈让我获得了类似遗世而独立的短暂的人间清醒。</p>
+<p>以上。</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://book.douban.com/subject/1077528/discussion/15106911/">关于殷海光版与社科版的简单比较</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Trips|Inner Mongolia 6.10-6.15</title>
+			<link>https://hicole.me/en/posts/tripsinner-mongolia-6.10-6.15/</link>
+			<pubDate>Thu, 22 Jun 2023 10:40:43 +0800</pubDate>
+			
+			<guid>https://hicole.me/en/posts/tripsinner-mongolia-6.10-6.15/</guid>
+			<description><![CDATA[]]></description>
+			<content type="html"><![CDATA[<h2 id="intro">Intro</h2>
+<p>遥想上次和朋友结伴出行还是刚高考完的时候，去到了美丽的山城重庆。如今，四年的大学生活也临近尾声，四年间大家虽曾有无数个idea，诸如：拿到license后自驾去拉萨、带上各自的家属来一次浪漫的6人行…但因为一系列原因（包括新冠疫情的影响）都没能付诸以实践。</p>
+<p>毕业季大家都非常忙，但时间就像海绵里的水，只可惜挤出来的水实在有限。时间原因，这次旅行的目的地就选在了北京周边，遂无奈排除了莫高窟、抚仙湖这些令我心驰神往多时的地点。老实说，现在出去玩，不太愿意去一二线城市中走马观花，相比寻踪美食、走街串巷，我还是更向往被自然和天地怀抱，于是成都、厦门也被我严词拒绝，哈哈哈哈哈。</p>
+<p>本来我是想夜爬泰山的，两位朋友9月份就即将乘上飞机踏上异国的土地，怎能不在这之前领略一下祖国三山五岳的壮美风光呢？在泰山顶上裹着军大衣欣赏一轮完整的日出，是齐鲁大地上独有的浪漫。在行车驶出泰安之后，再给最近火遍全网的淄博留上一日的时间，胡吃海塞后，驱车驶向海岸线：烟台、日照、威海，选一个城市驻足一两日，感受一下海边小城的文娱生活想必也是相当惬意的。</p>
+<p>嗯，想到这里，我还是匪夷所思他们到底是用什么借口把我如此完美的idea给pass掉的：</p>
+<blockquote>
+<p>“我还是不想去山东”</p>
+<p>“嗯，那就换，出去玩儿肯定去一个大家都想去的地方”</p>
+<p>“真的不考虑内蒙吗，火山草原沙漠啥都有”</p>
+<p>“也不是不行”</p>
+</blockquote>
+<p>嗯，于是内蒙之行开始了。</p>
+<h2 id="610-北京--呼和浩特">6.10 北京 → 呼和浩特</h2>
+<ul>
+<li>夜宿火车 K89 22:17 - 07:41 全程耗时：9时24分</li>
+</ul>
+<p>说起来这还是人生中第一次体验传统绿皮火车上的软卧车厢，考虑到同行四人，刚好能独占软卧的四人间，于是价格贵了点也无所谓，图个新鲜的尝试也方便舒服，后来对比了解到实际软卧的价格是要比高铁还贵上十来块钱的。</p>
+<p>这趟列车于十号晚上出发，晃晃悠悠了近十个小时，早上不到八点便抵达了呼和浩特站，这得以让我们留出了完整的一天时间来计划第一天的行程，这种方案（利用夜间乘卧铺出行）倒是以前完全没有考虑过的，体验还算不错。就是绿皮车穿山跨水的旅途中着实信号不太好，头天晚上十一点多因为实在连接不到任何一丝丝网络便作罢早早入眠了。第二天醒来时体感上觉得睡的不错，但是查看Apple Watch的睡眠信息发现是空…不知道是不是太颠簸的缘故导致未能正常检测到睡眠的状态。</p>
+<p><a href="https://zh.wikipedia.org/wiki/%E5%91%BC%E5%92%8C%E6%B5%A9%E7%89%B9%E5%B8%82">呼和浩特</a>是蒙古语音译，意为“青色的城”，到呼市的第一观感就是：随处可见的蒙文与湛蓝色的天空。</p>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/DSC04037.JPG?raw=true"alt="image"/><figcaption><p>呼和浩特站</p></figcaption></figure>
+<p>租车方面我们选择了雪佛兰沃兰德，随着朋友从租车行提来了座驾，这趟旅程便正式开始啦！</p>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/IMG_0330.JPG?raw=true"alt="image"/><figcaption><p>第一次自驾！</p></figcaption></figure>
+<h2 id="611-呼和浩特--达拉特旗">6.11 呼和浩特 → 达拉特旗</h2>
+<ul>
+<li>沙漠：响沙湾</li>
+</ul>
+<p>响沙湾总的来说算是一个开发的比较完善的旅游景区，分为两座沙岛，由于时间原因，我们只玩了其中更具人气的仙沙岛，买一张联票，岛上的娱乐设施以及往返沙岛的索道、摆渡船车就都包括在内了，比较省心也足够玩了。</p>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/a4969fe7fa0f8df9d84ebd9bb5a7b8a2.jpg?raw=true"alt="image"/><figcaption><p>仙沙岛</p></figcaption></figure>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/DSC04262.JPG?raw=true"alt="image"/><figcaption><p>沙漠中的绿·灰·黄</p></figcaption></figure>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/DSC04254.JPG?raw=true"alt="image"/><figcaption><p>沙漠大摆锤</p></figcaption></figure>
+<p>除了尝试各种游乐设施外，找一处坡度适中又没什么人经过的沙丘，配上天上一两朵忽明忽暗的云，随意摆上几个pose，嗯，相当出片儿。</p>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/DSC04281.JPG?raw=true"alt="image"/><figcaption><p>云</p></figcaption></figure>
+<h2 id="612-达拉特旗--希拉穆仁">6.12 达拉特旗 → 希拉穆仁</h2>
+<ul>
+<li>草原：希拉穆仁草原</li>
+</ul>
+<p>说到内蒙的草原，无疑首选的是呼伦贝尔大草原，因为草种不一样，那里的草长得既丰也高，六月中下旬时节草色也已渐绿。但无奈美丽的内蒙古幅员辽阔，很难一次走完，这次我们选择的是蒙西的路线，去到呼伦贝尔则是内蒙东部的另一条自驾环线：海拉尔，呼伦湖，大兴安岭。</p>
+<p>其实，蒙西可选的草原也非常多，锡林郭勒、敕勒川、以及我们去到的希拉穆仁，但这边的草原普遍这个时候还不算绿，大地的土黄之上点缀着些许草青，仅此而已。不过也有人说锡林郭勒的草要更好一些，这点在我们这趟旅程中就无从考证了。</p>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/DSC04366.JPG?raw=true"alt="image"/><figcaption><p>马车</p></figcaption></figure>
+<p>这个季节的希拉穆仁草原鲜有游客踏足，朝四面八方延伸的石板路与柏油干道交织成网，道路上驶过的私人车辆也只是三三两两，更多还是用铁笼装载着小羊羔的箱式小货。</p>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/DSC04459.JPG?raw=true"alt="image"/><figcaption><p>无人公路</p></figcaption></figure>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/IMG_4986.JPG?raw=true"alt="image"/><figcaption><p>Gangster草原限定版</p></figcaption></figure>
+<p>值得一提的是<a href="http://www.slmjjq.com/">“丝路梦郡”</a>，它是希拉穆仁草原上一个综合娱乐中心，我们刚好赶上了它试营业期间，门票抖音上团购只需要9.9元，嗯没错，进景区时有专人接待，还有小姐姐陪同游览讲解。</p>
+<p>园区里景色很棒，广阔草场上的灰白色砖瓦建筑上都被绑满了蓝色的风马旗，成片成片的随风飘荡、自由跳动的克莱因蓝，联结着草原人民心中的情愫，美不胜收。</p>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/IMG_0398.JPG?raw=true"alt="image"/><figcaption><p>丝路梦郡</p></figcaption></figure>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/IMG_0414.JPG?raw=true"alt="image"/><figcaption><p>希拉穆仁的草</p></figcaption></figure>
+<p>即然来到了草原，一场能够用目光穷尽地平线的日落一定不能错过，把车斜停在路边，下车支好相机拍上一段延时摄影，与此同时，用身体的全部感官捕捉天空、云朵、太阳、空气、光影在每一秒的变化与不同。极目远眺，将天地间的颜色尽收眼底，这时，摇下的车窗内，车载音响的喇叭中播放的那首“日落大道”也正巧进行至高潮的段落：</p>
+<blockquote>
+<p>我们奔跑着在这条路的中间</p>
+<p>我们哭泣着在这条路的两端</p>
+<p>每当黄昏阳光把所有都渲染</p>
+<p>我看到夜的黑暗</p>
+</blockquote>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/IMG_1383.jpeg?raw=true"alt="image"/><figcaption><p>日落大道</p></figcaption></figure>
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/sgxRcoqvNdA?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<p>说起草原上的住宿，自然要体验一晚夜宿蒙古包，同行的两位朋友因为其中有一位女性的缘故选择了带独立卫浴和一米八大床的房型，我和另一位朋友坚持认为：来都来了！（划重点，后面要考）必须住的纯粹，套壳的酒店标间没意思，于是我们选择了一个8人大包，内置超大土炕，门锁就是一根儿被扭的弯弯曲曲的铁丝，室内还高悬着一颗电灯泡以提供微弱的光源，当然也理所应当的只收了我们84块钱，要的就是原汁原味！</p>
+<p>不过体验归体验，蒙古包内的卫生条件实在堪忧，炕上的八床被褥都有一股不可名状的气味，水龙头里的水含进嘴里是一种非常饱满的沙粒感，嗯对，就是感觉吃了一嘴沙子。于是在看完篝火晚会后，我们俩决定先回车里休息，开着暖风舒服会儿，真要睡觉了再回包里。</p>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/DSC04547.JPG?raw=true"alt="image"/><figcaption><p>篝火晚会</p></figcaption></figure>
+<p>晚些时候，从车里摇开天窗，草原的夜静谧而深邃，抬头仰望即是漫天星河，远离光污染，用iPhone的夜间成像也能拍出星空的大致模样。那天刚好是我22岁生日的前夕，在车里赶在12点前剪好了早些时候拍摄的日落，整点时分发了条朋友圈，配上了王小波在《黄金时代》中的名句：</p>
+<blockquote>
+<p>我想爱，想吃，还想在一瞬间变成天上半明半暗的云。</p>
+</blockquote>
+<p>嗯，生日碰上旅途，人就难免变得矫情，看着身边早已熟睡的朋友，我跳出车，打开手机里的Star Walk 2，对着四周，从原野划过穹顶，贪婪地想要识别每一颗星星和每一片星座。耳边只是无垠的静，什么声音都没有，只剩时空里的我，以及星空下的希拉穆仁。</p>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/IMG_2899.JPG?raw=true"alt="image"/><figcaption><p>草原的星空</p></figcaption></figure>
+<h2 id="613-希拉穆仁--乌兰察布--呼和浩特">6.13 希拉穆仁 → 乌兰察布 → 呼和浩特</h2>
+<ul>
+<li>火山：乌兰哈达火山地质公园</li>
+</ul>
+<p>虽然暂时没有办法去夏威夷看<a href="https://zh.wikipedia.org/zh-hans/%E5%9F%BA%E6%8B%89%E9%9F%8B%E5%8E%84%E7%81%AB%E5%B1%B1">基拉韦厄火山</a>，但是乌兰哈达毕竟也是上过《中国国家地理》杂志封面的火山群，30余座大小不一的火山洒落在草原各处，串联分布在200多平方公里的火山带上，蔚为壮观。</p>
+<p>整个火山群被命名归类的有大大小小八座火山，时间原因，我们去到的是4号、6号和7号火山。</p>
+<p>其中4号火山是我们最先到达的，“乌兰哈达地质公园”的牌子就立在了半山腰的位置。整个火山并不是一个完整的山体，翻过第一座山头呈现在眼前的是一个裸露的深黑色剖面，看起来是层次分布鲜明的火山内部。</p>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/DSC04663.JPG?raw=true"alt="image"/><figcaption><p>火山周围</p></figcaption></figure>
+<p>6号火山是其中最具有一个火山该有的样子的一座，除了没有任何喷发的可能，基本符合我对于火山的一切想象。烈日照耀下勾勒出的暗黑阴影让火山的沟壑与棱角更加分明且神秘，至于火山所呈现的那种颜色我不知道如何去定义，它是一种由红色、黑色、褐色和青灰色调和成的火山色。不过，这座火山是经过深度开发的，山上提供宇航服租赁与拍照，山下有网红打卡拍照的红色电话亭。</p>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/DSC04706.JPG?raw=true"alt="image"/><figcaption><p>6号火山</p></figcaption></figure>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/DSC04695.JPG?raw=true"alt="image"/><figcaption><p>UFO</p></figcaption></figure>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/DSC04691.JPG?raw=true"alt="image"/><figcaption><p>宇航员</p></figcaption></figure>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/DSC04750.JPG?raw=true"alt="image"/><figcaption><p>阵法大师</p></figcaption></figure>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/DSC04698.JPG?raw=true"alt="image"/><figcaption><p>火山拉力赛</p></figcaption></figure>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/DSC04758.JPG?raw=true"alt="image"/><figcaption><p>爱心山</p></figcaption></figure>
+<p>最后来到的是7号火山，它跟先前的两座火山不同，黑色的山体被葱绿色的植被和五颜六色的小石块所覆盖。传说，在这些密密麻麻分布的小石块中藏着真正的玛瑙，也难怪火山上人不多，但几乎都呈弯腰的姿势，低着头，手里提着袋子，里面收纳着各自心怀鬼胎相中的小石块。</p>
+<p>我当然也是其中之一，将几块石头不远千里带回了北京。</p>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/DSC04846.JPG?raw=true"alt="image"/><figcaption><p>7号火山</p></figcaption></figure>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/DSC04897.JPG?raw=true"alt="image"/><figcaption><p>捡玛瑙</p></figcaption></figure>
+<h2 id="614-呼和浩特市内">6.14 呼和浩特市内</h2>
+<ul>
+<li>内蒙古博物院、大召寺、塞上老街</li>
+</ul>
+<p>由于前三天的行程多少有点儿特种兵的意思，睡得晚起得早，白天往返于各个景点之间还要开上两三百公里的车，四个人都颇受舟车劳顿之苦，索性最后一天就将行程安排在了呼和浩特市内，上午逛一逛内蒙古博物院，下午走一走大召无量寺，感受一下内蒙大地上的人文气息。</p>
+<h2 id="615-呼和浩特--北京">6.15 呼和浩特 → 北京</h2>
+<ul>
+<li>上午Outlets逛街购物，下午乘G2474次高铁返京。</li>
+</ul>
+<p><strong>至此，内蒙作为毕业旅行的第一站，完结撒花 🎉！</strong></p>
+<hr>
+<h2 id="一些其他感受">一些其他感受</h2>
+<h3 id="1-hoka">1. HOKA</h3>
+<p>考虑到这趟内蒙之行结束后，七月又要启程前往新疆进行为期17天的北疆环游，亟需一双舒服好穿且能适应多场景的徒步鞋，于是便在资金窘迫的阶段内还是咬咬牙购入了这双HOKA KAHA 2 LOW GTX。</p>
+<p>五天的旅程走下来，综合来看，这双鞋反馈给我的体验感还是非常不错的，无论脚下是流沙飞漾、湿草漉漉又或是嶙峋的火山怪石，Vibram橡胶大底提供的安全感拉满，全身小牛皮和Gore-Tex内靴让这双鞋打理起来也非常容易，用蘸水布或是湿纸巾擦拭鞋面即可。总的来说，是一双徒步好鞋！但是毕竟鞋身不透气，城市通勤我还是会选择HOKA slipper，哈哈哈哈哈。</p>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/IMG_2397.JPEG?raw=true"alt="image"/><figcaption><p>四天前-四天后</p></figcaption></figure>
+<h3 id="2-公路旅行">2. 公路旅行</h3>
+<p>说起来，这是我第一次在旅行目的地选择租车自驾的方式。蒙西路线以呼和浩特为中心，其他旅游景点向外辐射扩散开来，各个destination之间，少说也有个一二百公里的车程，尤其是前三天，每天都有多一半的时间是在路上，导致这趟旅程倒是颇有点儿公路旅行的味道。</p>
+<p>私以为，公路旅行有三大要素，除了路途中的状况百出、车窗外高速闪烁而过的风景，非常重要的一个组成元素就是车内播放的音乐。这一趟我们几乎把每个人的歌单都听了个遍，从周杰伦到林子祥，从blackpink到coldplay，每个人都唱了一路，欢乐不断。</p>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/DSC04068.JPG?raw=true"alt="image"/><figcaption><p>闪烁而过的风景</p></figcaption></figure>
+<p>说实话，不知什么原因，内蒙各地都有出现大片大片的修路状况，尤其是一部分国道和省道，甚至不如县道好开，自驾路况比较糟糕。很多主干道都不让通行，道路指示牌不断指引你从旁侧用推土机碾出的起伏不平的土路上绕行，砂石非常多，我们选择的算是一款城市SUV，底盘非常低，经常要冒着托底的风险前行，甚至期间还有数次我们停下车来，人工去前面勘探地形，徒手把车前的障碍扫清。如此小心翼翼，还是不知什么时候一颗飞溅的小石子儿带着一股子寸劲儿把车前挡风玻璃划了一道十多厘米的口子，遂好在最后一天还车时经过一番与修车行的友好礼貌的沟通（讨价还价），从最初的1100元讲到最后600元私了，嗯，辩论人的又一次精神胜利！</p>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/IMG_2005.jpg?raw=true"alt="image"/><figcaption><p>意外状况</p></figcaption></figure>
+<h3 id="3-来都来了">3. 来都来了</h3>
+<p>不知从哪趟旅程开始，“来都来了”这四个字成为了我们三人旅行中心照不宣的最终奥义。尽管这趟旅行加入了新成员，但不管在何时何地何种场景，只要有人铿锵有力掷地有声地喊出这句话，大家都会瞬间注满活力，迈开沉重的脚步，向下一个地点进发。</p>
+<blockquote>
+<p>犹豫骑不骑骆驼，来都来了！</p>
+<p>犹豫住不住蒙古包，来都来了！</p>
+<p>犹豫去不去下个景点，来都来了！</p>
+</blockquote>
+<p>嗯，所有选择困难症、畏惧心理、享乐主义，消极情绪，“来都来了”就像一剂panacea，包治百病。</p>
+<h3 id="4-美食">4. 美食</h3>
+<p>来到内蒙古，吃肯定离不开牛羊肉，喝肯定离不开咸奶茶。总的来说，吃的还算不错，毕竟我们挑的都是人均百元附近的馆子，味道自然不会差。但是主食还是以各种饼和面食为主，对于我们米饭星人来，最后一天实在忍不住找了一家兰州牛肉拉面，点了一盘土豆牛肉盖饭大炫特炫，嗯，crazy！</p>
+
+<figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog7/IMG_0295.JPG?raw=true"alt="image"/><figcaption><p>泽成冰煮羊</p></figcaption></figure>
+<p>有趣的是，这几天饭桌上离不开的明星产品竟然是沙葱。</p>
+<p><a href="https://zh.wikipedia.org/wiki/%E8%92%99%E5%8F%A4%E9%9F%AD">沙葱</a>，也称蒙古韭，是葱科葱属的植物。分布在蒙古以及中国的青海、新疆、宁夏、陕西、甘肃、内蒙古、辽宁等地，生长于海拔800米至2,800米的地区，多生长在砂地、荒漠和干旱山坡，目前已由人工引种栽培。</p>
+<p>沙葱炒鸡蛋，沙葱炒土豆，反正就是，沙葱炒一切。好吃到我们甚至萌生了从内蒙进沙葱到北京卖的idea，真的不要太荒谬。</p>
+<p>这几天吃过的正经饭按时间排序如下表所示：</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">地点</th>
+          <th style="text-align: center">餐厅</th>
+          <th style="text-align: center">主观评分</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">呼和浩特</td>
+          <td style="text-align: center">老绥元烧麦</td>
+          <td style="text-align: center">3.5</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">达拉特旗</td>
+          <td style="text-align: center">蒙古大营</td>
+          <td style="text-align: center">2</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">希拉穆仁</td>
+          <td style="text-align: center">丝路梦郡餐厅</td>
+          <td style="text-align: center">4</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">呼和浩特</td>
+          <td style="text-align: center">泽成冰煮羊</td>
+          <td style="text-align: center">5</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">呼和浩特</td>
+          <td style="text-align: center">格日勒阿玛</td>
+          <td style="text-align: center">4.5</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<p>拍摄设备（排名不分先后）：</p>
+<ol>
+<li>SONY α6000 + 18-50mm</li>
+<li>DJI Osmo Pocket</li>
+<li>iPhone13 Pro</li>
+</ol>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Acknowledgement</title>
+			<link>https://hicole.me/en/posts/acknowledgement/</link>
+			<pubDate>Tue, 23 May 2023 11:32:10 +0800</pubDate>
+			
+			<guid>https://hicole.me/en/posts/acknowledgement/</guid>
+			<description><![CDATA[On my Graduation Thesis]]></description>
+			<content type="html"><![CDATA[<p>我是一个时常联想不同时空的人，想回不到的从前，想遥远的将来，但我似乎从没有在哪一次深夜或是某一次发呆时畅想过我会如何写这段将会出现在毕业论文最后的致谢。</p>
+<p>老实讲，毕业意味着什么我说不清，我也不知道毕业那天会发生什么，多少人会哭，多少人会笑，多少人会骂骂咧咧，多少人会不回头。但我想，多年后，提起大学生活，我所怀念的不会是作为符号存在的“河北科技大学”，而是翻阅过的每一封书卷，是伙伴们的挑灯夜话，是牧星湖畔的风，是图书馆两侧的石阶路，是不断的自我怀疑与反思，是一次次挑战，是与他人跳动的联结，也是爱。</p>
+<p>当然，闪烁其间的一定还有教育的自由，借用一下David Foster Wallace在毕业致辞中的一段话<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>：“To be just a little less arrogant. To have just a little critical awareness about myself and my certainties. Because a huge percentage of the stuff that I tend to be automatically certain of is, it turns out, totally wrong and deluded. I have learned this the hard way, as I predict you graduates will, too.”</p>
+<p>微雨过，小荷翻。榴花开欲然。<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p>感谢院和校辩论队，穷则为薪，火传也，不知其尽也。</p>
+<p>感谢每一位任课教师，师恩如海，唯有勤学以谢之。</p>
+<p>感谢家人，永远陪伴、包容、支持我的漫无目的。</p>
+<p>感谢自己，时常居于幽暗不忘真诚和努力。</p>
+<p>感谢互联网，容纳我有限的生命与无限的浅尝辄止。</p>
+<p>我想感谢风，想感谢云，我想感谢的太多了，我没有不想感谢的，因为，缺乏任何一个瞬间、任何一次经历，我都无法是现在这个鲜活的生命体。</p>
+<p>世界仍在下沉，四年时间，在人生的黄金时代，我学会了如何看见人与生活本身。</p>
+<p>以上。</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>From <a href="https://fs.blog/david-foster-wallace-this-is-water/">This is Water by David Foster Wallace (Full Transcript and Audio)</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>From <a href="https://zh.wikisource.org/zh-hans/%E9%98%AE%E9%83%8E%E6%AD%B8%EF%BC%88%E5%88%9D%E5%A4%8F%EF%BC%89">阮郎归·初夏</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+]]></content>
+		</item>
+		
+		<item>
+			<title>My English Reading Flow —— Collection</title>
+			<link>https://hicole.me/en/posts/my-english-reading-flow--collection/</link>
+			<pubDate>Thu, 13 Apr 2023 09:58:24 +0800</pubDate>
+			
+			<guid>https://hicole.me/en/posts/my-english-reading-flow--collection/</guid>
+			<description><![CDATA[The third in a series]]></description>
+			<content type="html"><![CDATA[<p>这是My Reading Flow （For English Source）系列博客的第三篇</p>
+<p>讲完了如何阅读，下面来聊聊整条flow的最后一个环节，<strong>Collection</strong> — 对读过的文章进行收录。其实在第二部分Read中，我当时就谈及了一些关于收录的事情。</p>
+<p>但是必须要说的是，Collection<strong>并不是</strong>一个阅读流中必不可少的环节。像有很多朋友觉得这些不过是伪需求，疲于形式。但就像我在之前的Q&amp;A中谈到的一点我的理解（很主观）：纵使你真的不会再想起这些你收录的内容（当然，你有很大的可能会有用得到它们的时候，它相当于为你读过的信息加上索引，方便你回顾、引用，这是它的<strong>实际意义</strong>），收录行为也会为你的阅读带来完整性，完整性又带来仪式感，这些都潜移默化地强化着你的阅读体验，帮助你日复一日养成阅读的习惯，明晰阅读的意义（算是种<strong>精神意义</strong>吧）。</p>
+<p>而特别对于像我本人这种有点<a href="https://zh.wikipedia.org/zh-tw/%E8%97%8F%E4%B9%A6%E7%99%96">收藏癖</a>的情况，看着被填得满满当当的database，真的很爽啊拜托！</p>
+<p>在明确了Collection并不是一项可有可无的工作后，来聊聊我是怎样做收录的。</p>
+<p>对于前文谈到的两种不同的阅读模式，我分别在<strong>Notion</strong>中建了两个不同的<strong>Database</strong>来实现信息的收录。大名鼎鼎的<a href="https://www.notion.so/product?fredir=1">Notion</a>自然不必多介绍，它特有的database功能很适合完成这项工作：选择为数据库添加不同种类的view可以清晰地展示信息，利用好Filter和Sort两种工具可以帮助我很好的完成对信息的检索和二次利用。</p>
+<p>当设计并部署好适合自己阅读的数据库后，这其实算是件<strong>一劳永逸</strong>的事情，你后期需要做的只是把文章填加进来就好。</p>
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/O8qdvSxDYNY?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<h2 id="database1--for-reading-type1">Database1  (For Reading Type1)</h2>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog5/01.png"alt="image"/><figcaption><p>Database1 TableView</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog5/02.png"alt="image"/><figcaption><p>Database1 BoardView</p></figcaption></figure>
+<p>如图所示，在Database 1 &ldquo;Jornal List&rdquo; 中，我作了如下设计：</p>
+<ul>
+<li><em>Property</em>
+<ol>
+<li><em>Title：文章标题</em></li>
+<li><em>From：文章出处</em></li>
+<li><em>Date：开始阅读的日期</em></li>
+<li><em>Category：文章分类</em></li>
+<li><em>Words：link单词汇总的pdf文件（由Eudic的生词本自动生成）</em></li>
+</ol>
+</li>
+</ul>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog5/03.png"alt="image"/><figcaption><p>Words PDF</p></figcaption></figure>
+<ul>
+<li><em>View</em>
+<ol>
+<li><em>Table</em>
+<ul>
+<li><em>Sort by Date</em></li>
+<li><em>Filter by Category &amp; From</em></li>
+</ul>
+</li>
+<li><em>Board</em>
+<ul>
+<li><em>Group by Category</em></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="一些说明">一些说明</h3>
+<p>总的来说，Database1设计的比较简单，仅保留了一些便于Filter和Sort的Properties。其中Category Board可以将自己阅读涉猎的领域作简单可视化，看看自己对哪些领域比较感兴趣，又对哪些方面的信息比较抗拒。</p>
+<p>而阅读中对于语料的积累，都以pdf文件的方式将文章本体存档在对应文件夹内：</p>
+<ul>
+<li><em>标注过的文章本体，裁切后以统一格式命名（收录在文件夹：外刊精读）</em></li>
+</ul>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog5/04.png"alt="image"/><figcaption><p>对文章本体的收录</p></figcaption></figure>
+<ul>
+<li><em>生词（收录在文件夹：生词本）</em></li>
+</ul>
+<h2 id="database2--for-reading-type2">Database2  (For Reading Type2)</h2>
+<p>如图所示，在Database 2 &ldquo;Reading List&rdquo; 中，我作了如下设计：</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog5/05.png"alt="image"/><figcaption><p>Database2 TableView 01</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog5/06.png"alt="image"/><figcaption><p>Database2 TableView 02</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog5/07.png"alt="image"/><figcaption><p>Database2 Gallery for Articles</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog5/08.png"alt="image"/><figcaption><p>Database2 Gallery for News</p></figcaption></figure>
+<ul>
+<li>
+<p><em>Property</em></p>
+<ol>
+<li><em>Type：文章类型（Articles、News、Film&amp;TV）</em></li>
+<li><em>Title：文章标题</em></li>
+<li><em>Status：阅读状态（按时态分为三种）</em></li>
+<li><em>Score/5：评价打分</em></li>
+<li><em>Author：作者</em></li>
+<li><em>Publisher：出版社</em></li>
+<li><em>Publishing/Release Date：发行日期</em></li>
+<li><em>Link：链接</em></li>
+<li><em>Summary：文章内容总结（一般是直接摘抄文章的Subtitle）</em></li>
+</ol>
+</li>
+<li>
+<p><em>View</em></p>
+<ol>
+<li><em>Table for All</em></li>
+<li><em>Gallery for Articles</em></li>
+<li><em>Gallery for News</em></li>
+<li><em>Gallery for Film&amp;TV</em></li>
+</ol>
+<blockquote>
+<p>三种Gallery分别对应上面三种Type</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="一些说明-1">一些说明</h3>
+<p>特别要强调的是，因为我也会阅读很多<strong>中文信息</strong>，所以本质上Reading List是我阅读<strong>各类信息</strong>的收录库，并不局限于英文信息。</p>
+<p>可以看到，区别database 1，我对Property作了比较细致的划分，并增加了一些<strong>新的元素</strong>，像是比较主观的Score（对于不同的文章类型适用不同的打分标准）；考虑到有的文章（像是某篇Essay或是项目的Document）不能一天读完，我引入了Status这一概念，由Ready to Start、Reading、Finished三个选项组成；还有像是Summary，它可以加速我完成对于信息的索引构建。</p>
+<p>另外对于这一类阅读，将文章收录进数据库时，我还会将阅读时的一些摘录（在第二节的Type 2中讲到，由Paste实现）也一并誊抄进来，用quote block，并且用简短的一个或几个单词总结一下这段文字是在讲什么，像是这样：</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog5/09.png"alt="image"/><figcaption><p>Outlook</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog5/10.png"alt="image"/><figcaption><p>Excerpt</p></figcaption></figure>
+<p>相信我，搭配Gallery View可以将你的Collection打造得<strong>井然有序且质感十足</strong>。</p>
+<h2 id="小结">小结</h2>
+<p>其实很多阅读工具中都自带一些类似的收录功能，像是Apple News+中的Saved Story和Hisroty、Reeder中的Star和Add to Read Later，甚至是Chrome中的Bookmark，Mail中的Flag。但是我还是更喜欢将不同平台，不同种类篇幅的信息作统一的收录，像是我在Notion的database中做的这样，毕竟术业有专攻嘛。</p>
+<h1 id="完结撒花">完结撒花～🎉</h1>
+]]></content>
+		</item>
+		
+		<item>
+			<title>My English Reading Flow —— Read</title>
+			<link>https://hicole.me/en/posts/my-english-reading-flow--read/</link>
+			<pubDate>Sun, 09 Apr 2023 21:37:52 +0800</pubDate>
+			
+			<guid>https://hicole.me/en/posts/my-english-reading-flow--read/</guid>
+			<description><![CDATA[The second in a series]]></description>
+			<content type="html"><![CDATA[<p>这是My Reading Flow （For English Source）系列博客的第二篇</p>
+<p>在上一节中讲完了有关如何获取信息，下面我们回到阅读本身。我大致将我的阅读分为两种，不过思来想去，还是觉得不能直接划分为精读和粗读这样泾渭分明的简单定义，因为其实我读的都挺认真的。可能从阅读的目的或者说是侧重点来讲会更好，第一种阅读是偏向于语料的积累和提高语言的赏析能力，另一种则是以信息的获取为首要目的的阅读。</p>
+<h2 id="type-1">Type 1</h2>
+<blockquote>
+<p>工具：PDF Expert + Eudic</p>
+</blockquote>
+<p>在这一类阅读中，材料通常是从各大报刊杂志中挑选出的某一篇文章，从体裁上看，news较少，一般是<strong>比较感兴趣的领域的Article</strong>，文章篇幅较长。首先在当期issue的PDF文件中剪切出文章篇幅所在的那几页另存为一个新的PDF文件，以「 精读外刊 序号 + 文章标题 」的方式命名，然后在<a href="https://pdfexpert.com/">PDF Expert</a>中打开，<strong>iPad分屏，左三分之二屏幕是文章，右三分之一是Eudic词典</strong>，然后就可以开始阅读啦。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog4/01.jpeg"alt="image"/><figcaption><p>如何阅读 01</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog4/02.jpeg"alt="image"/><figcaption><p>如何阅读 02</p></figcaption></figure>
+<p>在阅读的过程中，我会对各种词汇句子作<strong>勾画标注和归类区分</strong>:</p>
+<ul>
+<li><em>比如对于词汇来说，用<strong>highlight工具</strong>标注，黄色代表生词，绿色代表动词短语，蓝色代表专有名词，橘色代表熟词僻义，等等。</em></li>
+<li><em>对于句子来说，用<strong>underline工具</strong>标注，红色代表这个句子是长难句（我读起来非常费劲），蓝色代表它是带给我思考的句子，橙色则是写的很美的句子，等等。</em></li>
+</ul>
+<p>这一套标注的流程在我的悉心调教以及软件功能加持下的运转是非常流畅高效的。PDF Expert的普通版就足够使用，完全不必要付费，我曾经尝试过很多款pdf工具，Expert是最令我满意的，page view、bookmark 以及各种标注工具都兼具颜值和效率；而<a href="https://www.eudic.net/v4/en/app/eudic">Eudic</a>能将你查词的<strong>操作成本和频次降至最低</strong>。以一个生词为例，pencil选中，copy然后屏幕右侧的词典中就会自动为你查找该单词（如果你复制的是句子也可以即时翻译），然后点右上角五角星根据你的设计将该单词收录进<strong>Eudic生词本</strong>的对应类别。</p>
+<p>值得一提的是，Eudic一定要搭配<a href="https://zhuanlan.zhihu.com/p/115242261"><strong>外部词典</strong></a>导入使用，我选的是一本朗文和一本柯林斯，很多时候读单词的<strong>英英解释</strong>更有利于你理解单词的真正意思和在此语境下的用法，也记得更牢。另外，对于每篇文章新认识的单词（此时应该已经列在生词本中），我都会加入到像是<strong>墨墨背单词</strong>这类App中，利用它们的算法帮助我后续强化巩固记忆。</p>
+<p>到这里有的人可能会讲，</p>
+<p><strong>Q</strong>：这样阅读不累吗？</p>
+<p><strong>A</strong>：是的，加上本身这类阅读我选的文章也普遍偏长，如果像是The New Yorker的一篇文章的话，一天读两个小时也要连续读上三四天才可以读完，但是就像我说的，这类阅读模式不仅仅是为了获取信息本身设计的，它是对于语言<strong>读写能力的全方位提高</strong>。就像上面source中讲到，这样纯粹高水平的英文原版材料，每一次精读整理都是对文章里丰富的信息量和语言点的榨取，每一次读完都是你语言潜修道路上的又一次小精进。</p>
+<p><strong>Q</strong>：这样的标注、划分、收录你未来真的会再翻出来看吗？</p>
+<p><strong>A</strong>：老实说，每一次读完归档的文章安安静静地陈列在文件夹里，我确实没有一次回头打开他们review。就像我之前听过的一种论调，一些人觉得：稍后读、收藏和摘录其实都是<strong>伪需求</strong>，存起来的文章（稍后读、或标记为想读），基本不会读，收藏起来的文章，也几乎不会看第二遍。我觉得有一定道理，但是换个角度想，在你能真正做到坚持阅读之前，需要一些仪式感来帮助你养成这个习惯，或者说你需要一些印记来证明你读过，你有在吸收、有在感受。所以<strong>我觉得阅读的同时进行标注是必要的</strong>（或许你拿着pencil划着文本读会读的更认真也说不定）。就像看到一个写得很优美的句子时，我忍不住把它标注出来，纵使将来再也不会回头翻看这一处标注，标注那一刻的反馈强化了我的阅读体验，这就足够了。另外收录也必不可少，看着文件夹里你精读过的文章序号慢慢变大，真的是一笔不小的<strong>成就感</strong>，我甚至为他们在Notion中作了专属的数据库，我们放在下一章Collection中讲。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog4/03.png"alt="image"/><figcaption><p>收录整理</p></figcaption></figure>
+<h2 id="type-2">Type 2</h2>
+<blockquote>
+<p>工具：Bob  + Eudic + PopClip(可选) + Paste</p>
+</blockquote>
+<p>讲完了上一种较为繁琐和费时的阅读方式后，接下来要介绍的这种阅读方式则要轻松许多，他的目的简单纯粹：<strong>获取信息、读懂信息</strong>。</p>
+<p>其实，这种阅读方式如果将文本材料换成中文（母语）的版本，似乎我并不需要介绍或是分享什么，它遍布在我们从小到大的日常阅读当中，我们打开一篇文章，只是因为我们对文章的领域或内容感兴趣，目的并不在于提升某种语言能力，我们只是饥渴地想要从纷繁的大千世界中获取讯息，更新我们对事物的认知，试着多去了解一点什么。我一直觉得，<strong>求知欲</strong>就像是性欲、求生欲一样，是人类一种最原始的欲望。</p>
+<p>于是，当用这种方式和思维去尝试阅读英文信息源时，就自然而然产生了两个基本问题：</p>
+<ol>
+<li><em>如何寻找我感兴趣的信息？（在Source部分中简单作了简单介绍）</em></li>
+<li><em>如何轻松地看懂一篇文章？</em></li>
+</ol>
+<p>接下来会就第二个问题分享一些我的心得与经验。</p>
+<p>可能很多人都有阅读外文信息的需求，无论是专业需要，还是兴趣使然。<strong>这并不是一个“外国的月亮比较圆”的问题</strong>，从全世界的角度看，我们每一个人都只是偏安一隅地被身边的信息所围绕着。而与此同时，世界上各个角落都在演绎着自己的精彩故事，用当地语言写出的报道无疑更地道也更靠谱，能更好地还原并带你了解事情的全貌。</p>
+<p>走出舒适圈的概念喊了很久，获取信息也要走出自己的圈子，如何从<a href="https://baike.baidu.com/item/%E4%BF%A1%E6%81%AF%E8%8C%A7%E6%88%BF/12661227">信息茧房</a>中破壁而出值得被广泛讨论，就拿我最近读的一篇文章为例，讲了一个<a href="https://theconversation.com/forget-the-conspiracies-15-minute-cities-will-free-us-to-improve-our-mental-health-and-wellbeing-200823?utm_source=densediscovery&amp;utm_medium=email&amp;utm_campaign=newsletter-issue-232">15-minute cities</a>的概念，还真的挺有趣，而这很难从我身边打听到。而且互联网上日趋活跃的Online writting的发达生态下，创作者们维护、更新、推送自己的独立blog、newsletter、podacast，甚至是Reddit的一篇帖子，Twitter上的一条tweet都可以成为我们的<strong>信息源</strong>。</p>
+<p>以上好像是在说“<strong>我为什么要去阅读外文信息</strong>”的问题，这好像可以是一个蛮宏大的选题，就先简单说到这里吧，还是回到如何阅读本身。既然有了需求，即：<strong>流畅轻松</strong>地看懂外文信息。那么，为什么会看不懂呢？无非是单词不认识，单词组合在一起的句子或段落读不懂，那把他们放到翻译软件中翻译不就好了吗？这当然不用我说，重点是如何让这个look-up的过程尽可能变得流畅、轻松、优雅。</p>
+<p>下面这张图是我阅读时的<strong>屏幕截图</strong>，以阅读Apple News的文章为例来说明我是如何阅读的。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog4/04.png"alt="image"/><figcaption><p>如何阅读</p></figcaption></figure>
+<p>可以看到屏幕大致分为了<strong>三个区域</strong>：</p>
+<ol>
+<li>
+<p><em>文章主体在中间，是我在Apple news+中挑选的文章</em></p>
+</li>
+<li>
+<p><em>查词区域在左</em></p>
+<p><em>查词功能由<a href="https://www.eudic.net/v4/en/app/eudic">Eudic</a>中（老朋友了，Type1中有介绍）其自带的鼠标自动取词功能实现，按住contrl（win则是ctrl，键位可自行在偏好设置中修改），将鼠标指针定位在你想要查询的单词上即可完成取词并翻译。</em></p>
+</li>
+<li>
+<p><em>翻译语段的区域在右</em></p>
+<p><em>翻译功能由<a href="https://bobtranslate.com/">Bob</a>实现，它是一款 macOS 平台的翻译和 OCR 软件，鼠标划过并选中需要翻译的文本，按下划词翻译快捷键（默认 ⌥ + D）即可翻译，你可以在Bob中配置不同的翻译引擎，我选择的是<a href="https://www.deepl.com/zh/translator">DeepL</a>（毕竟是号称全世界最准确的翻译软件），并辅助以Google 和 Open AI的translation作为参考</em></p>
+
+   <figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog4/05.png"alt="image"/><figcaption><p>customize翻译引擎</p></figcaption></figure>
+</li>
+</ol>
+<p>简而言之，当阅读遇到不认识的生词时，我只需要完成两个操作，左手按一下，右手在触控板上完成对单词在文本中的定位，即可完成查词；想知道一段语篇的大意，只需要右手在触摸板上完成对语篇的选取，左手按两个键，即可完成翻译。且2、3的查询结果都是以<strong>悬浮窗口</strong>的形式存在的（如图所示），我可以任意调整窗口的大小和位置，以优雅的方式布局阅读界面。悬浮窗口的好处在于，你不用去操纵分屏，也不用切出你所处的文章窗口，一切操纵都能<strong>专注于你正在阅读的文字四周</strong>。</p>
+<blockquote>
+<p>小Tips：记得调整到合适的位置后就可以选择将悬浮窗口pin住固定，且Bob中可以调整其每次被唤出时所处的默认位置。</p>
+</blockquote>
+<p>这样一来，我查询<strong>操作的频次</strong>变得非常低，这能最大化降低我对于原始翻译方案下频繁又恼人的查询操作所带来的反感，以免其负反馈于阅读体验本身，将外文信息阅读的体验尽量向母语阅读靠近。同时这套工具的搭配使用不受限于选择何种阅读器，无论是News+，Mail，<a href="https://reederapp.com/">Reeder</a>（我在用的一款RSS阅读器）还是直接在Chrome中阅读，它都能很好的帮助我完成阅读。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog4/06.png"alt="image"/><figcaption><p>在Chrome中阅读</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog4/07.png"alt="image"/><figcaption><p>在Reeder中阅读</p></figcaption></figure>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog4/08.png"alt="image"/><figcaption><p>在Mail中阅读</p></figcaption></figure>
+<p>如果你想要上面这套翻译操作再优雅一点点，那就试试<a href="https://pilotmoon.com/popclip/">Popclip</a>吧，本质上讲他是一款Mac上的增强型插件。</p>
+<blockquote>
+<p><strong>PopClip</strong> appears when you <strong>select text</strong> with your mouse on your Mac. Instantly copy &amp; paste, and access actions like search, spelling, dictionary and <a href="https://pilotmoon.com/popclip/extensions/">many, many more</a>.</p>
+</blockquote>
+<p>在Popclip的extension中<a href="https://bobtranslate.com/guide/integration/popclip.html#%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85">install相关的Bob插件</a>，它甚至可以让你省去按（⌥ + D）的操作，选中文本，点击显示的Bob丑萌丑萌的图标即可完成翻译，我愿称之为——武魂融合技！</p>
+
+<figure><img src="https://cdn.ripperhe.com/oss/master/2022/0508/translate_popclip.gif"alt="video"/><figcaption><p>PopClip与Bob的武魂融合技</p></figcaption></figure>
+<p>而在阅读的过程中，除了翻译工作，我还会对于文章内容做一些<strong>摘录工作</strong>，用工具<a href="https://pasteapp.io/">Paste</a>实现。Paste是一款Apple生态下的跨设备Clipboard Manager软件，功能强大且果味儿十足。（我真的体验过很多类似的App，它真的最优雅）</p>
+<blockquote>
+<p><em><strong>Paste</strong></em> lets you keep, search, and organize everything you copy on your Mac, iPhone, and iPad.</p>
+</blockquote>
+<p>阅读时，我会将那些带给我启发和思考的段落复制下来，然后它们就自动进入了Paste，再利用Paste的Tag功能将段落标记并归入专门的“摘录区域”。等读完文章并将文章收录进database时（会在第三节讲到），按（⌥ + V）将摘录区域的段落再粘贴进文章对应的page并加上自己的一些小结，像是这样：</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog4/09.png"alt="image"/><figcaption><p>Excert in Paste</p></figcaption></figure>
+<h2 id="小结">小结</h2>
+<p>两种阅读模式，侧重点不同，工具不同，甚至是操作平台都不同，（前者主要在pad上完成，后者则主要在mac上阅读），但也有许多共通之处：</p>
+<ul>
+<li>
+<p><em>阅读可以优雅而流畅。</em></p>
+</li>
+<li>
+<p><em>使阅读尽可能专注于阅读本身。用合适的工具将阅读程式化，将其他琐碎边缘化。</em></p>
+</li>
+<li>
+<p><em>尽可能读完后留下些什么。即时是type 2的阅读中，每一次查词操作，我也会将生词星标，仿照type 1进行后续的记忆。</em></p>
+</li>
+</ul>
+<p>总的来说，利用各种效率工具和插件打磨并适配你的专属阅读流本身就是一件非常自我且乐在其中的事，我可能会就这样一直tinker下去。^o^</p>
+<h1 id="下期再见">下期再见～👋</h1>
+]]></content>
+		</item>
+		
+		<item>
+			<title>My English Reading Flow —— Source</title>
+			<link>https://hicole.me/en/posts/my-english-reading-flow--source/</link>
+			<pubDate>Thu, 06 Apr 2023 10:18:11 +0800</pubDate>
+			
+			<guid>https://hicole.me/en/posts/my-english-reading-flow--source/</guid>
+			<description><![CDATA[The first in a series]]></description>
+			<content type="html"><![CDATA[<p>这是My Reading Flow （For English Source）系列博客的第一篇</p>
+<p>首先，第一节中，我们来聊聊信息的来源。开门见山，我获取英文信息的渠道基本如下：</p>
+<ul>
+<li><em>杂志报刊</em></li>
+<li><em>Newsletter</em></li>
+<li><em>其他(独立blog, Reddit, Youtube etc.)</em></li>
+</ul>
+<h2 id="杂志报刊">杂志报刊</h2>
+<p>如果你选的是一些比较有名气的journal&amp;magzine，那么从这一渠道获取的信息大多质量非常高，文章语言表达也非常地道得体，但同时<strong>比较难啃</strong>。毕竟文章都是出自名社名家之手，相比于阅读本身，对于我们来说可能更难的是如何找到方便易获取的信息源。当然，直接到感兴趣的报刊官网去订阅电子版无疑是最稳定可靠的方式，但同时价格不菲。那么除了这种方法，我是如何获取到每一期最新的issue呢？</p>
+<p>以我订阅Apple News作时间节点大致可分为两个阶段</p>
+<h3 id="阶段1"><strong>阶段1</strong></h3>
+
+<figure class="right" ><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog3/01.png"alt="image"/><figcaption><p>分享频道</p></figcaption></figure>
+<p>我是在一些国内外善良的朋友们的<strong>分享频道</strong>中获取到的，那时主要是把每一期的The New Yorker和The Economist找来翻翻，其中感兴趣的文章语篇裁切出来做精读，获取途径大概如下（不过一定要<strong>仔细甄别</strong>分享目的和盈利目的不同群组，有很多借口卖课的公众号混杂其中）</p>
+<ol>
+<li><em>Telegram群组</em></li>
+<li><em>RSS订阅</em></li>
+</ol>
+<p>推荐:</p>
+<ul>
+<li><em><a href="https://t.me/sharingte">The Economist Sharing Channel</a></em></li>
+<li><em><a href="https://plink.anyfeeder.com/">RSS 合集</a></em></li>
+</ul>
+<h3 id="阶段2">阶段2</h3>
+<p>在去年的末尾我终于订阅了垂涎已久的<strong>Apple One</strong>美区全家桶，其中包含的Apple News（以下简称News）无疑是我使用频率最高的增值服务，它相当于是一个各大报刊杂志的<strong>信息聚合平台</strong>，加持着像是For you的算法推荐和Edito&rsquo;s Pick的信息精炼这样的功能。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog3/02.png"alt="image"/><figcaption><p>News+ Menu</p></figcaption></figure>
+<p>我也在下面罗列了一些我在关注的channel，基本上都是大名鼎鼎的报社。值得一提的是，如果你订阅了Apple News，这些出版物每一期你都是可以免费获取并下载的，安静整齐地陈列在你的Library里面，随意翻阅，阅读体验也非常纯粹流畅。所以如果News囊括的期刊中有一本是你感兴趣并想要订阅的，其一年的订阅费和News本身的订阅费也就大差不差了。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog3/03.png"alt="image"/><figcaption><p>News+ Library</p></figcaption></figure>
+<ol>
+<li><em>The Wall Street Journal</em></li>
+<li><em>TIME</em></li>
+<li><em>The Atalntic</em></li>
+<li><em>The New Yorker</em></li>
+<li><em>WIRED</em></li>
+<li><em>National Geographic</em></li>
+<li><em>World Soccer</em></li>
+</ol>
+<p>总之，我觉得News算是非常不错的信息源，它对信息作<strong>索引和分类聚合</strong>，让你可以主动选择自己感兴趣的信息，取百家之所长，而不像上一阶段有赖于别人分享的被动获取，且专注一两家报社容易造成视角局限。</p>
+<p>值得一提的是News只包含在Apple美区的服务中，开通且使用有诸多门槛，适合稍微爱折腾一些的朋友，更多的在这里就不详细介绍了，擅用搜索引擎即可。感兴趣的朋友也可以移步官网 <a href="https://www.apple.com/apple-news/">News+</a>，试一试<strong>Try 1 month for free</strong>.</p>
+<h2 id="newsletter">Newsletter</h2>
+<p>相比于在News上读社论报道，在这里我更喜欢阅读的多是一些“流水账”，他们读起来非常轻松有趣。</p>
+<p>有的是一些作者的一周见闻，大部分是<strong>链接推荐型</strong>，里面有作者觉得不错的书籍，有趣的网站，新鲜的App资讯，甚至是搞笑的GIF或是Overheard on Twitter。它们不是长篇大论的文章，而是一个个链接配上简短说明，所以可以算作是别人已经帮我筛选过一遍的信息索引。就像是每周update一下在世界上另外一个角落的人们的近况，看看他们最近有什么新发现，身边又发生了哪些奇闻逸事。<strong>见字如面</strong>，慢慢的这些newsletter的作者就成为了你的某种朋友一样的存在。</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog3/04.png"alt="image"/><figcaption><p>链接推荐型Newsletter</p></figcaption></figure>
+<p>另一些则几乎不能用语言来对他们定义类型，毕竟newsletter的种类太多了，作者想分享什么都可以，只要刚好有读者感兴趣，一拍即合。比如我订阅了一个频道专门分享<strong>Desk Setup</strong>的，看着别人把自己的桌面打造的整齐干净，工作环境风格统一真是一件非常舒服又享受的事情。你一定会种草很多产品，然后陷入日复一日地折腾改造你自己的桌面的漩涡中，痛并快乐着。</p>
+<p>下面附上一部分我在订阅的newsletter，因为他们的更新日期都不一样，我是选择每周六把一周囤起来的newsletter<strong>集中</strong>浏览阅读。</p>
+<ul>
+<li><em><a href="https://www.workspaces.xyz/">Workspaces</a></em></li>
+<li><em><a href="https://www.densediscovery.com/">Dense Discovery</a></em></li>
+<li><em><a href="https://perell.com/newsletter/">David Perell newsletter</a></em></li>
+<li><em><a href="https://weichen.zhubai.love/">生活奇旅</a></em></li>
+<li><em><a href="https://bestxtools.zhubai.love/">好工具周刊</a></em></li>
+</ul>
+<h3 id="碎碎念">碎碎念</h3>
+
+<figure class="right" ><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog3/05.png"alt="image"/><figcaption><p>Mail Rules</p></figcaption></figure>
+<p>总觉得自己一直不能很有效的把Mail这个工具利用起来，知道newsletter也是最近几年的事情。不知道是不是国内外的差异，两年前，newsletter就像是Podcast一样在国内<strong>不温不火</strong>（不过都在慢慢发展，已经有了不小的起色），基本还是以RSS订阅独立blog的方式为主。另外就是可能有我还没有进入工作的原因吧，邮箱的利用率本身也不高，我们学院导师甚至不知道有<strong>学生邮箱stu.edu</strong>这个东西的存在，还是我自己去信息中心申请开通的。</p>
+<p>总的来讲，Mail无论是工具本身还是其所链接的生态都是<strong>高度稳定可靠</strong>的，拿Mac自带的Mail客户端讲，利用好它的规则工具（RULES）可以很方便的自动化你的收件流程，像我的newsletter通过发件地址的识别都会通过规则自动进入一个单独的分组，这样就不会与其他乱七八糟的邮件混在一起。另外擅用<strong>标记</strong>(Flag)和<strong>移动</strong>(Move)也算是一个小技巧吧。</p>
+<h2 id="小结">小结</h2>
+<p>总的来说，以上两种source提供了我算是比较正式的那一类阅读的信息材料。当然，可以被称之为信息的太多了，逛逛油管，刷刷推，这些时候我也在获取信息，但好像可供分享的话题不多，不过这些也都作为我日常生活中的英语元素，多多益善嘛。就像自作安慰的把电子设备的操作系统语言都换成了英语，人为的给自己增添一点儿语言环境，聊胜于无吧。</p>
+<h1 id="下期再见">下期再见～👋</h1>
+]]></content>
+		</item>
+		
+		<item>
+			<title>This is my first blog</title>
+			<link>https://hicole.me/en/posts/this-is-my-first-blog/</link>
+			<pubDate>Mon, 02 Jan 2023 14:56:19 +0800</pubDate>
+			
+			<guid>https://hicole.me/en/posts/this-is-my-first-blog/</guid>
+			<description><![CDATA[%!s(<nil>)]]></description>
+			<content type="html"><![CDATA[<h3 id="hello-hugo">Hello Hugo!</h3>
+
+<figure><img src="https://d33wubrfki0l68.cloudfront.net/c38c7334cc3f23585738e40334284fddcaf03d5e/2e17c/images/hugo-logo-wide.svg"alt="image"/><figcaption><p>The world’s fastest framework for building websites</p></figcaption></figure>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Running Pentaho Data Integration on Mac bigSur (M1)</title>
+			<link>https://hicole.me/en/posts/running-pentaho-data-integration-on-mac-bigsur-m1/</link>
+			<pubDate>Sat, 10 Jul 2021 16:47:33 +0800</pubDate>
+			
+			<guid>https://hicole.me/en/posts/running-pentaho-data-integration-on-mac-bigsur-m1/</guid>
+			<description><![CDATA[%!s(<nil>)]]></description>
+			<content type="html"><![CDATA[<h1 id="关于在m1-mac-上安装部署pdikettle">关于在M1 Mac 上安装部署PDI(kettle)</h1>
+<ul>
+<li>
+<h2 id="前言">前言</h2>
+<p>截止我编写这篇笔记之时，Kettle并没有原生支持M1，所以本文大致思路是使用Rosetta转译运行，无需借助任何虚拟机。</p>
+</li>
+<li>
+<h2 id="安装步骤">安装步骤</h2>
+<ol>
+<li>
+<h3 id="配置rosetta-terminal强制在intel模式下运行shell">配置Rosetta Terminal（强制在Intel模式下运行shell）</h3>
+<blockquote>
+<p>参考 <a href="https://cutecoder.org/software/run-command-line-apple-silicon/">https://cutecoder.org/software/run-command-line-apple-silicon/</a></p>
+</blockquote>
+<ol>
+<li>
+<p>打开Terminal终端的 <strong>偏好设置</strong> → <strong>描述文件</strong></p>
+</li>
+<li>
+<p>从左侧选择一个你喜欢的shell → 下方省略号 → <strong>复制描述文件</strong></p>
+</li>
+<li>
+<p>点击新的描述文件 给它起一个好听的名字 就像“Rosetta Shell”</p>
+</li>
+<li>
+<p>右侧点击 <strong>窗口</strong> 再给它起一个好听的标题 就像“Terminal (Intel)”</p>
+</li>
+<li>
+<p>点击 <strong>shell</strong> 运行命令处写入以下 并取消勾选 <strong>在shell中运行</strong></p>
+<p><code>env</code> <code>/usr/bin/arch</code> <code>-x86_64 ``/bin/zsh</code> <code>--login</code></p>
+</li>
+<li>
+<p>(可选) 将该shell设置为默认</p>
+</li>
+</ol>
+</li>
+<li>
+<h3 id="安装-homebrew">安装 Homebrew</h3>
+<blockquote>
+<p>在arm64架构中 我们需要做两种Homebrew的安装</p>
+<blockquote>
+<p>/usr/local/homebrew —— 服务于传统intel安装路径</p>
+<p>/opt/homebrew —— 服务于已原生支持Apple Silicon的包</p>
+</blockquote>
+</blockquote>
+<ol>
+<li>
+<p>打开刚配置好的Rosetta Shell</p>
+</li>
+<li>
+<p>输入以下几行命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> /usr/local
+</span></span><span class="line"><span class="cl">sudo mkdir homebrew
+</span></span><span class="line"><span class="cl">sudo chgrp admin homebrew
+</span></span><span class="line"><span class="cl">sudo chmod g+rwx homebrew
+</span></span><span class="line"><span class="cl">curl -L https://github.com/Homebrew/brew/tarball/master <span class="p">|</span> tar xz --strip <span class="m">1</span> -C homebrew
+</span></span></code></pre></div></li>
+<li>
+<p>在 ～/.zshrc 中加入如下行，来自动选择运行何种homebrew的安装模式</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="k">$(</span>sysctl -n sysctl.proc_translated<span class="k">)</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s2">&#34;1&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">local</span> <span class="nv">brew_path</span><span class="o">=</span><span class="s2">&#34;/usr/local/homebrew/bin&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">local</span> <span class="nv">brew_path</span><span class="o">=</span><span class="s2">&#34;/opt/homebrew/bin&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">brew_path</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span></code></pre></div><p>记得 <code> source ~/.zshrc</code> 哦～</p>
+</li>
+</ol>
+</li>
+<li>
+<h3 id="配置-java环境">配置 java环境</h3>
+<blockquote>
+<p>这里需要对应Kettle和JDK 版本的对应关系 非常严格</p>
+<p><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog2/01.png" alt=""></p>
+<p>如果已经安装了其他版本JDK 关于mac上的多版本Java管理</p>
+<p>请参考 <a href="https://blog.csdn.net/qq_39992641/article/details/117048076">https://blog.csdn.net/qq_39992641/article/details/117048076</a></p>
+</blockquote>
+<ol>
+<li>
+<p>打开Rosetta shell 输入如下命令</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew tap AdoptOpenJDK/openjdk
+</span></span><span class="line"><span class="cl">brew install adoptopenjdk8 
+</span></span></code></pre></div></li>
+<li>
+<p>安装完成后 查看java版本</p>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog2/02.png" alt="查看java版本"></p>
+<p>如图就成功了 我采用的是<strong>kettle9.1 + jdk8</strong></p>
+<p>所以 version 一定是要 <strong>1.8.xxx</strong>  还请注意自己的版本对应关系</p>
+</li>
+<li>
+<h3 id="下载kettle">下载Kettle</h3>
+<blockquote>
+<p>官方下载地址：https://sourceforge.net/projects/pentaho/files/</p>
+</blockquote>
+<p>点击选择需要的版本 → client-tools → 点击<strong>pdi-ce-xxxxxx.zip</strong>文件下载解压即可</p>
+</li>
+<li>
+<h3 id="启动kettle">启动Kettle</h3>
+<p>通过终端进入解压后得到的**/data-integration**目录，</p>
+<p>输入命令<code>sh spoon.sh</code> 等待自动启动即可（时间可能较长）</p>
+<p><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog2/03.png" alt="启动Kettle"></p>
+<p>看到 <strong>Spoon -欢迎!</strong> 字样 大功告成～ 🎉</p>
+</li>
+</ol>
+</li>
+</ul>
+<p>​</p>
+<ul>
+<li>
+<h2 id="可能出现的问题">可能出现的问题</h2>
+<ol>
+<li>
+<p>I&rsquo;m sorry, this Mac platform [arm64] is not yet supported! Please try starting using &lsquo;Data Integration 32-bit&rsquo; or &lsquo;Data Integration 64-bit&rsquo; as appropriate.</p>
+<p><strong>报错如下</strong>：</p>
+<p><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog2/04.png" alt="问题1-1"></p>
+<p><strong>分析：</strong></p>
+<p>Rosetta Termina并没有配置好 并没有用成功Rosetta转译运行 请重回 <strong>步骤1</strong> 仔细参考 <a href="https://cutecoder.org/software/run-command-line-apple-silicon/">https://cutecoder.org/software/run-command-line-apple-silicon/</a></p>
+<p><strong>另外我这篇笔记默认您安装了Rosetta 如没有安装 请您先自行安装 网上很多教程</strong></p>
+</li>
+<li>
+<p><strong>java相关问题</strong></p>
+<p><strong>报错1:</strong></p>
+<p>endorsed is not supported. Endorsed standards and standalone APIs</p>
+<p>in modular form will be supported via the concept of upgradeable modules.</p>
+<p>Error: Could not create the Java Virtual Machine.</p>
+<p>Error: A fatal exception has occurred. Program will exit.</p>
+<p><strong>分析：</strong></p>
+<p>Java JDK 版本不匹配 请下载正确对应版本 请重回 <strong>步骤3</strong></p>
+<p><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog2/05.png" alt="问题2-1"></p>
+<p><strong>报错2:</strong></p>
+<p>java.lang.UnsatisfiedLinkError: Could not load SWT library. Reasons:</p>
+<p>​	no swt-cocoa-4940r23 in java.library.path</p>
+<p>​	no swt-cocoa in java.library.path</p>
+<p><strong>分析：</strong></p>
+<p>Java JDK是arm64版本的 请下载x86版本 因为很多朋友可能在了解kettle之前就在自己心爱的m1上配置了Java环境 但是oracle并没有原生适配M1 所以一般我们下载的都是arm架构的 Zulu JDK 但是由于我们的Kettle是x86</p>
+<p><strong>所以架构体系一定要对应！！！请重回步骤3</strong></p>
+<p>可以看到 下图 <code>java -version</code> 显示的虽然是jdk版本没问题 但是版本架构不对</p>
+<p><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog2/06.png" alt="问题2-2"></p>
+</li>
+<li>
+<p><strong>Kettle mac 启动失败（闪退）报错 Unknown Source</strong></p>
+<blockquote>
+<p>参考 <a href="https://blog.csdn.net/qq_41066235/article/details/108668423">https://blog.csdn.net/qq_41066235/article/details/108668423</a></p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog2/07.png" alt="问题3-1"></p>
+<p><strong>分析：</strong></p>
+<p>下载最新的eclipse.swt包，替换kettle中的原文件即可  <a href="https://mvnrepository.com/artifact/org.eclipse.platform/org.eclipse.swt.cocoa.macosx.x86_64">下载地址</a></p>
+<p>替换路径：data-integration → libswt → osx64</p>
+<p><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog2/08.png" alt="问题3-2"></p>
+</li>
+</ol>
+</li>
+</ul>
+<p>​</p>
+<ul>
+<li>
+<h2 id="结语">结语</h2>
+<p>M1可真是个磨人的小妖精～ Rosetta的转译不知道后续还会遇到什么bug</p>
+<p>期待后续的Kettle学习之路～ 💪</p>
+</li>
+</ul>
+]]></content>
+		</item>
+		
+	</channel>
+</rss>

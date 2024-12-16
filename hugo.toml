@@ -1,0 +1,142 @@
+baseURL = 'https://hicole.me'
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+theme = "hermit-v2"
+#enableRobotsTXT = true ## set to true to enable inbuilt robots.txt
+
+#[languages]
+#  [languages.en]
+#    title = 'CHANGE ME'
+#    [languages.en.params]
+#      homeSubtitle = "CHANGE ME"
+#    weight = 1
+#  [languages.fr]
+#    title = 'CHANGE ME(FR)'
+#    [languages.fr.params]
+#      homeSubtitle = "CHANGE ME"
+#    weight = 2
+#  [languages.it]
+#    title = 'CHANGE ME(IT)'
+#    [languages.it.params]
+#      homeSubtitle = "CHANGE ME"
+#    weight = 3
+ 
+languageCode = "en-us"
+
+title = "Cole World"
+# enableGitInfo = true
+
+pygmentsCodefences  = true
+pygmentsUseClasses  = true
+hasCJKLanguage = true
+
+rssLimit = 10
+
+copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
+enableEmoji = true
+
+#[services]
+#  [services.disqus]
+#    shortname = ''
+#  [services.googleAnalytics]
+#    id = ''
+
+[frontmatter]
+date = ["date", "publishDate", "lastmod"]
+lastmod = ["lastmod", ":git", "date", "publishDate"]
+publishDate = ["publishDate", "date"]
+expiryDate = ["expiryDate"]
+
+
+[params.author]
+  name = "Cole Mei"
+  about = "about"
+
+[blackfriday]
+  # hrefTargetBlank = true
+  # noreferrerLinks = true
+  # nofollowLinks = true
+
+[taxonomies]
+  tag = "tags"
+  # Categories are disabled by default.
+  # category = "categories"
+
+# Enable to get proper Mathjax support
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
+
+
+[params]
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04 -0700"
+
+  # description = "Cole's Blog"
+  # images = [""]
+  themeColor = "#494f5c"
+
+  homeSubtitle = "To be just a little less arrogant. To have just a little critical awareness about myself and my certainties."
+  footerCopyright = ' <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+  footerHideThemeName = true
+  bgImg = "https://github.com/ColeMei/Picgo/blob/master/others/wallhaven-7pr53v_3840x2160.png?raw=true"  # Homepage background-image URL
+  # gitUrl = "https://github.com/1bl4z3r/hermit-V2/tree/staging"
+
+  justifyContent = false
+
+  relatedPosts = true
+  code_copy_button = true
+
+  homeSubtitlePrinter = true
+  scrollToTop = true 
+  global_mathjax = false
+  readTime = true
+  readTimeSeparator = "\u2026 \u23F2 Reading Time:"
+  # legacyLayout = false
+  shareSocial = true
+  # googleTagManager = "GTM-XXXXXXXX"
+  # tagSymbol = "#"
+  # categorySymbol = "⊲"
+  pinned = "Pinned Posts"
+  # pinnedSVGname = "pin"
+  descriptionInPosts= true
+  # initialPublish = "Initally Posted on: "
+  # human = ["single","posts"]
+  # noIndex = false
+  # denyRobots = "noindex, nofollow, noarchive"
+  # allowRobots = "index, follow"
+  # siteNoIndex = false
+  # noIndexPages = ["404 Page not found"]
+  # usesAnimation = true
+
+  [[params.socialLinks]]
+    name = "telegram"
+    url = "https://t.me/Colemei"
+
+  [[params.socialLinks]]
+    name = "github"
+    url = "https://github.com/ColeMei"
+
+[menu]
+
+  [[menu.main]]
+    name = "Posts"
+    url = "posts/"
+    weight = 10
+
+  [[menu.main]]
+    name = "About"
+    url = "about/"
+    weight = 20
+
+  [[menu.main]]
+    name = "Links"
+    url = "links/"
+    weight = 50
