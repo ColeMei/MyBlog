@@ -296,7 +296,7 @@ A = U \Lambda U^*
         </div>
         <div class="admonition-content">本文是北疆之行系列的第四篇</div>
     </aside>
-<h1 id="hahahugoshortcode14s1hbhb">
+<h1 id="hahahugoshortcode15s1hbhb">
 
 <p style="text-align:center">Day12</p>
 </h1>
@@ -329,7 +329,7 @@ A = U \Lambda U^*
 <p>第二天早起，朋友带着我上镇上的药店买了健胃消食片和维C泡腾片，我觉得稍好些就继续上路了。</p>
 
 <figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/38DE19B3-AA5E-40D5-97EE-10BE3BB179B7.jpg"alt="image"/><figcaption><p>把胃吃坏了</p></figcaption></figure>
-<h1 id="hahahugoshortcode14s8hbhb">
+<h1 id="hahahugoshortcode15s8hbhb">
 
 <p style="text-align:center">Day13</p>
 </h1>
@@ -385,7 +385,7 @@ A = U \Lambda U^*
 <p>县城不大，各方面条件在这十几天的行程中算是中等水平，朋友们照顾我残疾的胃，特意先暂时告别了牛羊肉，找了一家川菜馆，吃了点儿简单的，看到老板端上来的我点的青菜、糖醋里脊和雪白雪白的大米饭，我真的差点儿眼泪掉下来。</p>
 
 <figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/BBE0C7DB-128B-4FED-AF82-49A937EF4789.jpg"alt="image"/><figcaption><p>阔别已久的川菜</p></figcaption></figure>
-<h1 id="hahahugoshortcode14s25hbhb">
+<h1 id="hahahugoshortcode15s25hbhb">
 
 <p style="text-align:center">Day14</p>
 </h1>
@@ -980,7 +980,7 @@ A = U \Lambda U^*
 <p>这次旅行无疑是令人难忘的，是酣畅淋漓而现在回想起来仍意犹未尽的。尽管充斥着许多始料未及与措手不及，这趟旅程还是带来了太多的体验、太多的第一次：第一次露营、第一次雨中徒步、第一次骑马飞驰穿越溪流与沟壑、第一次住房车、第一次在漫天繁星的草原上喝乌苏&hellip;&hellip;</p>
 <p>于是在此，借blog的形式，我准备将一些比较满意的照片作品在这里作以展示与留念，点缀一些文字寥寥，试图真诚地连结那些并不遥远的记忆。</p>
 <hr>
-<h1 id="hahahugoshortcode13s1hbhb">
+<h1 id="hahahugoshortcode14s1hbhb">
 
 <p style="text-align:center">Day1</p>
 </h1>
@@ -999,7 +999,7 @@ A = U \Lambda U^*
 </ol>
 
 <figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_2538.jpeg"alt="image"/><figcaption><p>We&rsquo;re Ready!</p></figcaption></figure>
-<h1 id="hahahugoshortcode13s3hbhb">
+<h1 id="hahahugoshortcode14s3hbhb">
 
 <p style="text-align:center">Day2</p>
 </h1>
@@ -1047,7 +1047,7 @@ A = U \Lambda U^*
 <figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_2731.jpeg"alt="image"/><figcaption><p>公路旅行</p></figcaption></figure>
 
 <figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_2726.jpeg"alt="image"/><figcaption><p>超香的囊坑肉</p></figcaption></figure>
-<h1 id="hahahugoshortcode13s20hbhb">
+<h1 id="hahahugoshortcode14s20hbhb">
 
 <p style="text-align:center">Day3</p>
 </h1>
@@ -1289,7 +1289,7 @@ A = U \Lambda U^*
 <li>随着很多网站的政策更新，获取其内容所需要的条件越来越苛刻，像是API、Cookies、Token等信息需要预配置。</li>
 </ol>
 <p>好在RSSHub的生态还算完整，对于自建这样一个相对小众的需求也有比较详细（当然还不够！不然我也不写这篇blog了）的文档支持。</p>
-<h1 id="hahahugoshortcode3s2hbhb">
+<h1 id="hahahugoshortcode8s2hbhb">
 
 <p style="text-align:center">折腾开始！</p>
 </h1>
@@ -1335,7 +1335,7 @@ A = U \Lambda U^*
 </ol>
 <p>更详细的部署教程（step by step）可以参考这篇Guide：<a href="https://www.cnblogs.com/QiuSYan/p/RssHub.html">RssHub + Vercel ：在 Vercel 上免费部署你的RssHub</a>。</p>
 <p>至此，专属于我自己的RSSHub就已经部署在了Vercel为我提供的Domain下，点击visit即可看到Welcome Page。</p>
-<h1 id="hahahugoshortcode3s4hbhb">
+<h1 id="hahahugoshortcode8s4hbhb">
 
 <p style="text-align:center">Bingo！</p>
 </h1>
@@ -1385,7 +1385,7 @@ A = U \Lambda U^*
 
 <figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog10/CleanShot%202023-09-12%20at%2002.43.21.gif?raw=true"alt="video"/><figcaption><p>最后的验证</p></figcaption></figure>
 <p>可以看到，上面的GIF中，我先点击的是自建域名下生成的新订阅中的文章（全文），后点击的是老的订阅源中的文章（部分）</p>
-<h1 id="hahahugoshortcode3s11hbhb">
+<h1 id="hahahugoshortcode8s11hbhb">
 
 <p style="text-align:center">Perfect！</p>
 </h1>
