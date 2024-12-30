@@ -2,20 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://hicole.me/en/tags/blog/</loc>
-    <lastmod>2024-07-17T15:31:50+10:00</lastmod>
-  </url><url>
     <loc>https://hicole.me/en/</loc>
+    <lastmod>2024-12-30T18:46:08+08:00</lastmod>
+  </url><url>
+    <loc>https://hicole.me/en/posts/</loc>
+    <lastmod>2024-12-30T18:46:08+08:00</lastmod>
+  </url><url>
+    <loc>https://hicole.me/en/tags/blog/</loc>
     <lastmod>2024-07-17T15:31:50+10:00</lastmod>
   </url><url>
     <loc>https://hicole.me/en/posts/new-features-in-blog-2.0/</loc>
     <lastmod>2024-07-17T15:31:50+10:00</lastmod>
   </url><url>
-    <loc>https://hicole.me/en/posts/</loc>
-    <lastmod>2024-07-17T15:31:50+10:00</lastmod>
-  </url><url>
     <loc>https://hicole.me/en/tags/</loc>
     <lastmod>2024-07-17T15:31:50+10:00</lastmod>
+  </url><url>
+    <loc>https://hicole.me/en/posts/echoes-of-march/</loc>
+    <lastmod>2024-03-16T00:32:06+08:00</lastmod>
+  </url><url>
+    <loc>https://hicole.me/en/tags/thingkingfeeling/</loc>
+    <lastmod>2024-03-16T00:32:06+08:00</lastmod>
   </url><url>
     <loc>https://hicole.me/en/tags/trips/</loc>
     <lastmod>2024-01-15T15:47:31+08:00</lastmod>

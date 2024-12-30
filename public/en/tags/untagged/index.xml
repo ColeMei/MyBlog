@@ -7,14 +7,14 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 16 Dec 2024 23:23:09 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 30 Dec 2024 18:46:08 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/en/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Blog1</title>
-      <link>http://localhost:1313/en/posts/blog1/</link>
-      <pubDate>Mon, 16 Dec 2024 23:23:09 +0800</pubDate>
-      <guid>http://localhost:1313/en/posts/blog1/</guid>
-      <description>&lt;p&gt;Hello, My Site&#xA;I&amp;rsquo;m Cole&lt;/p&gt;</description>
+      <title>2024</title>
+      <link>http://localhost:1313/en/posts/2024/</link>
+      <pubDate>Mon, 30 Dec 2024 18:46:08 +0800</pubDate>
+      <guid>http://localhost:1313/en/posts/2024/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>
