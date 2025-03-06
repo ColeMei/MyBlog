@@ -9,15 +9,15 @@ images:
 
 {{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/others/photo_2023-03-06_16-37-15.jpg" alt="image" caption="My Status Be Like" class="right" >}}
 
-I’m Cole, 23-year old. I lived in Beijing, China with a whole bunch of **digital products** and all of my memories in this old but lovely house.
+I’m Cole Mei, a 24-year-old originally from Beijing, China, and I have been living in Brunswick, Melbourne, for a year and a half.
 
 I believe that life is not measured by time, but by experience. So, just like the saying goes  ***‘finite life but infinite exploring’***
 
 > ## More About
 
-I consider myself a **geeky** person, but I don't want to define my future as a programmer in some traditional sense. After all, my major is not CS either.
+I consider myself a **geeky** person, but I don't want to define my future as a programmer in some traditional sense.
 
-I just keep trying what I'm fond of in any realms I’m interested in. To be specific, My expertise and interest lies in **Data Visualization,** **Deep Learning,** **UI design** and any **Fun Tools** that can enhance my efficiency and serve for my personal **work flow.**
+I just keep trying what I'm fond of in any realms I’m interested in. To be specific, My expertise and interest lies in **Big Data,** **Deep Learning,** **Distributed System** and any **Fun Tools** that can enhance my efficiency and serve for my personal **work flow.**
 
 - *Always keep an open mind, use tools you wouldn't usually use, and never give up.*
 
@@ -25,18 +25,17 @@ I just keep trying what I'm fond of in any realms I’m interested in. To be spe
 
 When not buried in my text editor,
 
-- I’m a big lover of **Hiphop** (especially melody rap) and **R&B** music (Now, I'm also a fan of Kpop). J. Cole and 6lack are two of my favorite singers. So, It’s entirely natural that I've listened to [‘Pretty little fears’](https://www.youtube.com/watch?v=iSgUMPHQEWw) for more than thousands of times.
-  - 「I have tried to write some **verses** and **hook**, but immediately realized that I can only be a fan.」
-
-- I enjoy watching **TV series, Movies, animations** on streaming medias, so I subscribed to huge numbers of services like Netflix, Disney+, PrimeVideo, Peacock, HboGo etc.
-  - 「For Addiction of Collection ✅ For Actual Watching ❌  ￣◇￣; 」
+- I’m a big lover of **Hiphop** and **R&B** music (Updated: I'm also a fan of **Kpop** now). J.cole and Jennie are two of my favorite artists. 
+  
+- I enjoy watching **TV series and Movies**. My favorite TV series is [Shrinking](https://www.imdb.com/title/tt15677150/) and my favorite movie is [Interstellar](https://www.imdb.com/title/tt0816692/). 
 
 - Other tags :
-  - Big Big Fan of **Arsenal FC**
-  - A **Moba** expert and also a **Fps** rookie
+  - *Big Big Fan of **Arsenal FC***
+  - *A **Moba** expert and also a **Fps** rookie*
   - ***Tabletop game** lover*
   - *Amateur in **Debate competition***
   - *Lyrics **translator***
+  - ***Research Explorer** in Training*
 
 ---
 
@@ -51,7 +50,7 @@ When not buried in my text editor,
 
 You can visit the ***Home page*** to find out how you can get in touch. All friendly exchanges are welcome.
 
-- *Or via **email**: meiqiyue53@gmail.com*
+- *Or via **email**: qmmei@student.unimelb.edu.au*
 
 ---
 

@@ -2,18 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Thingking&amp;Feeling on Cole World</title>
-    <link>https://hicole.me/en/tags/thingkingfeeling/</link>
+    <link>http://localhost:1313/en/tags/thingkingfeeling/</link>
     <description>Recent content in Thingking&amp;Feeling on Cole World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 16 Mar 2024 00:32:06 +0800</lastBuildDate>
-    <atom:link href="https://hicole.me/en/tags/thingkingfeeling/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Dec 2024 18:46:08 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/en/tags/thingkingfeeling/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2024 Summary</title>
+      <link>http://localhost:1313/en/posts/2024-summary/</link>
+      <pubDate>Mon, 30 Dec 2024 18:46:08 +0800</pubDate>
+      <guid>http://localhost:1313/en/posts/2024-summary/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Echoes of March</title>
-      <link>https://hicole.me/en/posts/echoes-of-march/</link>
+      <link>http://localhost:1313/en/posts/echoes-of-march/</link>
       <pubDate>Sat, 16 Mar 2024 00:32:06 +0800</pubDate>
-      <guid>https://hicole.me/en/posts/echoes-of-march/</guid>
+      <guid>http://localhost:1313/en/posts/echoes-of-march/</guid>
       <description>&lt;h2 id=&#34;life-is-elsewhere&#34;&gt;Life Is Elsewhere&lt;/h2&gt;&#xA;&lt;p&gt;Today marks March 16th. I casually glanced at my smartphone, only to find the countdown I had set prior to my departure now relegated to the annals of history, adorned with the inscription &amp;ldquo;25 days since.&amp;rdquo; Yes, it has been precisely 25 days since my arrival in Melbourne. Before embarking on this journey, whether engaged in light banter with my parents or amidst the joviality of a say-goodbye gathering with friends, I often jestingly remarked, &amp;ldquo;I&amp;rsquo;m traversing from the northern reaches of the northern hemisphere to the southern expanses of the southern hemisphere.&amp;rdquo;&lt;/p&gt;</description>
     </item>
   </channel>

@@ -1,20 +1,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Posts on Cole World</title>
-		<link>https://hicole.me/en/posts/</link>
+		<link>http://localhost:1313/en/posts/</link>
 		<description>Recent content in Posts on Cole World</description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
 		<lastBuildDate>Mon, 30 Dec 2024 18:46:08 +0800</lastBuildDate>
-		<atom:link href="https://hicole.me/en/posts/index.xml" rel="self" type="application/rss+xml" />
+		<atom:link href="http://localhost:1313/en/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>2024 Summary</title>
+			<link>http://localhost:1313/en/posts/2024-summary/</link>
+			<pubDate>Mon, 30 Dec 2024 18:46:08 +0800</pubDate>
+			
+			<guid>http://localhost:1313/en/posts/2024-summary/</guid>
+			<description><![CDATA[Year Review]]></description>
+			<content type="html"><![CDATA[]]></content>
+		</item>
 		
 		<item>
 			<title>New features in Blog 2.0</title>
-			<link>https://hicole.me/en/posts/new-features-in-blog-2.0/</link>
+			<link>http://localhost:1313/en/posts/new-features-in-blog-2.0/</link>
 			<pubDate>Wed, 17 Jul 2024 15:31:50 +1000</pubDate>
 			
-			<guid>https://hicole.me/en/posts/new-features-in-blog-2.0/</guid>
+			<guid>http://localhost:1313/en/posts/new-features-in-blog-2.0/</guid>
 			<description><![CDATA[This explains some implementation details of new features]]></description>
 			<content type="html"><![CDATA[<h1 id="new-comment-system">New Comment System</h1>
 <p>A comments system powered by <a href="https://docs.github.com/en/discussions">GitHub Discussions</a>. Let visitors leave comments and reactions on your website via GitHub! Heavily inspired by <a href="https://github.com/utterance/utterances">utterances</a>.</p>
@@ -167,10 +177,10 @@ A = U \Lambda U^*
 		
 		<item>
 			<title>Echoes of March</title>
-			<link>https://hicole.me/en/posts/echoes-of-march/</link>
+			<link>http://localhost:1313/en/posts/echoes-of-march/</link>
 			<pubDate>Sat, 16 Mar 2024 00:32:06 +0800</pubDate>
 			
-			<guid>https://hicole.me/en/posts/echoes-of-march/</guid>
+			<guid>http://localhost:1313/en/posts/echoes-of-march/</guid>
 			<description><![CDATA[First Year Diaries]]></description>
 			<content type="html"><![CDATA[<h2 id="life-is-elsewhere">Life Is Elsewhere</h2>
 <p>Today marks March 16th. I casually glanced at my smartphone, only to find the countdown I had set prior to my departure now relegated to the annals of history, adorned with the inscription &ldquo;25 days since.&rdquo; Yes, it has been precisely 25 days since my arrival in Melbourne. Before embarking on this journey, whether engaged in light banter with my parents or amidst the joviality of a say-goodbye gathering with friends, I often jestingly remarked, &ldquo;I&rsquo;m traversing from the northern reaches of the northern hemisphere to the southern expanses of the southern hemisphere.&rdquo;</p>
@@ -188,10 +198,10 @@ A = U \Lambda U^*
 		
 		<item>
 			<title>Trips|North of Xinjiang 7.15-7.17</title>
-			<link>https://hicole.me/en/posts/tripsnorth-of-xinjiang-7.15-7.17/</link>
+			<link>http://localhost:1313/en/posts/tripsnorth-of-xinjiang-7.15-7.17/</link>
 			<pubDate>Mon, 15 Jan 2024 15:47:31 +0800</pubDate>
 			
-			<guid>https://hicole.me/en/posts/tripsnorth-of-xinjiang-7.15-7.17/</guid>
+			<guid>http://localhost:1313/en/posts/tripsnorth-of-xinjiang-7.15-7.17/</guid>
 			<description><![CDATA[The fifth in a series]]></description>
 			<content type="html"><![CDATA[
     <aside class="admonition tip">
@@ -294,10 +304,10 @@ A = U \Lambda U^*
 		
 		<item>
 			<title>Trips|North of Xinjiang 7.12-7.14</title>
-			<link>https://hicole.me/en/posts/tripsnorth-of-xinjiang-7.12-7.14/</link>
+			<link>http://localhost:1313/en/posts/tripsnorth-of-xinjiang-7.12-7.14/</link>
 			<pubDate>Fri, 12 Jan 2024 20:39:04 +0800</pubDate>
 			
-			<guid>https://hicole.me/en/posts/tripsnorth-of-xinjiang-7.12-7.14/</guid>
+			<guid>http://localhost:1313/en/posts/tripsnorth-of-xinjiang-7.12-7.14/</guid>
 			<description><![CDATA[The fourth in a series]]></description>
 			<content type="html"><![CDATA[
     <aside class="admonition tip">
@@ -487,10 +497,10 @@ A = U \Lambda U^*
 		
 		<item>
 			<title>Trips|North of Xinjiang 7.9-7.11</title>
-			<link>https://hicole.me/en/posts/tripsnorth-of-xinjiang-7.9-7.11/</link>
+			<link>http://localhost:1313/en/posts/tripsnorth-of-xinjiang-7.9-7.11/</link>
 			<pubDate>Tue, 28 Nov 2023 23:30:44 +0800</pubDate>
 			
-			<guid>https://hicole.me/en/posts/tripsnorth-of-xinjiang-7.9-7.11/</guid>
+			<guid>http://localhost:1313/en/posts/tripsnorth-of-xinjiang-7.9-7.11/</guid>
 			<description><![CDATA[The third in a series]]></description>
 			<content type="html"><![CDATA[
     <aside class="admonition tip">
@@ -712,10 +722,10 @@ A = U \Lambda U^*
 		
 		<item>
 			<title>Trips|North of Xinjiang 7.4-7.8</title>
-			<link>https://hicole.me/en/posts/tripsnorth-of-xinjiang-7.4-7.8/</link>
+			<link>http://localhost:1313/en/posts/tripsnorth-of-xinjiang-7.4-7.8/</link>
 			<pubDate>Mon, 20 Nov 2023 23:22:30 +0800</pubDate>
 			
-			<guid>https://hicole.me/en/posts/tripsnorth-of-xinjiang-7.4-7.8/</guid>
+			<guid>http://localhost:1313/en/posts/tripsnorth-of-xinjiang-7.4-7.8/</guid>
 			<description><![CDATA[The second in a series]]></description>
 			<content type="html"><![CDATA[
     <aside class="admonition tip">
@@ -972,10 +982,10 @@ A = U \Lambda U^*
 		
 		<item>
 			<title>Trips|North of Xinjiang 7.1-7.3</title>
-			<link>https://hicole.me/en/posts/tripsnorth-of-xinjiang-7.1-7.3/</link>
+			<link>http://localhost:1313/en/posts/tripsnorth-of-xinjiang-7.1-7.3/</link>
 			<pubDate>Sat, 11 Nov 2023 16:49:29 +0800</pubDate>
 			
-			<guid>https://hicole.me/en/posts/tripsnorth-of-xinjiang-7.1-7.3/</guid>
+			<guid>http://localhost:1313/en/posts/tripsnorth-of-xinjiang-7.1-7.3/</guid>
 			<description><![CDATA[The first in a series]]></description>
 			<content type="html"><![CDATA[
     <aside class="admonition tip">
@@ -1001,7 +1011,7 @@ A = U \Lambda U^*
 <p>这次旅行无疑是令人难忘的，是酣畅淋漓而现在回想起来仍意犹未尽的。尽管充斥着许多始料未及与措手不及，这趟旅程还是带来了太多的体验、太多的第一次：第一次露营、第一次雨中徒步、第一次骑马飞驰穿越溪流与沟壑、第一次住房车、第一次在漫天繁星的草原上喝乌苏&hellip;&hellip;</p>
 <p>于是在此，借blog的形式，我准备将一些比较满意的照片作品在这里作以展示与留念，点缀一些文字寥寥，试图真诚地连结那些并不遥远的记忆。</p>
 <hr>
-<h1 id="hahahugoshortcode10s1hbhb">
+<h1 id="hahahugoshortcode16s1hbhb">
 
 <p style="text-align:center">Day1</p>
 </h1>
@@ -1020,7 +1030,7 @@ A = U \Lambda U^*
 </ol>
 
 <figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_2538.jpeg"alt="image"/><figcaption><p>We&rsquo;re Ready!</p></figcaption></figure>
-<h1 id="hahahugoshortcode10s3hbhb">
+<h1 id="hahahugoshortcode16s3hbhb">
 
 <p style="text-align:center">Day2</p>
 </h1>
@@ -1068,7 +1078,7 @@ A = U \Lambda U^*
 <figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_2731.jpeg"alt="image"/><figcaption><p>公路旅行</p></figcaption></figure>
 
 <figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_2726.jpeg"alt="image"/><figcaption><p>超香的囊坑肉</p></figcaption></figure>
-<h1 id="hahahugoshortcode10s20hbhb">
+<h1 id="hahahugoshortcode16s20hbhb">
 
 <p style="text-align:center">Day3</p>
 </h1>
@@ -1148,10 +1158,10 @@ A = U \Lambda U^*
 		
 		<item>
 			<title>Recall and Review of the IELTS Test on November 6th</title>
-			<link>https://hicole.me/en/posts/recall-and-review-of-the-ielts-test-on-november-6th/</link>
+			<link>http://localhost:1313/en/posts/recall-and-review-of-the-ielts-test-on-november-6th/</link>
 			<pubDate>Tue, 07 Nov 2023 14:52:18 +0800</pubDate>
 			
-			<guid>https://hicole.me/en/posts/recall-and-review-of-the-ielts-test-on-november-6th/</guid>
+			<guid>http://localhost:1313/en/posts/recall-and-review-of-the-ielts-test-on-november-6th/</guid>
 			<description><![CDATA[]]></description>
 			<content type="html"><![CDATA[
 <figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog11/11.6%20Beijing%20IELTS%20Recap%20%282%29.jpg"alt="image"/><figcaption><p>British Council 北京嘉华世达(崇文门)雅思机考考点</p></figcaption></figure>
@@ -1278,10 +1288,10 @@ A = U \Lambda U^*
 		
 		<item>
 			<title>Self-host Deployment of RSSHub</title>
-			<link>https://hicole.me/en/posts/self-host-deployment-of-rsshub/</link>
+			<link>http://localhost:1313/en/posts/self-host-deployment-of-rsshub/</link>
 			<pubDate>Mon, 11 Sep 2023 23:50:36 +0800</pubDate>
 			
-			<guid>https://hicole.me/en/posts/self-host-deployment-of-rsshub/</guid>
+			<guid>http://localhost:1313/en/posts/self-host-deployment-of-rsshub/</guid>
 			<description><![CDATA[]]></description>
 			<content type="html"><![CDATA[<h2 id="引言">引言</h2>
 <p>说起来，我采用「RSS信息源 + 一款心仪的多平台阅读器」这样的方式获取信息已经有一年多的时间了。总的来说，它带给了我很不错体验，有效的缓解了我在Daily Input过程中的一些无奈与焦虑：一方面，它使筛选过的优质信息源尽量常驻，另一方面，它使阅读信息的过程尽量纯粹。</p>
@@ -1310,7 +1320,7 @@ A = U \Lambda U^*
 <li>随着很多网站的政策更新，获取其内容所需要的条件越来越苛刻，像是API、Cookies、Token等信息需要预配置。</li>
 </ol>
 <p>好在RSSHub的生态还算完整，对于自建这样一个相对小众的需求也有比较详细（当然还不够！不然我也不写这篇blog了）的文档支持。</p>
-<h1 id="hahahugoshortcode5s2hbhb">
+<h1 id="hahahugoshortcode13s2hbhb">
 
 <p style="text-align:center">折腾开始！</p>
 </h1>
@@ -1356,7 +1366,7 @@ A = U \Lambda U^*
 </ol>
 <p>更详细的部署教程（step by step）可以参考这篇Guide：<a href="https://www.cnblogs.com/QiuSYan/p/RssHub.html">RssHub + Vercel ：在 Vercel 上免费部署你的RssHub</a>。</p>
 <p>至此，专属于我自己的RSSHub就已经部署在了Vercel为我提供的Domain下，点击visit即可看到Welcome Page。</p>
-<h1 id="hahahugoshortcode5s4hbhb">
+<h1 id="hahahugoshortcode13s4hbhb">
 
 <p style="text-align:center">Bingo！</p>
 </h1>
@@ -1406,7 +1416,7 @@ A = U \Lambda U^*
 
 <figure><img src="https://github.com/ColeMei/Picgo/blob/master/blog10/CleanShot%202023-09-12%20at%2002.43.21.gif?raw=true"alt="video"/><figcaption><p>最后的验证</p></figcaption></figure>
 <p>可以看到，上面的GIF中，我先点击的是自建域名下生成的新订阅中的文章（全文），后点击的是老的订阅源中的文章（部分）</p>
-<h1 id="hahahugoshortcode5s11hbhb">
+<h1 id="hahahugoshortcode13s11hbhb">
 
 <p style="text-align:center">Perfect！</p>
 </h1>
@@ -1420,10 +1430,10 @@ A = U \Lambda U^*
 		
 		<item>
 			<title>Books|The Road to Serfdom</title>
-			<link>https://hicole.me/en/posts/booksthe-road-to-serfdom/</link>
+			<link>http://localhost:1313/en/posts/booksthe-road-to-serfdom/</link>
 			<pubDate>Sat, 12 Aug 2023 16:00:32 +0800</pubDate>
 			
-			<guid>https://hicole.me/en/posts/booksthe-road-to-serfdom/</guid>
+			<guid>http://localhost:1313/en/posts/booksthe-road-to-serfdom/</guid>
 			<description><![CDATA[Some Reflections on Liberalism and Insinuations from the Current Reality of Society]]></description>
 			<content type="html"><![CDATA[<h1 id="一些关于自由主义的思考和当下现实社会的影射">一些关于自由主义的思考和当下现实社会的影射</h1>
 <h2 id="preface">Preface</h2>
@@ -1668,10 +1678,10 @@ A = U \Lambda U^*
 		
 		<item>
 			<title>Trips|Inner Mongolia 6.10-6.15</title>
-			<link>https://hicole.me/en/posts/tripsinner-mongolia-6.10-6.15/</link>
+			<link>http://localhost:1313/en/posts/tripsinner-mongolia-6.10-6.15/</link>
 			<pubDate>Thu, 22 Jun 2023 10:40:43 +0800</pubDate>
 			
-			<guid>https://hicole.me/en/posts/tripsinner-mongolia-6.10-6.15/</guid>
+			<guid>http://localhost:1313/en/posts/tripsinner-mongolia-6.10-6.15/</guid>
 			<description><![CDATA[]]></description>
 			<content type="html"><![CDATA[<h2 id="intro">Intro</h2>
 <p>遥想上次和朋友结伴出行还是刚高考完的时候，去到了美丽的山城重庆。如今，四年的大学生活也临近尾声，四年间大家虽曾有无数个idea，诸如：拿到license后自驾去拉萨、带上各自的家属来一次浪漫的6人行…但因为一系列原因（包括新冠疫情的影响）都没能付诸以实践。</p>
@@ -1872,10 +1882,10 @@ A = U \Lambda U^*
 		
 		<item>
 			<title>Acknowledgement</title>
-			<link>https://hicole.me/en/posts/acknowledgement/</link>
+			<link>http://localhost:1313/en/posts/acknowledgement/</link>
 			<pubDate>Tue, 23 May 2023 11:32:10 +0800</pubDate>
 			
-			<guid>https://hicole.me/en/posts/acknowledgement/</guid>
+			<guid>http://localhost:1313/en/posts/acknowledgement/</guid>
 			<description><![CDATA[On my Graduation Thesis]]></description>
 			<content type="html"><![CDATA[<p>我是一个时常联想不同时空的人，想回不到的从前，想遥远的将来，但我似乎从没有在哪一次深夜或是某一次发呆时畅想过我会如何写这段将会出现在毕业论文最后的致谢。</p>
 <p>老实讲，毕业意味着什么我说不清，我也不知道毕业那天会发生什么，多少人会哭，多少人会笑，多少人会骂骂咧咧，多少人会不回头。但我想，多年后，提起大学生活，我所怀念的不会是作为符号存在的“河北科技大学”，而是翻阅过的每一封书卷，是伙伴们的挑灯夜话，是牧星湖畔的风，是图书馆两侧的石阶路，是不断的自我怀疑与反思，是一次次挑战，是与他人跳动的联结，也是爱。</p>
@@ -1905,10 +1915,10 @@ A = U \Lambda U^*
 		
 		<item>
 			<title>My English Reading Flow —— Collection</title>
-			<link>https://hicole.me/en/posts/my-english-reading-flow--collection/</link>
+			<link>http://localhost:1313/en/posts/my-english-reading-flow--collection/</link>
 			<pubDate>Thu, 13 Apr 2023 09:58:24 +0800</pubDate>
 			
-			<guid>https://hicole.me/en/posts/my-english-reading-flow--collection/</guid>
+			<guid>http://localhost:1313/en/posts/my-english-reading-flow--collection/</guid>
 			<description><![CDATA[The third in a series]]></description>
 			<content type="html"><![CDATA[<p>这是My Reading Flow （For English Source）系列博客的第三篇</p>
 <p>讲完了如何阅读，下面来聊聊整条flow的最后一个环节，<strong>Collection</strong> — 对读过的文章进行收录。其实在第二部分Read中，我当时就谈及了一些关于收录的事情。</p>
@@ -2024,10 +2034,10 @@ A = U \Lambda U^*
 		
 		<item>
 			<title>My English Reading Flow —— Read</title>
-			<link>https://hicole.me/en/posts/my-english-reading-flow--read/</link>
+			<link>http://localhost:1313/en/posts/my-english-reading-flow--read/</link>
 			<pubDate>Sun, 09 Apr 2023 21:37:52 +0800</pubDate>
 			
-			<guid>https://hicole.me/en/posts/my-english-reading-flow--read/</guid>
+			<guid>http://localhost:1313/en/posts/my-english-reading-flow--read/</guid>
 			<description><![CDATA[The second in a series]]></description>
 			<content type="html"><![CDATA[<p>这是My Reading Flow （For English Source）系列博客的第二篇</p>
 <p>在上一节中讲完了有关如何获取信息，下面我们回到阅读本身。我大致将我的阅读分为两种，不过思来想去，还是觉得不能直接划分为精读和粗读这样泾渭分明的简单定义，因为其实我读的都挺认真的。可能从阅读的目的或者说是侧重点来讲会更好，第一种阅读是偏向于语料的积累和提高语言的赏析能力，另一种则是以信息的获取为首要目的的阅读。</p>
@@ -2133,10 +2143,10 @@ A = U \Lambda U^*
 		
 		<item>
 			<title>My English Reading Flow —— Source</title>
-			<link>https://hicole.me/en/posts/my-english-reading-flow--source/</link>
+			<link>http://localhost:1313/en/posts/my-english-reading-flow--source/</link>
 			<pubDate>Thu, 06 Apr 2023 10:18:11 +0800</pubDate>
 			
-			<guid>https://hicole.me/en/posts/my-english-reading-flow--source/</guid>
+			<guid>http://localhost:1313/en/posts/my-english-reading-flow--source/</guid>
 			<description><![CDATA[The first in a series]]></description>
 			<content type="html"><![CDATA[<p>这是My Reading Flow （For English Source）系列博客的第一篇</p>
 <p>首先，第一节中，我们来聊聊信息的来源。开门见山，我获取英文信息的渠道基本如下：</p>
@@ -2206,10 +2216,10 @@ A = U \Lambda U^*
 		
 		<item>
 			<title>This is my first blog</title>
-			<link>https://hicole.me/en/posts/this-is-my-first-blog/</link>
+			<link>http://localhost:1313/en/posts/this-is-my-first-blog/</link>
 			<pubDate>Mon, 02 Jan 2023 14:56:19 +0800</pubDate>
 			
-			<guid>https://hicole.me/en/posts/this-is-my-first-blog/</guid>
+			<guid>http://localhost:1313/en/posts/this-is-my-first-blog/</guid>
 			<description><![CDATA[%!s(<nil>)]]></description>
 			<content type="html"><![CDATA[<h3 id="hello-hugo">Hello Hugo!</h3>
 
@@ -2219,10 +2229,10 @@ A = U \Lambda U^*
 		
 		<item>
 			<title>Running Pentaho Data Integration on Mac bigSur (M1)</title>
-			<link>https://hicole.me/en/posts/running-pentaho-data-integration-on-mac-bigsur-m1/</link>
+			<link>http://localhost:1313/en/posts/running-pentaho-data-integration-on-mac-bigsur-m1/</link>
 			<pubDate>Sat, 10 Jul 2021 16:47:33 +0800</pubDate>
 			
-			<guid>https://hicole.me/en/posts/running-pentaho-data-integration-on-mac-bigsur-m1/</guid>
+			<guid>http://localhost:1313/en/posts/running-pentaho-data-integration-on-mac-bigsur-m1/</guid>
 			<description><![CDATA[%!s(<nil>)]]></description>
 			<content type="html"><![CDATA[<h1 id="关于在m1-mac-上安装部署pdikettle">关于在M1 Mac 上安装部署PDI(kettle)</h1>
 <ul>

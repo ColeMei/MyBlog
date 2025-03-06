@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Skillset on Cole World</title>
-    <link>https://hicole.me/en/tags/skillset/</link>
+    <link>http://localhost:1313/en/tags/skillset/</link>
     <description>Recent content in Skillset on Cole World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Sat, 10 Jul 2021 16:47:33 +0800</lastBuildDate>
-    <atom:link href="https://hicole.me/en/tags/skillset/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/en/tags/skillset/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Running Pentaho Data Integration on Mac bigSur (M1)</title>
-      <link>https://hicole.me/en/posts/running-pentaho-data-integration-on-mac-bigsur-m1/</link>
+      <link>http://localhost:1313/en/posts/running-pentaho-data-integration-on-mac-bigsur-m1/</link>
       <pubDate>Sat, 10 Jul 2021 16:47:33 +0800</pubDate>
-      <guid>https://hicole.me/en/posts/running-pentaho-data-integration-on-mac-bigsur-m1/</guid>
+      <guid>http://localhost:1313/en/posts/running-pentaho-data-integration-on-mac-bigsur-m1/</guid>
       <description>&lt;h1 id=&#34;关于在m1-mac-上安装部署pdikettle&#34;&gt;关于在M1 Mac 上安装部署PDI(kettle)&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;截止我编写这篇笔记之时，Kettle并没有原生支持M1，所以本文大致思路是使用Rosetta转译运行，无需借助任何虚拟机。&lt;/p&gt;</description>
     </item>
   </channel>
