@@ -1,6 +1,6 @@
 # Cole World
 
-Welcome to **Cole World**, a place where thoughts flow like water and code blends seamlessly with life. This repository is the source of my personal blog: [hicole.me](https://hicole.me). 
+Welcome to **Cole World**, a place where thoughts flow like water and code blends seamlessly with life. This repository is the source of my personal blog: [colemei.live](https://colemei.live). 
 
 ## 💡 What’s Here?
 
