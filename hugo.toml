@@ -1,4 +1,4 @@
-baseURL = 'https://hicole.me'
+baseURL = 'https://colemei.live'
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 theme = "hermit-v2"
