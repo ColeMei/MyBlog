@@ -12,6 +12,221 @@
 		
 		
 		<item>
+			<title>PAC Theory and VC Dimension</title>
+			<link>https://colemei.live/en/posts/pac-theory-and-vc-dimension/</link>
+			<pubDate>Wed, 02 Apr 2025 13:18:30 +1100</pubDate><author>Cole Mei</author><guid>https://colemei.live/en/posts/pac-theory-and-vc-dimension/</guid>
+			<description><![CDATA[COMP90051 Statistical Machine Learning]]></description><enclosure url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" length="" type="image/jpeg" />
+			<media:thumbnail url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" width="1920" height="1080" />
+			<media:content url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" medium="image" type="image/jpeg" width="1920" height="1080" >
+			    <media:title type="html">/560-1920x1080_9913724952418298616.jpg</media:title>
+			</media:content><content type="text/html" mode="escaped"><![CDATA[
+    <aside class="admonition info">
+        <div class="admonition-title">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info">
+      <circle cx="12" cy="12" r="10"></circle>
+      <line x1="12" y1="16" x2="12" y2="12"></line>
+      <line x1="12" y1="8" x2="12.01" y2="8"></line>
+   </svg></div><b>This is a info</b>
+        </div>
+        <div class="admonition-content">This blog is inspired by my experience in COMP90051 Statistical Machine Learning in Unimelb, particularly content from Lectures 6-8. I&rsquo;ve created this summary for my self-learning, organization, and reference purposes.</div>
+    </aside>
+<h2 id="introduction-to-pac-theory">Introduction to PAC Theory<a href="#introduction-to-pac-theory" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>In machine learning, we often grapple with a fundamental question: how well does our model, trained on limited data, perform on unseen examples? Probably Approximately Correct (PAC) learning theory provides a framework to address this question rigorously.</p>
+<h2 id="the-standard-setup">The Standard Setup<a href="#the-standard-setup" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>Let&rsquo;s establish some notation and key concepts:</p>
+<ul>
+<li>
+<p>$f_m$: The best function on our training set that minimizes empirical error ($\arg\min \hat{R}(f)$)</p>
+</li>
+<li>
+<p>$f^*$: The best function within our hypothesis space $\mathcal{H}$</p>
+</li>
+<li>
+<p>$f$: The exact objective function (the best in all possible space)</p>
+</li>
+<li>
+<p>True risk $R(f)$: What we ultimately want to minimize</p>
+</li>
+<li>
+<p>True risk ≈ Test error (as sample size approaches infinity)</p>
+</li>
+<li>
+<p>Excess risk = $R(f_m) - R^*$, which can be decomposed into:</p>
+<ul>
+<li>Estimation error: $R(f_m) - R(f^*)$</li>
+<li>Approximation error: $R(f^*) - R^*$</li>
+<li>$R^*$: The Bayes risk, which represents the lowest possible risk achievable given the data distribution</li>
+</ul>
+</li>
+</ul>
+<p>For our analysis, let&rsquo;s focus on understanding $R(f_m)$ and its relation to other error measures.</p>
+<h2 id="the-relationship-between-errors">The Relationship Between Errors<a href="#the-relationship-between-errors" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/pac-theory-and-vc-dimension/ml_work_flows.png"alt="image"/></figure>
+<p>The key relationships we need to understand are:</p>
+<ul>
+<li>$E_{out}(g) = R(f_m)$: The generalization error (estimation error or true risk)</li>
+<li>$E_{in}(g) = \hat{R}(f_m)$: The empirical error measured on training data</li>
+<li>$E_{out}(f) = R(f)$: The true risk of the ideal function</li>
+</ul>
+<p>In the ideal scenario where $R(f) = 0$ and $fm$ approximates $f$ well, we want $R(f_m) \approx 0$. This leads to the desired chain of approximations:
+$0 = R(f) \approx R(f_m) \approx \hat{R}(f_m) \approx 0$</p>
+<p>However, since we can&rsquo;t access the full data distribution, we can&rsquo;t calculate $R(f_m)$ directly. Instead, we need to bound it.</p>
+<h2 id="bounding-the-true-risk">Bounding the True Risk<a href="#bounding-the-true-risk" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<h3 id="for-a-single-function-hoeffdings-inequality">For a Single Function: Hoeffding&rsquo;s Inequality<a href="#for-a-single-function-hoeffdings-inequality" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>$\hat{R}(f)$ varies depending on our sample, while $R(f)$ is fixed. Using Hoeffding&rsquo;s inequality:</p>
+$$P\left[|\nu - \mu| > \epsilon\right] \leq 2 \exp\left(-2\epsilon^2 N\right)$$<p>Where $\nu$ represents the sample expectation and $\mu$ is the true expectation. As our sample size $N$ increases, $\nu$ approaches $\mu$.</p>
+<p>From Hoeffding&rsquo;s inequality, we can see that as $N$ increases, the probability that the difference between $\nu$ and $\mu$ exceeds $\epsilon$ approaches zero. This means the sample expectation increasingly approximates the population expectation—they become &ldquo;probably approximately correct.&rdquo;</p>
+<p>For any specific function, as $N$ grows: $\hat{R}(f_m) \approx R(f_m)$</p>
+$$\Pr\left( |E_{\text{in}}(h) - E_{\text{out}}(h)| > \epsilon \right) \leq 2 \exp\left(-2\epsilon^2 N\right)$$<h3 id="for-a-family-of-functions-uniform-deviation-bounds">For a Family of Functions: Uniform Deviation Bounds<a href="#for-a-family-of-functions-uniform-deviation-bounds" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>Why we need our bound to simultaneously (or uniformly) hold over a family of functions?</p>
+<p>Theorem: ERM’s estimation error is at most twice the uniform divergence</p>
+<p>When dealing with multiple hypotheses, we must account for the fact that rare events become likely when tried many times. Consider this example: flipping a coin 5 times and getting all heads has a probability of 1/32. But if 100 people perform this experiment, the probability that at least one person gets all heads exceeds 0.95.</p>
+<p>Using the union bound for a hypothesis space $\mathcal{H}$ with functions $f_1, f_2, \ldots, f_M$:</p>
+$$\forall g \in \mathcal{H}, \Pr\left( |E_{\text{in}}(g) - E_{\text{out}}(g)| > \epsilon \right) \leq 2M \exp\left(-2\epsilon^2 N\right)$$<p>This formula tells us that for any hypothesis $g$ in $\mathcal{H}$, the probability that the difference between $E_{in}(g)$ and $E_{out}(g)$ exceeds $\epsilon$ is bounded by $2M\exp(-2\epsilon^2 N)$. This bound heavily depends on both $M$ (the size of the hypothesis space) and $N$ (the sample size).</p>
+<h2 id="what-makes-a-hypothesis-space-learnable">What Makes a Hypothesis Space Learnable?<a href="#what-makes-a-hypothesis-space-learnable" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>A hypothesis space $\mathcal{H}$ is learnable if:</p>
+<ol>
+<li>Algorithm $A$ can learn a function $f$ from $\mathcal{H}$ such that $\hat{R}(f) \approx 0$</li>
+<li>In $\mathcal{H}$, $M$ is finite and $N$ is sufficiently large</li>
+</ol>
+<p>When these conditions are met, the right side of our bound approaches 0, guaranteeing $R(f) \approx \hat{R}(f)$.</p>
+<ul>
+<li>In training: We minimize $\hat{R}(f)$ to find $f_m$</li>
+<li>In testing: We aim to minimize $R(f)$, which should be close to $\hat{R}(f)$</li>
+</ul>
+<p>However, challenges arise when:</p>
+<ul>
+<li>$M$ is too small: It becomes difficult to find the exact $f$</li>
+<li>$M$ is too large: The right side doesn&rsquo;t approach 0</li>
+<li>$M$ is infinite (which is common): This violates condition 2, making learning seemingly impossible</li>
+</ul>
+<p>But wait—in most practical scenarios, $M$ is infinite. For instance, in a 2D space, we have infinitely many possible lines. Does this mean learning is impossible? This is where VC dimension comes in.</p>
+<h2 id="vc-dimension-making-the-infinite-manageable">VC Dimension: Making the Infinite Manageable<a href="#vc-dimension-making-the-infinite-manageable" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>The union bound can be loose because hypotheses in $\mathcal{H}$ aren&rsquo;t completely independent—many can be categorized as essentially the same class.</p>
+<p>This means $M$ can be rewritten as a finite &ldquo;effective($M$)&rdquo; depending on the sample:</p>
+$$\forall g \in \mathcal{H}, \Pr\left( |E_{\text{in}}(g) - E_{\text{out}}(g)| > \epsilon \right) \leq 2 \cdot \text{effective}(M) \exp\left(-2\epsilon^2 N\right)$$<h3 id="growth-function-and-dichotomy">Growth Function and Dichotomy<a href="#growth-function-and-dichotomy" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>To understand the effective $M$, we introduce the concepts of dichotomy and growth function. Since we don&rsquo;t want to depend on a specific data distribution $D$, we consider the maximum number of dichotomies across any $D$ in $\mathcal{H}$—this is the Growth Function.</p>
+<p>The growth function represents the maximum possible number of labeling results that the hypothesis space $\mathcal{H}$ can assign to any $N$ samples. In simpler terms, it represents the number of meaningfully different hypotheses that can produce distinct results—the effective hypotheses.</p>
+<p>A larger growth function indicates that $\mathcal{H}$ can express more classifiers, which leads to the question: can we substitute the effective($M$) with the Growth function?</p>
+<h3 id="shattering-and-break-points">Shattering and Break Points<a href="#shattering-and-break-points" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>When a hypothesis space $\mathcal{H}$ acting on a sample set $D$ of size $N$ produces $2^N$ dichotomies (Growth Function = $2^N$), we say $D$ is &ldquo;shattered&rdquo; by $\mathcal{H}$. In other words, if $\mathcal{H}$ can produce all possible dichotomies on a dataset, we say $\mathcal{H}$ can shatter that dataset.</p>
+<p>The growth function helps us reduce $M$ from infinite to being bounded by $2^N$, but this is still too loose. We introduce the concept of a &ldquo;break point&rdquo;:</p>
+<p>Starting from $N=1$ and gradually increasing, when we reach a value $k$ where the growth function becomes less than $2^N$, we say $k$ is the break point of the hypothesis space. In other words, for any dataset of size $N$ (where $N \geq k$), $\mathcal{H}$ cannot shatter it.</p>
+<p>For example, if $\mathcal{H}$ consists of all lines in 2D space, the break point is 4.</p>
+<p>With a break point, the upper bound becomes a polynomial $N^{k-1}$ rather than the exponential $2^N$. (Proof Here) <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+$$m_H(N) \leq B(N, k) \leq \sum_{i=0}^{k-1} \binom{N}{i} \leq N^{k-1}$$<p>Then, the PAC bound with VC bound becomes (Proof Here) <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>:</p>
+$$\forall g \in \mathcal{H}, \Pr\left( |E_{\text{in}}(g) - E_{\text{out}}(g)| > \epsilon \right) \leq 4 m_{\mathcal{H}}(2N) \exp\left(-\frac{1}{8} \epsilon^2 N\right)$$<p>While we can&rsquo;t simply substitute effective $M$ with the Growth function, they are clearly related.</p>
+<h3 id="vc-dimension-defined">VC Dimension Defined<a href="#vc-dimension-defined" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>The VC dimension $d = k-1$ (where $k$ is the break point). The VC dimension indicates:</p>
+<ul>
+<li>There exists a dataset of size $d$ that can be shattered by hypothesis space $\mathcal{H}$</li>
+<li>$\mathcal{H}$ can at most shatter $d$ data points</li>
+</ul>
+<p>It&rsquo;s important to note that this doesn&rsquo;t mean all datasets of size $d$ can be shattered by $\mathcal{H}$. For example, the hypothesis space of all lines in a 2D plane has a VC dimension of 3, but it cannot shatter three points lying on the same line. In fact, the VC dimension&rsquo;s definition is independent of the specific data distribution.</p>
+<p>With the growth function bounded by $N^d$, we get:</p>
+$$\forall g \in \mathcal{H}, \Pr\left( |E_{\text{in}}(g) - E_{\text{out}}(g)| > \epsilon \right) \leq 4(2N)^{V(\mathcal{H})} \exp\left(-\frac{1}{8} \epsilon^2 N\right)$$<h3 id="revisiting-learnability-with-vc-dimension">Revisiting Learnability with VC Dimension<a href="#revisiting-learnability-with-vc-dimension" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>With these concepts in hand, we can redefine the second condition for learnability from &ldquo;$M$ finite&rdquo; to &ldquo;VC dimension for $\mathcal{H}$ is finite.&rdquo; The progression of our understanding has been:
+$M \rightarrow \text{Effective } M \rightarrow \text{Growth Function} \rightarrow \text{VC dimension}$</p>
+<p>A larger VC dimension generally indicates a more complex model.</p>
+<p>Importantly, the VC dimension is independent of:</p>
+<ul>
+<li>The learning algorithm</li>
+<li>The specific distribution of the dataset</li>
+<li>The objective function we solve</li>
+</ul>
+<p>It depends only on the model and the hypothesis space. In practice, the VC dimension of a hypothesis space is approximately equal to the number of free parameters in the hypothesis.</p>
+<h2 id="the-tradeoff-empirical-risk-vs-true-risk">The Tradeoff: Empirical Risk vs. True Risk<a href="#the-tradeoff-empirical-risk-vs-true-risk" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>Finally, we can derive the relationship between $E_{in}(g)$ and $E_{out}(g)$, by inversely solve for</p>
+$$\epsilon = \sqrt{\frac{8}{N} \ln \left( \frac{4(2N)^{VC(H)}}{\delta} \right)}$$<p>it follows that there is a $1-\delta$ probability that something good will happen, and the good thing,</p>
+$$E_{in}(g) - \sqrt{\frac{8}{N} \ln \left( \frac{4(2N)^{VC(H)}}{\delta} \right)} \leq E_{out}(g) \leq E_{in}(g) + \sqrt{\frac{8}{N} \ln \left( \frac{4(2N)^{VC(H)}}{\delta} \right)}$$<p>This equation describes the relationship between $E_{in}(g)$ and $E_{out}(g)$. The square root term can be viewed as the model complexity $\Omega$—the more complex the model, the larger the gap between $E_{in}(g)$ and $E_{out}(g)$.</p>
+<p>When we fix the sample size $N$, as the VC dimension increases, $E_{in}(g)$ continuously decreases while the complexity $\Omega$ increases. The rates of increase and decrease vary at different stages, so we need to find a suitable VC dimension that balances both factors to minimize $E_{out}(g)$.</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/pac-theory-and-vc-dimension/vcdimension_error_complexity.png"alt="image"/></figure>
+<p>This relationship reveals the classic bias-variance tradeoff in machine learning: simpler models might have higher training error but generalize better, while more complex models can fit the training data perfectly but may perform poorly on unseen examples.</p>
+<h2 id="conclusion">Conclusion<a href="#conclusion" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>PAC theory and VC dimension provide a theoretical foundation for understanding when and why machine learning algorithms work. By quantifying the relationship between empirical and true risk, they help us navigate the fundamental tradeoff between model complexity and generalization performance.</p>
+<h2 id="reference">Reference<a href="#reference" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<ol>
+<li><a href="https://tangshusen.me/2018/12/09/vc-dimension/">统计学习理论之VC维究竟是什么 | TangShusen</a></li>
+<li><a href="https://www.facequant.com/2020/11/13/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-PAC-%E5%AD%A6%E4%B9%A0%E7%90%86%E8%AE%BA/">深入理解 PAC 学习理论 | 阿平的自我修养</a></li>
+</ol>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://www.zhihu.com/question/38607822/answer/157787203">https://www.zhihu.com/question/38607822/answer/157787203</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://nowak.ece.wisc.edu/SLT09/lecture19.pdf">https://nowak.ece.wisc.edu/SLT09/lecture19.pdf</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+]]></content>
+		</item>
+		
+		<item>
 			<title>New features in Blog 2.0</title>
 			<link>https://colemei.live/en/posts/new-features-in-blog-2.0/</link>
 			<pubDate>Wed, 17 Jul 2024 15:31:50 +1000</pubDate><author>Cole Mei</author><guid>https://colemei.live/en/posts/new-features-in-blog-2.0/</guid>
@@ -232,10 +447,10 @@ A = U \Lambda U^*
         </div>
         <div class="admonition-content">本文是北疆之行系列的第五篇</div>
     </aside>
-<h1 id="hahahugoshortcode19s1hbhb">
+<h1 id="hahahugoshortcode20s1hbhb">
 
 <p style="text-align:center">Day15</p>
-<a href="#hahahugoshortcode19s1hbhb" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+<a href="#hahahugoshortcode20s1hbhb" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
@@ -273,10 +488,10 @@ A = U \Lambda U^*
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
 <p>库车市是古龟兹国的所在地，市区里遍布着很多纵横交错的商业街和一些人文景点。我们到库车时天色还早，便拜访了比较有名的库车王府，走马观花，就当是一个迷你博物馆闲逛了一圈，随后便入住宾馆休息了。</p>
-<h1 id="hahahugoshortcode19s7hbhb">
+<h1 id="hahahugoshortcode20s7hbhb">
 
 <p style="text-align:center">Day16</p>
-<a href="#hahahugoshortcode19s7hbhb" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+<a href="#hahahugoshortcode20s7hbhb" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
@@ -312,10 +527,10 @@ A = U \Lambda U^*
    </svg></a></h3>
 <p>时至今日，时隔近半年的时间，我还是能在脑中构想出，在吐鲁番市区内，第一次钻出车舱迎面袭来的那股高温热浪。行走在市区内，我们三个人都一致对吐鲁番的常住人口是怎样忍耐如此高温环境表示诧异和难以置信。</p>
 <p>真的太热了，这是我最直接的感受，打开手机天气证实一下，果然：42度。这还是在七月的中旬，不知道九十月份这里又会是怎样的一种窒息感。本来计划在市区内逛逛，买点儿水果点心什么的，但是吃完饭以后实在是热得难以忍受，就回宾馆吹空调了。</p>
-<h1 id="hahahugoshortcode19s11hbhb">
+<h1 id="hahahugoshortcode20s11hbhb">
 
 <p style="text-align:center">Day17</p>
-<a href="#hahahugoshortcode19s11hbhb" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+<a href="#hahahugoshortcode20s11hbhb" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
@@ -915,10 +1130,10 @@ A = U \Lambda U^*
         </div>
         <div class="admonition-content">本文是北疆之行系列的第二篇</div>
     </aside>
-<h1 id="hahahugoshortcode20s1hbhb">
+<h1 id="hahahugoshortcode19s1hbhb">
 
 <p style="text-align:center">Day4</p>
-<a href="#hahahugoshortcode20s1hbhb" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+<a href="#hahahugoshortcode19s1hbhb" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
@@ -961,10 +1176,10 @@ A = U \Lambda U^*
       <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/MhN2eaRInQk?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
     </div>
 
-<h1 id="hahahugoshortcode20s7hbhb">
+<h1 id="hahahugoshortcode19s7hbhb">
 
 <p style="text-align:center">Day5</p>
-<a href="#hahahugoshortcode20s7hbhb" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+<a href="#hahahugoshortcode19s7hbhb" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
@@ -1033,10 +1248,10 @@ A = U \Lambda U^*
 
 <figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/A0AC76A2-CDE1-4444-8052-FFFD12815E19.JPG"alt="image"/><figcaption><p>原始森林间的一条徒步路线</p></figcaption></figure>
 <p>这天晚饭时，我们特意找了一家餐厅，专门点了很多很多绿叶菜吃来补充，调解了一下膳食平衡。</p>
-<h1 id="hahahugoshortcode20s25hbhb">
+<h1 id="hahahugoshortcode19s25hbhb">
 
 <p style="text-align:center">Day6</p>
-<a href="#hahahugoshortcode20s25hbhb" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+<a href="#hahahugoshortcode19s25hbhb" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
@@ -1078,10 +1293,10 @@ A = U \Lambda U^*
 <figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/C40313A7-16CB-454B-9246-B0CB45BFE88A.JPG"alt="image"/><figcaption><p>盘旋的鸢</p></figcaption></figure>
 
 <figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/98CC478F-AC71-4857-92A0-C0AE466D41DB.JPG"alt="image"/><figcaption><p>无限接近边境！</p></figcaption></figure>
-<h1 id="hahahugoshortcode20s34hbhb">
+<h1 id="hahahugoshortcode19s34hbhb">
 
 <p style="text-align:center">Day7</p>
-<a href="#hahahugoshortcode20s34hbhb" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+<a href="#hahahugoshortcode19s34hbhb" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
@@ -1164,10 +1379,10 @@ A = U \Lambda U^*
 <figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/118828D6-9CFF-45CD-99D0-CF5FAB6B94C5.JPG"alt="image"/><figcaption><p>层叠的光影</p></figcaption></figure>
 
 <figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/1F81166B-3564-468A-AEEE-A3CFC2095ABB.JPG"alt="image"/><figcaption><p>与五彩滩分别</p></figcaption></figure>
-<h1 id="hahahugoshortcode20s57hbhb">
+<h1 id="hahahugoshortcode19s57hbhb">
 
 <p style="text-align:center">Day8</p>
-<a href="#hahahugoshortcode20s57hbhb" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+<a href="#hahahugoshortcode19s57hbhb" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
@@ -1821,471 +2036,6 @@ A = U \Lambda U^*
 <p>这篇blog算是对又一次的折腾之旅的一次小记录，并不能称之为一篇正经的教程，所以更多的记录的是我的一些思辨过程，写一些我想写的而不是简单的step by step的tracking。</p>
 <p>最近这段时间日子过的比较清闲，在做出了可能是人生中的又一个Big Decision后，短暂结束了自己的迷茫与百无聊赖，折腾的频率就也又上来了。</p>
 <p>今天难得心血来潮，洋洋洒洒写成此篇，就借此以最美好的祝愿许给RSS（Really Simple Syndication）这一古老朴素而余温无限的协议和其繁盛的生态以最高的敬意吧！</p>
-]]></content>
-		</item>
-		
-		<item>
-			<title>Books|The Road to Serfdom</title>
-			<link>https://colemei.live/en/posts/booksthe-road-to-serfdom/</link>
-			<pubDate>Sat, 12 Aug 2023 16:00:32 +0800</pubDate><author>Cole Mei</author><guid>https://colemei.live/en/posts/booksthe-road-to-serfdom/</guid>
-			<description><![CDATA[Some Reflections on Liberalism and Insinuations from the Current Reality of Society]]></description><enclosure url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" length="" type="image/jpeg" />
-			<media:thumbnail url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" width="1920" height="1080" />
-			<media:content url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" medium="image" type="image/jpeg" width="1920" height="1080" >
-			    <media:title type="html">/560-1920x1080_9913724952418298616.jpg</media:title>
-			</media:content><content type="text/html" mode="escaped"><![CDATA[<h1 id="一些关于自由主义的思考和当下现实社会的影射">一些关于自由主义的思考和当下现实社会的影射<a href="#%e4%b8%80%e4%ba%9b%e5%85%b3%e4%ba%8e%e8%87%aa%e7%94%b1%e4%b8%bb%e4%b9%89%e7%9a%84%e6%80%9d%e8%80%83%e5%92%8c%e5%bd%93%e4%b8%8b%e7%8e%b0%e5%ae%9e%e7%a4%be%e4%bc%9a%e7%9a%84%e5%bd%b1%e5%b0%84" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h1>
-<h2 id="preface">Preface<a href="#preface" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h2>
-<p>现在回想起来，最初了解到这本书并不是瞥见于某个图书网站的Rank List或是源自某个up主的Recommendation，而是从V2EX中的一个帖子里看到的，那个帖子的主题好像是”2022年你读过最棒(最有意义/最振聋发聩/最值得推荐，等等具体的那个形容词我记不清了)的一本书“。</p>
-<p>当时就有注意到，“通往自由之路”这个title呼声相当高，于是就从Z-library上找来了Epub的读本，加入了Apple books的收藏中，期间短暂翻阅过寥寥，但也直到最近才重新拾起来通读一遍。</p>
-<hr>
-<h2 id="the-terrible-translation">The Terrible Translation<a href="#the-terrible-translation" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h2>
-<p>其实，刚开始读这本被出版方（中国社会科学出版社）定义为“西方现代思想丛书”的前几天，是很痛苦的：这本书的翻译工作实在是太糟糕了，结合书中的思想与当下的社会现实的某些强烈对冲，我不得不怀疑是不是由于一些不可名状的因素才导致翻译家老师们只能把哈耶克的这部作品翻译成这样的水平。因为仅仅凭借我零星的文学造诣，有些句子我也能很明显地看出简单换一换语序即可使理解的难度降低不少。在晦涩崎岖的阅读过程中，我不得不用上了一些类似我阅读英文长难句中的技巧：缩句，抽剥，仅保留句子主谓宾、主系表的骨架结构。有时我甚至萌生出去找英文原版来读的想法（无奈这毕竟是一本nonfiction，难度太大了）。</p>
-<p>上面提到的翻译问题可能真的要亲自去读这版译本才能真切感觉到我的这种痛苦吧，或许细心找找可能会有更好的民间译本（<a href="https://book.douban.com/subject/4016869/">比如殷海光老师1954年版</a>)<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。 不过，换一个角度想，该译本出版于1997年，处在那个我未曾亲临过的世纪交汇之间，可能也是这25年来人们精神和思想世界都比较轻松和悠闲的时代。也难怪这么多年来原作都没有再版的消息，不过至少没有被列为禁书，从读者身份来讲也算是一种幸运吧。</p>
-<hr>
-<h2 id="excerptions-and-notes">Excerptions and Notes<a href="#excerptions-and-notes" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h2>
-<p>从7月27日至8月10日读完，十几天的时间也只是做到浏览一遍，真正能够理解消化其中的思想而并入自己的智识体系还尚远，索性就借着这篇blog，结合当时阅读时做的highlight和notes，重新梳理一下，也以备后时之需。</p>
-<p>「<em>Tips 1：一些原文中比较晦涩拗口的翻译我将结合自己的理解进行调整与修补。</em>」</p>
-<p>「<em>Tips 2：对原文内容的摘录也并不代表我的观点和体现着我的评价（赞同或是否定）</em>」</p>
-<h3 id="第一章-被离弃的道路">第一章 《被离弃的道路》<a href="#%e7%ac%ac%e4%b8%80%e7%ab%a0-%e8%a2%ab%e7%a6%bb%e5%bc%83%e7%9a%84%e9%81%93%e8%b7%af" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h3>
-<blockquote>
-<h5 id="个人主义的基本特征就是把个人当作人来尊重相信人应该发展自己的天赋和爱好就是在他自己的范围内承认他的看法和趣味是至高无上的纵然这个范围可能被限制得很狭隘">个人主义的基本特征就是把个人当作人来尊重，相信人应该发展自己的天赋和爱好。就是在他自己的范围内承认他的看法和趣味是<strong>至高无上</strong>的。纵然这个范围可能被限制得很狭隘。<a href="#%e4%b8%aa%e4%ba%ba%e4%b8%bb%e4%b9%89%e7%9a%84%e5%9f%ba%e6%9c%ac%e7%89%b9%e5%be%81%e5%b0%b1%e6%98%af%e6%8a%8a%e4%b8%aa%e4%ba%ba%e5%bd%93%e4%bd%9c%e4%ba%ba%e6%9d%a5%e5%b0%8a%e9%87%8d%e7%9b%b8%e4%bf%a1%e4%ba%ba%e5%ba%94%e8%af%a5%e5%8f%91%e5%b1%95%e8%87%aa%e5%b7%b1%e7%9a%84%e5%a4%a9%e8%b5%8b%e5%92%8c%e7%88%b1%e5%a5%bd%e5%b0%b1%e6%98%af%e5%9c%a8%e4%bb%96%e8%87%aa%e5%b7%b1%e7%9a%84%e8%8c%83%e5%9b%b4%e5%86%85%e6%89%bf%e8%ae%a4%e4%bb%96%e7%9a%84%e7%9c%8b%e6%b3%95%e5%92%8c%e8%b6%a3%e5%91%b3%e6%98%af%e8%87%b3%e9%ab%98%e6%97%a0%e4%b8%8a%e7%9a%84%e7%ba%b5%e7%84%b6%e8%bf%99%e4%b8%aa%e8%8c%83%e5%9b%b4%e5%8f%af%e8%83%bd%e8%a2%ab%e9%99%90%e5%88%b6%e5%be%97%e5%be%88%e7%8b%ad%e9%9a%98" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>如何理解个人主义之于个人的尊重与认同。</li>
-</ul>
-<h3 id="第二章-伟大的乌托邦">第二章 《伟大的乌托邦》<a href="#%e7%ac%ac%e4%ba%8c%e7%ab%a0-%e4%bc%9f%e5%a4%a7%e7%9a%84%e4%b9%8c%e6%89%98%e9%82%a6" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h3>
-<blockquote>
-<h5 id="民主扩展个人自由的范围而社会主义却对其加以限制民主尽可能地赋予每一个人价值而社会主义却仅仅使每一个人成为一个工具一个数字民主和社会主义除了平等一词毫无共同之处但请注意这个区别民主在自由之中寻求平等而社会主义则在约束和奴役之中寻求平等">民主扩展个人自由的范围，而社会主义却对其加以限制。民主尽可能地赋予每一个人价值，而社会主义却仅仅使每一个人成为一个工具、一个数字。民主和社会主义除了“平等”一词毫无共同之处。但请注意这个区别：<strong>民主在自由之中寻求平等，而社会主义则在约束和奴役之中寻求平等。</strong><a href="#%e6%b0%91%e4%b8%bb%e6%89%a9%e5%b1%95%e4%b8%aa%e4%ba%ba%e8%87%aa%e7%94%b1%e7%9a%84%e8%8c%83%e5%9b%b4%e8%80%8c%e7%a4%be%e4%bc%9a%e4%b8%bb%e4%b9%89%e5%8d%b4%e5%af%b9%e5%85%b6%e5%8a%a0%e4%bb%a5%e9%99%90%e5%88%b6%e6%b0%91%e4%b8%bb%e5%b0%bd%e5%8f%af%e8%83%bd%e5%9c%b0%e8%b5%8b%e4%ba%88%e6%af%8f%e4%b8%80%e4%b8%aa%e4%ba%ba%e4%bb%b7%e5%80%bc%e8%80%8c%e7%a4%be%e4%bc%9a%e4%b8%bb%e4%b9%89%e5%8d%b4%e4%bb%85%e4%bb%85%e4%bd%bf%e6%af%8f%e4%b8%80%e4%b8%aa%e4%ba%ba%e6%88%90%e4%b8%ba%e4%b8%80%e4%b8%aa%e5%b7%a5%e5%85%b7%e4%b8%80%e4%b8%aa%e6%95%b0%e5%ad%97%e6%b0%91%e4%b8%bb%e5%92%8c%e7%a4%be%e4%bc%9a%e4%b8%bb%e4%b9%89%e9%99%a4%e4%ba%86%e5%b9%b3%e7%ad%89%e4%b8%80%e8%af%8d%e6%af%ab%e6%97%a0%e5%85%b1%e5%90%8c%e4%b9%8b%e5%a4%84%e4%bd%86%e8%af%b7%e6%b3%a8%e6%84%8f%e8%bf%99%e4%b8%aa%e5%8c%ba%e5%88%ab%e6%b0%91%e4%b8%bb%e5%9c%a8%e8%87%aa%e7%94%b1%e4%b9%8b%e4%b8%ad%e5%af%bb%e6%b1%82%e5%b9%b3%e7%ad%89%e8%80%8c%e7%a4%be%e4%bc%9a%e4%b8%bb%e4%b9%89%e5%88%99%e5%9c%a8%e7%ba%a6%e6%9d%9f%e5%92%8c%e5%a5%b4%e5%bd%b9%e4%b9%8b%e4%b8%ad%e5%af%bb%e6%b1%82%e5%b9%b3%e7%ad%89" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>个体在不同社会制度下的角色变化。</li>
-</ul>
-<blockquote>
-<h5 id="然而虽则这种新自由的允诺常常与社会主义社会中物质财富会大大增加的这样不负责任的允诺相提并论但并非出于这种对自然的吝啬的绝对征服经济自由便指日可待这个允诺实际上指的是不同的人在选择余地上现存的巨大悬殊将被消除因此对这种新自由的要求不过是对平均分配财富旧要求的代名词而已">然而，虽则这种新自由的允诺常常与社会主义社会中物质财富会大大增加的这样不负责任的允诺相提并论，<strong>但并非出于这种对自然的吝啬的绝对征服，经济自由便指日可待</strong>。这个允诺实际上指的是，不同的人在选择余地上现存的巨大悬殊将被消除。因此，对这种新自由的要求，不过是对平均分配财富旧要求的代名词而已。<a href="#%e7%84%b6%e8%80%8c%e8%99%bd%e5%88%99%e8%bf%99%e7%a7%8d%e6%96%b0%e8%87%aa%e7%94%b1%e7%9a%84%e5%85%81%e8%af%ba%e5%b8%b8%e5%b8%b8%e4%b8%8e%e7%a4%be%e4%bc%9a%e4%b8%bb%e4%b9%89%e7%a4%be%e4%bc%9a%e4%b8%ad%e7%89%a9%e8%b4%a8%e8%b4%a2%e5%af%8c%e4%bc%9a%e5%a4%a7%e5%a4%a7%e5%a2%9e%e5%8a%a0%e7%9a%84%e8%bf%99%e6%a0%b7%e4%b8%8d%e8%b4%9f%e8%b4%a3%e4%bb%bb%e7%9a%84%e5%85%81%e8%af%ba%e7%9b%b8%e6%8f%90%e5%b9%b6%e8%ae%ba%e4%bd%86%e5%b9%b6%e9%9d%9e%e5%87%ba%e4%ba%8e%e8%bf%99%e7%a7%8d%e5%af%b9%e8%87%aa%e7%84%b6%e7%9a%84%e5%90%9d%e5%95%ac%e7%9a%84%e7%bb%9d%e5%af%b9%e5%be%81%e6%9c%8d%e7%bb%8f%e6%b5%8e%e8%87%aa%e7%94%b1%e4%be%bf%e6%8c%87%e6%97%a5%e5%8f%af%e5%be%85%e8%bf%99%e4%b8%aa%e5%85%81%e8%af%ba%e5%ae%9e%e9%99%85%e4%b8%8a%e6%8c%87%e7%9a%84%e6%98%af%e4%b8%8d%e5%90%8c%e7%9a%84%e4%ba%ba%e5%9c%a8%e9%80%89%e6%8b%a9%e4%bd%99%e5%9c%b0%e4%b8%8a%e7%8e%b0%e5%ad%98%e7%9a%84%e5%b7%a8%e5%a4%a7%e6%82%ac%e6%ae%8a%e5%b0%86%e8%a2%ab%e6%b6%88%e9%99%a4%e5%9b%a0%e6%ad%a4%e5%af%b9%e8%bf%99%e7%a7%8d%e6%96%b0%e8%87%aa%e7%94%b1%e7%9a%84%e8%a6%81%e6%b1%82%e4%b8%8d%e8%bf%87%e6%98%af%e5%af%b9%e5%b9%b3%e5%9d%87%e5%88%86%e9%85%8d%e8%b4%a2%e5%af%8c%e6%97%a7%e8%a6%81%e6%b1%82%e7%9a%84%e4%bb%a3%e5%90%8d%e8%af%8d%e8%80%8c%e5%b7%b2" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>“对自然的吝啬”即指我们对自己资产的保护，我们的就是我们自己的。这段话揭示了社会主义所描绘的最终理想背后其实是通过“绝对征服”每个个体的选择权的均一化来实现的。</li>
-</ul>
-<h3 id="第三章-个人主义与集体主义">第三章 《个人主义与集体主义》<a href="#%e7%ac%ac%e4%b8%89%e7%ab%a0-%e4%b8%aa%e4%ba%ba%e4%b8%bb%e4%b9%89%e4%b8%8e%e9%9b%86%e4%bd%93%e4%b8%bb%e4%b9%89" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h3>
-<blockquote>
-<h5 id="有许多人自称为社会主义者他们热烈地信仰社会主义的终极目标但他们既不关心也不理解这些目标何以才能实现他们确信的仅仅是这些目标一定会实现无论其代价如何">有许多人自称为社会主义者，他们热烈地信仰社会主义的终极目标，但他们既不关心也不理解这些目标何以才能实现，他们确信的仅仅是这些目标一定会实现，无论其代价如何。<a href="#%e6%9c%89%e8%ae%b8%e5%a4%9a%e4%ba%ba%e8%87%aa%e7%a7%b0%e4%b8%ba%e7%a4%be%e4%bc%9a%e4%b8%bb%e4%b9%89%e8%80%85%e4%bb%96%e4%bb%ac%e7%83%ad%e7%83%88%e5%9c%b0%e4%bf%a1%e4%bb%b0%e7%a4%be%e4%bc%9a%e4%b8%bb%e4%b9%89%e7%9a%84%e7%bb%88%e6%9e%81%e7%9b%ae%e6%a0%87%e4%bd%86%e4%bb%96%e4%bb%ac%e6%97%a2%e4%b8%8d%e5%85%b3%e5%bf%83%e4%b9%9f%e4%b8%8d%e7%90%86%e8%a7%a3%e8%bf%99%e4%ba%9b%e7%9b%ae%e6%a0%87%e4%bd%95%e4%bb%a5%e6%89%8d%e8%83%bd%e5%ae%9e%e7%8e%b0%e4%bb%96%e4%bb%ac%e7%a1%ae%e4%bf%a1%e7%9a%84%e4%bb%85%e4%bb%85%e6%98%af%e8%bf%99%e4%ba%9b%e7%9b%ae%e6%a0%87%e4%b8%80%e5%ae%9a%e4%bc%9a%e5%ae%9e%e7%8e%b0%e6%97%a0%e8%ae%ba%e5%85%b6%e4%bb%a3%e4%bb%b7%e5%a6%82%e4%bd%95" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>提醒我们每个人，在看到一种思想一种制度的宣传其最终形态时，要去思考至这一最终形态的路上，我们需要付出和牺牲的是什么。</li>
-</ul>
-<blockquote>
-<h5 id="自由主义的论点是赞成尽可能地运用竞争力量作为协调人类各种努力的工具而不是主张让事态放任自流它是以这种信念为基础的只要能创造出有效的竞争就是再好不过的指导个人努力的方法它并不否认甚至还强调为了竞争能有益地运行需要一种精心设想的法律框架而现存的和以往的法律无不具有严重的缺陷它也不否认在不可能创造出使竞争有效的必要条件的地方我们就必须采用其他指导经济活动的方法">自由主义的论点，是赞成尽可能地运用竞争力量作为协调人类各种努力的工具，而不是主张让事态放任自流。它是以这种信念为基础的：只要能创造出有效的竞争，就是再好不过的指导个人努力的方法。它并不否认，甚至还强调，为了竞争能有益地运行，需要一种精心设想的法律框架，而现存的和以往的法律无不具有严重的缺陷。它也不否认，在不可能创造出使竞争有效的必要条件的地方，我们就必须采用其他指导经济活动的方法。<a href="#%e8%87%aa%e7%94%b1%e4%b8%bb%e4%b9%89%e7%9a%84%e8%ae%ba%e7%82%b9%e6%98%af%e8%b5%9e%e6%88%90%e5%b0%bd%e5%8f%af%e8%83%bd%e5%9c%b0%e8%bf%90%e7%94%a8%e7%ab%9e%e4%ba%89%e5%8a%9b%e9%87%8f%e4%bd%9c%e4%b8%ba%e5%8d%8f%e8%b0%83%e4%ba%ba%e7%b1%bb%e5%90%84%e7%a7%8d%e5%8a%aa%e5%8a%9b%e7%9a%84%e5%b7%a5%e5%85%b7%e8%80%8c%e4%b8%8d%e6%98%af%e4%b8%bb%e5%bc%a0%e8%ae%a9%e4%ba%8b%e6%80%81%e6%94%be%e4%bb%bb%e8%87%aa%e6%b5%81%e5%ae%83%e6%98%af%e4%bb%a5%e8%bf%99%e7%a7%8d%e4%bf%a1%e5%bf%b5%e4%b8%ba%e5%9f%ba%e7%a1%80%e7%9a%84%e5%8f%aa%e8%a6%81%e8%83%bd%e5%88%9b%e9%80%a0%e5%87%ba%e6%9c%89%e6%95%88%e7%9a%84%e7%ab%9e%e4%ba%89%e5%b0%b1%e6%98%af%e5%86%8d%e5%a5%bd%e4%b8%8d%e8%bf%87%e7%9a%84%e6%8c%87%e5%af%bc%e4%b8%aa%e4%ba%ba%e5%8a%aa%e5%8a%9b%e7%9a%84%e6%96%b9%e6%b3%95%e5%ae%83%e5%b9%b6%e4%b8%8d%e5%90%a6%e8%ae%a4%e7%94%9a%e8%87%b3%e8%bf%98%e5%bc%ba%e8%b0%83%e4%b8%ba%e4%ba%86%e7%ab%9e%e4%ba%89%e8%83%bd%e6%9c%89%e7%9b%8a%e5%9c%b0%e8%bf%90%e8%a1%8c%e9%9c%80%e8%a6%81%e4%b8%80%e7%a7%8d%e7%b2%be%e5%bf%83%e8%ae%be%e6%83%b3%e7%9a%84%e6%b3%95%e5%be%8b%e6%a1%86%e6%9e%b6%e8%80%8c%e7%8e%b0%e5%ad%98%e7%9a%84%e5%92%8c%e4%bb%a5%e5%be%80%e7%9a%84%e6%b3%95%e5%be%8b%e6%97%a0%e4%b8%8d%e5%85%b7%e6%9c%89%e4%b8%a5%e9%87%8d%e7%9a%84%e7%bc%ba%e9%99%b7%e5%ae%83%e4%b9%9f%e4%b8%8d%e5%90%a6%e8%ae%a4%e5%9c%a8%e4%b8%8d%e5%8f%af%e8%83%bd%e5%88%9b%e9%80%a0%e5%87%ba%e4%bd%bf%e7%ab%9e%e4%ba%89%e6%9c%89%e6%95%88%e7%9a%84%e5%bf%85%e8%a6%81%e6%9d%a1%e4%bb%b6%e7%9a%84%e5%9c%b0%e6%96%b9%e6%88%91%e4%bb%ac%e5%b0%b1%e5%bf%85%e9%a1%bb%e9%87%87%e7%94%a8%e5%85%b6%e4%bb%96%e6%8c%87%e5%af%bc%e7%bb%8f%e6%b5%8e%e6%b4%bb%e5%8a%a8%e7%9a%84%e6%96%b9%e6%b3%95" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>自由主义并不是让事态放任自流，他需要一定的指导以创造出有效的竞争。</li>
-</ul>
-<blockquote>
-<h5 id="创造条件使竞争尽可能有效在竞争不能行之有效的地方为其提供补充提供那些用亚当斯密的话来说虽则能够在最高的程度上有利于一个伟大的社会但却具有这一性质即对任何个人或少数人来说利润不足以补偿耗费的服务这些任务实际上都为国家提供了广阔的和无可置疑的活动领域在没有那种能被合理地加以维护的制度时国家绝不会袖手旁观一个有效的竞争制度和其他制度一样需要一种明智规划的并不断加以调节的法律框架甚至提供它适当发挥作用所必需的最根本的前提即防止欺诈和诡骗包括利用无知都给立法活动提供了一个伟大的但远未充分实现的目标">创造条件使竞争尽可能有效，在竞争不能行之有效的地方为其提供补充，提供那些用亚当·斯密的话来说“虽则能够在最高的程度上有利于一个伟大的社会，但却具有这一性质，即对任何个人或少数人来说，利润不足以补偿耗费”的服务，这些任务实际上都为国家提供了广阔的和无可置疑的活动领域。在没有那种能被合理地加以维护的制度时，国家绝不会袖手旁观。一个有效的竞争制度和其他制度一样，需要一种明智规划的并不断加以调节的法律框架。甚至提供它适当发挥作用所必需的最根本的前提，即防止欺诈和诡骗（包括利用无知），都给立法活动提供了一个伟大的但远未充分实现的目标。<a href="#%e5%88%9b%e9%80%a0%e6%9d%a1%e4%bb%b6%e4%bd%bf%e7%ab%9e%e4%ba%89%e5%b0%bd%e5%8f%af%e8%83%bd%e6%9c%89%e6%95%88%e5%9c%a8%e7%ab%9e%e4%ba%89%e4%b8%8d%e8%83%bd%e8%a1%8c%e4%b9%8b%e6%9c%89%e6%95%88%e7%9a%84%e5%9c%b0%e6%96%b9%e4%b8%ba%e5%85%b6%e6%8f%90%e4%be%9b%e8%a1%a5%e5%85%85%e6%8f%90%e4%be%9b%e9%82%a3%e4%ba%9b%e7%94%a8%e4%ba%9a%e5%bd%93%e6%96%af%e5%af%86%e7%9a%84%e8%af%9d%e6%9d%a5%e8%af%b4%e8%99%bd%e5%88%99%e8%83%bd%e5%a4%9f%e5%9c%a8%e6%9c%80%e9%ab%98%e7%9a%84%e7%a8%8b%e5%ba%a6%e4%b8%8a%e6%9c%89%e5%88%a9%e4%ba%8e%e4%b8%80%e4%b8%aa%e4%bc%9f%e5%a4%a7%e7%9a%84%e7%a4%be%e4%bc%9a%e4%bd%86%e5%8d%b4%e5%85%b7%e6%9c%89%e8%bf%99%e4%b8%80%e6%80%a7%e8%b4%a8%e5%8d%b3%e5%af%b9%e4%bb%bb%e4%bd%95%e4%b8%aa%e4%ba%ba%e6%88%96%e5%b0%91%e6%95%b0%e4%ba%ba%e6%9d%a5%e8%af%b4%e5%88%a9%e6%b6%a6%e4%b8%8d%e8%b6%b3%e4%bb%a5%e8%a1%a5%e5%81%bf%e8%80%97%e8%b4%b9%e7%9a%84%e6%9c%8d%e5%8a%a1%e8%bf%99%e4%ba%9b%e4%bb%bb%e5%8a%a1%e5%ae%9e%e9%99%85%e4%b8%8a%e9%83%bd%e4%b8%ba%e5%9b%bd%e5%ae%b6%e6%8f%90%e4%be%9b%e4%ba%86%e5%b9%bf%e9%98%94%e7%9a%84%e5%92%8c%e6%97%a0%e5%8f%af%e7%bd%ae%e7%96%91%e7%9a%84%e6%b4%bb%e5%8a%a8%e9%a2%86%e5%9f%9f%e5%9c%a8%e6%b2%a1%e6%9c%89%e9%82%a3%e7%a7%8d%e8%83%bd%e8%a2%ab%e5%90%88%e7%90%86%e5%9c%b0%e5%8a%a0%e4%bb%a5%e7%bb%b4%e6%8a%a4%e7%9a%84%e5%88%b6%e5%ba%a6%e6%97%b6%e5%9b%bd%e5%ae%b6%e7%bb%9d%e4%b8%8d%e4%bc%9a%e8%a2%96%e6%89%8b%e6%97%81%e8%a7%82%e4%b8%80%e4%b8%aa%e6%9c%89%e6%95%88%e7%9a%84%e7%ab%9e%e4%ba%89%e5%88%b6%e5%ba%a6%e5%92%8c%e5%85%b6%e4%bb%96%e5%88%b6%e5%ba%a6%e4%b8%80%e6%a0%b7%e9%9c%80%e8%a6%81%e4%b8%80%e7%a7%8d%e6%98%8e%e6%99%ba%e8%a7%84%e5%88%92%e7%9a%84%e5%b9%b6%e4%b8%8d%e6%96%ad%e5%8a%a0%e4%bb%a5%e8%b0%83%e8%8a%82%e7%9a%84%e6%b3%95%e5%be%8b%e6%a1%86%e6%9e%b6%e7%94%9a%e8%87%b3%e6%8f%90%e4%be%9b%e5%ae%83%e9%80%82%e5%bd%93%e5%8f%91%e6%8c%a5%e4%bd%9c%e7%94%a8%e6%89%80%e5%bf%85%e9%9c%80%e7%9a%84%e6%9c%80%e6%a0%b9%e6%9c%ac%e7%9a%84%e5%89%8d%e6%8f%90%e5%8d%b3%e9%98%b2%e6%ad%a2%e6%ac%ba%e8%af%88%e5%92%8c%e8%af%a1%e9%aa%97%e5%8c%85%e6%8b%ac%e5%88%a9%e7%94%a8%e6%97%a0%e7%9f%a5%e9%83%bd%e7%bb%99%e7%ab%8b%e6%b3%95%e6%b4%bb%e5%8a%a8%e6%8f%90%e4%be%9b%e4%ba%86%e4%b8%80%e4%b8%aa%e4%bc%9f%e5%a4%a7%e7%9a%84%e4%bd%86%e8%bf%9c%e6%9c%aa%e5%85%85%e5%88%86%e5%ae%9e%e7%8e%b0%e7%9a%84%e7%9b%ae%e6%a0%87" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>这里亚当斯密提到的那种服务，我的理解即是类似于公共服务，基础设施那样的实体，当然也包括立法这样漫长而劳神的工作。</li>
-</ul>
-<h3 id="第四章-计划的不可避免性">第四章 《计划的不可避免性》<a href="#%e7%ac%ac%e5%9b%9b%e7%ab%a0-%e8%ae%a1%e5%88%92%e7%9a%84%e4%b8%8d%e5%8f%af%e9%81%bf%e5%85%8d%e6%80%a7" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h3>
-<blockquote>
-<h5 id="专家们幻想在一个有计划的社会中他最关心的目标将会受到更多的注意有这种幻想的人并不限于专家们在我们所偏爱和关心的事情中某种程度上我们都是专家我们认为我们个人排列各种价值的顺序不仅是个人的排列顺序而且是在有理性的人们的自由讨论中我们会使别人相信我们的顺序是正确的喜欢乡村田舍的人他最希望的就是应当保存它的传统风貌工业在它的美丽面貌上已经造成的污点则应予以清除正如热心于卫生的人希望所有风景如画的但不卫生的古老茅屋都要去除一样或者驱车游览的人之希望全国都有纵横交错的公路迷信效率的人之希望最大可能的专业化和机械化不亚于理想家为了发展个性而希望尽可能保存独立的手艺人所有的人都知道他们的目标只有通过计划才能充分实现并且他们都是为了那个理由而希望制订计划不过采用他们所叫嚣强求的社会计划当然只能把他们的目标之间潜伏的冲突暴露出来">专家们幻想在一个有计划的社会中，他最关心的目标将会受到更多的注意；有这种幻想的人并不限于专家们。在我们所偏爱和关心的事情中，某种程度上我们都是专家。我们认为我们个人排列各种价值的顺序不仅是个人的排列顺序，而且是在有理性的人们的自由讨论中，我们会使别人相信我们的顺序是正确的。喜欢乡村田舍的人，他最希望的就是应当保存它的传统风貌，工业在它的美丽面貌上已经造成的污点则应予以清除；正如热心于卫生的人，希望所有风景如画的但不卫生的古老茅屋都要去除一样；或者驱车游览的人之希望全国都有纵横交错的公路，迷信效率的人之希望最大可能的专业化和机械化，不亚于理想家为了发展个性而希望尽可能保存独立的手艺人。所有的人都知道他们的目标只有通过计划才能充分实现——并且他们都是为了那个理由而希望制订计划。不过，采用他们所叫嚣强求的社会计划，当然只能把他们的目标之间潜伏的冲突暴露出来。<a href="#%e4%b8%93%e5%ae%b6%e4%bb%ac%e5%b9%bb%e6%83%b3%e5%9c%a8%e4%b8%80%e4%b8%aa%e6%9c%89%e8%ae%a1%e5%88%92%e7%9a%84%e7%a4%be%e4%bc%9a%e4%b8%ad%e4%bb%96%e6%9c%80%e5%85%b3%e5%bf%83%e7%9a%84%e7%9b%ae%e6%a0%87%e5%b0%86%e4%bc%9a%e5%8f%97%e5%88%b0%e6%9b%b4%e5%a4%9a%e7%9a%84%e6%b3%a8%e6%84%8f%e6%9c%89%e8%bf%99%e7%a7%8d%e5%b9%bb%e6%83%b3%e7%9a%84%e4%ba%ba%e5%b9%b6%e4%b8%8d%e9%99%90%e4%ba%8e%e4%b8%93%e5%ae%b6%e4%bb%ac%e5%9c%a8%e6%88%91%e4%bb%ac%e6%89%80%e5%81%8f%e7%88%b1%e5%92%8c%e5%85%b3%e5%bf%83%e7%9a%84%e4%ba%8b%e6%83%85%e4%b8%ad%e6%9f%90%e7%a7%8d%e7%a8%8b%e5%ba%a6%e4%b8%8a%e6%88%91%e4%bb%ac%e9%83%bd%e6%98%af%e4%b8%93%e5%ae%b6%e6%88%91%e4%bb%ac%e8%ae%a4%e4%b8%ba%e6%88%91%e4%bb%ac%e4%b8%aa%e4%ba%ba%e6%8e%92%e5%88%97%e5%90%84%e7%a7%8d%e4%bb%b7%e5%80%bc%e7%9a%84%e9%a1%ba%e5%ba%8f%e4%b8%8d%e4%bb%85%e6%98%af%e4%b8%aa%e4%ba%ba%e7%9a%84%e6%8e%92%e5%88%97%e9%a1%ba%e5%ba%8f%e8%80%8c%e4%b8%94%e6%98%af%e5%9c%a8%e6%9c%89%e7%90%86%e6%80%a7%e7%9a%84%e4%ba%ba%e4%bb%ac%e7%9a%84%e8%87%aa%e7%94%b1%e8%ae%a8%e8%ae%ba%e4%b8%ad%e6%88%91%e4%bb%ac%e4%bc%9a%e4%bd%bf%e5%88%ab%e4%ba%ba%e7%9b%b8%e4%bf%a1%e6%88%91%e4%bb%ac%e7%9a%84%e9%a1%ba%e5%ba%8f%e6%98%af%e6%ad%a3%e7%a1%ae%e7%9a%84%e5%96%9c%e6%ac%a2%e4%b9%a1%e6%9d%91%e7%94%b0%e8%88%8d%e7%9a%84%e4%ba%ba%e4%bb%96%e6%9c%80%e5%b8%8c%e6%9c%9b%e7%9a%84%e5%b0%b1%e6%98%af%e5%ba%94%e5%bd%93%e4%bf%9d%e5%ad%98%e5%ae%83%e7%9a%84%e4%bc%a0%e7%bb%9f%e9%a3%8e%e8%b2%8c%e5%b7%a5%e4%b8%9a%e5%9c%a8%e5%ae%83%e7%9a%84%e7%be%8e%e4%b8%bd%e9%9d%a2%e8%b2%8c%e4%b8%8a%e5%b7%b2%e7%bb%8f%e9%80%a0%e6%88%90%e7%9a%84%e6%b1%a1%e7%82%b9%e5%88%99%e5%ba%94%e4%ba%88%e4%bb%a5%e6%b8%85%e9%99%a4%e6%ad%a3%e5%a6%82%e7%83%ad%e5%bf%83%e4%ba%8e%e5%8d%ab%e7%94%9f%e7%9a%84%e4%ba%ba%e5%b8%8c%e6%9c%9b%e6%89%80%e6%9c%89%e9%a3%8e%e6%99%af%e5%a6%82%e7%94%bb%e7%9a%84%e4%bd%86%e4%b8%8d%e5%8d%ab%e7%94%9f%e7%9a%84%e5%8f%a4%e8%80%81%e8%8c%85%e5%b1%8b%e9%83%bd%e8%a6%81%e5%8e%bb%e9%99%a4%e4%b8%80%e6%a0%b7%e6%88%96%e8%80%85%e9%a9%b1%e8%bd%a6%e6%b8%b8%e8%a7%88%e7%9a%84%e4%ba%ba%e4%b9%8b%e5%b8%8c%e6%9c%9b%e5%85%a8%e5%9b%bd%e9%83%bd%e6%9c%89%e7%ba%b5%e6%a8%aa%e4%ba%a4%e9%94%99%e7%9a%84%e5%85%ac%e8%b7%af%e8%bf%b7%e4%bf%a1%e6%95%88%e7%8e%87%e7%9a%84%e4%ba%ba%e4%b9%8b%e5%b8%8c%e6%9c%9b%e6%9c%80%e5%a4%a7%e5%8f%af%e8%83%bd%e7%9a%84%e4%b8%93%e4%b8%9a%e5%8c%96%e5%92%8c%e6%9c%ba%e6%a2%b0%e5%8c%96%e4%b8%8d%e4%ba%9a%e4%ba%8e%e7%90%86%e6%83%b3%e5%ae%b6%e4%b8%ba%e4%ba%86%e5%8f%91%e5%b1%95%e4%b8%aa%e6%80%a7%e8%80%8c%e5%b8%8c%e6%9c%9b%e5%b0%bd%e5%8f%af%e8%83%bd%e4%bf%9d%e5%ad%98%e7%8b%ac%e7%ab%8b%e7%9a%84%e6%89%8b%e8%89%ba%e4%ba%ba%e6%89%80%e6%9c%89%e7%9a%84%e4%ba%ba%e9%83%bd%e7%9f%a5%e9%81%93%e4%bb%96%e4%bb%ac%e7%9a%84%e7%9b%ae%e6%a0%87%e5%8f%aa%e6%9c%89%e9%80%9a%e8%bf%87%e8%ae%a1%e5%88%92%e6%89%8d%e8%83%bd%e5%85%85%e5%88%86%e5%ae%9e%e7%8e%b0%e5%b9%b6%e4%b8%94%e4%bb%96%e4%bb%ac%e9%83%bd%e6%98%af%e4%b8%ba%e4%ba%86%e9%82%a3%e4%b8%aa%e7%90%86%e7%94%b1%e8%80%8c%e5%b8%8c%e6%9c%9b%e5%88%b6%e8%ae%a2%e8%ae%a1%e5%88%92%e4%b8%8d%e8%bf%87%e9%87%87%e7%94%a8%e4%bb%96%e4%bb%ac%e6%89%80%e5%8f%ab%e5%9a%a3%e5%bc%ba%e6%b1%82%e7%9a%84%e7%a4%be%e4%bc%9a%e8%ae%a1%e5%88%92%e5%bd%93%e7%84%b6%e5%8f%aa%e8%83%bd%e6%8a%8a%e4%bb%96%e4%bb%ac%e7%9a%84%e7%9b%ae%e6%a0%87%e4%b9%8b%e9%97%b4%e6%bd%9c%e4%bc%8f%e7%9a%84%e5%86%b2%e7%aa%81%e6%9a%b4%e9%9c%b2%e5%87%ba%e6%9d%a5" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>所有人都认为自己的价值排序是正确的，是利于社会发展的，但是将他变成现实生活只能通过计划的手段，大家都是为了社会更好而想要去计划，而最后难免冲突，进而导致权力的争夺。</li>
-</ul>
-<h3 id="第五章-民主与计划">第五章 《民主与计划》<a href="#%e7%ac%ac%e4%ba%94%e7%ab%a0-%e6%b0%91%e4%b8%bb%e4%b8%8e%e8%ae%a1%e5%88%92" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h3>
-<blockquote>
-<h5 id="迄今为止随着文明的发展个人行动受成规束缚的范围在不断地缩减构成我们共同道德准则的条规为数越来越少而性质上却越来越具一般性原始人几乎在日常生活中的每件事上都受一种复杂仪式的束缚受无可胜数的禁忌的限制几乎想象不出可以按照一种与众不同的方式行事从原始人起道德已越来越倾向于成为只是对个人可以随心所欲的范围的限制采纳一种全面到足以决定一个单一的经济计划的共同伦理准则将意味着与这种趋势背道而驰">迄今为止，随着文明的发展，个人行动受成规束缚的范围在不断地缩减。构成我们共同道德准则的条规，为数越来越少而性质上却越来越具一般性。原始人几乎在日常生活中的每件事上都受一种复杂仪式的束缚，受无可胜数的禁忌的限制，几乎想象不出可以按照一种与众不同的方式行事。从原始人起，道德已越来越倾向于成为只是对个人可以随心所欲的范围的限制。采纳一种全面到足以决定一个单一的经济计划的共同伦理准则，将意味着与这种趋势背道而驰。<a href="#%e8%bf%84%e4%bb%8a%e4%b8%ba%e6%ad%a2%e9%9a%8f%e7%9d%80%e6%96%87%e6%98%8e%e7%9a%84%e5%8f%91%e5%b1%95%e4%b8%aa%e4%ba%ba%e8%a1%8c%e5%8a%a8%e5%8f%97%e6%88%90%e8%a7%84%e6%9d%9f%e7%bc%9a%e7%9a%84%e8%8c%83%e5%9b%b4%e5%9c%a8%e4%b8%8d%e6%96%ad%e5%9c%b0%e7%bc%a9%e5%87%8f%e6%9e%84%e6%88%90%e6%88%91%e4%bb%ac%e5%85%b1%e5%90%8c%e9%81%93%e5%be%b7%e5%87%86%e5%88%99%e7%9a%84%e6%9d%a1%e8%a7%84%e4%b8%ba%e6%95%b0%e8%b6%8a%e6%9d%a5%e8%b6%8a%e5%b0%91%e8%80%8c%e6%80%a7%e8%b4%a8%e4%b8%8a%e5%8d%b4%e8%b6%8a%e6%9d%a5%e8%b6%8a%e5%85%b7%e4%b8%80%e8%88%ac%e6%80%a7%e5%8e%9f%e5%a7%8b%e4%ba%ba%e5%87%a0%e4%b9%8e%e5%9c%a8%e6%97%a5%e5%b8%b8%e7%94%9f%e6%b4%bb%e4%b8%ad%e7%9a%84%e6%af%8f%e4%bb%b6%e4%ba%8b%e4%b8%8a%e9%83%bd%e5%8f%97%e4%b8%80%e7%a7%8d%e5%a4%8d%e6%9d%82%e4%bb%aa%e5%bc%8f%e7%9a%84%e6%9d%9f%e7%bc%9a%e5%8f%97%e6%97%a0%e5%8f%af%e8%83%9c%e6%95%b0%e7%9a%84%e7%a6%81%e5%bf%8c%e7%9a%84%e9%99%90%e5%88%b6%e5%87%a0%e4%b9%8e%e6%83%b3%e8%b1%a1%e4%b8%8d%e5%87%ba%e5%8f%af%e4%bb%a5%e6%8c%89%e7%85%a7%e4%b8%80%e7%a7%8d%e4%b8%8e%e4%bc%97%e4%b8%8d%e5%90%8c%e7%9a%84%e6%96%b9%e5%bc%8f%e8%a1%8c%e4%ba%8b%e4%bb%8e%e5%8e%9f%e5%a7%8b%e4%ba%ba%e8%b5%b7%e9%81%93%e5%be%b7%e5%b7%b2%e8%b6%8a%e6%9d%a5%e8%b6%8a%e5%80%be%e5%90%91%e4%ba%8e%e6%88%90%e4%b8%ba%e5%8f%aa%e6%98%af%e5%af%b9%e4%b8%aa%e4%ba%ba%e5%8f%af%e4%bb%a5%e9%9a%8f%e5%bf%83%e6%89%80%e6%ac%b2%e7%9a%84%e8%8c%83%e5%9b%b4%e7%9a%84%e9%99%90%e5%88%b6%e9%87%87%e7%ba%b3%e4%b8%80%e7%a7%8d%e5%85%a8%e9%9d%a2%e5%88%b0%e8%b6%b3%e4%bb%a5%e5%86%b3%e5%ae%9a%e4%b8%80%e4%b8%aa%e5%8d%95%e4%b8%80%e7%9a%84%e7%bb%8f%e6%b5%8e%e8%ae%a1%e5%88%92%e7%9a%84%e5%85%b1%e5%90%8c%e4%bc%a6%e7%90%86%e5%87%86%e5%88%99%e5%b0%86%e6%84%8f%e5%91%b3%e7%9d%80%e4%b8%8e%e8%bf%99%e7%a7%8d%e8%b6%8b%e5%8a%bf%e8%83%8c%e9%81%93%e8%80%8c%e9%a9%b0" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>退步：原始的仪式 -&gt; 自由的思想 -&gt; 计划的规程</li>
-</ul>
-<blockquote>
-<h5 id="这就是整个个人主义哲学所根据的基本事实它并不像通常人们所断言的那样假定人是或应该是利己的或自私的它仅仅从这个毫无争议的事实出发即我们想象力的局限使我们只能在我们的价值尺度中包含全社会需要的一部分而且严格地说由于价值尺度仅能存在于个人头脑中除了种种局部的价值尺度没有任何别的可以存在而这些价值尺度不可避免地有所不同并常常相互矛盾由此个人主义者得出结论说在限定的范围内应该允许个人遵循自己的而不是别人的价值和偏好而且在这些领域内个人的目标体系应该至高无上而不屈从于他人的指令就是这种对个人作为其目标的最终决断者的承认对个人应尽可能以自己的意图支配自己的行动的信念构成了个人主义立场的实质">这就是整个个人主义哲学所根据的基本事实。它并不像通常人们所断言的那样，假定人是或应该是利己的或自私的。它仅仅从这个毫无争议的事实出发，即我们想象力的局限，使我们只能在我们的价值尺度中包含全社会需要的一部分，而且严格地说，由于价值尺度仅能存在于个人头脑中，除了种种局部的价值尺度，没有任何别的可以存在，而这些价值尺度不可避免地有所不同并常常相互矛盾。由此，个人主义者得出结论说，在限定的范围内，应该允许个人遵循自己的而不是别人的价值和偏好，而且，在这些领域内，个人的目标体系应该至高无上而不屈从于他人的指令。就是这种对个人作为其目标的最终决断者的承认，对个人应尽可能以自己的意图支配自己的行动的信念，构成了个人主义立场的实质。<a href="#%e8%bf%99%e5%b0%b1%e6%98%af%e6%95%b4%e4%b8%aa%e4%b8%aa%e4%ba%ba%e4%b8%bb%e4%b9%89%e5%93%b2%e5%ad%a6%e6%89%80%e6%a0%b9%e6%8d%ae%e7%9a%84%e5%9f%ba%e6%9c%ac%e4%ba%8b%e5%ae%9e%e5%ae%83%e5%b9%b6%e4%b8%8d%e5%83%8f%e9%80%9a%e5%b8%b8%e4%ba%ba%e4%bb%ac%e6%89%80%e6%96%ad%e8%a8%80%e7%9a%84%e9%82%a3%e6%a0%b7%e5%81%87%e5%ae%9a%e4%ba%ba%e6%98%af%e6%88%96%e5%ba%94%e8%af%a5%e6%98%af%e5%88%a9%e5%b7%b1%e7%9a%84%e6%88%96%e8%87%aa%e7%a7%81%e7%9a%84%e5%ae%83%e4%bb%85%e4%bb%85%e4%bb%8e%e8%bf%99%e4%b8%aa%e6%af%ab%e6%97%a0%e4%ba%89%e8%ae%ae%e7%9a%84%e4%ba%8b%e5%ae%9e%e5%87%ba%e5%8f%91%e5%8d%b3%e6%88%91%e4%bb%ac%e6%83%b3%e8%b1%a1%e5%8a%9b%e7%9a%84%e5%b1%80%e9%99%90%e4%bd%bf%e6%88%91%e4%bb%ac%e5%8f%aa%e8%83%bd%e5%9c%a8%e6%88%91%e4%bb%ac%e7%9a%84%e4%bb%b7%e5%80%bc%e5%b0%ba%e5%ba%a6%e4%b8%ad%e5%8c%85%e5%90%ab%e5%85%a8%e7%a4%be%e4%bc%9a%e9%9c%80%e8%a6%81%e7%9a%84%e4%b8%80%e9%83%a8%e5%88%86%e8%80%8c%e4%b8%94%e4%b8%a5%e6%a0%bc%e5%9c%b0%e8%af%b4%e7%94%b1%e4%ba%8e%e4%bb%b7%e5%80%bc%e5%b0%ba%e5%ba%a6%e4%bb%85%e8%83%bd%e5%ad%98%e5%9c%a8%e4%ba%8e%e4%b8%aa%e4%ba%ba%e5%a4%b4%e8%84%91%e4%b8%ad%e9%99%a4%e4%ba%86%e7%a7%8d%e7%a7%8d%e5%b1%80%e9%83%a8%e7%9a%84%e4%bb%b7%e5%80%bc%e5%b0%ba%e5%ba%a6%e6%b2%a1%e6%9c%89%e4%bb%bb%e4%bd%95%e5%88%ab%e7%9a%84%e5%8f%af%e4%bb%a5%e5%ad%98%e5%9c%a8%e8%80%8c%e8%bf%99%e4%ba%9b%e4%bb%b7%e5%80%bc%e5%b0%ba%e5%ba%a6%e4%b8%8d%e5%8f%af%e9%81%bf%e5%85%8d%e5%9c%b0%e6%9c%89%e6%89%80%e4%b8%8d%e5%90%8c%e5%b9%b6%e5%b8%b8%e5%b8%b8%e7%9b%b8%e4%ba%92%e7%9f%9b%e7%9b%be%e7%94%b1%e6%ad%a4%e4%b8%aa%e4%ba%ba%e4%b8%bb%e4%b9%89%e8%80%85%e5%be%97%e5%87%ba%e7%bb%93%e8%ae%ba%e8%af%b4%e5%9c%a8%e9%99%90%e5%ae%9a%e7%9a%84%e8%8c%83%e5%9b%b4%e5%86%85%e5%ba%94%e8%af%a5%e5%85%81%e8%ae%b8%e4%b8%aa%e4%ba%ba%e9%81%b5%e5%be%aa%e8%87%aa%e5%b7%b1%e7%9a%84%e8%80%8c%e4%b8%8d%e6%98%af%e5%88%ab%e4%ba%ba%e7%9a%84%e4%bb%b7%e5%80%bc%e5%92%8c%e5%81%8f%e5%a5%bd%e8%80%8c%e4%b8%94%e5%9c%a8%e8%bf%99%e4%ba%9b%e9%a2%86%e5%9f%9f%e5%86%85%e4%b8%aa%e4%ba%ba%e7%9a%84%e7%9b%ae%e6%a0%87%e4%bd%93%e7%b3%bb%e5%ba%94%e8%af%a5%e8%87%b3%e9%ab%98%e6%97%a0%e4%b8%8a%e8%80%8c%e4%b8%8d%e5%b1%88%e4%bb%8e%e4%ba%8e%e4%bb%96%e4%ba%ba%e7%9a%84%e6%8c%87%e4%bb%a4%e5%b0%b1%e6%98%af%e8%bf%99%e7%a7%8d%e5%af%b9%e4%b8%aa%e4%ba%ba%e4%bd%9c%e4%b8%ba%e5%85%b6%e7%9b%ae%e6%a0%87%e7%9a%84%e6%9c%80%e7%bb%88%e5%86%b3%e6%96%ad%e8%80%85%e7%9a%84%e6%89%bf%e8%ae%a4%e5%af%b9%e4%b8%aa%e4%ba%ba%e5%ba%94%e5%b0%bd%e5%8f%af%e8%83%bd%e4%bb%a5%e8%87%aa%e5%b7%b1%e7%9a%84%e6%84%8f%e5%9b%be%e6%94%af%e9%85%8d%e8%87%aa%e5%b7%b1%e7%9a%84%e8%a1%8c%e5%8a%a8%e7%9a%84%e4%bf%a1%e5%bf%b5%e6%9e%84%e6%88%90%e4%ba%86%e4%b8%aa%e4%ba%ba%e4%b8%bb%e4%b9%89%e7%ab%8b%e5%9c%ba%e7%9a%84%e5%ae%9e%e8%b4%a8" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>个人主义的本质并不是经常被人断言的那样：利己主义，无处不在的自私。 基于人类个体的局限性，个人主义实际强调的是，个人无论如何也没有办法代表一个广泛社会下所有的价值尺度，于是，在自己的领域与专长内自己的思想和指令才应该至高无上。</li>
-</ul>
-<blockquote>
-<h5 id="就此而言所谓社会目标不过是许多个人的相同目标或者说是个人为了回报他们在满足自身欲望所接受的帮助而愿意有所贡献的那种目标因而共同行动局限于人们对共同目标一致同意的那些领域习以为常的是这些共同目标不会是个人的终极目标而是意味着不同的人可以将其用于不同的意图实际上在共同目标对人们并非一种终极目标而是一种能够用于多种多样意图的手段的地方人们才最可能对共同行动达成共识">就此而言，所谓“社会目标”不过是许多个人的相同目标——或者说，是个人为了回报他们在满足自身欲望所接受的帮助而愿意有所贡献的那种目标。因而，共同行动局限于人们对共同目标一致同意的那些领域。习以为常的是，这些共同目标不会是个人的终极目标，而是意味着不同的人可以将其用于不同的意图。实际上，在共同目标对人们并非一种终极目标而是一种能够用于多种多样意图的手段的地方，人们才最可能对共同行动达成共识。<a href="#%e5%b0%b1%e6%ad%a4%e8%80%8c%e8%a8%80%e6%89%80%e8%b0%93%e7%a4%be%e4%bc%9a%e7%9b%ae%e6%a0%87%e4%b8%8d%e8%bf%87%e6%98%af%e8%ae%b8%e5%a4%9a%e4%b8%aa%e4%ba%ba%e7%9a%84%e7%9b%b8%e5%90%8c%e7%9b%ae%e6%a0%87%e6%88%96%e8%80%85%e8%af%b4%e6%98%af%e4%b8%aa%e4%ba%ba%e4%b8%ba%e4%ba%86%e5%9b%9e%e6%8a%a5%e4%bb%96%e4%bb%ac%e5%9c%a8%e6%bb%a1%e8%b6%b3%e8%87%aa%e8%ba%ab%e6%ac%b2%e6%9c%9b%e6%89%80%e6%8e%a5%e5%8f%97%e7%9a%84%e5%b8%ae%e5%8a%a9%e8%80%8c%e6%84%bf%e6%84%8f%e6%9c%89%e6%89%80%e8%b4%a1%e7%8c%ae%e7%9a%84%e9%82%a3%e7%a7%8d%e7%9b%ae%e6%a0%87%e5%9b%a0%e8%80%8c%e5%85%b1%e5%90%8c%e8%a1%8c%e5%8a%a8%e5%b1%80%e9%99%90%e4%ba%8e%e4%ba%ba%e4%bb%ac%e5%af%b9%e5%85%b1%e5%90%8c%e7%9b%ae%e6%a0%87%e4%b8%80%e8%87%b4%e5%90%8c%e6%84%8f%e7%9a%84%e9%82%a3%e4%ba%9b%e9%a2%86%e5%9f%9f%e4%b9%a0%e4%bb%a5%e4%b8%ba%e5%b8%b8%e7%9a%84%e6%98%af%e8%bf%99%e4%ba%9b%e5%85%b1%e5%90%8c%e7%9b%ae%e6%a0%87%e4%b8%8d%e4%bc%9a%e6%98%af%e4%b8%aa%e4%ba%ba%e7%9a%84%e7%bb%88%e6%9e%81%e7%9b%ae%e6%a0%87%e8%80%8c%e6%98%af%e6%84%8f%e5%91%b3%e7%9d%80%e4%b8%8d%e5%90%8c%e7%9a%84%e4%ba%ba%e5%8f%af%e4%bb%a5%e5%b0%86%e5%85%b6%e7%94%a8%e4%ba%8e%e4%b8%8d%e5%90%8c%e7%9a%84%e6%84%8f%e5%9b%be%e5%ae%9e%e9%99%85%e4%b8%8a%e5%9c%a8%e5%85%b1%e5%90%8c%e7%9b%ae%e6%a0%87%e5%af%b9%e4%ba%ba%e4%bb%ac%e5%b9%b6%e9%9d%9e%e4%b8%80%e7%a7%8d%e7%bb%88%e6%9e%81%e7%9b%ae%e6%a0%87%e8%80%8c%e6%98%af%e4%b8%80%e7%a7%8d%e8%83%bd%e5%a4%9f%e7%94%a8%e4%ba%8e%e5%a4%9a%e7%a7%8d%e5%a4%9a%e6%a0%b7%e6%84%8f%e5%9b%be%e7%9a%84%e6%89%8b%e6%ae%b5%e7%9a%84%e5%9c%b0%e6%96%b9%e4%ba%ba%e4%bb%ac%e6%89%8d%e6%9c%80%e5%8f%af%e8%83%bd%e5%af%b9%e5%85%b1%e5%90%8c%e8%a1%8c%e5%8a%a8%e8%be%be%e6%88%90%e5%85%b1%e8%af%86" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>社会目标与个人目标的辩证关系。也是社会目标其实服务于个人终极目标的一种解释。</li>
-</ul>
-<blockquote>
-<h5 id="民主本质上是一种手段一种保障国内安定和个人自由的实用装置它本身绝不是一贯正确和可靠无疑的我们绝不能忘记在一个专制统治下往往比在某些民主制度下有更多的文化和精神的自由至少可能想见在一个非常整齐划一和教条主义地推行多数民主的政府统治下民主制度也许和最坏的独裁制度同样暴虐但是我们的要点与其是说独裁必然不可避免地消灭了自由毋宁是说计划导致独裁因为独裁是强制推行各种理想的最有效工具而且集中计划要在很大程度成为可能的话独裁本身是必不可少的计划与民主之间的冲突只不过起因于这样一个事实即对指导经济活动所需的对自由的压制来说后者是个障碍但是只要民主不再是个人自由的保障的话它也可能以某种形式依然存在于极权主义政体之中一个真正的无产阶级专政即使形式上是民主的如果它集中指导经济体系的话可能会和任何专制政体所曾做的一样完全破坏了个人自由">民主本质上是一种手段，一种保障国内安定和个人自由的实用装置。它本身绝不是一贯正确和可靠无疑的。我们绝不能忘记，在一个专制统治下往往比在某些民主制度下有更多的文化和精神的自由——至少可能想见，在一个非常整齐划一和教条主义地推行多数民主的政府统治下，民主制度也许和最坏的独裁制度同样暴虐。但是，我们的要点与其是说独裁必然不可避免地消灭了自由，毋宁是说计划导致独裁，因为<strong>独裁是强制推行各种理想的最有效工具</strong>，而且，集中计划要在很大程度成为可能的话，独裁本身是必不可少的。计划与民主之间的冲突只不过起因于这样一个事实，即对指导经济活动所需的对自由的压制来说，后者是个障碍。但是，只要民主不再是个人自由的保障的话，它也可能以某种形式依然存在于极权主义政体之中。一个真正的“无产阶级专政”，即使形式上是民主的，如果它集中指导经济体系的话，可能会和任何专制政体所曾做的一样，完全破坏了个人自由。<a href="#%e6%b0%91%e4%b8%bb%e6%9c%ac%e8%b4%a8%e4%b8%8a%e6%98%af%e4%b8%80%e7%a7%8d%e6%89%8b%e6%ae%b5%e4%b8%80%e7%a7%8d%e4%bf%9d%e9%9a%9c%e5%9b%bd%e5%86%85%e5%ae%89%e5%ae%9a%e5%92%8c%e4%b8%aa%e4%ba%ba%e8%87%aa%e7%94%b1%e7%9a%84%e5%ae%9e%e7%94%a8%e8%a3%85%e7%bd%ae%e5%ae%83%e6%9c%ac%e8%ba%ab%e7%bb%9d%e4%b8%8d%e6%98%af%e4%b8%80%e8%b4%af%e6%ad%a3%e7%a1%ae%e5%92%8c%e5%8f%af%e9%9d%a0%e6%97%a0%e7%96%91%e7%9a%84%e6%88%91%e4%bb%ac%e7%bb%9d%e4%b8%8d%e8%83%bd%e5%bf%98%e8%ae%b0%e5%9c%a8%e4%b8%80%e4%b8%aa%e4%b8%93%e5%88%b6%e7%bb%9f%e6%b2%bb%e4%b8%8b%e5%be%80%e5%be%80%e6%af%94%e5%9c%a8%e6%9f%90%e4%ba%9b%e6%b0%91%e4%b8%bb%e5%88%b6%e5%ba%a6%e4%b8%8b%e6%9c%89%e6%9b%b4%e5%a4%9a%e7%9a%84%e6%96%87%e5%8c%96%e5%92%8c%e7%b2%be%e7%a5%9e%e7%9a%84%e8%87%aa%e7%94%b1%e8%87%b3%e5%b0%91%e5%8f%af%e8%83%bd%e6%83%b3%e8%a7%81%e5%9c%a8%e4%b8%80%e4%b8%aa%e9%9d%9e%e5%b8%b8%e6%95%b4%e9%bd%90%e5%88%92%e4%b8%80%e5%92%8c%e6%95%99%e6%9d%a1%e4%b8%bb%e4%b9%89%e5%9c%b0%e6%8e%a8%e8%a1%8c%e5%a4%9a%e6%95%b0%e6%b0%91%e4%b8%bb%e7%9a%84%e6%94%bf%e5%ba%9c%e7%bb%9f%e6%b2%bb%e4%b8%8b%e6%b0%91%e4%b8%bb%e5%88%b6%e5%ba%a6%e4%b9%9f%e8%ae%b8%e5%92%8c%e6%9c%80%e5%9d%8f%e7%9a%84%e7%8b%ac%e8%a3%81%e5%88%b6%e5%ba%a6%e5%90%8c%e6%a0%b7%e6%9a%b4%e8%99%90%e4%bd%86%e6%98%af%e6%88%91%e4%bb%ac%e7%9a%84%e8%a6%81%e7%82%b9%e4%b8%8e%e5%85%b6%e6%98%af%e8%af%b4%e7%8b%ac%e8%a3%81%e5%bf%85%e7%84%b6%e4%b8%8d%e5%8f%af%e9%81%bf%e5%85%8d%e5%9c%b0%e6%b6%88%e7%81%ad%e4%ba%86%e8%87%aa%e7%94%b1%e6%af%8b%e5%ae%81%e6%98%af%e8%af%b4%e8%ae%a1%e5%88%92%e5%af%bc%e8%87%b4%e7%8b%ac%e8%a3%81%e5%9b%a0%e4%b8%ba%e7%8b%ac%e8%a3%81%e6%98%af%e5%bc%ba%e5%88%b6%e6%8e%a8%e8%a1%8c%e5%90%84%e7%a7%8d%e7%90%86%e6%83%b3%e7%9a%84%e6%9c%80%e6%9c%89%e6%95%88%e5%b7%a5%e5%85%b7%e8%80%8c%e4%b8%94%e9%9b%86%e4%b8%ad%e8%ae%a1%e5%88%92%e8%a6%81%e5%9c%a8%e5%be%88%e5%a4%a7%e7%a8%8b%e5%ba%a6%e6%88%90%e4%b8%ba%e5%8f%af%e8%83%bd%e7%9a%84%e8%af%9d%e7%8b%ac%e8%a3%81%e6%9c%ac%e8%ba%ab%e6%98%af%e5%bf%85%e4%b8%8d%e5%8f%af%e5%b0%91%e7%9a%84%e8%ae%a1%e5%88%92%e4%b8%8e%e6%b0%91%e4%b8%bb%e4%b9%8b%e9%97%b4%e7%9a%84%e5%86%b2%e7%aa%81%e5%8f%aa%e4%b8%8d%e8%bf%87%e8%b5%b7%e5%9b%a0%e4%ba%8e%e8%bf%99%e6%a0%b7%e4%b8%80%e4%b8%aa%e4%ba%8b%e5%ae%9e%e5%8d%b3%e5%af%b9%e6%8c%87%e5%af%bc%e7%bb%8f%e6%b5%8e%e6%b4%bb%e5%8a%a8%e6%89%80%e9%9c%80%e7%9a%84%e5%af%b9%e8%87%aa%e7%94%b1%e7%9a%84%e5%8e%8b%e5%88%b6%e6%9d%a5%e8%af%b4%e5%90%8e%e8%80%85%e6%98%af%e4%b8%aa%e9%9a%9c%e7%a2%8d%e4%bd%86%e6%98%af%e5%8f%aa%e8%a6%81%e6%b0%91%e4%b8%bb%e4%b8%8d%e5%86%8d%e6%98%af%e4%b8%aa%e4%ba%ba%e8%87%aa%e7%94%b1%e7%9a%84%e4%bf%9d%e9%9a%9c%e7%9a%84%e8%af%9d%e5%ae%83%e4%b9%9f%e5%8f%af%e8%83%bd%e4%bb%a5%e6%9f%90%e7%a7%8d%e5%bd%a2%e5%bc%8f%e4%be%9d%e7%84%b6%e5%ad%98%e5%9c%a8%e4%ba%8e%e6%9e%81%e6%9d%83%e4%b8%bb%e4%b9%89%e6%94%bf%e4%bd%93%e4%b9%8b%e4%b8%ad%e4%b8%80%e4%b8%aa%e7%9c%9f%e6%ad%a3%e7%9a%84%e6%97%a0%e4%ba%a7%e9%98%b6%e7%ba%a7%e4%b8%93%e6%94%bf%e5%8d%b3%e4%bd%bf%e5%bd%a2%e5%bc%8f%e4%b8%8a%e6%98%af%e6%b0%91%e4%b8%bb%e7%9a%84%e5%a6%82%e6%9e%9c%e5%ae%83%e9%9b%86%e4%b8%ad%e6%8c%87%e5%af%bc%e7%bb%8f%e6%b5%8e%e4%bd%93%e7%b3%bb%e7%9a%84%e8%af%9d%e5%8f%af%e8%83%bd%e4%bc%9a%e5%92%8c%e4%bb%bb%e4%bd%95%e4%b8%93%e5%88%b6%e6%94%bf%e4%bd%93%e6%89%80%e6%9b%be%e5%81%9a%e7%9a%84%e4%b8%80%e6%a0%b7%e5%ae%8c%e5%85%a8%e7%a0%b4%e5%9d%8f%e4%ba%86%e4%b8%aa%e4%ba%ba%e8%87%aa%e7%94%b1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>民主并不等于自由，关键还是社会形态的问题。想到了曾经看到的一句话：“即使民主真的很烂，但它也是我们所能构想出的最优解了。”</li>
-</ul>
-<h3 id="第六章-计划与法治">第六章 《计划与法治》<a href="#%e7%ac%ac%e5%85%ad%e7%ab%a0-%e8%ae%a1%e5%88%92%e4%b8%8e%e6%b3%95%e6%b2%bb" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h3>
-<blockquote>
-<h5 id="但是法治的基本点是很清楚的即留给执掌强制权力的执行机构的行动自由应当减少到最低限度虽则每一条法律通过变动人们可能用以追求其目的的手段而在一定程度上限制了个人自由但是在法治之下却防止了政府采取特别的行动来破坏个人的努力">但是法治的基本点是很清楚的：即留给执掌强制权力的执行机构的行动自由，应当减少到最低限度。虽则每一条法律，通过变动人们可能用以追求其目的的手段而在一定程度上限制了个人自由，但是在法治之下，却防止了政府采取特别的行动来破坏个人的努力。<a href="#%e4%bd%86%e6%98%af%e6%b3%95%e6%b2%bb%e7%9a%84%e5%9f%ba%e6%9c%ac%e7%82%b9%e6%98%af%e5%be%88%e6%b8%85%e6%a5%9a%e7%9a%84%e5%8d%b3%e7%95%99%e7%bb%99%e6%89%a7%e6%8e%8c%e5%bc%ba%e5%88%b6%e6%9d%83%e5%8a%9b%e7%9a%84%e6%89%a7%e8%a1%8c%e6%9c%ba%e6%9e%84%e7%9a%84%e8%a1%8c%e5%8a%a8%e8%87%aa%e7%94%b1%e5%ba%94%e5%bd%93%e5%87%8f%e5%b0%91%e5%88%b0%e6%9c%80%e4%bd%8e%e9%99%90%e5%ba%a6%e8%99%bd%e5%88%99%e6%af%8f%e4%b8%80%e6%9d%a1%e6%b3%95%e5%be%8b%e9%80%9a%e8%bf%87%e5%8f%98%e5%8a%a8%e4%ba%ba%e4%bb%ac%e5%8f%af%e8%83%bd%e7%94%a8%e4%bb%a5%e8%bf%bd%e6%b1%82%e5%85%b6%e7%9b%ae%e7%9a%84%e7%9a%84%e6%89%8b%e6%ae%b5%e8%80%8c%e5%9c%a8%e4%b8%80%e5%ae%9a%e7%a8%8b%e5%ba%a6%e4%b8%8a%e9%99%90%e5%88%b6%e4%ba%86%e4%b8%aa%e4%ba%ba%e8%87%aa%e7%94%b1%e4%bd%86%e6%98%af%e5%9c%a8%e6%b3%95%e6%b2%bb%e4%b9%8b%e4%b8%8b%e5%8d%b4%e9%98%b2%e6%ad%a2%e4%ba%86%e6%94%bf%e5%ba%9c%e9%87%87%e5%8f%96%e7%89%b9%e5%88%ab%e7%9a%84%e8%a1%8c%e5%8a%a8%e6%9d%a5%e7%a0%b4%e5%9d%8f%e4%b8%aa%e4%ba%ba%e7%9a%84%e5%8a%aa%e5%8a%9b" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>法治不只适用于个人，更适用于政府本身。</li>
-</ul>
-<blockquote>
-<h5 id="而且任何旨在实现公平分配的重大理想的政策必定会导致法治的破坏要为不同的人产生同样的结果必须给予他们不同的待遇给予不同的人以同样客观的机会并不等于给予他们以同样主观的机会">而且任何旨在实现公平分配的重大理想的政策，必定会导致法治的破坏。要为不同的人产生同样的结果，必须给予他们不同的待遇。给予不同的人以同样客观的机会并不等于给予他们以同样主观的机会。<a href="#%e8%80%8c%e4%b8%94%e4%bb%bb%e4%bd%95%e6%97%a8%e5%9c%a8%e5%ae%9e%e7%8e%b0%e5%85%ac%e5%b9%b3%e5%88%86%e9%85%8d%e7%9a%84%e9%87%8d%e5%a4%a7%e7%90%86%e6%83%b3%e7%9a%84%e6%94%bf%e7%ad%96%e5%bf%85%e5%ae%9a%e4%bc%9a%e5%af%bc%e8%87%b4%e6%b3%95%e6%b2%bb%e7%9a%84%e7%a0%b4%e5%9d%8f%e8%a6%81%e4%b8%ba%e4%b8%8d%e5%90%8c%e7%9a%84%e4%ba%ba%e4%ba%a7%e7%94%9f%e5%90%8c%e6%a0%b7%e7%9a%84%e7%bb%93%e6%9e%9c%e5%bf%85%e9%a1%bb%e7%bb%99%e4%ba%88%e4%bb%96%e4%bb%ac%e4%b8%8d%e5%90%8c%e7%9a%84%e5%be%85%e9%81%87%e7%bb%99%e4%ba%88%e4%b8%8d%e5%90%8c%e7%9a%84%e4%ba%ba%e4%bb%a5%e5%90%8c%e6%a0%b7%e5%ae%a2%e8%a7%82%e7%9a%84%e6%9c%ba%e4%bc%9a%e5%b9%b6%e4%b8%8d%e7%ad%89%e4%ba%8e%e7%bb%99%e4%ba%88%e4%bb%96%e4%bb%ac%e4%bb%a5%e5%90%8c%e6%a0%b7%e4%b8%bb%e8%a7%82%e7%9a%84%e6%9c%ba%e4%bc%9a" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>让我联想到了税收，可能是现实社会中一种最不公平的行为之一。</li>
-</ul>
-<blockquote>
-<h5 id="又如在我们这个时代里如果把某些商品的生产和出售的权利由当局指定给某些人这也是一种特权但是私有财产是任何人根据同样的规则都能够获得的因为只有某些人在取得私有财产方面成功了就把私有财产本身称做一种特权那就使特权这个字失去它的意义了">又如在我们这个时代里，如果把某些商品的生产和出售的权利，由当局指定给某些人，这也是一种特权。但是私有财产是任何人根据同样的规则都能够获得的，因为只有某些人在取得私有财产方面成功了，就把私有财产本身称做一种特权，那就使“特权”这个字失去它的意义了。<a href="#%e5%8f%88%e5%a6%82%e5%9c%a8%e6%88%91%e4%bb%ac%e8%bf%99%e4%b8%aa%e6%97%b6%e4%bb%a3%e9%87%8c%e5%a6%82%e6%9e%9c%e6%8a%8a%e6%9f%90%e4%ba%9b%e5%95%86%e5%93%81%e7%9a%84%e7%94%9f%e4%ba%a7%e5%92%8c%e5%87%ba%e5%94%ae%e7%9a%84%e6%9d%83%e5%88%a9%e7%94%b1%e5%bd%93%e5%b1%80%e6%8c%87%e5%ae%9a%e7%bb%99%e6%9f%90%e4%ba%9b%e4%ba%ba%e8%bf%99%e4%b9%9f%e6%98%af%e4%b8%80%e7%a7%8d%e7%89%b9%e6%9d%83%e4%bd%86%e6%98%af%e7%a7%81%e6%9c%89%e8%b4%a2%e4%ba%a7%e6%98%af%e4%bb%bb%e4%bd%95%e4%ba%ba%e6%a0%b9%e6%8d%ae%e5%90%8c%e6%a0%b7%e7%9a%84%e8%a7%84%e5%88%99%e9%83%bd%e8%83%bd%e5%a4%9f%e8%8e%b7%e5%be%97%e7%9a%84%e5%9b%a0%e4%b8%ba%e5%8f%aa%e6%9c%89%e6%9f%90%e4%ba%9b%e4%ba%ba%e5%9c%a8%e5%8f%96%e5%be%97%e7%a7%81%e6%9c%89%e8%b4%a2%e4%ba%a7%e6%96%b9%e9%9d%a2%e6%88%90%e5%8a%9f%e4%ba%86%e5%b0%b1%e6%8a%8a%e7%a7%81%e6%9c%89%e8%b4%a2%e4%ba%a7%e6%9c%ac%e8%ba%ab%e7%a7%b0%e5%81%9a%e4%b8%80%e7%a7%8d%e7%89%b9%e6%9d%83%e9%82%a3%e5%b0%b1%e4%bd%bf%e7%89%b9%e6%9d%83%e8%bf%99%e4%b8%aa%e5%ad%97%e5%a4%b1%e5%8e%bb%e5%ae%83%e7%9a%84%e6%84%8f%e4%b9%89%e4%ba%86" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>前后两种现象很容易引发对于现实社会中的联想与指代。</li>
-</ul>
-<blockquote>
-<h5 id="如果一个人不需要服从任何人只服从法律那么他就是自由的">“如果一个人不需要服从任何人，只服从法律，那么他就是自由的”。<a href="#%e5%a6%82%e6%9e%9c%e4%b8%80%e4%b8%aa%e4%ba%ba%e4%b8%8d%e9%9c%80%e8%a6%81%e6%9c%8d%e4%bb%8e%e4%bb%bb%e4%bd%95%e4%ba%ba%e5%8f%aa%e6%9c%8d%e4%bb%8e%e6%b3%95%e5%be%8b%e9%82%a3%e4%b9%88%e4%bb%96%e5%b0%b1%e6%98%af%e8%87%aa%e7%94%b1%e7%9a%84" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>可以从这个角度上思考一下，我们是否生活在一个自由的社会中。</li>
-</ul>
-<blockquote>
-<h5 id="法治和政府的一切行动是否在司法的意义上合法这一问题没有什么关系它们可能很合法但仍可能不符合法治某些人在法律规定上有权按他的方式去行动但这并没说明法律是否给他权力进而采取专断行为或法律是否明白地规定他必须如何行动很可能希特勒是以严格的合乎宪法的方式获得无限权力的因而在法律的意义上说他的所作所为都是合法的但是谁会因为这种理由而说在德国仍然盛行着法治呢">法治和政府的一切行动是否在司法的意义上合法这一问题没有什么关系——它们可能很合法，但仍可能不符合法治。某些人在法律规定上有权按他的方式去行动，但这并没说明法律是否给他权力进而采取专断行为，或法律是否明白地规定他必须如何行动。很可能，希特勒是以严格的合乎宪法的方式获得无限权力的，因而在法律的意义上说，他的所作所为都是合法的。但是，谁会因为这种理由而说，在德国仍然盛行着法治呢？<a href="#%e6%b3%95%e6%b2%bb%e5%92%8c%e6%94%bf%e5%ba%9c%e7%9a%84%e4%b8%80%e5%88%87%e8%a1%8c%e5%8a%a8%e6%98%af%e5%90%a6%e5%9c%a8%e5%8f%b8%e6%b3%95%e7%9a%84%e6%84%8f%e4%b9%89%e4%b8%8a%e5%90%88%e6%b3%95%e8%bf%99%e4%b8%80%e9%97%ae%e9%a2%98%e6%b2%a1%e6%9c%89%e4%bb%80%e4%b9%88%e5%85%b3%e7%b3%bb%e5%ae%83%e4%bb%ac%e5%8f%af%e8%83%bd%e5%be%88%e5%90%88%e6%b3%95%e4%bd%86%e4%bb%8d%e5%8f%af%e8%83%bd%e4%b8%8d%e7%ac%a6%e5%90%88%e6%b3%95%e6%b2%bb%e6%9f%90%e4%ba%9b%e4%ba%ba%e5%9c%a8%e6%b3%95%e5%be%8b%e8%a7%84%e5%ae%9a%e4%b8%8a%e6%9c%89%e6%9d%83%e6%8c%89%e4%bb%96%e7%9a%84%e6%96%b9%e5%bc%8f%e5%8e%bb%e8%a1%8c%e5%8a%a8%e4%bd%86%e8%bf%99%e5%b9%b6%e6%b2%a1%e8%af%b4%e6%98%8e%e6%b3%95%e5%be%8b%e6%98%af%e5%90%a6%e7%bb%99%e4%bb%96%e6%9d%83%e5%8a%9b%e8%bf%9b%e8%80%8c%e9%87%87%e5%8f%96%e4%b8%93%e6%96%ad%e8%a1%8c%e4%b8%ba%e6%88%96%e6%b3%95%e5%be%8b%e6%98%af%e5%90%a6%e6%98%8e%e7%99%bd%e5%9c%b0%e8%a7%84%e5%ae%9a%e4%bb%96%e5%bf%85%e9%a1%bb%e5%a6%82%e4%bd%95%e8%a1%8c%e5%8a%a8%e5%be%88%e5%8f%af%e8%83%bd%e5%b8%8c%e7%89%b9%e5%8b%92%e6%98%af%e4%bb%a5%e4%b8%a5%e6%a0%bc%e7%9a%84%e5%90%88%e4%b9%8e%e5%ae%aa%e6%b3%95%e7%9a%84%e6%96%b9%e5%bc%8f%e8%8e%b7%e5%be%97%e6%97%a0%e9%99%90%e6%9d%83%e5%8a%9b%e7%9a%84%e5%9b%a0%e8%80%8c%e5%9c%a8%e6%b3%95%e5%be%8b%e7%9a%84%e6%84%8f%e4%b9%89%e4%b8%8a%e8%af%b4%e4%bb%96%e7%9a%84%e6%89%80%e4%bd%9c%e6%89%80%e4%b8%ba%e9%83%bd%e6%98%af%e5%90%88%e6%b3%95%e7%9a%84%e4%bd%86%e6%98%af%e8%b0%81%e4%bc%9a%e5%9b%a0%e4%b8%ba%e8%bf%99%e7%a7%8d%e7%90%86%e7%94%b1%e8%80%8c%e8%af%b4%e5%9c%a8%e5%be%b7%e5%9b%bd%e4%bb%8d%e7%84%b6%e7%9b%9b%e8%a1%8c%e7%9d%80%e6%b3%95%e6%b2%bb%e5%91%a2" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>法治与依法办事 的区别。</li>
-</ul>
-<h3 id="第七章-经济控制和极权主义">第七章 《经济控制和极权主义》<a href="#%e7%ac%ac%e4%b8%83%e7%ab%a0-%e7%bb%8f%e6%b5%8e%e6%8e%a7%e5%88%b6%e5%92%8c%e6%9e%81%e6%9d%83%e4%b8%bb%e4%b9%89" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h3>
-<blockquote>
-<h5 id="如果我们力求获得金钱那是因为金钱能提供给我们最广泛的选择机会去享受我们努力的成果因为在现代社会里我们是通过货币收入的限制才感到那种由于相对的贫困而仍然强加在我们身上的束缚许多人因此憎恨作为这种束缚象征的货币但这是错把人们感到一种力量存在的媒介当作原因了更正确地说钱是人们所发明的最伟大的实践自由的工具之一在当今社会中只有钱才向穷人开放了一个惊人的选择范围这个范围比没有多少代人之前向富人开放的范围还要大许多社会主义者都主张大量运用非经济激励以代替金钱动机这是他们的一个共同特点如果我们考虑一下这种建议实际上意味着什么我们就能够对货币所起的作用的重要性有比较深刻的了解如果所有报酬不是采取提供货币的形式而是采取提供公开表彰或特权凌驾别人之上的权力地位较好的住宅或较好的食物旅行或受教育机会等形式这只不过是意味着接受报酬者不再可以自行选择而任何决定报酬的那个人不仅决定报酬的大小而且也决定了享用报酬的特定形式">如果我们力求获得金钱，那是因为金钱能提供给我们最广泛的选择机会去享受我们努力的成果。因为在现代社会里，我们是通过货币收入的限制，才感到那种由于相对的贫困而仍然强加在我们身上的束缚，许多人因此憎恨作为这种束缚象征的货币。但这是错把人们感到一种力量存在的媒介当作原因了。更正确地说，钱是人们所发明的最伟大的实践自由的工具之一。在当今社会中，只有钱才向穷人开放了一个惊人的选择范围——这个范围比没有多少代人之前向富人开放的范围还要大。许多社会主义者都主张，大量运用“非经济激励”以代替“金钱动机”。这是他们的一个共同特点。如果我们考虑一下这种建议实际上意味着什么，我们就能够对货币所起的作用的重要性有比较深刻的了解。如果所有报酬，不是采取提供货币的形式，而是采取提供公开表彰或特权、凌驾别人之上的权力地位、较好的住宅或较好的食物、旅行或受教育机会等形式，这只不过是意味着，接受报酬者不再可以自行选择，而任何决定报酬的那个人，不仅决定报酬的大小而且也决定了享用报酬的特定形式。<a href="#%e5%a6%82%e6%9e%9c%e6%88%91%e4%bb%ac%e5%8a%9b%e6%b1%82%e8%8e%b7%e5%be%97%e9%87%91%e9%92%b1%e9%82%a3%e6%98%af%e5%9b%a0%e4%b8%ba%e9%87%91%e9%92%b1%e8%83%bd%e6%8f%90%e4%be%9b%e7%bb%99%e6%88%91%e4%bb%ac%e6%9c%80%e5%b9%bf%e6%b3%9b%e7%9a%84%e9%80%89%e6%8b%a9%e6%9c%ba%e4%bc%9a%e5%8e%bb%e4%ba%ab%e5%8f%97%e6%88%91%e4%bb%ac%e5%8a%aa%e5%8a%9b%e7%9a%84%e6%88%90%e6%9e%9c%e5%9b%a0%e4%b8%ba%e5%9c%a8%e7%8e%b0%e4%bb%a3%e7%a4%be%e4%bc%9a%e9%87%8c%e6%88%91%e4%bb%ac%e6%98%af%e9%80%9a%e8%bf%87%e8%b4%a7%e5%b8%81%e6%94%b6%e5%85%a5%e7%9a%84%e9%99%90%e5%88%b6%e6%89%8d%e6%84%9f%e5%88%b0%e9%82%a3%e7%a7%8d%e7%94%b1%e4%ba%8e%e7%9b%b8%e5%af%b9%e7%9a%84%e8%b4%ab%e5%9b%b0%e8%80%8c%e4%bb%8d%e7%84%b6%e5%bc%ba%e5%8a%a0%e5%9c%a8%e6%88%91%e4%bb%ac%e8%ba%ab%e4%b8%8a%e7%9a%84%e6%9d%9f%e7%bc%9a%e8%ae%b8%e5%a4%9a%e4%ba%ba%e5%9b%a0%e6%ad%a4%e6%86%8e%e6%81%a8%e4%bd%9c%e4%b8%ba%e8%bf%99%e7%a7%8d%e6%9d%9f%e7%bc%9a%e8%b1%a1%e5%be%81%e7%9a%84%e8%b4%a7%e5%b8%81%e4%bd%86%e8%bf%99%e6%98%af%e9%94%99%e6%8a%8a%e4%ba%ba%e4%bb%ac%e6%84%9f%e5%88%b0%e4%b8%80%e7%a7%8d%e5%8a%9b%e9%87%8f%e5%ad%98%e5%9c%a8%e7%9a%84%e5%aa%92%e4%bb%8b%e5%bd%93%e4%bd%9c%e5%8e%9f%e5%9b%a0%e4%ba%86%e6%9b%b4%e6%ad%a3%e7%a1%ae%e5%9c%b0%e8%af%b4%e9%92%b1%e6%98%af%e4%ba%ba%e4%bb%ac%e6%89%80%e5%8f%91%e6%98%8e%e7%9a%84%e6%9c%80%e4%bc%9f%e5%a4%a7%e7%9a%84%e5%ae%9e%e8%b7%b5%e8%87%aa%e7%94%b1%e7%9a%84%e5%b7%a5%e5%85%b7%e4%b9%8b%e4%b8%80%e5%9c%a8%e5%bd%93%e4%bb%8a%e7%a4%be%e4%bc%9a%e4%b8%ad%e5%8f%aa%e6%9c%89%e9%92%b1%e6%89%8d%e5%90%91%e7%a9%b7%e4%ba%ba%e5%bc%80%e6%94%be%e4%ba%86%e4%b8%80%e4%b8%aa%e6%83%8a%e4%ba%ba%e7%9a%84%e9%80%89%e6%8b%a9%e8%8c%83%e5%9b%b4%e8%bf%99%e4%b8%aa%e8%8c%83%e5%9b%b4%e6%af%94%e6%b2%a1%e6%9c%89%e5%a4%9a%e5%b0%91%e4%bb%a3%e4%ba%ba%e4%b9%8b%e5%89%8d%e5%90%91%e5%af%8c%e4%ba%ba%e5%bc%80%e6%94%be%e7%9a%84%e8%8c%83%e5%9b%b4%e8%bf%98%e8%a6%81%e5%a4%a7%e8%ae%b8%e5%a4%9a%e7%a4%be%e4%bc%9a%e4%b8%bb%e4%b9%89%e8%80%85%e9%83%bd%e4%b8%bb%e5%bc%a0%e5%a4%a7%e9%87%8f%e8%bf%90%e7%94%a8%e9%9d%9e%e7%bb%8f%e6%b5%8e%e6%bf%80%e5%8a%b1%e4%bb%a5%e4%bb%a3%e6%9b%bf%e9%87%91%e9%92%b1%e5%8a%a8%e6%9c%ba%e8%bf%99%e6%98%af%e4%bb%96%e4%bb%ac%e7%9a%84%e4%b8%80%e4%b8%aa%e5%85%b1%e5%90%8c%e7%89%b9%e7%82%b9%e5%a6%82%e6%9e%9c%e6%88%91%e4%bb%ac%e8%80%83%e8%99%91%e4%b8%80%e4%b8%8b%e8%bf%99%e7%a7%8d%e5%bb%ba%e8%ae%ae%e5%ae%9e%e9%99%85%e4%b8%8a%e6%84%8f%e5%91%b3%e7%9d%80%e4%bb%80%e4%b9%88%e6%88%91%e4%bb%ac%e5%b0%b1%e8%83%bd%e5%a4%9f%e5%af%b9%e8%b4%a7%e5%b8%81%e6%89%80%e8%b5%b7%e7%9a%84%e4%bd%9c%e7%94%a8%e7%9a%84%e9%87%8d%e8%a6%81%e6%80%a7%e6%9c%89%e6%af%94%e8%be%83%e6%b7%b1%e5%88%bb%e7%9a%84%e4%ba%86%e8%a7%a3%e5%a6%82%e6%9e%9c%e6%89%80%e6%9c%89%e6%8a%a5%e9%85%ac%e4%b8%8d%e6%98%af%e9%87%87%e5%8f%96%e6%8f%90%e4%be%9b%e8%b4%a7%e5%b8%81%e7%9a%84%e5%bd%a2%e5%bc%8f%e8%80%8c%e6%98%af%e9%87%87%e5%8f%96%e6%8f%90%e4%be%9b%e5%85%ac%e5%bc%80%e8%a1%a8%e5%bd%b0%e6%88%96%e7%89%b9%e6%9d%83%e5%87%8c%e9%a9%be%e5%88%ab%e4%ba%ba%e4%b9%8b%e4%b8%8a%e7%9a%84%e6%9d%83%e5%8a%9b%e5%9c%b0%e4%bd%8d%e8%be%83%e5%a5%bd%e7%9a%84%e4%bd%8f%e5%ae%85%e6%88%96%e8%be%83%e5%a5%bd%e7%9a%84%e9%a3%9f%e7%89%a9%e6%97%85%e8%a1%8c%e6%88%96%e5%8f%97%e6%95%99%e8%82%b2%e6%9c%ba%e4%bc%9a%e7%ad%89%e5%bd%a2%e5%bc%8f%e8%bf%99%e5%8f%aa%e4%b8%8d%e8%bf%87%e6%98%af%e6%84%8f%e5%91%b3%e7%9d%80%e6%8e%a5%e5%8f%97%e6%8a%a5%e9%85%ac%e8%80%85%e4%b8%8d%e5%86%8d%e5%8f%af%e4%bb%a5%e8%87%aa%e8%a1%8c%e9%80%89%e6%8b%a9%e8%80%8c%e4%bb%bb%e4%bd%95%e5%86%b3%e5%ae%9a%e6%8a%a5%e9%85%ac%e7%9a%84%e9%82%a3%e4%b8%aa%e4%ba%ba%e4%b8%8d%e4%bb%85%e5%86%b3%e5%ae%9a%e6%8a%a5%e9%85%ac%e7%9a%84%e5%a4%a7%e5%b0%8f%e8%80%8c%e4%b8%94%e4%b9%9f%e5%86%b3%e5%ae%9a%e4%ba%86%e4%ba%ab%e7%94%a8%e6%8a%a5%e9%85%ac%e7%9a%84%e7%89%b9%e5%ae%9a%e5%bd%a2%e5%bc%8f" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>非常有趣的观点，其实在我们的现实生活中也有映射，比如当你理应或赚得某些奖励时，我们都更渴望那是实实在在的金钱数额，而不是一句褒奖，一顿饭，一堆优惠券。金钱，也就是这种货币，而不是“非经济激励”，才能给我们选择自己如何生活的机会与行动范畴。<strong>在我们的报酬以非经济激励代替时，我们要意识到这确实是一种不折不扣的经济控制</strong>。</li>
-</ul>
-<h3 id="第八章-谁跟谁">第八章 《谁跟谁？》<a href="#%e7%ac%ac%e5%85%ab%e7%ab%a0-%e8%b0%81%e8%b7%9f%e8%b0%81" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h3>
-<blockquote>
-<h5 id="一个富人得势的世界仍比一个只有得势的人才能致富的世界要好些试问谁会否认这一点呢">一个富人得势的世界仍比一个只有得势的人才能致富的世界要好些，试问谁会否认这一点呢？<a href="#%e4%b8%80%e4%b8%aa%e5%af%8c%e4%ba%ba%e5%be%97%e5%8a%bf%e7%9a%84%e4%b8%96%e7%95%8c%e4%bb%8d%e6%af%94%e4%b8%80%e4%b8%aa%e5%8f%aa%e6%9c%89%e5%be%97%e5%8a%bf%e7%9a%84%e4%ba%ba%e6%89%8d%e8%83%bd%e8%87%b4%e5%af%8c%e7%9a%84%e4%b8%96%e7%95%8c%e8%a6%81%e5%a5%bd%e4%ba%9b%e8%af%95%e9%97%ae%e8%b0%81%e4%bc%9a%e5%90%a6%e8%ae%a4%e8%bf%99%e4%b8%80%e7%82%b9%e5%91%a2" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>似乎是两种社会制度的终极形态。</li>
-</ul>
-<blockquote>
-<h5 id="当每个人意识到他的命运是某些人有意地作出的决定的结果时他对其命运的不满就会同他的这种意识一齐增长">当每个人意识到他的命运是某些人有意地作出的决定的结果时，他对其命运的不满，就会同他的这种意识一齐增长。<a href="#%e5%bd%93%e6%af%8f%e4%b8%aa%e4%ba%ba%e6%84%8f%e8%af%86%e5%88%b0%e4%bb%96%e7%9a%84%e5%91%bd%e8%bf%90%e6%98%af%e6%9f%90%e4%ba%9b%e4%ba%ba%e6%9c%89%e6%84%8f%e5%9c%b0%e4%bd%9c%e5%87%ba%e7%9a%84%e5%86%b3%e5%ae%9a%e7%9a%84%e7%bb%93%e6%9e%9c%e6%97%b6%e4%bb%96%e5%af%b9%e5%85%b6%e5%91%bd%e8%bf%90%e7%9a%84%e4%b8%8d%e6%bb%a1%e5%b0%b1%e4%bc%9a%e5%90%8c%e4%bb%96%e7%9a%84%e8%bf%99%e7%a7%8d%e6%84%8f%e8%af%86%e4%b8%80%e9%bd%90%e5%a2%9e%e9%95%bf" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>很多社会现象的一种形成原因吧，可能也是伴随着这种意识的觉醒。</li>
-</ul>
-<h3 id="第九章-保障与自由">第九章 《保障与自由》<a href="#%e7%ac%ac%e4%b9%9d%e7%ab%a0-%e4%bf%9d%e9%9a%9c%e4%b8%8e%e8%87%aa%e7%94%b1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h3>
-<blockquote>
-<h5 id="给人以地位和身份的不再是自立而是有保障一个青年人拥有领得年薪的确定权利比对他怀有飞黄腾达的信心更是其结婚的资格而无保障则成为贱民的可怕处境那些在青年时就被拒绝于受庇护的领薪阶层之外的人要在这种处境下终其一生">给人以地位和身份的不再是自立，而是有保障，一个青年人拥有领得年薪的确定权利比对他怀有飞黄腾达的信心更是其结婚的资格，而无保障则成为贱民的可怕处境，那些在青年时就被拒绝于受庇护的领薪阶层之外的人，要在这种处境下终其一生。<a href="#%e7%bb%99%e4%ba%ba%e4%bb%a5%e5%9c%b0%e4%bd%8d%e5%92%8c%e8%ba%ab%e4%bb%bd%e7%9a%84%e4%b8%8d%e5%86%8d%e6%98%af%e8%87%aa%e7%ab%8b%e8%80%8c%e6%98%af%e6%9c%89%e4%bf%9d%e9%9a%9c%e4%b8%80%e4%b8%aa%e9%9d%92%e5%b9%b4%e4%ba%ba%e6%8b%a5%e6%9c%89%e9%a2%86%e5%be%97%e5%b9%b4%e8%96%aa%e7%9a%84%e7%a1%ae%e5%ae%9a%e6%9d%83%e5%88%a9%e6%af%94%e5%af%b9%e4%bb%96%e6%80%80%e6%9c%89%e9%a3%9e%e9%bb%84%e8%85%be%e8%be%be%e7%9a%84%e4%bf%a1%e5%bf%83%e6%9b%b4%e6%98%af%e5%85%b6%e7%bb%93%e5%a9%9a%e7%9a%84%e8%b5%84%e6%a0%bc%e8%80%8c%e6%97%a0%e4%bf%9d%e9%9a%9c%e5%88%99%e6%88%90%e4%b8%ba%e8%b4%b1%e6%b0%91%e7%9a%84%e5%8f%af%e6%80%95%e5%a4%84%e5%a2%83%e9%82%a3%e4%ba%9b%e5%9c%a8%e9%9d%92%e5%b9%b4%e6%97%b6%e5%b0%b1%e8%a2%ab%e6%8b%92%e7%bb%9d%e4%ba%8e%e5%8f%97%e5%ba%87%e6%8a%a4%e7%9a%84%e9%a2%86%e8%96%aa%e9%98%b6%e5%b1%82%e4%b9%8b%e5%a4%96%e7%9a%84%e4%ba%ba%e8%a6%81%e5%9c%a8%e8%bf%99%e7%a7%8d%e5%a4%84%e5%a2%83%e4%b8%8b%e7%bb%88%e5%85%b6%e4%b8%80%e7%94%9f" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<blockquote>
-<h5 id="当我们的青年人喜欢薪水稳定的职位而不喜欢企业的风险的时候我们不能责怪他们因为他们从小就听人说过前者是高级的更不自私和更公平的职业今天这一代的青年是在这样一个世界里成长起来的即无论在学校中或在报纸上都是把商业企业精神看成是不名誉的把赚取利润说成是不道德的把雇用100个人视为剥削却把指挥100个人说成是光荣的年纪大些的人也许认为这种对当前情况的说法未免言过其实但大学教师日常的经验无疑证明由于反资本主义的宣传在英国价值标准的改变远远地走在迄今已发生的制度改变的前面现在的问题是在通过改变制度的方法来满足新的需要的时候我们会不会并非不知不觉地把我们仍然估价较高的那些价值标准毁灭掉呢">当我们的青年人喜欢薪水稳定的职位而不喜欢企业的风险的时候，我们不能责怪他们，因为他们从小就听人说过，前者是高级的、更不自私和更公平的职业。今天这一代的青年是在这样一个世界里成长起来的，即无论在学校中或在报纸上，都是把商业企业精神看成是不名誉的，把赚取利润说成是不道德的，把雇用100个人视为剥削，却把指挥100个人说成是光荣的。年纪大些的人也许认为这种对当前情况的说法未免言过其实，但大学教师日常的经验无疑证明：由于反资本主义的宣传，在英国价值标准的改变远远地走在迄今已发生的制度改变的前面。现在的问题是，在通过改变制度的方法来满足新的需要的时候，我们会不会并非不知不觉地把我们仍然估价较高的那些价值标准毁灭掉呢？<a href="#%e5%bd%93%e6%88%91%e4%bb%ac%e7%9a%84%e9%9d%92%e5%b9%b4%e4%ba%ba%e5%96%9c%e6%ac%a2%e8%96%aa%e6%b0%b4%e7%a8%b3%e5%ae%9a%e7%9a%84%e8%81%8c%e4%bd%8d%e8%80%8c%e4%b8%8d%e5%96%9c%e6%ac%a2%e4%bc%81%e4%b8%9a%e7%9a%84%e9%a3%8e%e9%99%a9%e7%9a%84%e6%97%b6%e5%80%99%e6%88%91%e4%bb%ac%e4%b8%8d%e8%83%bd%e8%b4%a3%e6%80%aa%e4%bb%96%e4%bb%ac%e5%9b%a0%e4%b8%ba%e4%bb%96%e4%bb%ac%e4%bb%8e%e5%b0%8f%e5%b0%b1%e5%90%ac%e4%ba%ba%e8%af%b4%e8%bf%87%e5%89%8d%e8%80%85%e6%98%af%e9%ab%98%e7%ba%a7%e7%9a%84%e6%9b%b4%e4%b8%8d%e8%87%aa%e7%a7%81%e5%92%8c%e6%9b%b4%e5%85%ac%e5%b9%b3%e7%9a%84%e8%81%8c%e4%b8%9a%e4%bb%8a%e5%a4%a9%e8%bf%99%e4%b8%80%e4%bb%a3%e7%9a%84%e9%9d%92%e5%b9%b4%e6%98%af%e5%9c%a8%e8%bf%99%e6%a0%b7%e4%b8%80%e4%b8%aa%e4%b8%96%e7%95%8c%e9%87%8c%e6%88%90%e9%95%bf%e8%b5%b7%e6%9d%a5%e7%9a%84%e5%8d%b3%e6%97%a0%e8%ae%ba%e5%9c%a8%e5%ad%a6%e6%a0%a1%e4%b8%ad%e6%88%96%e5%9c%a8%e6%8a%a5%e7%ba%b8%e4%b8%8a%e9%83%bd%e6%98%af%e6%8a%8a%e5%95%86%e4%b8%9a%e4%bc%81%e4%b8%9a%e7%b2%be%e7%a5%9e%e7%9c%8b%e6%88%90%e6%98%af%e4%b8%8d%e5%90%8d%e8%aa%89%e7%9a%84%e6%8a%8a%e8%b5%9a%e5%8f%96%e5%88%a9%e6%b6%a6%e8%af%b4%e6%88%90%e6%98%af%e4%b8%8d%e9%81%93%e5%be%b7%e7%9a%84%e6%8a%8a%e9%9b%87%e7%94%a8100%e4%b8%aa%e4%ba%ba%e8%a7%86%e4%b8%ba%e5%89%a5%e5%89%8a%e5%8d%b4%e6%8a%8a%e6%8c%87%e6%8c%a5100%e4%b8%aa%e4%ba%ba%e8%af%b4%e6%88%90%e6%98%af%e5%85%89%e8%8d%a3%e7%9a%84%e5%b9%b4%e7%ba%aa%e5%a4%a7%e4%ba%9b%e7%9a%84%e4%ba%ba%e4%b9%9f%e8%ae%b8%e8%ae%a4%e4%b8%ba%e8%bf%99%e7%a7%8d%e5%af%b9%e5%bd%93%e5%89%8d%e6%83%85%e5%86%b5%e7%9a%84%e8%af%b4%e6%b3%95%e6%9c%aa%e5%85%8d%e8%a8%80%e8%bf%87%e5%85%b6%e5%ae%9e%e4%bd%86%e5%a4%a7%e5%ad%a6%e6%95%99%e5%b8%88%e6%97%a5%e5%b8%b8%e7%9a%84%e7%bb%8f%e9%aa%8c%e6%97%a0%e7%96%91%e8%af%81%e6%98%8e%e7%94%b1%e4%ba%8e%e5%8f%8d%e8%b5%84%e6%9c%ac%e4%b8%bb%e4%b9%89%e7%9a%84%e5%ae%a3%e4%bc%a0%e5%9c%a8%e8%8b%b1%e5%9b%bd%e4%bb%b7%e5%80%bc%e6%a0%87%e5%87%86%e7%9a%84%e6%94%b9%e5%8f%98%e8%bf%9c%e8%bf%9c%e5%9c%b0%e8%b5%b0%e5%9c%a8%e8%bf%84%e4%bb%8a%e5%b7%b2%e5%8f%91%e7%94%9f%e7%9a%84%e5%88%b6%e5%ba%a6%e6%94%b9%e5%8f%98%e7%9a%84%e5%89%8d%e9%9d%a2%e7%8e%b0%e5%9c%a8%e7%9a%84%e9%97%ae%e9%a2%98%e6%98%af%e5%9c%a8%e9%80%9a%e8%bf%87%e6%94%b9%e5%8f%98%e5%88%b6%e5%ba%a6%e7%9a%84%e6%96%b9%e6%b3%95%e6%9d%a5%e6%bb%a1%e8%b6%b3%e6%96%b0%e7%9a%84%e9%9c%80%e8%a6%81%e7%9a%84%e6%97%b6%e5%80%99%e6%88%91%e4%bb%ac%e4%bc%9a%e4%b8%8d%e4%bc%9a%e5%b9%b6%e9%9d%9e%e4%b8%8d%e7%9f%a5%e4%b8%8d%e8%a7%89%e5%9c%b0%e6%8a%8a%e6%88%91%e4%bb%ac%e4%bb%8d%e7%84%b6%e4%bc%b0%e4%bb%b7%e8%be%83%e9%ab%98%e7%9a%84%e9%82%a3%e4%ba%9b%e4%bb%b7%e5%80%bc%e6%a0%87%e5%87%86%e6%af%81%e7%81%ad%e6%8e%89%e5%91%a2" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<blockquote>
-<h5 id="在这种状态下难怪越来越多的人开始感到没有经济保障自由就没有拥有的价值并且都感到情愿牺牲自由来争取保障">在这种状态下，难怪越来越多的人开始感到，没有经济保障，自由就“没有拥有的价值”，并且，都感到情愿牺牲自由来争取保障。<a href="#%e5%9c%a8%e8%bf%99%e7%a7%8d%e7%8a%b6%e6%80%81%e4%b8%8b%e9%9a%be%e6%80%aa%e8%b6%8a%e6%9d%a5%e8%b6%8a%e5%a4%9a%e7%9a%84%e4%ba%ba%e5%bc%80%e5%a7%8b%e6%84%9f%e5%88%b0%e6%b2%a1%e6%9c%89%e7%bb%8f%e6%b5%8e%e4%bf%9d%e9%9a%9c%e8%87%aa%e7%94%b1%e5%b0%b1%e6%b2%a1%e6%9c%89%e6%8b%a5%e6%9c%89%e7%9a%84%e4%bb%b7%e5%80%bc%e5%b9%b6%e4%b8%94%e9%83%bd%e6%84%9f%e5%88%b0%e6%83%85%e6%84%bf%e7%89%ba%e7%89%b2%e8%87%aa%e7%94%b1%e6%9d%a5%e4%ba%89%e5%8f%96%e4%bf%9d%e9%9a%9c" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>嗯，情愿牺牲自由来争取保障。这应该算是全书中最能够直接而毫不费力的联系到现实社会的一点了：挤破头的省考与无止境的编制。</li>
-</ul>
-<h3 id="第十章-为什么最坏者当政">第十章 《为什么最坏者当政》<a href="#%e7%ac%ac%e5%8d%81%e7%ab%a0-%e4%b8%ba%e4%bb%80%e4%b9%88%e6%9c%80%e5%9d%8f%e8%80%85%e5%bd%93%e6%94%bf" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h3>
-<blockquote>
-<h5 id="首先一般说来各个人的教育和知识越高他们的见解和趣味就越不相同而他们赞同某种价值等级制度的可能性就越少这或许是事实其结果必然是如果我们希望找到具有高度一致性和相似性的观念我们必须降格到道德和知识标准比较低级的地方去在那里比较原始的和共同的本能与趣味占统治地位">首先，一般说来，各个人的教育和知识越高，他们的见解和趣味就越不相同，而他们赞同某种价值等级制度的可能性就越少。这或许是事实。其结果必然是：如果我们希望找到具有高度一致性和相似性的观念，我们必须降格到道德和知识标准比较低级的地方去，在那里比较原始的和“共同”的本能与趣味占统治地位。<a href="#%e9%a6%96%e5%85%88%e4%b8%80%e8%88%ac%e8%af%b4%e6%9d%a5%e5%90%84%e4%b8%aa%e4%ba%ba%e7%9a%84%e6%95%99%e8%82%b2%e5%92%8c%e7%9f%a5%e8%af%86%e8%b6%8a%e9%ab%98%e4%bb%96%e4%bb%ac%e7%9a%84%e8%a7%81%e8%a7%a3%e5%92%8c%e8%b6%a3%e5%91%b3%e5%b0%b1%e8%b6%8a%e4%b8%8d%e7%9b%b8%e5%90%8c%e8%80%8c%e4%bb%96%e4%bb%ac%e8%b5%9e%e5%90%8c%e6%9f%90%e7%a7%8d%e4%bb%b7%e5%80%bc%e7%ad%89%e7%ba%a7%e5%88%b6%e5%ba%a6%e7%9a%84%e5%8f%af%e8%83%bd%e6%80%a7%e5%b0%b1%e8%b6%8a%e5%b0%91%e8%bf%99%e6%88%96%e8%ae%b8%e6%98%af%e4%ba%8b%e5%ae%9e%e5%85%b6%e7%bb%93%e6%9e%9c%e5%bf%85%e7%84%b6%e6%98%af%e5%a6%82%e6%9e%9c%e6%88%91%e4%bb%ac%e5%b8%8c%e6%9c%9b%e6%89%be%e5%88%b0%e5%85%b7%e6%9c%89%e9%ab%98%e5%ba%a6%e4%b8%80%e8%87%b4%e6%80%a7%e5%92%8c%e7%9b%b8%e4%bc%bc%e6%80%a7%e7%9a%84%e8%a7%82%e5%bf%b5%e6%88%91%e4%bb%ac%e5%bf%85%e9%a1%bb%e9%99%8d%e6%a0%bc%e5%88%b0%e9%81%93%e5%be%b7%e5%92%8c%e7%9f%a5%e8%af%86%e6%a0%87%e5%87%86%e6%af%94%e8%be%83%e4%bd%8e%e7%ba%a7%e7%9a%84%e5%9c%b0%e6%96%b9%e5%8e%bb%e5%9c%a8%e9%82%a3%e9%87%8c%e6%af%94%e8%be%83%e5%8e%9f%e5%a7%8b%e7%9a%84%e5%92%8c%e5%85%b1%e5%90%8c%e7%9a%84%e6%9c%ac%e8%83%bd%e4%b8%8e%e8%b6%a3%e5%91%b3%e5%8d%a0%e7%bb%9f%e6%b2%bb%e5%9c%b0%e4%bd%8d" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>一个蛮有趣的推导，每次回老家（一个北方五六线的小县城）就会有类似的感觉。这里的高级与低级并不含有优越的成分，只是从表达或思想的实质来讲，高阶或是低阶。</li>
-</ul>
-<blockquote>
-<h5 id="人们赞同一个消极的纲领即对敌人的憎恨对富人的嫉妒比赞同一项积极的任务要容易些这看来几乎是人性的一个法则若要用一个信条将某个集团牢牢地团结在一起以便共同行动的话那么将我们和他们对立起来即与一个集团以外的人进行共同的斗争则似乎是这个信条中的重要组成部分">人们赞同一个消极的纲领，即对敌人的憎恨、对富人的嫉妒，比赞同一项积极的任务要容易些，这看来几乎是人性的一个法则。若要用一个信条将某个集团牢牢地团结在一起以便共同行动的话，那么，将“我们”和“他们”对立起来，即与一个集团以外的人进行共同的斗争，则似乎是这个信条中的重要组成部分。<a href="#%e4%ba%ba%e4%bb%ac%e8%b5%9e%e5%90%8c%e4%b8%80%e4%b8%aa%e6%b6%88%e6%9e%81%e7%9a%84%e7%ba%b2%e9%a2%86%e5%8d%b3%e5%af%b9%e6%95%8c%e4%ba%ba%e7%9a%84%e6%86%8e%e6%81%a8%e5%af%b9%e5%af%8c%e4%ba%ba%e7%9a%84%e5%ab%89%e5%a6%92%e6%af%94%e8%b5%9e%e5%90%8c%e4%b8%80%e9%a1%b9%e7%a7%af%e6%9e%81%e7%9a%84%e4%bb%bb%e5%8a%a1%e8%a6%81%e5%ae%b9%e6%98%93%e4%ba%9b%e8%bf%99%e7%9c%8b%e6%9d%a5%e5%87%a0%e4%b9%8e%e6%98%af%e4%ba%ba%e6%80%a7%e7%9a%84%e4%b8%80%e4%b8%aa%e6%b3%95%e5%88%99%e8%8b%a5%e8%a6%81%e7%94%a8%e4%b8%80%e4%b8%aa%e4%bf%a1%e6%9d%a1%e5%b0%86%e6%9f%90%e4%b8%aa%e9%9b%86%e5%9b%a2%e7%89%a2%e7%89%a2%e5%9c%b0%e5%9b%a2%e7%bb%93%e5%9c%a8%e4%b8%80%e8%b5%b7%e4%bb%a5%e4%be%bf%e5%85%b1%e5%90%8c%e8%a1%8c%e5%8a%a8%e7%9a%84%e8%af%9d%e9%82%a3%e4%b9%88%e5%b0%86%e6%88%91%e4%bb%ac%e5%92%8c%e4%bb%96%e4%bb%ac%e5%af%b9%e7%ab%8b%e8%b5%b7%e6%9d%a5%e5%8d%b3%e4%b8%8e%e4%b8%80%e4%b8%aa%e9%9b%86%e5%9b%a2%e4%bb%a5%e5%a4%96%e7%9a%84%e4%ba%ba%e8%bf%9b%e8%a1%8c%e5%85%b1%e5%90%8c%e7%9a%84%e6%96%97%e4%ba%89%e5%88%99%e4%bc%bc%e4%b9%8e%e6%98%af%e8%bf%99%e4%b8%aa%e4%bf%a1%e6%9d%a1%e4%b8%ad%e7%9a%84%e9%87%8d%e8%a6%81%e7%bb%84%e6%88%90%e9%83%a8%e5%88%86" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>一些关于宣传的技巧性与团结的目的性，这个也很很很容易链接至现实。</li>
-</ul>
-<blockquote>
-<h5 id="以为剥夺了个人主义制度中个人拥有的权力并把它转让给社会他们就能够消灭权力凡是提出这样主张的人都忽略了以下几点为了能够用来为一个单一计划服务的权力的集中不仅是权力的转移并且也使权力得到无限的扩张把从前许多人独立行使的权力集中在某个单个集团的手里会使权力膨胀到前所未有的程度其影响极为深广几乎使它变成了另外一样东西">以为剥夺了个人主义制度中个人拥有的权力，并把它转让给社会，他们就能够消灭权力。凡是提出这样主张的人都忽略了以下几点：为了能够用来为一个单一计划服务的权力的集中，不仅是权力的转移，并且也使权力得到无限的扩张；把从前许多人独立行使的权力集中在某个单个集团的手里，会使权力膨胀到前所未有的程度，其影响极为深广，几乎使它变成了另外一样东西。<a href="#%e4%bb%a5%e4%b8%ba%e5%89%a5%e5%a4%ba%e4%ba%86%e4%b8%aa%e4%ba%ba%e4%b8%bb%e4%b9%89%e5%88%b6%e5%ba%a6%e4%b8%ad%e4%b8%aa%e4%ba%ba%e6%8b%a5%e6%9c%89%e7%9a%84%e6%9d%83%e5%8a%9b%e5%b9%b6%e6%8a%8a%e5%ae%83%e8%bd%ac%e8%ae%a9%e7%bb%99%e7%a4%be%e4%bc%9a%e4%bb%96%e4%bb%ac%e5%b0%b1%e8%83%bd%e5%a4%9f%e6%b6%88%e7%81%ad%e6%9d%83%e5%8a%9b%e5%87%a1%e6%98%af%e6%8f%90%e5%87%ba%e8%bf%99%e6%a0%b7%e4%b8%bb%e5%bc%a0%e7%9a%84%e4%ba%ba%e9%83%bd%e5%bf%bd%e7%95%a5%e4%ba%86%e4%bb%a5%e4%b8%8b%e5%87%a0%e7%82%b9%e4%b8%ba%e4%ba%86%e8%83%bd%e5%a4%9f%e7%94%a8%e6%9d%a5%e4%b8%ba%e4%b8%80%e4%b8%aa%e5%8d%95%e4%b8%80%e8%ae%a1%e5%88%92%e6%9c%8d%e5%8a%a1%e7%9a%84%e6%9d%83%e5%8a%9b%e7%9a%84%e9%9b%86%e4%b8%ad%e4%b8%8d%e4%bb%85%e6%98%af%e6%9d%83%e5%8a%9b%e7%9a%84%e8%bd%ac%e7%a7%bb%e5%b9%b6%e4%b8%94%e4%b9%9f%e4%bd%bf%e6%9d%83%e5%8a%9b%e5%be%97%e5%88%b0%e6%97%a0%e9%99%90%e7%9a%84%e6%89%a9%e5%bc%a0%e6%8a%8a%e4%bb%8e%e5%89%8d%e8%ae%b8%e5%a4%9a%e4%ba%ba%e7%8b%ac%e7%ab%8b%e8%a1%8c%e4%bd%bf%e7%9a%84%e6%9d%83%e5%8a%9b%e9%9b%86%e4%b8%ad%e5%9c%a8%e6%9f%90%e4%b8%aa%e5%8d%95%e4%b8%aa%e9%9b%86%e5%9b%a2%e7%9a%84%e6%89%8b%e9%87%8c%e4%bc%9a%e4%bd%bf%e6%9d%83%e5%8a%9b%e8%86%a8%e8%83%80%e5%88%b0%e5%89%8d%e6%89%80%e6%9c%aa%e6%9c%89%e7%9a%84%e7%a8%8b%e5%ba%a6%e5%85%b6%e5%bd%b1%e5%93%8d%e6%9e%81%e4%b8%ba%e6%b7%b1%e5%b9%bf%e5%87%a0%e4%b9%8e%e4%bd%bf%e5%ae%83%e5%8f%98%e6%88%90%e4%ba%86%e5%8f%a6%e5%a4%96%e4%b8%80%e6%a0%b7%e4%b8%9c%e8%a5%bf" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>中央集权 -&gt; 权利的无限扩张，这并不是一个1+1 = 2的问题，当无数个体的权利集中在某一个或某个组织上时，权利就会膨胀到难以想象的程度。</li>
-</ul>
-<blockquote>
-<h5 id="原则的区别在很多方面是和我们在讨论有关法治问题时的区别相同的像形式法律一样个人主义道德的规则尽管在很多方面不很精确但都是一般的和绝对的它们规定或禁止一个一般类型的行为不管在某一特定情况下它的最终目标是好的还是坏的欺诈或盗窃歪曲或背弃信任被认为是坏事不管在个别场合里它是否造成危害即使在一个情况之下没有人因此受害或者这样行为可能是为着一个高尚的目标但这两种情况都不能改变它是坏的这个事实虽然我们有时也许会不得不在不同的坏事之间作出选择但它们仍然是坏事用目的说明手段的正当性这个原则在个人主义道德里面被认为是对一切道德的否定而它在集体主义的道德里面却必然成为至高无上的准则坚定彻底的集体主义者绝对不许做的事简直是没有的如果它有助于整体利益的话因为这个整体利益是他判定应当做什么的唯一标准国家利益是集体主义道德最明确的表述它的唯一界限就是利害的权宜一定的行为对于眼前的目标的适宜性凡是国家利益所肯定的国与国之间的关系也适用于集体主义国家里面人与人之间的关系在集体主义国家里不可能有任何限制界定什么是公民一定不要去做的事情他的良心不允许他做的事是没有的只要这是为集体已经确定的目标所需要的或者这是他的上级命令他要达到的目标">原则的区别，在很多方面是和我们在讨论有关法治问题时的区别相同的。像形式法律一样，个人主义道德的规则，尽管在很多方面不很精确，但都是一般的和绝对的，它们规定或禁止一个一般类型的行为，不管在某一特定情况下它的最终目标是好的还是坏的。欺诈或盗窃，歪曲或背弃信任，被认为是坏事，不管在个别场合里它是否造成危害。即使在一个情况之下没有人因此受害，或者，这样行为可能是为着一个高尚的目标，但这两种情况都不能改变它是坏的这个事实。虽然我们有时也许会不得不在不同的坏事之间作出选择，但它们仍然是坏事。用目的说明手段的正当性这个原则，在个人主义道德里面被认为是对一切道德的否定。而它在集体主义的道德里面却必然成为至高无上的准则；坚定彻底的集体主义者绝对不许做的事简直是没有的，如果它有助于“整体利益”的话，因为这个“整体利益”是他判定应当做什么的唯一标准。国家利益是集体主义道德最明确的表述，它的唯一界限就是利害的权宜——一定的行为对于眼前的目标的适宜性。凡是国家利益所肯定的国与国之间的关系，也适用于集体主义国家里面人与人之间的关系。在集体主义国家里，不可能有任何限制界定什么是公民一定不要去做的事情；他的良心不允许他做的事是没有的，只要这是为集体已经确定的目标所需要的，或者这是他的上级命令他要达到的目标。<a href="#%e5%8e%9f%e5%88%99%e7%9a%84%e5%8c%ba%e5%88%ab%e5%9c%a8%e5%be%88%e5%a4%9a%e6%96%b9%e9%9d%a2%e6%98%af%e5%92%8c%e6%88%91%e4%bb%ac%e5%9c%a8%e8%ae%a8%e8%ae%ba%e6%9c%89%e5%85%b3%e6%b3%95%e6%b2%bb%e9%97%ae%e9%a2%98%e6%97%b6%e7%9a%84%e5%8c%ba%e5%88%ab%e7%9b%b8%e5%90%8c%e7%9a%84%e5%83%8f%e5%bd%a2%e5%bc%8f%e6%b3%95%e5%be%8b%e4%b8%80%e6%a0%b7%e4%b8%aa%e4%ba%ba%e4%b8%bb%e4%b9%89%e9%81%93%e5%be%b7%e7%9a%84%e8%a7%84%e5%88%99%e5%b0%bd%e7%ae%a1%e5%9c%a8%e5%be%88%e5%a4%9a%e6%96%b9%e9%9d%a2%e4%b8%8d%e5%be%88%e7%b2%be%e7%a1%ae%e4%bd%86%e9%83%bd%e6%98%af%e4%b8%80%e8%88%ac%e7%9a%84%e5%92%8c%e7%bb%9d%e5%af%b9%e7%9a%84%e5%ae%83%e4%bb%ac%e8%a7%84%e5%ae%9a%e6%88%96%e7%a6%81%e6%ad%a2%e4%b8%80%e4%b8%aa%e4%b8%80%e8%88%ac%e7%b1%bb%e5%9e%8b%e7%9a%84%e8%a1%8c%e4%b8%ba%e4%b8%8d%e7%ae%a1%e5%9c%a8%e6%9f%90%e4%b8%80%e7%89%b9%e5%ae%9a%e6%83%85%e5%86%b5%e4%b8%8b%e5%ae%83%e7%9a%84%e6%9c%80%e7%bb%88%e7%9b%ae%e6%a0%87%e6%98%af%e5%a5%bd%e7%9a%84%e8%bf%98%e6%98%af%e5%9d%8f%e7%9a%84%e6%ac%ba%e8%af%88%e6%88%96%e7%9b%97%e7%aa%83%e6%ad%aa%e6%9b%b2%e6%88%96%e8%83%8c%e5%bc%83%e4%bf%a1%e4%bb%bb%e8%a2%ab%e8%ae%a4%e4%b8%ba%e6%98%af%e5%9d%8f%e4%ba%8b%e4%b8%8d%e7%ae%a1%e5%9c%a8%e4%b8%aa%e5%88%ab%e5%9c%ba%e5%90%88%e9%87%8c%e5%ae%83%e6%98%af%e5%90%a6%e9%80%a0%e6%88%90%e5%8d%b1%e5%ae%b3%e5%8d%b3%e4%bd%bf%e5%9c%a8%e4%b8%80%e4%b8%aa%e6%83%85%e5%86%b5%e4%b9%8b%e4%b8%8b%e6%b2%a1%e6%9c%89%e4%ba%ba%e5%9b%a0%e6%ad%a4%e5%8f%97%e5%ae%b3%e6%88%96%e8%80%85%e8%bf%99%e6%a0%b7%e8%a1%8c%e4%b8%ba%e5%8f%af%e8%83%bd%e6%98%af%e4%b8%ba%e7%9d%80%e4%b8%80%e4%b8%aa%e9%ab%98%e5%b0%9a%e7%9a%84%e7%9b%ae%e6%a0%87%e4%bd%86%e8%bf%99%e4%b8%a4%e7%a7%8d%e6%83%85%e5%86%b5%e9%83%bd%e4%b8%8d%e8%83%bd%e6%94%b9%e5%8f%98%e5%ae%83%e6%98%af%e5%9d%8f%e7%9a%84%e8%bf%99%e4%b8%aa%e4%ba%8b%e5%ae%9e%e8%99%bd%e7%84%b6%e6%88%91%e4%bb%ac%e6%9c%89%e6%97%b6%e4%b9%9f%e8%ae%b8%e4%bc%9a%e4%b8%8d%e5%be%97%e4%b8%8d%e5%9c%a8%e4%b8%8d%e5%90%8c%e7%9a%84%e5%9d%8f%e4%ba%8b%e4%b9%8b%e9%97%b4%e4%bd%9c%e5%87%ba%e9%80%89%e6%8b%a9%e4%bd%86%e5%ae%83%e4%bb%ac%e4%bb%8d%e7%84%b6%e6%98%af%e5%9d%8f%e4%ba%8b%e7%94%a8%e7%9b%ae%e7%9a%84%e8%af%b4%e6%98%8e%e6%89%8b%e6%ae%b5%e7%9a%84%e6%ad%a3%e5%bd%93%e6%80%a7%e8%bf%99%e4%b8%aa%e5%8e%9f%e5%88%99%e5%9c%a8%e4%b8%aa%e4%ba%ba%e4%b8%bb%e4%b9%89%e9%81%93%e5%be%b7%e9%87%8c%e9%9d%a2%e8%a2%ab%e8%ae%a4%e4%b8%ba%e6%98%af%e5%af%b9%e4%b8%80%e5%88%87%e9%81%93%e5%be%b7%e7%9a%84%e5%90%a6%e5%ae%9a%e8%80%8c%e5%ae%83%e5%9c%a8%e9%9b%86%e4%bd%93%e4%b8%bb%e4%b9%89%e7%9a%84%e9%81%93%e5%be%b7%e9%87%8c%e9%9d%a2%e5%8d%b4%e5%bf%85%e7%84%b6%e6%88%90%e4%b8%ba%e8%87%b3%e9%ab%98%e6%97%a0%e4%b8%8a%e7%9a%84%e5%87%86%e5%88%99%e5%9d%9a%e5%ae%9a%e5%bd%bb%e5%ba%95%e7%9a%84%e9%9b%86%e4%bd%93%e4%b8%bb%e4%b9%89%e8%80%85%e7%bb%9d%e5%af%b9%e4%b8%8d%e8%ae%b8%e5%81%9a%e7%9a%84%e4%ba%8b%e7%ae%80%e7%9b%b4%e6%98%af%e6%b2%a1%e6%9c%89%e7%9a%84%e5%a6%82%e6%9e%9c%e5%ae%83%e6%9c%89%e5%8a%a9%e4%ba%8e%e6%95%b4%e4%bd%93%e5%88%a9%e7%9b%8a%e7%9a%84%e8%af%9d%e5%9b%a0%e4%b8%ba%e8%bf%99%e4%b8%aa%e6%95%b4%e4%bd%93%e5%88%a9%e7%9b%8a%e6%98%af%e4%bb%96%e5%88%a4%e5%ae%9a%e5%ba%94%e5%bd%93%e5%81%9a%e4%bb%80%e4%b9%88%e7%9a%84%e5%94%af%e4%b8%80%e6%a0%87%e5%87%86%e5%9b%bd%e5%ae%b6%e5%88%a9%e7%9b%8a%e6%98%af%e9%9b%86%e4%bd%93%e4%b8%bb%e4%b9%89%e9%81%93%e5%be%b7%e6%9c%80%e6%98%8e%e7%a1%ae%e7%9a%84%e8%a1%a8%e8%bf%b0%e5%ae%83%e7%9a%84%e5%94%af%e4%b8%80%e7%95%8c%e9%99%90%e5%b0%b1%e6%98%af%e5%88%a9%e5%ae%b3%e7%9a%84%e6%9d%83%e5%ae%9c%e4%b8%80%e5%ae%9a%e7%9a%84%e8%a1%8c%e4%b8%ba%e5%af%b9%e4%ba%8e%e7%9c%bc%e5%89%8d%e7%9a%84%e7%9b%ae%e6%a0%87%e7%9a%84%e9%80%82%e5%ae%9c%e6%80%a7%e5%87%a1%e6%98%af%e5%9b%bd%e5%ae%b6%e5%88%a9%e7%9b%8a%e6%89%80%e8%82%af%e5%ae%9a%e7%9a%84%e5%9b%bd%e4%b8%8e%e5%9b%bd%e4%b9%8b%e9%97%b4%e7%9a%84%e5%85%b3%e7%b3%bb%e4%b9%9f%e9%80%82%e7%94%a8%e4%ba%8e%e9%9b%86%e4%bd%93%e4%b8%bb%e4%b9%89%e5%9b%bd%e5%ae%b6%e9%87%8c%e9%9d%a2%e4%ba%ba%e4%b8%8e%e4%ba%ba%e4%b9%8b%e9%97%b4%e7%9a%84%e5%85%b3%e7%b3%bb%e5%9c%a8%e9%9b%86%e4%bd%93%e4%b8%bb%e4%b9%89%e5%9b%bd%e5%ae%b6%e9%87%8c%e4%b8%8d%e5%8f%af%e8%83%bd%e6%9c%89%e4%bb%bb%e4%bd%95%e9%99%90%e5%88%b6%e7%95%8c%e5%ae%9a%e4%bb%80%e4%b9%88%e6%98%af%e5%85%ac%e6%b0%91%e4%b8%80%e5%ae%9a%e4%b8%8d%e8%a6%81%e5%8e%bb%e5%81%9a%e7%9a%84%e4%ba%8b%e6%83%85%e4%bb%96%e7%9a%84%e8%89%af%e5%bf%83%e4%b8%8d%e5%85%81%e8%ae%b8%e4%bb%96%e5%81%9a%e7%9a%84%e4%ba%8b%e6%98%af%e6%b2%a1%e6%9c%89%e7%9a%84%e5%8f%aa%e8%a6%81%e8%bf%99%e6%98%af%e4%b8%ba%e9%9b%86%e4%bd%93%e5%b7%b2%e7%bb%8f%e7%a1%ae%e5%ae%9a%e7%9a%84%e7%9b%ae%e6%a0%87%e6%89%80%e9%9c%80%e8%a6%81%e7%9a%84%e6%88%96%e8%80%85%e8%bf%99%e6%98%af%e4%bb%96%e7%9a%84%e4%b8%8a%e7%ba%a7%e5%91%bd%e4%bb%a4%e4%bb%96%e8%a6%81%e8%be%be%e5%88%b0%e7%9a%84%e7%9b%ae%e6%a0%87" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<blockquote>
-<h5 id="要做一个集体主义社会里有用的成员他必须具有很明确的品质这些品质又必须通过经常不断的实践来得到加强我们把这些品质称为有用的习惯却很难把它们说成是道德品格这是因为个人绝不可以使这些惯例超越于任何具体命令之上或者说绝不可让这些惯例成为实现该社会的特定目标的障碍它们只适用于填补一切直接的命令或者指定特殊目标所留下的缺口但绝不能成为抵触当局意志的正当理由">要做一个集体主义社会里有用的成员，他必须具有很明确的品质，这些品质又必须通过经常不断的实践来得到加强。我们把这些品质称为“有用的习惯”，却很难把它们说成是道德品格，这是因为个人绝不可以使这些惯例超越于任何具体命令之上，或者说，绝不可让这些惯例成为实现该社会的特定目标的障碍。它们只适用于填补一切直接的命令或者指定特殊目标所留下的缺口，但绝不能成为抵触当局意志的正当理由。<a href="#%e8%a6%81%e5%81%9a%e4%b8%80%e4%b8%aa%e9%9b%86%e4%bd%93%e4%b8%bb%e4%b9%89%e7%a4%be%e4%bc%9a%e9%87%8c%e6%9c%89%e7%94%a8%e7%9a%84%e6%88%90%e5%91%98%e4%bb%96%e5%bf%85%e9%a1%bb%e5%85%b7%e6%9c%89%e5%be%88%e6%98%8e%e7%a1%ae%e7%9a%84%e5%93%81%e8%b4%a8%e8%bf%99%e4%ba%9b%e5%93%81%e8%b4%a8%e5%8f%88%e5%bf%85%e9%a1%bb%e9%80%9a%e8%bf%87%e7%bb%8f%e5%b8%b8%e4%b8%8d%e6%96%ad%e7%9a%84%e5%ae%9e%e8%b7%b5%e6%9d%a5%e5%be%97%e5%88%b0%e5%8a%a0%e5%bc%ba%e6%88%91%e4%bb%ac%e6%8a%8a%e8%bf%99%e4%ba%9b%e5%93%81%e8%b4%a8%e7%a7%b0%e4%b8%ba%e6%9c%89%e7%94%a8%e7%9a%84%e4%b9%a0%e6%83%af%e5%8d%b4%e5%be%88%e9%9a%be%e6%8a%8a%e5%ae%83%e4%bb%ac%e8%af%b4%e6%88%90%e6%98%af%e9%81%93%e5%be%b7%e5%93%81%e6%a0%bc%e8%bf%99%e6%98%af%e5%9b%a0%e4%b8%ba%e4%b8%aa%e4%ba%ba%e7%bb%9d%e4%b8%8d%e5%8f%af%e4%bb%a5%e4%bd%bf%e8%bf%99%e4%ba%9b%e6%83%af%e4%be%8b%e8%b6%85%e8%b6%8a%e4%ba%8e%e4%bb%bb%e4%bd%95%e5%85%b7%e4%bd%93%e5%91%bd%e4%bb%a4%e4%b9%8b%e4%b8%8a%e6%88%96%e8%80%85%e8%af%b4%e7%bb%9d%e4%b8%8d%e5%8f%af%e8%ae%a9%e8%bf%99%e4%ba%9b%e6%83%af%e4%be%8b%e6%88%90%e4%b8%ba%e5%ae%9e%e7%8e%b0%e8%af%a5%e7%a4%be%e4%bc%9a%e7%9a%84%e7%89%b9%e5%ae%9a%e7%9b%ae%e6%a0%87%e7%9a%84%e9%9a%9c%e7%a2%8d%e5%ae%83%e4%bb%ac%e5%8f%aa%e9%80%82%e7%94%a8%e4%ba%8e%e5%a1%ab%e8%a1%a5%e4%b8%80%e5%88%87%e7%9b%b4%e6%8e%a5%e7%9a%84%e5%91%bd%e4%bb%a4%e6%88%96%e8%80%85%e6%8c%87%e5%ae%9a%e7%89%b9%e6%ae%8a%e7%9b%ae%e6%a0%87%e6%89%80%e7%95%99%e4%b8%8b%e7%9a%84%e7%bc%ba%e5%8f%a3%e4%bd%86%e7%bb%9d%e4%b8%8d%e8%83%bd%e6%88%90%e4%b8%ba%e6%8a%b5%e8%a7%a6%e5%bd%93%e5%b1%80%e6%84%8f%e5%bf%97%e7%9a%84%e6%ad%a3%e5%bd%93%e7%90%86%e7%94%b1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<blockquote>
-<h5 id="但当几个特定目标支配着整个社会的时候就有下面的情况不可避免地发生残酷有时可以变成责任违反我们情感的行为例如枪毙人质杀害老弱等竟被看成仅仅是权宜之计强迫迁移数万人口竟成为差不多除了受害人以外每个人都赞成的一种政策措施或者像征募妇女以作传宗接代之用之类的建议也会受到认真考虑在集体主义者的眼中总是有一个上述这些行为为之服务的重大目标并且照他看来这一目标使这些行为具有合理性因为对一个社会的共同目标的追求可以无限制地忽略任何个人的任何权利和价值">但当几个特定目标支配着整个社会的时候，就有下面的情况不可避免地发生：残酷有时可以变成责任，违反我们情感的行为，例如枪毙人质、杀害老弱等，竟被看成仅仅是权宜之计；强迫迁移数万人口竟成为差不多除了受害人以外每个人都赞成的一种政策措施；或者像“征募妇女以作传宗接代之用”之类的建议也会受到认真考虑。在集体主义者的眼中，总是有一个上述这些行为为之服务的重大目标，并且，照他看来，这一目标使这些行为具有合理性，因为对一个社会的共同目标的追求，可以无限制地忽略任何个人的任何权利和价值。<a href="#%e4%bd%86%e5%bd%93%e5%87%a0%e4%b8%aa%e7%89%b9%e5%ae%9a%e7%9b%ae%e6%a0%87%e6%94%af%e9%85%8d%e7%9d%80%e6%95%b4%e4%b8%aa%e7%a4%be%e4%bc%9a%e7%9a%84%e6%97%b6%e5%80%99%e5%b0%b1%e6%9c%89%e4%b8%8b%e9%9d%a2%e7%9a%84%e6%83%85%e5%86%b5%e4%b8%8d%e5%8f%af%e9%81%bf%e5%85%8d%e5%9c%b0%e5%8f%91%e7%94%9f%e6%ae%8b%e9%85%b7%e6%9c%89%e6%97%b6%e5%8f%af%e4%bb%a5%e5%8f%98%e6%88%90%e8%b4%a3%e4%bb%bb%e8%bf%9d%e5%8f%8d%e6%88%91%e4%bb%ac%e6%83%85%e6%84%9f%e7%9a%84%e8%a1%8c%e4%b8%ba%e4%be%8b%e5%a6%82%e6%9e%aa%e6%af%99%e4%ba%ba%e8%b4%a8%e6%9d%80%e5%ae%b3%e8%80%81%e5%bc%b1%e7%ad%89%e7%ab%9f%e8%a2%ab%e7%9c%8b%e6%88%90%e4%bb%85%e4%bb%85%e6%98%af%e6%9d%83%e5%ae%9c%e4%b9%8b%e8%ae%a1%e5%bc%ba%e8%bf%ab%e8%bf%81%e7%a7%bb%e6%95%b0%e4%b8%87%e4%ba%ba%e5%8f%a3%e7%ab%9f%e6%88%90%e4%b8%ba%e5%b7%ae%e4%b8%8d%e5%a4%9a%e9%99%a4%e4%ba%86%e5%8f%97%e5%ae%b3%e4%ba%ba%e4%bb%a5%e5%a4%96%e6%af%8f%e4%b8%aa%e4%ba%ba%e9%83%bd%e8%b5%9e%e6%88%90%e7%9a%84%e4%b8%80%e7%a7%8d%e6%94%bf%e7%ad%96%e6%8e%aa%e6%96%bd%e6%88%96%e8%80%85%e5%83%8f%e5%be%81%e5%8b%9f%e5%a6%87%e5%a5%b3%e4%bb%a5%e4%bd%9c%e4%bc%a0%e5%ae%97%e6%8e%a5%e4%bb%a3%e4%b9%8b%e7%94%a8%e4%b9%8b%e7%b1%bb%e7%9a%84%e5%bb%ba%e8%ae%ae%e4%b9%9f%e4%bc%9a%e5%8f%97%e5%88%b0%e8%ae%a4%e7%9c%9f%e8%80%83%e8%99%91%e5%9c%a8%e9%9b%86%e4%bd%93%e4%b8%bb%e4%b9%89%e8%80%85%e7%9a%84%e7%9c%bc%e4%b8%ad%e6%80%bb%e6%98%af%e6%9c%89%e4%b8%80%e4%b8%aa%e4%b8%8a%e8%bf%b0%e8%bf%99%e4%ba%9b%e8%a1%8c%e4%b8%ba%e4%b8%ba%e4%b9%8b%e6%9c%8d%e5%8a%a1%e7%9a%84%e9%87%8d%e5%a4%a7%e7%9b%ae%e6%a0%87%e5%b9%b6%e4%b8%94%e7%85%a7%e4%bb%96%e7%9c%8b%e6%9d%a5%e8%bf%99%e4%b8%80%e7%9b%ae%e6%a0%87%e4%bd%bf%e8%bf%99%e4%ba%9b%e8%a1%8c%e4%b8%ba%e5%85%b7%e6%9c%89%e5%90%88%e7%90%86%e6%80%a7%e5%9b%a0%e4%b8%ba%e5%af%b9%e4%b8%80%e4%b8%aa%e7%a4%be%e4%bc%9a%e7%9a%84%e5%85%b1%e5%90%8c%e7%9b%ae%e6%a0%87%e7%9a%84%e8%bf%bd%e6%b1%82%e5%8f%af%e4%bb%a5%e6%97%a0%e9%99%90%e5%88%b6%e5%9c%b0%e5%bf%bd%e7%95%a5%e4%bb%bb%e4%bd%95%e4%b8%aa%e4%ba%ba%e7%9a%84%e4%bb%bb%e4%bd%95%e6%9d%83%e5%88%a9%e5%92%8c%e4%bb%b7%e5%80%bc" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>用目的说明手段的正当性这个原则导致的结果可能是最基础的道德伦理体系的崩溃。以上倒是都在试图论证一个观点：哪里存在着一个凌驾一切的共同目标，哪里就没有任何一般的道德或规则的容身之地。</li>
-</ul>
-<h3 id="第十一章-真理的终结">第十一章 《真理的终结》<a href="#%e7%ac%ac%e5%8d%81%e4%b8%80%e7%ab%a0-%e7%9c%9f%e7%90%86%e7%9a%84%e7%bb%88%e7%bb%93" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h3>
-<blockquote>
-<h5 id="据他们说在我们的社会里没有真正的思想自由因为群众的意见和爱好是被宣传广告和上层阶级的榜样以及其他必然强使人民的思想循规蹈矩的环境因素塑造而成的从这一点得出的结论是如果大多数人的理想和爱好都一直是由我们能够控制的环境形成的那我们就应当有意识地运用这个力量来把人民的思想转到我们认为是可取的方向上去">据他们说，在我们的社会里没有真正的思想自由，因为群众的意见和爱好是被宣传、广告和上层阶级的榜样以及其他必然强使人民的思想循规蹈矩的环境因素塑造而成的。从这一点得出的结论是：如果大多数人的理想和爱好都一直是由我们能够控制的环境形成的，那我们就应当有意识地运用这个力量来把人民的思想转到我们认为是可取的方向上去。<a href="#%e6%8d%ae%e4%bb%96%e4%bb%ac%e8%af%b4%e5%9c%a8%e6%88%91%e4%bb%ac%e7%9a%84%e7%a4%be%e4%bc%9a%e9%87%8c%e6%b2%a1%e6%9c%89%e7%9c%9f%e6%ad%a3%e7%9a%84%e6%80%9d%e6%83%b3%e8%87%aa%e7%94%b1%e5%9b%a0%e4%b8%ba%e7%be%a4%e4%bc%97%e7%9a%84%e6%84%8f%e8%a7%81%e5%92%8c%e7%88%b1%e5%a5%bd%e6%98%af%e8%a2%ab%e5%ae%a3%e4%bc%a0%e5%b9%bf%e5%91%8a%e5%92%8c%e4%b8%8a%e5%b1%82%e9%98%b6%e7%ba%a7%e7%9a%84%e6%a6%9c%e6%a0%b7%e4%bb%a5%e5%8f%8a%e5%85%b6%e4%bb%96%e5%bf%85%e7%84%b6%e5%bc%ba%e4%bd%bf%e4%ba%ba%e6%b0%91%e7%9a%84%e6%80%9d%e6%83%b3%e5%be%aa%e8%a7%84%e8%b9%88%e7%9f%a9%e7%9a%84%e7%8e%af%e5%a2%83%e5%9b%a0%e7%b4%a0%e5%a1%91%e9%80%a0%e8%80%8c%e6%88%90%e7%9a%84%e4%bb%8e%e8%bf%99%e4%b8%80%e7%82%b9%e5%be%97%e5%87%ba%e7%9a%84%e7%bb%93%e8%ae%ba%e6%98%af%e5%a6%82%e6%9e%9c%e5%a4%a7%e5%a4%9a%e6%95%b0%e4%ba%ba%e7%9a%84%e7%90%86%e6%83%b3%e5%92%8c%e7%88%b1%e5%a5%bd%e9%83%bd%e4%b8%80%e7%9b%b4%e6%98%af%e7%94%b1%e6%88%91%e4%bb%ac%e8%83%bd%e5%a4%9f%e6%8e%a7%e5%88%b6%e7%9a%84%e7%8e%af%e5%a2%83%e5%bd%a2%e6%88%90%e7%9a%84%e9%82%a3%e6%88%91%e4%bb%ac%e5%b0%b1%e5%ba%94%e5%bd%93%e6%9c%89%e6%84%8f%e8%af%86%e5%9c%b0%e8%bf%90%e7%94%a8%e8%bf%99%e4%b8%aa%e5%8a%9b%e9%87%8f%e6%9d%a5%e6%8a%8a%e4%ba%ba%e6%b0%91%e7%9a%84%e6%80%9d%e6%83%b3%e8%bd%ac%e5%88%b0%e6%88%91%e4%bb%ac%e8%ae%a4%e4%b8%ba%e6%98%af%e5%8f%af%e5%8f%96%e7%9a%84%e6%96%b9%e5%90%91%e4%b8%8a%e5%8e%bb" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<blockquote>
-<h5 id="在任何社会里思想的自由可能只对很少的人才有直接的意义但这并不是说某些人有资格或者有权力选择一批专门享有这种思想自由的人它决不证明某些人有要求决定人民必须想什么或信仰什么的权利的这个假定是正当的">在任何社会里，思想的自由可能只对很少的人才有直接的意义。但这并不是说，某些人有资格或者有权力选择一批专门享有这种思想自由的人。它决不证明，某些人有要求决定人民必须想什么或信仰什么的权利的这个假定是正当的。<a href="#%e5%9c%a8%e4%bb%bb%e4%bd%95%e7%a4%be%e4%bc%9a%e9%87%8c%e6%80%9d%e6%83%b3%e7%9a%84%e8%87%aa%e7%94%b1%e5%8f%af%e8%83%bd%e5%8f%aa%e5%af%b9%e5%be%88%e5%b0%91%e7%9a%84%e4%ba%ba%e6%89%8d%e6%9c%89%e7%9b%b4%e6%8e%a5%e7%9a%84%e6%84%8f%e4%b9%89%e4%bd%86%e8%bf%99%e5%b9%b6%e4%b8%8d%e6%98%af%e8%af%b4%e6%9f%90%e4%ba%9b%e4%ba%ba%e6%9c%89%e8%b5%84%e6%a0%bc%e6%88%96%e8%80%85%e6%9c%89%e6%9d%83%e5%8a%9b%e9%80%89%e6%8b%a9%e4%b8%80%e6%89%b9%e4%b8%93%e9%97%a8%e4%ba%ab%e6%9c%89%e8%bf%99%e7%a7%8d%e6%80%9d%e6%83%b3%e8%87%aa%e7%94%b1%e7%9a%84%e4%ba%ba%e5%ae%83%e5%86%b3%e4%b8%8d%e8%af%81%e6%98%8e%e6%9f%90%e4%ba%9b%e4%ba%ba%e6%9c%89%e8%a6%81%e6%b1%82%e5%86%b3%e5%ae%9a%e4%ba%ba%e6%b0%91%e5%bf%85%e9%a1%bb%e6%83%b3%e4%bb%80%e4%b9%88%e6%88%96%e4%bf%a1%e4%bb%b0%e4%bb%80%e4%b9%88%e7%9a%84%e6%9d%83%e5%88%a9%e7%9a%84%e8%bf%99%e4%b8%aa%e5%81%87%e5%ae%9a%e6%98%af%e6%ad%a3%e5%bd%93%e7%9a%84" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>或许说明了，没有谁的思想是该被谁领导和指导的。</li>
-</ul>
-<blockquote>
-<h5 id="使智识自由对知识的进步起主要推动作用的根本之点不在于每个人都可能有能力思考或写点什么而在于任何人对任何事由或意见都可以争论只要异议不受到禁止就始终会有人对支配着他们同时代人的意见有所疑问并且提出新的意见来接受辩论和宣传的考验">使智识自由对知识的进步起主要推动作用的根本之点，不在于每个人都可能有能力思考或写点什么，而在于任何人对任何事由或意见都可以争论。只要异议不受到禁止，就始终会有人对支配着他们同时代人的意见有所疑问，并且提出新的意见来接受辩论和宣传的考验。<a href="#%e4%bd%bf%e6%99%ba%e8%af%86%e8%87%aa%e7%94%b1%e5%af%b9%e7%9f%a5%e8%af%86%e7%9a%84%e8%bf%9b%e6%ad%a5%e8%b5%b7%e4%b8%bb%e8%a6%81%e6%8e%a8%e5%8a%a8%e4%bd%9c%e7%94%a8%e7%9a%84%e6%a0%b9%e6%9c%ac%e4%b9%8b%e7%82%b9%e4%b8%8d%e5%9c%a8%e4%ba%8e%e6%af%8f%e4%b8%aa%e4%ba%ba%e9%83%bd%e5%8f%af%e8%83%bd%e6%9c%89%e8%83%bd%e5%8a%9b%e6%80%9d%e8%80%83%e6%88%96%e5%86%99%e7%82%b9%e4%bb%80%e4%b9%88%e8%80%8c%e5%9c%a8%e4%ba%8e%e4%bb%bb%e4%bd%95%e4%ba%ba%e5%af%b9%e4%bb%bb%e4%bd%95%e4%ba%8b%e7%94%b1%e6%88%96%e6%84%8f%e8%a7%81%e9%83%bd%e5%8f%af%e4%bb%a5%e4%ba%89%e8%ae%ba%e5%8f%aa%e8%a6%81%e5%bc%82%e8%ae%ae%e4%b8%8d%e5%8f%97%e5%88%b0%e7%a6%81%e6%ad%a2%e5%b0%b1%e5%a7%8b%e7%bb%88%e4%bc%9a%e6%9c%89%e4%ba%ba%e5%af%b9%e6%94%af%e9%85%8d%e7%9d%80%e4%bb%96%e4%bb%ac%e5%90%8c%e6%97%b6%e4%bb%a3%e4%ba%ba%e7%9a%84%e6%84%8f%e8%a7%81%e6%9c%89%e6%89%80%e7%96%91%e9%97%ae%e5%b9%b6%e4%b8%94%e6%8f%90%e5%87%ba%e6%96%b0%e7%9a%84%e6%84%8f%e8%a7%81%e6%9d%a5%e6%8e%a5%e5%8f%97%e8%be%a9%e8%ae%ba%e5%92%8c%e5%ae%a3%e4%bc%a0%e7%9a%84%e8%80%83%e9%aa%8c" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>使思想获得生命的，是具有不同知识和不同见解的个人之间的互动。</li>
-</ul>
-<h3 id="第十四章-物质条件与理想目标">第十四章 《物质条件与理想目标》<a href="#%e7%ac%ac%e5%8d%81%e5%9b%9b%e7%ab%a0-%e7%89%a9%e8%b4%a8%e6%9d%a1%e4%bb%b6%e4%b8%8e%e7%90%86%e6%83%b3%e7%9b%ae%e6%a0%87" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h3>
-<blockquote>
-<h5 id="为了将来的自由更有保障而暂时牺牲自由这是可以理解的但是要把这些措施作为一种永久性的制度安排提出来那就是另一回事了">为了将来的自由更有保障而暂时牺牲自由，这是可以理解的；但是，要把这些措施作为一种永久性的制度安排提出来，那就是另一回事了。<a href="#%e4%b8%ba%e4%ba%86%e5%b0%86%e6%9d%a5%e7%9a%84%e8%87%aa%e7%94%b1%e6%9b%b4%e6%9c%89%e4%bf%9d%e9%9a%9c%e8%80%8c%e6%9a%82%e6%97%b6%e7%89%ba%e7%89%b2%e8%87%aa%e7%94%b1%e8%bf%99%e6%98%af%e5%8f%af%e4%bb%a5%e7%90%86%e8%a7%a3%e7%9a%84%e4%bd%86%e6%98%af%e8%a6%81%e6%8a%8a%e8%bf%99%e4%ba%9b%e6%8e%aa%e6%96%bd%e4%bd%9c%e4%b8%ba%e4%b8%80%e7%a7%8d%e6%b0%b8%e4%b9%85%e6%80%a7%e7%9a%84%e5%88%b6%e5%ba%a6%e5%ae%89%e6%8e%92%e6%8f%90%e5%87%ba%e6%9d%a5%e9%82%a3%e5%b0%b1%e6%98%af%e5%8f%a6%e4%b8%80%e5%9b%9e%e4%ba%8b%e4%ba%86" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<blockquote>
-<h5 id="在物质环境迫使我们要做出某种选择时有决定自己行动的自由以及对依照自己良心安排自己的生活可以自行负责这两者是道德观念能够赖以培育道德价值在个人的自由决定中赖以逐日再造的唯一氛围">在物质环境迫使我们要做出某种选择时有决定自己行动的自由，以及对依照自己良心安排自己的生活可以自行负责，这两者是道德观念能够赖以培育、道德价值在个人的自由决定中赖以逐日再造的唯一氛围<a href="#%e5%9c%a8%e7%89%a9%e8%b4%a8%e7%8e%af%e5%a2%83%e8%bf%ab%e4%bd%bf%e6%88%91%e4%bb%ac%e8%a6%81%e5%81%9a%e5%87%ba%e6%9f%90%e7%a7%8d%e9%80%89%e6%8b%a9%e6%97%b6%e6%9c%89%e5%86%b3%e5%ae%9a%e8%87%aa%e5%b7%b1%e8%a1%8c%e5%8a%a8%e7%9a%84%e8%87%aa%e7%94%b1%e4%bb%a5%e5%8f%8a%e5%af%b9%e4%be%9d%e7%85%a7%e8%87%aa%e5%b7%b1%e8%89%af%e5%bf%83%e5%ae%89%e6%8e%92%e8%87%aa%e5%b7%b1%e7%9a%84%e7%94%9f%e6%b4%bb%e5%8f%af%e4%bb%a5%e8%87%aa%e8%a1%8c%e8%b4%9f%e8%b4%a3%e8%bf%99%e4%b8%a4%e8%80%85%e6%98%af%e9%81%93%e5%be%b7%e8%a7%82%e5%bf%b5%e8%83%bd%e5%a4%9f%e8%b5%96%e4%bb%a5%e5%9f%b9%e8%82%b2%e9%81%93%e5%be%b7%e4%bb%b7%e5%80%bc%e5%9c%a8%e4%b8%aa%e4%ba%ba%e7%9a%84%e8%87%aa%e7%94%b1%e5%86%b3%e5%ae%9a%e4%b8%ad%e8%b5%96%e4%bb%a5%e9%80%90%e6%97%a5%e5%86%8d%e9%80%a0%e7%9a%84%e5%94%af%e4%b8%80%e6%b0%9b%e5%9b%b4" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>也就是说行动的自由和对自身行为的自理是塑造道德观念与培养道德价值的事实基理。</li>
-</ul>
-<h3 id="第十五章-国际秩序的展望">第十五章 《国际秩序的展望》<a href="#%e7%ac%ac%e5%8d%81%e4%ba%94%e7%ab%a0-%e5%9b%bd%e9%99%85%e7%a7%a9%e5%ba%8f%e7%9a%84%e5%b1%95%e6%9c%9b" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h3>
-<blockquote>
-<h5 id="在任何地方只要没有很大程度的地方自治管理没有对大众和他们的未来领导人提供一所国民教育学校民主就从未顺利运作过只有可以在大多数人所熟悉的事务中学习和完成承担自身的责任的地方只有在是近邻的觉悟而不是某些有关他人的需要的理论知识在指导行动的地方一个普通人才能真正参与公共事务因为他们关心他所了解的世界如果把政治行动范围搞得过大以至于几乎只有官僚机构才能掌握有关这一政治行动的必要知识那么个人的首创性一定会减弱">在任何地方，只要没有很大程度的地方自治管理，没有对大众和他们的未来领导人提供一所国民教育学校，民主就从未顺利运作过。只有可以在大多数人所熟悉的事务中学习和完成承担自身的责任的地方，只有在是近邻的觉悟而不是某些有关他人的需要的理论知识在指导行动的地方，一个普通人才能真正参与公共事务，因为他们关心他所了解的世界。如果把政治行动范围搞得过大，以至于几乎只有官僚机构才能掌握有关这一政治行动的必要知识，那么个人的首创性一定会减弱，<a href="#%e5%9c%a8%e4%bb%bb%e4%bd%95%e5%9c%b0%e6%96%b9%e5%8f%aa%e8%a6%81%e6%b2%a1%e6%9c%89%e5%be%88%e5%a4%a7%e7%a8%8b%e5%ba%a6%e7%9a%84%e5%9c%b0%e6%96%b9%e8%87%aa%e6%b2%bb%e7%ae%a1%e7%90%86%e6%b2%a1%e6%9c%89%e5%af%b9%e5%a4%a7%e4%bc%97%e5%92%8c%e4%bb%96%e4%bb%ac%e7%9a%84%e6%9c%aa%e6%9d%a5%e9%a2%86%e5%af%bc%e4%ba%ba%e6%8f%90%e4%be%9b%e4%b8%80%e6%89%80%e5%9b%bd%e6%b0%91%e6%95%99%e8%82%b2%e5%ad%a6%e6%a0%a1%e6%b0%91%e4%b8%bb%e5%b0%b1%e4%bb%8e%e6%9c%aa%e9%a1%ba%e5%88%a9%e8%bf%90%e4%bd%9c%e8%bf%87%e5%8f%aa%e6%9c%89%e5%8f%af%e4%bb%a5%e5%9c%a8%e5%a4%a7%e5%a4%9a%e6%95%b0%e4%ba%ba%e6%89%80%e7%86%9f%e6%82%89%e7%9a%84%e4%ba%8b%e5%8a%a1%e4%b8%ad%e5%ad%a6%e4%b9%a0%e5%92%8c%e5%ae%8c%e6%88%90%e6%89%bf%e6%8b%85%e8%87%aa%e8%ba%ab%e7%9a%84%e8%b4%a3%e4%bb%bb%e7%9a%84%e5%9c%b0%e6%96%b9%e5%8f%aa%e6%9c%89%e5%9c%a8%e6%98%af%e8%bf%91%e9%82%bb%e7%9a%84%e8%a7%89%e6%82%9f%e8%80%8c%e4%b8%8d%e6%98%af%e6%9f%90%e4%ba%9b%e6%9c%89%e5%85%b3%e4%bb%96%e4%ba%ba%e7%9a%84%e9%9c%80%e8%a6%81%e7%9a%84%e7%90%86%e8%ae%ba%e7%9f%a5%e8%af%86%e5%9c%a8%e6%8c%87%e5%af%bc%e8%a1%8c%e5%8a%a8%e7%9a%84%e5%9c%b0%e6%96%b9%e4%b8%80%e4%b8%aa%e6%99%ae%e9%80%9a%e4%ba%ba%e6%89%8d%e8%83%bd%e7%9c%9f%e6%ad%a3%e5%8f%82%e4%b8%8e%e5%85%ac%e5%85%b1%e4%ba%8b%e5%8a%a1%e5%9b%a0%e4%b8%ba%e4%bb%96%e4%bb%ac%e5%85%b3%e5%bf%83%e4%bb%96%e6%89%80%e4%ba%86%e8%a7%a3%e7%9a%84%e4%b8%96%e7%95%8c%e5%a6%82%e6%9e%9c%e6%8a%8a%e6%94%bf%e6%b2%bb%e8%a1%8c%e5%8a%a8%e8%8c%83%e5%9b%b4%e6%90%9e%e5%be%97%e8%bf%87%e5%a4%a7%e4%bb%a5%e8%87%b3%e4%ba%8e%e5%87%a0%e4%b9%8e%e5%8f%aa%e6%9c%89%e5%ae%98%e5%83%9a%e6%9c%ba%e6%9e%84%e6%89%8d%e8%83%bd%e6%8e%8c%e6%8f%a1%e6%9c%89%e5%85%b3%e8%bf%99%e4%b8%80%e6%94%bf%e6%b2%bb%e8%a1%8c%e5%8a%a8%e7%9a%84%e5%bf%85%e8%a6%81%e7%9f%a5%e8%af%86%e9%82%a3%e4%b9%88%e4%b8%aa%e4%ba%ba%e7%9a%84%e9%a6%96%e5%88%9b%e6%80%a7%e4%b8%80%e5%ae%9a%e4%bc%9a%e5%87%8f%e5%bc%b1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<blockquote>
-<h5 id="当时更重要的是清除那些因人类的愚蠢而加诸于我们前进道路上的障碍解放个人的创造力而不是设计更多的机构去指引和指导他们也就是说要创造有利于进步的条件而不是去计划进步">当时更重要的是清除那些因人类的愚蠢而加诸于我们前进道路上的障碍，解放个人的创造力，而不是设计更多的机构去“指引”和“指导”他们——也就是说，要创造有利于进步的条件，而不是去“计划进步”。<a href="#%e5%bd%93%e6%97%b6%e6%9b%b4%e9%87%8d%e8%a6%81%e7%9a%84%e6%98%af%e6%b8%85%e9%99%a4%e9%82%a3%e4%ba%9b%e5%9b%a0%e4%ba%ba%e7%b1%bb%e7%9a%84%e6%84%9a%e8%a0%a2%e8%80%8c%e5%8a%a0%e8%af%b8%e4%ba%8e%e6%88%91%e4%bb%ac%e5%89%8d%e8%bf%9b%e9%81%93%e8%b7%af%e4%b8%8a%e7%9a%84%e9%9a%9c%e7%a2%8d%e8%a7%a3%e6%94%be%e4%b8%aa%e4%ba%ba%e7%9a%84%e5%88%9b%e9%80%a0%e5%8a%9b%e8%80%8c%e4%b8%8d%e6%98%af%e8%ae%be%e8%ae%a1%e6%9b%b4%e5%a4%9a%e7%9a%84%e6%9c%ba%e6%9e%84%e5%8e%bb%e6%8c%87%e5%bc%95%e5%92%8c%e6%8c%87%e5%af%bc%e4%bb%96%e4%bb%ac%e4%b9%9f%e5%b0%b1%e6%98%af%e8%af%b4%e8%a6%81%e5%88%9b%e9%80%a0%e6%9c%89%e5%88%a9%e4%ba%8e%e8%bf%9b%e6%ad%a5%e7%9a%84%e6%9d%a1%e4%bb%b6%e8%80%8c%e4%b8%8d%e6%98%af%e5%8e%bb%e8%ae%a1%e5%88%92%e8%bf%9b%e6%ad%a5" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h5>
-</blockquote>
-<ul>
-<li>如何引领个体参与到建设公共事务当中？政府要做的是为进步铺设道路，而不是取计划进步本身如何发展。</li>
-</ul>
-<hr>
-<p>至于书籍的具体内容和行文的思维脉络，就不在这篇blog中概括了，可以参考这位读者的<a href="https://book.douban.com/annotation/17542907/">读书笔记</a>，写的客观公正的同时又鞭辟入里。</p>
-<hr>
-<h2 id="opinions">Opinions<a href="#opinions" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h2>
-<p>无论如何，与其说这是一本以经济学为基底的自由主义思想教义，倒不如说它生来就是用来解构、抨击、批判社会主义的檄文。它高声呼唤着社会主义必然会走向极权主义，而社会中的人民必然走向奴役的结局。</p>
-<p>先不谈读下来后我对书整体的看法与对哈耶克思想的评价，我发现了一个有趣的现象，在<a href="https://m.douban.com/subject_collection/EC7Y43HNY">豆瓣热门经济学图书排行榜</a>中，这本书高居第三名，而在其前后将这本书夹在中间的，是亚当斯密的《国富论》和马克斯的《资本论》，而更有趣的是，豆瓣显示有16000多人读过了《通往奴役之路》这本书，而读过资本论的人数还不足这个数字的三分之一甚至是四分之一。</p>
-<p>对于这一现象可以有以下解读：一是豆瓣本来就是国内比较典型的左派互联网社区，无论是书籍的评论区包括影视剧的小组讨论中，都充满了“自由”的气息。所以读过这两本书的实际人数在现实社会（尤其是在我们国家中）的比例肯定并不是这样悬殊的，但是至于能否把这样的比例完全扭转过来也同样是一件不能确定的事情。在刚刚经历的压抑又幽暗的漫长三年中，可能有无数人都对现实的魔幻产生了新的思考：我生活在怎样一片土地之下？从对于Covid下的行政管理方式的质疑映射到对于我们与西方世界的社会制度的差异的好奇。在这样的时间节点下，这本哈耶克于1944年写下的著作进入了人们的视野也就不难理解了。</p>
-<p>毫无疑问，哈耶克这部作品的前瞻性和预示性是被轰鸣碾过的时间列车所证实的。就像我在上一节中的部分views中写到的，确实，哈耶克描绘的许多概念和假说可以让我很自然而然，甚至不需添油加醋地作任何抽象的理解与联想就可以连接到现实社会中的许多事件与现象。但是，我还是不会对我生活的国家所采取和执行的社会制度去做这样那样的评价。毕竟，这本书算是我正经而认真读完的第一部关于思想、关于社会制度的Non-fiction。在这方面，我的知识储备非常有限，最开始我甚至分不清什么是政治生活中的左与右。</p>
-<p>我私以为，一个有独立思考能力的人，是不会因为读完某一本书，就会完成一场自下而上的思想革命而皈依哪一主义派别的土地的。也正因为如此，接下来，我会找来与之对立的新的观点去了解，首选可能就是马克思的《资本论》，去了解在他的框架下计划经济是如何运作的，而资本又为何“来到世间，从头到脚，都流着血和肮脏的东西”。到那时我可能才会真的去输出一些我对于两种制度之比较的见解与看法。</p>
-<p><strong>所以这本书之于我的意义在于：在我的智识体系中构建一片全新的领域，用以对抗某些单一的声音与过度的宣传并作为引发我对现实进行批判性思考的理据。</strong></p>
-<p>毕竟，对这两种思想本身而言，在我生活的这片土地之上，我能接触到的关于二者的思想和信息的源头在数量方面是有巨大差距的。不论我想了解与否，在这22年的生活中，不管是在义务教育还是高等教育中，不管是我走在城市熙熙攘攘的步行街还是穿行在阡陌纵横的村落里，不论是主流官媒的溜须拍马还是家人朋友的觥筹交错间，我都能接受到一致且清晰的主旋律，且最近几年尤甚。而随着我辩证思维的成长和出现的一些发人深省的动荡事件和异见之声不绝于耳，我对于主旋律背后的暗面有着基于智识构建上的渴望。</p>
-<hr>
-<h2 id="epilogue">Epilogue<a href="#epilogue" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-      stroke-linecap="round" stroke-linejoin="round">
-      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
-      <line x1="8" y1="12" x2="16" y2="12"></line>
-   </svg></a></h2>
-<p>这篇blog无关乎政治，《通往奴役之路》这本书，哈耶克的漫谈让我获得了类似遗世而独立的短暂的人间清醒。</p>
-<p>以上。</p>
-<div class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1">
-<p><a href="https://book.douban.com/subject/1077528/discussion/15106911/">关于殷海光版与社科版的简单比较</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</div>
 ]]></content>
 		</item>
 		

@@ -2,7 +2,7 @@
 title: "PAC Theory and VC Dimension"
 slug: "pac-theory-and-vc-dimension"
 date: 2025-04-02T13:18:30+11:00
-draft: true
+draft: false
 description: 'COMP90051 Statistical Machine Learning'
 toc: true
 images:
@@ -37,7 +37,7 @@ Let's establish some notation and key concepts:
 
 For our analysis, let's focus on understanding $R(f_m)$ and its relation to other error measures.
 
-## The Relationship Between Different Errors
+## The Relationship Between Errors
 
 {{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/pac-theory-and-vc-dimension/ml_work_flows.png" alt="image" caption="" >}}
 
@@ -187,8 +187,6 @@ This relationship reveals the classic bias-variance tradeoff in machine learning
 ## Conclusion
 
 PAC theory and VC dimension provide a theoretical foundation for understanding when and why machine learning algorithms work. By quantifying the relationship between empirical and true risk, they help us navigate the fundamental tradeoff between model complexity and generalization performance.
-
-Whether you're designing algorithms, selecting models, or simply trying to understand why your neural network isn't generalizing well, these concepts offer valuable insights into the learning process.
 
 ## Reference
 
