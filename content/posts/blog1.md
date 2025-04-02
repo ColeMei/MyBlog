@@ -27,7 +27,7 @@ Let's establish some notation and key concepts:
 - $f_m$: The best function on our training set that minimizes empirical error ($\arg\min \hat{R}(f)$)
 - $f^*$: The best function within our hypothesis space $\mathcal{H}$
 - $f$: The exact objective function (the best in all possible space)
-- True risk ($R(f)$): What we ultimately want to minimize
+- True risk $R(f)$: What we ultimately want to minimize
 - True risk ≈ Test error (as sample size approaches infinity)
 
 - Excess risk = $R(f_m) - R^*$, which can be decomposed into:

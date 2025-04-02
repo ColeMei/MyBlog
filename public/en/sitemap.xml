@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/en/posts/2024-summary/</loc>
-    <lastmod>2024-12-30T18:46:08+08:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/en/</loc>
-    <lastmod>2024-12-30T18:46:08+08:00</lastmod>
+    <lastmod>2025-04-02T13:18:30+11:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/en/tags/ml/</loc>
+    <lastmod>2025-04-02T13:18:30+11:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/en/posts/pac-theory-and-vc-dimension-the-theoretical-foundations-of-machine-learning/</loc>
+    <lastmod>2025-04-02T13:18:30+11:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/en/posts/</loc>
-    <lastmod>2024-12-30T18:46:08+08:00</lastmod>
+    <lastmod>2025-04-02T13:18:30+11:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/en/tags/</loc>
+    <lastmod>2025-04-02T13:18:30+11:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/en/posts/2024-summary/</loc>
     <lastmod>2024-12-30T18:46:08+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/en/tags/thingkingfeeling/</loc>
