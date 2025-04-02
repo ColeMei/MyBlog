@@ -1,6 +1,6 @@
 ---
-title: "PAC Theory and VC Dimension: The Theoretical Foundations of Machine Learning"
-slug: "pac-theory-and-vc-dimension:-the-theoretical-foundations-of-machine-learning"
+title: "PAC Theory and VC Dimension"
+slug: "pac-theory-and-vc-dimension"
 date: 2025-04-02T13:18:30+11:00
 draft: true
 description: 'COMP90051 Statistical Machine Learning'
@@ -38,6 +38,8 @@ Let's establish some notation and key concepts:
 For our analysis, let's focus on understanding $R(f_m)$ and its relation to other error measures.
 
 ## The Relationship Between Different Errors
+
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/pac-theory-and-vc-dimension/ml_work_flows.png" alt="image" caption="" >}}
 
 The key relationships we need to understand are:
 
@@ -126,9 +128,11 @@ Starting from $N=1$ and gradually increasing, when we reach a value $k$ where th
 
 For example, if $\mathcal{H}$ consists of all lines in 2D space, the break point is 4.
 
-With a break point, the upper bound becomes a polynomial $N^{k-1}$ rather than the exponential $2^N$.
+With a break point, the upper bound becomes a polynomial $N^{k-1}$ rather than the exponential $2^N$. (Proof Here) [^1]
 
-The PAC bound with VC bound becomes:
+$$m_H(N) \leq B(N, k) \leq \sum_{i=0}^{k-1} \binom{N}{i} \leq N^{k-1}$$
+
+Then, the PAC bound with VC bound becomes (Proof Here) [^2]:
 
 $$\forall g \in \mathcal{H}, \Pr\left( |E_{\text{in}}(g) - E_{\text{out}}(g)| > \epsilon \right) \leq 4 m_{\mathcal{H}}(2N) \exp\left(-\frac{1}{8} \epsilon^2 N\right)$$
 
@@ -164,15 +168,19 @@ It depends only on the model and the hypothesis space. In practice, the VC dimen
 
 ## The Tradeoff: Empirical Risk vs. True Risk
 
-Finally, we can derive the relationship between $E_{in}(g)$ and $E_{out}(g)$:
+Finally, we can derive the relationship between $E_{in}(g)$ and $E_{out}(g)$, by inversely solve for
 
 $$\epsilon = \sqrt{\frac{8}{N} \ln \left( \frac{4(2N)^{VC(H)}}{\delta} \right)}$$
+
+it follows that there is a $1-\delta$ probability that something good will happen, and the good thing,
 
 $$E_{in}(g) - \sqrt{\frac{8}{N} \ln \left( \frac{4(2N)^{VC(H)}}{\delta} \right)} \leq E_{out}(g) \leq E_{in}(g) + \sqrt{\frac{8}{N} \ln \left( \frac{4(2N)^{VC(H)}}{\delta} \right)}$$
 
 This equation describes the relationship between $E_{in}(g)$ and $E_{out}(g)$. The square root term can be viewed as the model complexity $\Omega$—the more complex the model, the larger the gap between $E_{in}(g)$ and $E_{out}(g)$.
 
 When we fix the sample size $N$, as the VC dimension increases, $E_{in}(g)$ continuously decreases while the complexity $\Omega$ increases. The rates of increase and decrease vary at different stages, so we need to find a suitable VC dimension that balances both factors to minimize $E_{out}(g)$.
+
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/pac-theory-and-vc-dimension/vcdimension_error_complexity.png" alt="image" caption="" >}}
 
 This relationship reveals the classic bias-variance tradeoff in machine learning: simpler models might have higher training error but generalize better, while more complex models can fit the training data perfectly but may perform poorly on unseen examples.
 
@@ -181,3 +189,11 @@ This relationship reveals the classic bias-variance tradeoff in machine learning
 PAC theory and VC dimension provide a theoretical foundation for understanding when and why machine learning algorithms work. By quantifying the relationship between empirical and true risk, they help us navigate the fundamental tradeoff between model complexity and generalization performance.
 
 Whether you're designing algorithms, selecting models, or simply trying to understand why your neural network isn't generalizing well, these concepts offer valuable insights into the learning process.
+
+## Reference
+
+1. [统计学习理论之VC维究竟是什么 | TangShusen](https://tangshusen.me/2018/12/09/vc-dimension/)
+2. [深入理解 PAC 学习理论 | 阿平的自我修养](https://www.facequant.com/2020/11/13/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-PAC-%E5%AD%A6%E4%B9%A0%E7%90%86%E8%AE%BA/)
+
+[^1]: https://www.zhihu.com/question/38607822/answer/157787203
+[^2]: https://nowak.ece.wisc.edu/SLT09/lecture19.pdf

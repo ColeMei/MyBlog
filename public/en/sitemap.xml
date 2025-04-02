@@ -2,103 +2,94 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/en/</loc>
+    <loc>https://colemei.live/en/</loc>
     <lastmod>2025-04-02T13:18:30+11:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/tags/ml/</loc>
+    <loc>https://colemei.live/en/posts/</loc>
     <lastmod>2025-04-02T13:18:30+11:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/posts/pac-theory-and-vc-dimension-the-theoretical-foundations-of-machine-learning/</loc>
-    <lastmod>2025-04-02T13:18:30+11:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/en/posts/</loc>
-    <lastmod>2025-04-02T13:18:30+11:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/en/tags/</loc>
-    <lastmod>2025-04-02T13:18:30+11:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/en/posts/2024-summary/</loc>
-    <lastmod>2024-12-30T18:46:08+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/en/tags/thingkingfeeling/</loc>
-    <lastmod>2024-12-30T18:46:08+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/en/tags/blog/</loc>
+    <loc>https://colemei.live/en/tags/blog/</loc>
     <lastmod>2024-07-17T15:31:50+10:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/posts/new-features-in-blog-2.0/</loc>
+    <loc>https://colemei.live/en/posts/new-features-in-blog-2.0/</loc>
     <lastmod>2024-07-17T15:31:50+10:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/posts/echoes-of-march/</loc>
+    <loc>https://colemei.live/en/tags/</loc>
+    <lastmod>2024-07-17T15:31:50+10:00</lastmod>
+  </url><url>
+    <loc>https://colemei.live/en/posts/echoes-of-march/</loc>
     <lastmod>2024-03-16T00:32:06+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/tags/trips/</loc>
+    <loc>https://colemei.live/en/tags/thingkingfeeling/</loc>
+    <lastmod>2024-03-16T00:32:06+08:00</lastmod>
+  </url><url>
+    <loc>https://colemei.live/en/tags/trips/</loc>
     <lastmod>2024-01-15T15:47:31+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/posts/tripsnorth-of-xinjiang-7.15-7.17/</loc>
+    <loc>https://colemei.live/en/posts/tripsnorth-of-xinjiang-7.15-7.17/</loc>
     <lastmod>2024-01-15T15:47:31+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/posts/tripsnorth-of-xinjiang-7.12-7.14/</loc>
+    <loc>https://colemei.live/en/posts/tripsnorth-of-xinjiang-7.12-7.14/</loc>
     <lastmod>2024-01-12T20:39:04+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/posts/tripsnorth-of-xinjiang-7.9-7.11/</loc>
+    <loc>https://colemei.live/en/posts/tripsnorth-of-xinjiang-7.9-7.11/</loc>
     <lastmod>2023-11-28T23:30:44+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/posts/tripsnorth-of-xinjiang-7.4-7.8/</loc>
+    <loc>https://colemei.live/en/posts/tripsnorth-of-xinjiang-7.4-7.8/</loc>
     <lastmod>2023-11-20T23:22:30+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/posts/tripsnorth-of-xinjiang-7.1-7.3/</loc>
+    <loc>https://colemei.live/en/posts/tripsnorth-of-xinjiang-7.1-7.3/</loc>
     <lastmod>2023-11-11T16:49:29+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/tags/expierence-sharing/</loc>
+    <loc>https://colemei.live/en/tags/expierence-sharing/</loc>
     <lastmod>2023-11-07T14:52:18+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/posts/recall-and-review-of-the-ielts-test-on-november-6th/</loc>
+    <loc>https://colemei.live/en/posts/recall-and-review-of-the-ielts-test-on-november-6th/</loc>
     <lastmod>2023-11-07T14:52:18+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/posts/self-host-deployment-of-rsshub/</loc>
+    <loc>https://colemei.live/en/posts/self-host-deployment-of-rsshub/</loc>
     <lastmod>2023-09-11T23:50:36+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/tags/tutorial/</loc>
+    <loc>https://colemei.live/en/tags/tutorial/</loc>
     <lastmod>2023-09-11T23:50:36+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/posts/booksthe-road-to-serfdom/</loc>
+    <loc>https://colemei.live/en/posts/booksthe-road-to-serfdom/</loc>
     <lastmod>2023-08-12T16:00:32+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/tags/reading/</loc>
+    <loc>https://colemei.live/en/tags/reading/</loc>
     <lastmod>2023-08-12T16:00:32+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/links/</loc>
+    <loc>https://colemei.live/en/links/</loc>
     <lastmod>2023-08-09T13:32:20+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/posts/tripsinner-mongolia-6.10-6.15/</loc>
+    <loc>https://colemei.live/en/posts/tripsinner-mongolia-6.10-6.15/</loc>
     <lastmod>2023-06-22T10:40:43+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/posts/acknowledgement/</loc>
+    <loc>https://colemei.live/en/posts/acknowledgement/</loc>
     <lastmod>2023-05-23T11:32:10+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/tags/thinkingfeeling/</loc>
+    <loc>https://colemei.live/en/tags/thinkingfeeling/</loc>
     <lastmod>2023-05-23T11:32:10+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/posts/my-english-reading-flow--collection/</loc>
+    <loc>https://colemei.live/en/posts/my-english-reading-flow--collection/</loc>
     <lastmod>2023-04-13T09:58:24+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/posts/my-english-reading-flow--read/</loc>
+    <loc>https://colemei.live/en/posts/my-english-reading-flow--read/</loc>
     <lastmod>2023-04-09T21:37:52+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/posts/my-english-reading-flow--source/</loc>
+    <loc>https://colemei.live/en/posts/my-english-reading-flow--source/</loc>
     <lastmod>2023-04-06T10:18:11+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/about/</loc>
+    <loc>https://colemei.live/en/about/</loc>
     <lastmod>2023-01-02T16:20:28+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/posts/this-is-my-first-blog/</loc>
+    <loc>https://colemei.live/en/posts/this-is-my-first-blog/</loc>
     <lastmod>2023-01-02T14:56:19+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/posts/running-pentaho-data-integration-on-mac-bigsur-m1/</loc>
+    <loc>https://colemei.live/en/posts/running-pentaho-data-integration-on-mac-bigsur-m1/</loc>
     <lastmod>2021-07-10T16:47:33+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/tags/skillset/</loc>
+    <loc>https://colemei.live/en/tags/skillset/</loc>
     <lastmod>2021-07-10T16:47:33+08:00</lastmod>
   </url>
 </urlset>

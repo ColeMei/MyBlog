@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="robots" content="index, follow"><meta name="author" content="Cole Mei">
+<meta name="description" content="COMP90051 Statistical Machine Learning">
+<link rel="author" type="text/plain" href="/humans.txt">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<meta name="theme-color" content="#494f5c">
+<meta name="msapplication-TileColor" content="#494f5c">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#494f5c">
+
+  <meta itemprop="name" content="PAC Theory and VC Dimension">
+  <meta itemprop="description" content="COMP90051 Statistical Machine Learning">
+  <meta itemprop="datePublished" content="2025-04-02T13:18:30+11:00">
+  <meta itemprop="dateModified" content="2025-04-02T13:18:30+11:00">
+  <meta itemprop="wordCount" content="1683">
+  <meta itemprop="image" content="https://picsum.photos/1920/1080/?random">
+  <meta itemprop="keywords" content="ML"><meta property="og:url" content="http://localhost:1313/en/posts/pac-theory-and-vc-dimension/">
+  <meta property="og:site_name" content="Cole World">
+  <meta property="og:title" content="PAC Theory and VC Dimension">
+  <meta property="og:description" content="COMP90051 Statistical Machine Learning">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-04-02T13:18:30+11:00">
+    <meta property="article:modified_time" content="2025-04-02T13:18:30+11:00">
+    <meta property="article:tag" content="ML">
+    <meta property="og:image" content="https://picsum.photos/1920/1080/?random">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://picsum.photos/1920/1080/?random">
+  <meta name="twitter:title" content="PAC Theory and VC Dimension">
+  <meta name="twitter:description" content="COMP90051 Statistical Machine Learning">
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "PAC Theory and VC Dimension",
+    "name": "PAC Theory and VC Dimension",
+    "description": "COMP90051 Statistical Machine Learning",
+    "keywords": ["ML"],
+    "articleBody": " This is a info This blog is inspired by my experience in COMP90051 Statistical Machine Learning in Unimelb, particularly content from Lectures 6-8. I’ve created this summary for my self-learning, organization, and reference purposes. Introduction to PAC Theory In machine learning, we often grapple with a fundamental question: how well does our model, trained on limited data, perform on unseen examples? Probably Approximately Correct (PAC) learning theory provides a framework to address this question rigorously.\nThe Standard Setup Let’s establish some notation and key concepts:\n$f_m$: The best function on our training set that minimizes empirical error ($\\arg\\min \\hat{R}(f)$)\n$f^*$: The best function within our hypothesis space $\\mathcal{H}$\n$f$: The exact objective function (the best in all possible space)\nTrue risk $R(f)$: What we ultimately want to minimize\nTrue risk ≈ Test error (as sample size approaches infinity)\nExcess risk = $R(f_m) - R^*$, which can be decomposed into:\nEstimation error: $R(f_m) - R(f^*)$ Approximation error: $R(f^*) - R^*$ $R^*$: The Bayes risk, which represents the lowest possible risk achievable given the data distribution For our analysis, let’s focus on understanding $R(f_m)$ and its relation to other error measures.\nThe Relationship Between Different Errors The key relationships we need to understand are:\n$E_{out}(g) = R(f_m)$: The generalization error (estimation error or true risk) $E_{in}(g) = \\hat{R}(f_m)$: The empirical error measured on training data $E_{out}(f) = R(f)$: The true risk of the ideal function In the ideal scenario where $R(f) = 0$ and $fm$ approximates $f$ well, we want $R(f_m) \\approx 0$. This leads to the desired chain of approximations: $0 = R(f) \\approx R(f_m) \\approx \\hat{R}(f_m) \\approx 0$\nHowever, since we can’t access the full data distribution, we can’t calculate $R(f_m)$ directly. Instead, we need to bound it.\nBounding the True Risk For a Single Function: Hoeffding’s Inequality $\\hat{R}(f)$ varies depending on our sample, while $R(f)$ is fixed. Using Hoeffding’s inequality:\n$$P\\left[|\\nu - \\mu| \u003e \\epsilon\\right] \\leq 2 \\exp\\left(-2\\epsilon^2 N\\right)$$Where $\\nu$ represents the sample expectation and $\\mu$ is the true expectation. As our sample size $N$ increases, $\\nu$ approaches $\\mu$.\nFrom Hoeffding’s inequality, we can see that as $N$ increases, the probability that the difference between $\\nu$ and $\\mu$ exceeds $\\epsilon$ approaches zero. This means the sample expectation increasingly approximates the population expectation—they become “probably approximately correct.”\nFor any specific function, as $N$ grows: $\\hat{R}(f_m) \\approx R(f_m)$\n$$\\Pr\\left( |E_{\\text{in}}(h) - E_{\\text{out}}(h)| \u003e \\epsilon \\right) \\leq 2 \\exp\\left(-2\\epsilon^2 N\\right)$$For a Family of Functions: Uniform Deviation Bounds Why we need our bound to simultaneously (or uniformly) hold over a family of functions?\nTheorem: ERM’s estimation error is at most twice the uniform divergence\nWhen dealing with multiple hypotheses, we must account for the fact that rare events become likely when tried many times. Consider this example: flipping a coin 5 times and getting all heads has a probability of 1/32. But if 100 people perform this experiment, the probability that at least one person gets all heads exceeds 0.95.\nUsing the union bound for a hypothesis space $\\mathcal{H}$ with functions $f_1, f_2, \\ldots, f_M$:\n$$\\forall g \\in \\mathcal{H}, \\Pr\\left( |E_{\\text{in}}(g) - E_{\\text{out}}(g)| \u003e \\epsilon \\right) \\leq 2M \\exp\\left(-2\\epsilon^2 N\\right)$$This formula tells us that for any hypothesis $g$ in $\\mathcal{H}$, the probability that the difference between $E_{in}(g)$ and $E_{out}(g)$ exceeds $\\epsilon$ is bounded by $2M\\exp(-2\\epsilon^2 N)$. This bound heavily depends on both $M$ (the size of the hypothesis space) and $N$ (the sample size).\nWhat Makes a Hypothesis Space Learnable? A hypothesis space $\\mathcal{H}$ is learnable if:\nAlgorithm $A$ can learn a function $f$ from $\\mathcal{H}$ such that $\\hat{R}(f) \\approx 0$ In $\\mathcal{H}$, $M$ is finite and $N$ is sufficiently large When these conditions are met, the right side of our bound approaches 0, guaranteeing $R(f) \\approx \\hat{R}(f)$.\nIn training: We minimize $\\hat{R}(f)$ to find $f_m$ In testing: We aim to minimize $R(f)$, which should be close to $\\hat{R}(f)$ However, challenges arise when:\n$M$ is too small: It becomes difficult to find the exact $f$ $M$ is too large: The right side doesn’t approach 0 $M$ is infinite (which is common): This violates condition 2, making learning seemingly impossible But wait—in most practical scenarios, $M$ is infinite. For instance, in a 2D space, we have infinitely many possible lines. Does this mean learning is impossible? This is where VC dimension comes in.\nVC Dimension: Making the Infinite Manageable The union bound can be loose because hypotheses in $\\mathcal{H}$ aren’t completely independent—many can be categorized as essentially the same class.\nThis means $M$ can be rewritten as a finite “effective($M$)” depending on the sample:\n$$\\forall g \\in \\mathcal{H}, \\Pr\\left( |E_{\\text{in}}(g) - E_{\\text{out}}(g)| \u003e \\epsilon \\right) \\leq 2 \\cdot \\text{effective}(M) \\exp\\left(-2\\epsilon^2 N\\right)$$Growth Function and Dichotomy To understand the effective $M$, we introduce the concepts of dichotomy and growth function. Since we don’t want to depend on a specific data distribution $D$, we consider the maximum number of dichotomies across any $D$ in $\\mathcal{H}$—this is the Growth Function.\nThe growth function represents the maximum possible number of labeling results that the hypothesis space $\\mathcal{H}$ can assign to any $N$ samples. In simpler terms, it represents the number of meaningfully different hypotheses that can produce distinct results—the effective hypotheses.\nA larger growth function indicates that $\\mathcal{H}$ can express more classifiers, which leads to the question: can we substitute the effective($M$) with the Growth function?\nShattering and Break Points When a hypothesis space $\\mathcal{H}$ acting on a sample set $D$ of size $N$ produces $2^N$ dichotomies (Growth Function = $2^N$), we say $D$ is “shattered” by $\\mathcal{H}$. In other words, if $\\mathcal{H}$ can produce all possible dichotomies on a dataset, we say $\\mathcal{H}$ can shatter that dataset.\nThe growth function helps us reduce $M$ from infinite to being bounded by $2^N$, but this is still too loose. We introduce the concept of a “break point”:\nStarting from $N=1$ and gradually increasing, when we reach a value $k$ where the growth function becomes less than $2^N$, we say $k$ is the break point of the hypothesis space. In other words, for any dataset of size $N$ (where $N \\geq k$), $\\mathcal{H}$ cannot shatter it.\nFor example, if $\\mathcal{H}$ consists of all lines in 2D space, the break point is 4.\nWith a break point, the upper bound becomes a polynomial $N^{k-1}$ rather than the exponential $2^N$. (Proof Here) 1\n$$m_H(N) \\leq B(N, k) \\leq \\sum_{i=0}^{k-1} \\binom{N}{i} \\leq N^{k-1}$$Then, the PAC bound with VC bound becomes (Proof Here) 2:\n$$\\forall g \\in \\mathcal{H}, \\Pr\\left( |E_{\\text{in}}(g) - E_{\\text{out}}(g)| \u003e \\epsilon \\right) \\leq 4 m_{\\mathcal{H}}(2N) \\exp\\left(-\\frac{1}{8} \\epsilon^2 N\\right)$$While we can’t simply substitute effective $M$ with the Growth function, they are clearly related.\nVC Dimension Defined The VC dimension $d = k-1$ (where $k$ is the break point). The VC dimension indicates:\nThere exists a dataset of size $d$ that can be shattered by hypothesis space $\\mathcal{H}$ $\\mathcal{H}$ can at most shatter $d$ data points It’s important to note that this doesn’t mean all datasets of size $d$ can be shattered by $\\mathcal{H}$. For example, the hypothesis space of all lines in a 2D plane has a VC dimension of 3, but it cannot shatter three points lying on the same line. In fact, the VC dimension’s definition is independent of the specific data distribution.\nWith the growth function bounded by $N^d$, we get:\n$$\\forall g \\in \\mathcal{H}, \\Pr\\left( |E_{\\text{in}}(g) - E_{\\text{out}}(g)| \u003e \\epsilon \\right) \\leq 4(2N)^{V(\\mathcal{H})} \\exp\\left(-\\frac{1}{8} \\epsilon^2 N\\right)$$Revisiting Learnability with VC Dimension With these concepts in hand, we can redefine the second condition for learnability from “$M$ finite” to “VC dimension for $\\mathcal{H}$ is finite.” The progression of our understanding has been: $M \\rightarrow \\text{Effective } M \\rightarrow \\text{Growth Function} \\rightarrow \\text{VC dimension}$\nA larger VC dimension generally indicates a more complex model.\nImportantly, the VC dimension is independent of:\nThe learning algorithm The specific distribution of the dataset The objective function we solve It depends only on the model and the hypothesis space. In practice, the VC dimension of a hypothesis space is approximately equal to the number of free parameters in the hypothesis.\nThe Tradeoff: Empirical Risk vs. True Risk Finally, we can derive the relationship between $E_{in}(g)$ and $E_{out}(g)$, by inversely solve for\n$$\\epsilon = \\sqrt{\\frac{8}{N} \\ln \\left( \\frac{4(2N)^{VC(H)}}{\\delta} \\right)}$$it follows that there is a $1-\\delta$ probability that something good will happen, and the good thing,\n$$E_{in}(g) - \\sqrt{\\frac{8}{N} \\ln \\left( \\frac{4(2N)^{VC(H)}}{\\delta} \\right)} \\leq E_{out}(g) \\leq E_{in}(g) + \\sqrt{\\frac{8}{N} \\ln \\left( \\frac{4(2N)^{VC(H)}}{\\delta} \\right)}$$This equation describes the relationship between $E_{in}(g)$ and $E_{out}(g)$. The square root term can be viewed as the model complexity $\\Omega$—the more complex the model, the larger the gap between $E_{in}(g)$ and $E_{out}(g)$.\nWhen we fix the sample size $N$, as the VC dimension increases, $E_{in}(g)$ continuously decreases while the complexity $\\Omega$ increases. The rates of increase and decrease vary at different stages, so we need to find a suitable VC dimension that balances both factors to minimize $E_{out}(g)$.\nThis relationship reveals the classic bias-variance tradeoff in machine learning: simpler models might have higher training error but generalize better, while more complex models can fit the training data perfectly but may perform poorly on unseen examples.\nConclusion PAC theory and VC dimension provide a theoretical foundation for understanding when and why machine learning algorithms work. By quantifying the relationship between empirical and true risk, they help us navigate the fundamental tradeoff between model complexity and generalization performance.\nWhether you’re designing algorithms, selecting models, or simply trying to understand why your neural network isn’t generalizing well, these concepts offer valuable insights into the learning process.\nReference 统计学习理论之VC维究竟是什么 | TangShusen 深入理解 PAC 学习理论 | 阿平的自我修养 https://www.zhihu.com/question/38607822/answer/157787203 ↩︎\nhttps://nowak.ece.wisc.edu/SLT09/lecture19.pdf ↩︎\n",
+    "wordCount" : "1683",
+    "inLanguage": "en",
+    "image":"https://picsum.photos/1920/1080/?random",
+    "datePublished": "2025-04-02T13:18:30+11:00",
+    "dateModified": "2025-04-02T13:18:30+11:00",
+    "author":{
+        "@type": "Person",
+        "name": "Cole Mei",
+        "url": "http://localhost:1313/en/about/"
+        },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http://localhost:1313/en/posts/pac-theory-and-vc-dimension/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Cole World",
+      "description": "",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://localhost:1313/favicon.ico"
+      }
+    }
+}
+</script><title>PAC Theory and VC Dimension</title>
+<link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" media="screen" href="http://localhost:1313/css/style.min.3c634352f00a247a34622d66a345f3decb86a4b1c4227570587a9c9ed2b80307.css" integrity="sha256-PGNDUvAKJHo0Yi1mo0Xz3suGpLHEInVwWHqcntK4Awc=" crossorigin="anonymous">
+	<style>.bg-img {background-image: url('https://picsum.photos/1920/1080/?random');}</style></head>
+<body id="page">
+	<header id="site-header">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="http://localhost:1313/">Cole World</a>
+				</div>
+				<nav class="site-nav hide-in-mobile"><a href="http://localhost:1313/en/posts/">Posts</a><a href="http://localhost:1313/en/about/">About</a><a href="http://localhost:1313/en/links/">Links</a></nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<button id="img-btn" class="hdr-btn" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-image">
+      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+      <circle cx="8.5" cy="8.5" r="1.5"></circle>
+      <polyline points="21 15 16 10 5 21"></polyline>
+   </svg></button><button id="toc-btn" class="hdr-btn desktop-only-ib" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list">
+      <line x1="8" y1="6" x2="21" y2="6"></line>
+      <line x1="8" y1="12" x2="21" y2="12"></line>
+      <line x1="8" y1="18" x2="21" y2="18"></line>
+      <line x1="3" y1="6" x2="3" y2="6"></line>
+      <line x1="3" y1="12" x2="3" y2="12"></line>
+      <line x1="3" y1="18" x2="3" y2="18"></line>
+   </svg></button><span class="hdr-links hide-in-mobile"><a href="https://t.me/Colemei" target="_blank" rel="noopener me" title="Telegram"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none"
+   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+   <path
+      d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.968.193 1.798.919 2.286 1.61.516 3.275 1.009 4.654 1.472.509 1.793.997 3.592 1.48 5.388.16.36.506.494.864.498l-.002.018s.281.028.555-.038a2.1 2.1 0 0 0 .933-.517c.345-.324 1.28-1.244 1.811-1.764l3.999 2.952.032.018s.442.311 1.09.355c.324.022.75-.04 1.116-.308.37-.27.613-.702.728-1.196.342-1.492 2.61-12.285 2.997-14.072l-.01.042c.27-1.006.17-1.928-.455-2.474a1.654 1.654 0 0 0-1.034-.407z" />
+</svg></a><a href="https://github.com/ColeMei" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none"
+   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+   <path
+      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+   </path>
+</svg></a></span><button id="share-btn" class="hdr-btn" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2">
+      <circle cx="18" cy="5" r="3"></circle>
+      <circle cx="6" cy="12" r="3"></circle>
+      <circle cx="18" cy="19" r="3"></circle>
+      <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+      <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+   </svg></button>
+ 
+<div id="share-links" class="animated fast">
+    
+    
+    
+    
+    <ul>
+        <li>
+            <a href="https://twitter.com/intent/tweet?hashtags=hermit2&amp;url=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fpac-theory-and-vc-dimension%2f&amp;text=PAC%20Theory%20and%20VC%20Dimension" target="_blank" rel="noopener" aria-label="Share on X"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none"
+   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+   <path class="st0" d="m21.3 21.1 -11.4 -18.2h-7.2l11.4 18.2zm-18.6 0 7.2 -6.6m4.2 -5 7.2 -6.6" />
+</svg></a>
+        </li>
+        <li>
+            <a href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fpac-theory-and-vc-dimension%2f" target="_blank" rel="noopener" aria-label="Share on Facebook"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none"
+   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+</svg></a>
+        </li>
+        <li>
+            <a href="mailto:?subject=PAC%20Theory%20and%20VC%20Dimension&amp;body=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fpac-theory-and-vc-dimension%2f" target="_self" rel="noopener" aria-label="Share on Email"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none"
+   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+   <polyline points="22,6 12,13 2,6"></polyline>
+</svg></a>
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fpac-theory-and-vc-dimension%2f&amp;source=http%3a%2f%2flocalhost%3a1313%2f&amp;title=PAC%20Theory%20and%20VC%20Dimension&amp;summary=PAC%20Theory%20and%20VC%20Dimension%2c%20by%20Cole%20Mei%0a%0aCOMP90051%20Statistical%20Machine%20Learning%0a" target="_blank" rel="noopener" aria-label="Share on LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none"
+   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+   <rect x="2" y="9" width="4" height="12"></rect>
+   <circle cx="4" cy="4" r="2"></circle>
+</svg></a>
+        </li>
+        <li>
+            <a href="#" onclick="linkShare(&#34;PAC Theory and VC Dimension&#34;,&#34;http://localhost:1313/en/posts/pac-theory-and-vc-dimension/&#34;,&#34;PAC Theory and VC Dimension, by Cole Mei\n\nCOMP90051 Statistical Machine Learning\n&#34;); return false;" target="_self" rel="noopener" aria-label="Copy Link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy">
+      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+   </svg></a>
+        </li>
+    </ul>
+</div><button id="menu-btn" class="hdr-btn" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+   </svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="http://localhost:1313/en/posts/">Posts</a></li>
+			<li><a href="http://localhost:1313/en/about/">About</a></li>
+			<li><a href="http://localhost:1313/en/links/">Links</a></li>
+		</ul>
+	</div>
+
+
+	<div class="bg-img"></div>
+	<main class="site-main section-inner animated fadeIn faster"><article class="thin">
+			<header class="post-header">
+				<div class="post-date"><span>Apr 2, 2025</span></div>
+				<h1>PAC Theory and VC Dimension</h1>
+			</header>
+			<div class="post-description"><p>COMP90051 Statistical Machine Learning</p><p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+   stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-feather">
+   <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+   <line x1="16" y1="8" x2="2" y2="22"></line>
+   <line x1="17.5" y1="15" x2="9" y2="15"></line>
+</svg><a href="http://localhost:1313/en/about/" target="_blank">Cole Mei</a></p>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon">
+      <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+      <line x1="7" y1="7" x2="7" y2="7"></line>
+   </svg><span class="tag"><a href="http://localhost:1313/en/tags/ml">ML</a></span></p>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+      <polyline points="14 2 14 8 20 8"></polyline>
+      <line x1="16" y1="13" x2="8" y2="13"></line>
+      <line x1="16" y1="17" x2="8" y2="17"></line>
+      <polyline points="10 9 9 9 8 9"></polyline>
+   </svg>1683&nbsp  … ⏲ Reading Time:7 Minutes, 39 Seconds</p>
+<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+      <line x1="16" y1="2" x2="16" y2="6"></line>
+      <line x1="8" y1="2" x2="8" y2="6"></line>
+      <line x1="3" y1="10" x2="21" y2="10"></line>
+   </svg>2025-04-02 13:18 &#43;1100
+</p></div>
+			<hr class="post-end">
+			<div class="content">
+				 
+    <aside class="admonition info">
+        <div class="admonition-title">
+            <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-info">
+      <circle cx="12" cy="12" r="10"></circle>
+      <line x1="12" y1="16" x2="12" y2="12"></line>
+      <line x1="12" y1="8" x2="12.01" y2="8"></line>
+   </svg></div><b>This is a info</b>
+        </div>
+        <div class="admonition-content">This blog is inspired by my experience in COMP90051 Statistical Machine Learning in Unimelb, particularly content from Lectures 6-8. I&rsquo;ve created this summary for my self-learning, organization, and reference purposes.</div>
+    </aside>
+<h2 id="introduction-to-pac-theory">Introduction to PAC Theory<a href="#introduction-to-pac-theory" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>In machine learning, we often grapple with a fundamental question: how well does our model, trained on limited data, perform on unseen examples? Probably Approximately Correct (PAC) learning theory provides a framework to address this question rigorously.</p>
+<h2 id="the-standard-setup">The Standard Setup<a href="#the-standard-setup" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>Let&rsquo;s establish some notation and key concepts:</p>
+<ul>
+<li>
+<p>$f_m$: The best function on our training set that minimizes empirical error ($\arg\min \hat{R}(f)$)</p>
+</li>
+<li>
+<p>$f^*$: The best function within our hypothesis space $\mathcal{H}$</p>
+</li>
+<li>
+<p>$f$: The exact objective function (the best in all possible space)</p>
+</li>
+<li>
+<p>True risk $R(f)$: What we ultimately want to minimize</p>
+</li>
+<li>
+<p>True risk ≈ Test error (as sample size approaches infinity)</p>
+</li>
+<li>
+<p>Excess risk = $R(f_m) - R^*$, which can be decomposed into:</p>
+<ul>
+<li>Estimation error: $R(f_m) - R(f^*)$</li>
+<li>Approximation error: $R(f^*) - R^*$</li>
+<li>$R^*$: The Bayes risk, which represents the lowest possible risk achievable given the data distribution</li>
+</ul>
+</li>
+</ul>
+<p>For our analysis, let&rsquo;s focus on understanding $R(f_m)$ and its relation to other error measures.</p>
+<h2 id="the-relationship-between-different-errors">The Relationship Between Different Errors<a href="#the-relationship-between-different-errors" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/pac-theory-and-vc-dimension/ml_work_flows.png"alt="image"/></figure>
+<p>The key relationships we need to understand are:</p>
+<ul>
+<li>$E_{out}(g) = R(f_m)$: The generalization error (estimation error or true risk)</li>
+<li>$E_{in}(g) = \hat{R}(f_m)$: The empirical error measured on training data</li>
+<li>$E_{out}(f) = R(f)$: The true risk of the ideal function</li>
+</ul>
+<p>In the ideal scenario where $R(f) = 0$ and $fm$ approximates $f$ well, we want $R(f_m) \approx 0$. This leads to the desired chain of approximations:
+$0 = R(f) \approx R(f_m) \approx \hat{R}(f_m) \approx 0$</p>
+<p>However, since we can&rsquo;t access the full data distribution, we can&rsquo;t calculate $R(f_m)$ directly. Instead, we need to bound it.</p>
+<h2 id="bounding-the-true-risk">Bounding the True Risk<a href="#bounding-the-true-risk" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<h3 id="for-a-single-function-hoeffdings-inequality">For a Single Function: Hoeffding&rsquo;s Inequality<a href="#for-a-single-function-hoeffdings-inequality" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>$\hat{R}(f)$ varies depending on our sample, while $R(f)$ is fixed. Using Hoeffding&rsquo;s inequality:</p>
+$$P\left[|\nu - \mu| > \epsilon\right] \leq 2 \exp\left(-2\epsilon^2 N\right)$$<p>Where $\nu$ represents the sample expectation and $\mu$ is the true expectation. As our sample size $N$ increases, $\nu$ approaches $\mu$.</p>
+<p>From Hoeffding&rsquo;s inequality, we can see that as $N$ increases, the probability that the difference between $\nu$ and $\mu$ exceeds $\epsilon$ approaches zero. This means the sample expectation increasingly approximates the population expectation—they become &ldquo;probably approximately correct.&rdquo;</p>
+<p>For any specific function, as $N$ grows: $\hat{R}(f_m) \approx R(f_m)$</p>
+$$\Pr\left( |E_{\text{in}}(h) - E_{\text{out}}(h)| > \epsilon \right) \leq 2 \exp\left(-2\epsilon^2 N\right)$$<h3 id="for-a-family-of-functions-uniform-deviation-bounds">For a Family of Functions: Uniform Deviation Bounds<a href="#for-a-family-of-functions-uniform-deviation-bounds" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>Why we need our bound to simultaneously (or uniformly) hold over a family of functions?</p>
+<p>Theorem: ERM’s estimation error is at most twice the uniform divergence</p>
+<p>When dealing with multiple hypotheses, we must account for the fact that rare events become likely when tried many times. Consider this example: flipping a coin 5 times and getting all heads has a probability of 1/32. But if 100 people perform this experiment, the probability that at least one person gets all heads exceeds 0.95.</p>
+<p>Using the union bound for a hypothesis space $\mathcal{H}$ with functions $f_1, f_2, \ldots, f_M$:</p>
+$$\forall g \in \mathcal{H}, \Pr\left( |E_{\text{in}}(g) - E_{\text{out}}(g)| > \epsilon \right) \leq 2M \exp\left(-2\epsilon^2 N\right)$$<p>This formula tells us that for any hypothesis $g$ in $\mathcal{H}$, the probability that the difference between $E_{in}(g)$ and $E_{out}(g)$ exceeds $\epsilon$ is bounded by $2M\exp(-2\epsilon^2 N)$. This bound heavily depends on both $M$ (the size of the hypothesis space) and $N$ (the sample size).</p>
+<h2 id="what-makes-a-hypothesis-space-learnable">What Makes a Hypothesis Space Learnable?<a href="#what-makes-a-hypothesis-space-learnable" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>A hypothesis space $\mathcal{H}$ is learnable if:</p>
+<ol>
+<li>Algorithm $A$ can learn a function $f$ from $\mathcal{H}$ such that $\hat{R}(f) \approx 0$</li>
+<li>In $\mathcal{H}$, $M$ is finite and $N$ is sufficiently large</li>
+</ol>
+<p>When these conditions are met, the right side of our bound approaches 0, guaranteeing $R(f) \approx \hat{R}(f)$.</p>
+<ul>
+<li>In training: We minimize $\hat{R}(f)$ to find $f_m$</li>
+<li>In testing: We aim to minimize $R(f)$, which should be close to $\hat{R}(f)$</li>
+</ul>
+<p>However, challenges arise when:</p>
+<ul>
+<li>$M$ is too small: It becomes difficult to find the exact $f$</li>
+<li>$M$ is too large: The right side doesn&rsquo;t approach 0</li>
+<li>$M$ is infinite (which is common): This violates condition 2, making learning seemingly impossible</li>
+</ul>
+<p>But wait—in most practical scenarios, $M$ is infinite. For instance, in a 2D space, we have infinitely many possible lines. Does this mean learning is impossible? This is where VC dimension comes in.</p>
+<h2 id="vc-dimension-making-the-infinite-manageable">VC Dimension: Making the Infinite Manageable<a href="#vc-dimension-making-the-infinite-manageable" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>The union bound can be loose because hypotheses in $\mathcal{H}$ aren&rsquo;t completely independent—many can be categorized as essentially the same class.</p>
+<p>This means $M$ can be rewritten as a finite &ldquo;effective($M$)&rdquo; depending on the sample:</p>
+$$\forall g \in \mathcal{H}, \Pr\left( |E_{\text{in}}(g) - E_{\text{out}}(g)| > \epsilon \right) \leq 2 \cdot \text{effective}(M) \exp\left(-2\epsilon^2 N\right)$$<h3 id="growth-function-and-dichotomy">Growth Function and Dichotomy<a href="#growth-function-and-dichotomy" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>To understand the effective $M$, we introduce the concepts of dichotomy and growth function. Since we don&rsquo;t want to depend on a specific data distribution $D$, we consider the maximum number of dichotomies across any $D$ in $\mathcal{H}$—this is the Growth Function.</p>
+<p>The growth function represents the maximum possible number of labeling results that the hypothesis space $\mathcal{H}$ can assign to any $N$ samples. In simpler terms, it represents the number of meaningfully different hypotheses that can produce distinct results—the effective hypotheses.</p>
+<p>A larger growth function indicates that $\mathcal{H}$ can express more classifiers, which leads to the question: can we substitute the effective($M$) with the Growth function?</p>
+<h3 id="shattering-and-break-points">Shattering and Break Points<a href="#shattering-and-break-points" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>When a hypothesis space $\mathcal{H}$ acting on a sample set $D$ of size $N$ produces $2^N$ dichotomies (Growth Function = $2^N$), we say $D$ is &ldquo;shattered&rdquo; by $\mathcal{H}$. In other words, if $\mathcal{H}$ can produce all possible dichotomies on a dataset, we say $\mathcal{H}$ can shatter that dataset.</p>
+<p>The growth function helps us reduce $M$ from infinite to being bounded by $2^N$, but this is still too loose. We introduce the concept of a &ldquo;break point&rdquo;:</p>
+<p>Starting from $N=1$ and gradually increasing, when we reach a value $k$ where the growth function becomes less than $2^N$, we say $k$ is the break point of the hypothesis space. In other words, for any dataset of size $N$ (where $N \geq k$), $\mathcal{H}$ cannot shatter it.</p>
+<p>For example, if $\mathcal{H}$ consists of all lines in 2D space, the break point is 4.</p>
+<p>With a break point, the upper bound becomes a polynomial $N^{k-1}$ rather than the exponential $2^N$. (Proof Here) <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+$$m_H(N) \leq B(N, k) \leq \sum_{i=0}^{k-1} \binom{N}{i} \leq N^{k-1}$$<p>Then, the PAC bound with VC bound becomes (Proof Here) <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>:</p>
+$$\forall g \in \mathcal{H}, \Pr\left( |E_{\text{in}}(g) - E_{\text{out}}(g)| > \epsilon \right) \leq 4 m_{\mathcal{H}}(2N) \exp\left(-\frac{1}{8} \epsilon^2 N\right)$$<p>While we can&rsquo;t simply substitute effective $M$ with the Growth function, they are clearly related.</p>
+<h3 id="vc-dimension-defined">VC Dimension Defined<a href="#vc-dimension-defined" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>The VC dimension $d = k-1$ (where $k$ is the break point). The VC dimension indicates:</p>
+<ul>
+<li>There exists a dataset of size $d$ that can be shattered by hypothesis space $\mathcal{H}$</li>
+<li>$\mathcal{H}$ can at most shatter $d$ data points</li>
+</ul>
+<p>It&rsquo;s important to note that this doesn&rsquo;t mean all datasets of size $d$ can be shattered by $\mathcal{H}$. For example, the hypothesis space of all lines in a 2D plane has a VC dimension of 3, but it cannot shatter three points lying on the same line. In fact, the VC dimension&rsquo;s definition is independent of the specific data distribution.</p>
+<p>With the growth function bounded by $N^d$, we get:</p>
+$$\forall g \in \mathcal{H}, \Pr\left( |E_{\text{in}}(g) - E_{\text{out}}(g)| > \epsilon \right) \leq 4(2N)^{V(\mathcal{H})} \exp\left(-\frac{1}{8} \epsilon^2 N\right)$$<h3 id="revisiting-learnability-with-vc-dimension">Revisiting Learnability with VC Dimension<a href="#revisiting-learnability-with-vc-dimension" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h3>
+<p>With these concepts in hand, we can redefine the second condition for learnability from &ldquo;$M$ finite&rdquo; to &ldquo;VC dimension for $\mathcal{H}$ is finite.&rdquo; The progression of our understanding has been:
+$M \rightarrow \text{Effective } M \rightarrow \text{Growth Function} \rightarrow \text{VC dimension}$</p>
+<p>A larger VC dimension generally indicates a more complex model.</p>
+<p>Importantly, the VC dimension is independent of:</p>
+<ul>
+<li>The learning algorithm</li>
+<li>The specific distribution of the dataset</li>
+<li>The objective function we solve</li>
+</ul>
+<p>It depends only on the model and the hypothesis space. In practice, the VC dimension of a hypothesis space is approximately equal to the number of free parameters in the hypothesis.</p>
+<h2 id="the-tradeoff-empirical-risk-vs-true-risk">The Tradeoff: Empirical Risk vs. True Risk<a href="#the-tradeoff-empirical-risk-vs-true-risk" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>Finally, we can derive the relationship between $E_{in}(g)$ and $E_{out}(g)$, by inversely solve for</p>
+$$\epsilon = \sqrt{\frac{8}{N} \ln \left( \frac{4(2N)^{VC(H)}}{\delta} \right)}$$<p>it follows that there is a $1-\delta$ probability that something good will happen, and the good thing,</p>
+$$E_{in}(g) - \sqrt{\frac{8}{N} \ln \left( \frac{4(2N)^{VC(H)}}{\delta} \right)} \leq E_{out}(g) \leq E_{in}(g) + \sqrt{\frac{8}{N} \ln \left( \frac{4(2N)^{VC(H)}}{\delta} \right)}$$<p>This equation describes the relationship between $E_{in}(g)$ and $E_{out}(g)$. The square root term can be viewed as the model complexity $\Omega$—the more complex the model, the larger the gap between $E_{in}(g)$ and $E_{out}(g)$.</p>
+<p>When we fix the sample size $N$, as the VC dimension increases, $E_{in}(g)$ continuously decreases while the complexity $\Omega$ increases. The rates of increase and decrease vary at different stages, so we need to find a suitable VC dimension that balances both factors to minimize $E_{out}(g)$.</p>
+
+<figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/pac-theory-and-vc-dimension/vcdimension_error_complexity.png"alt="image"/></figure>
+<p>This relationship reveals the classic bias-variance tradeoff in machine learning: simpler models might have higher training error but generalize better, while more complex models can fit the training data perfectly but may perform poorly on unseen examples.</p>
+<h2 id="conclusion">Conclusion<a href="#conclusion" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<p>PAC theory and VC dimension provide a theoretical foundation for understanding when and why machine learning algorithms work. By quantifying the relationship between empirical and true risk, they help us navigate the fundamental tradeoff between model complexity and generalization performance.</p>
+<p>Whether you&rsquo;re designing algorithms, selecting models, or simply trying to understand why your neural network isn&rsquo;t generalizing well, these concepts offer valuable insights into the learning process.</p>
+<h2 id="reference">Reference<a href="#reference" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
+      <line x1="8" y1="12" x2="16" y2="12"></line>
+   </svg></a></h2>
+<ol>
+<li><a href="https://tangshusen.me/2018/12/09/vc-dimension/">统计学习理论之VC维究竟是什么 | TangShusen</a></li>
+<li><a href="https://www.facequant.com/2020/11/13/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-PAC-%E5%AD%A6%E4%B9%A0%E7%90%86%E8%AE%BA/">深入理解 PAC 学习理论 | 阿平的自我修养</a></li>
+</ol>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://www.zhihu.com/question/38607822/answer/157787203">https://www.zhihu.com/question/38607822/answer/157787203</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://nowak.ece.wisc.edu/SLT09/lecture19.pdf">https://nowak.ece.wisc.edu/SLT09/lecture19.pdf</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+			</div>
+			
+
+		</article>
+		<aside id="toc">
+			<div class="toc-title"></div>
+			<nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction-to-pac-theory">Introduction to PAC Theory</a></li>
+    <li><a href="#the-standard-setup">The Standard Setup</a></li>
+    <li><a href="#the-relationship-between-different-errors">The Relationship Between Different Errors</a></li>
+    <li><a href="#bounding-the-true-risk">Bounding the True Risk</a>
+      <ul>
+        <li><a href="#for-a-single-function-hoeffdings-inequality">For a Single Function: Hoeffding&rsquo;s Inequality</a></li>
+        <li><a href="#for-a-family-of-functions-uniform-deviation-bounds">For a Family of Functions: Uniform Deviation Bounds</a></li>
+      </ul>
+    </li>
+    <li><a href="#what-makes-a-hypothesis-space-learnable">What Makes a Hypothesis Space Learnable?</a></li>
+    <li><a href="#vc-dimension-making-the-infinite-manageable">VC Dimension: Making the Infinite Manageable</a>
+      <ul>
+        <li><a href="#growth-function-and-dichotomy">Growth Function and Dichotomy</a></li>
+        <li><a href="#shattering-and-break-points">Shattering and Break Points</a></li>
+        <li><a href="#vc-dimension-defined">VC Dimension Defined</a></li>
+        <li><a href="#revisiting-learnability-with-vc-dimension">Revisiting Learnability with VC Dimension</a></li>
+      </ul>
+    </li>
+    <li><a href="#the-tradeoff-empirical-risk-vs-true-risk">The Tradeoff: Empirical Risk vs. True Risk</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
+</nav>
+		</aside>
+		<div class="post-nav thin">
+			<a class="prev-post" href="http://localhost:1313/en/posts/2024-summary/">
+				<span class="post-nav-label">&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right">
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+      <polyline points="12 5 19 12 12 19"></polyline>
+   </svg></span><br><span>2024 Summary</span>
+			</a>
+		</div>
+		<div id="comments" class="thin"><script
+  src="https://giscus.app/client.js"
+  data-repo="ColeMei/MyBlog"
+  data-repo-id="R_kgDONeYiaA"
+  data-category="Announcements"
+  data-category-id="DIC_kwDONeYiaM4ClTE7"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="top"
+  data-theme="dark_dimmed"
+  data-lang="en"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async
+></script></div>
+	</main>
+<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+<p>
+	&copy; 2025 <a href="http://localhost:1313/">Cole World</a>
+	&#183;  <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p></footer>
+<script async src="http://localhost:1313/js/bundle.min.c7c384e4d29d192bbac6811ae4660bb01767194a5bea56baca77e8260f93ea16.js" integrity="sha256-x8OE5NKdGSu6xoEa5GYLsBdnGUpb6la6ynfoJg+T6hY=" crossorigin="anonymous"></script><script async src="http://localhost:1313/js/link-share.min.24409a4f6e5537d70ffc55ec8f9192208d718678cb8638585342423020b37f39.js" integrity="sha256-JECaT25VN9cP/FXsj5GSII1xhnjLhjhYU0JCMCCzfzk=" crossorigin="anonymous"></script><script id="MathJax-script" type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" crossorigin="anonymous"></script>
+<script type="text/javascript" id="MathJax-script-helper" async src="http://localhost:1313/js/mathjax-assistant.min.4ac284b8706fae8c6ab2d6f4082588181616b93f5337e7cfeabf19c8e59e9908.js" integrity="sha256-SsKEuHBvroxqstb0CCWIGBYWuT9TN+fP6r8ZyOWemQg=" crossorigin="anonymous"></script>
+
+</body>
+</html>

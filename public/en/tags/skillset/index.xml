@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Skillset on Cole World</title>
-    <link>http://localhost:1313/en/tags/skillset/</link>
+    <link>https://colemei.live/en/tags/skillset/</link>
     <description>Recent content in Skillset on Cole World</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Sat, 10 Jul 2021 16:47:33 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/en/tags/skillset/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://colemei.live/en/tags/skillset/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Running Pentaho Data Integration on Mac bigSur (M1)</title>
-      <link>http://localhost:1313/en/posts/running-pentaho-data-integration-on-mac-bigsur-m1/</link>
+      <link>https://colemei.live/en/posts/running-pentaho-data-integration-on-mac-bigsur-m1/</link>
       <pubDate>Sat, 10 Jul 2021 16:47:33 +0800</pubDate>
-      <guid>http://localhost:1313/en/posts/running-pentaho-data-integration-on-mac-bigsur-m1/</guid>
+      <guid>https://colemei.live/en/posts/running-pentaho-data-integration-on-mac-bigsur-m1/</guid>
       <description>&lt;h1 id=&#34;关于在m1-mac-上安装部署pdikettle&#34;&gt;关于在M1 Mac 上安装部署PDI(kettle)&lt;a href=&#34;#%e5%85%b3%e4%ba%8e%e5%9c%a8m1-mac-%e4%b8%8a%e5%ae%89%e8%a3%85%e9%83%a8%e7%bd%b2pdikettle&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&#xA;      stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;      &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;      &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;   &lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;h2 id=&#34;前言&#34;&gt;前言&lt;a href=&#34;#%e5%89%8d%e8%a8%80&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&#xA;      stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;      &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;      &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;   &lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;截止我编写这篇笔记之时，Kettle并没有原生支持M1，所以本文大致思路是使用Rosetta转译运行，无需借助任何虚拟机。&lt;/p&gt;</description>
     </item>
   </channel>
