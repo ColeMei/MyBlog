@@ -490,7 +490,100 @@ $$E_{in}(g) - \sqrt{\frac{8}{N} \ln \left( \frac{4(2N)^{VC(H)}}{\delta} \right)}
   data-loading="lazy"
   crossorigin="anonymous"
   async
-></script></div>
+></script>
+
+<script>
+  
+  function updateGiscusTheme() {
+    const currentTheme =
+      document.documentElement.getAttribute("data-theme") || "dark";
+    const giscusTheme = currentTheme === "light" ? "light" : "dark_dimmed";
+
+    const giscusFrame = document.querySelector("iframe.giscus-frame");
+    if (giscusFrame) {
+      giscusFrame.contentWindow.postMessage(
+        {
+          giscus: {
+            setConfig: {
+              theme: giscusTheme,
+            },
+          },
+        },
+        "https://giscus.app"
+      );
+    }
+  }
+
+  
+  function initGiscusTheme() {
+    const currentTheme =
+      document.documentElement.getAttribute("data-theme") || "dark";
+    const giscusScript = document.querySelector('script[src*="giscus.app"]');
+
+    if (giscusScript) {
+      
+      const giscusTheme = currentTheme === "light" ? "light" : "dark_dimmed";
+      giscusScript.setAttribute("data-theme", giscusTheme);
+    }
+
+    
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+          if (
+            node.nodeType === 1 &&
+            node.classList &&
+            node.classList.contains("giscus")
+          ) {
+            
+            observer.disconnect();
+
+            
+            setTimeout(() => {
+              updateGiscusTheme();
+            }, 1000);
+          }
+        });
+      });
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+  }
+
+  
+  function watchThemeChanges() {
+    const targetNode = document.documentElement;
+    const config = { attributes: true, attributeFilter: ["data-theme"] };
+
+    const callback = function (mutationsList) {
+      for (let mutation of mutationsList) {
+        if (
+          mutation.type === "attributes" &&
+          mutation.attributeName === "data-theme"
+        ) {
+          updateGiscusTheme();
+        }
+      }
+    };
+
+    const observer = new MutationObserver(callback);
+    observer.observe(targetNode, config);
+  }
+
+  
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => {
+      initGiscusTheme();
+      watchThemeChanges();
+    });
+  } else {
+    initGiscusTheme();
+    watchThemeChanges();
+  }
+</script></div>
 	</main>
 <footer id="site-footer" class="section-inner thin animated fadeIn faster">
 <p>
