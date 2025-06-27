@@ -2,7 +2,6 @@
 title: "About Me"
 date: 2023-01-02T16:20:28+08:00
 draft: false
-comments: true
 images:
 - https://github.com/ColeMei/Picgo/blob/master/others/wallhaven-7pr53v_3840x2160.png?raw=true
 ---
