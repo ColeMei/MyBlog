@@ -1,0 +1,19 @@
+<!-- Theme Toggle CSS and JS -->
+{{ $css := resources.Get "scss/userstyles.scss" | css.Sass | resources.Minify }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+
+{{ $js := resources.Get "js/theme-toggle.js" | resources.Minify }}
+<script src="{{ $js.RelPermalink }}" defer></script>
+
+<!-- Prevent flash of wrong theme -->
+<script>
+  // Immediately apply theme before page renders to prevent flash
+  (function () {
+    const theme =
+      localStorage.getItem("theme") ||
+      (window.matchMedia("(prefers-color-scheme: light)").matches
+        ? "light"
+        : "dark");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>

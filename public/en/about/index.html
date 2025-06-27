@@ -77,8 +77,27 @@ More About I consider myself a geeky person, but I don’t want to define my fut
       }
     }
 }
-</script><title>About Me</title><link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" media="screen" href="http://localhost:1313/css/style.min.c4f7b347078a45a04aa940523301de605d71a4631f63ced30c5bd6ad016c0b6d.css" integrity="sha256-xPezRweKRaBKqUBSMwHeYF1xpGMfY87TDFvWrQFsC20=" crossorigin="anonymous">
-	<style>.bg-img {background-image: url('https://github.com/ColeMei/Picgo/blob/master/others/wallhaven-7pr53v_3840x2160.png?raw=true');}</style></head>
+</script><title>About Me</title><link rel="stylesheet dns-prefetch preconnect preload prefetch" as="style" media="screen" href="http://localhost:1313/css/style.min.ed9d737a6aa83e1c859ba4b860bb5117101afa96027ad626b0b09ee20ec3355c.css" integrity="sha256-7Z1zemqoPhyFm6S4YLtRFxAa+pYCetYmsLCe4g7DNVw=" crossorigin="anonymous">
+	<style>.bg-img {background-image: url('https://github.com/ColeMei/Picgo/blob/master/others/wallhaven-7pr53v_3840x2160.png?raw=true');}</style>
+
+<link rel="stylesheet" href="/scss/userstyles.min.css" />
+
+
+<script src="/js/theme-toggle.min.js" defer></script>
+
+
+<script>
+  
+  (function () {
+    const theme =
+      localStorage.getItem("theme") ||
+      (window.matchMedia("(prefers-color-scheme: light)").matches
+        ? "light"
+        : "dark");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+</head>
 
 <body id="page">
 <header id="site-header">
