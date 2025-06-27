@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Collections on Cole World</title>
+    <link>http://localhost:1313/en/collections/</link>
+    <description>Recent content in Collections on Cole World</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Wed, 25 Dec 2024 12:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/en/collections/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Attention Is All You Need</title>
+      <link>http://localhost:1313/en/collections/attention-is-all-you-need/</link>
+      <pubDate>Wed, 25 Dec 2024 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/en/collections/attention-is-all-you-need/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;📄 Paper&lt;/strong&gt;: &lt;a href=&#34;https://arxiv.org/abs/1706.03762&#34;&gt;https://arxiv.org/abs/1706.03762&lt;/a&gt;&lt;br&gt;&#xA;&lt;strong&gt;Authors&lt;/strong&gt;: Ashish Vaswani et al.&lt;br&gt;&#xA;&lt;strong&gt;Year&lt;/strong&gt;: 2017&lt;br&gt;&#xA;&lt;strong&gt;Rating&lt;/strong&gt;: ⭐⭐⭐⭐⭐&lt;/p&gt;&#xA;&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;a href=&#34;#summary&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;&#xA;      stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&#xA;      &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;&#xA;      &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;&#xA;   &lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;This seminal paper introduced the Transformer model, which relies entirely on attention mechanisms, dispensing with recurrence and convolutions entirely. This architecture became the foundation for modern language models like GPT and BERT.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

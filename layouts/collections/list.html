@@ -1,0 +1,55 @@
+{{ define "header" }}
+{{ partialCached "header.html" . }}
+{{ end }}
+
+{{ define "title" }}
+{{ .Title }}
+{{ end }}
+
+{{ define "main" }}
+	<main class="site-main section-inner thin {{- if ne false .Site.Params.usesAnimation }} animated fadeIn faster{{- end -}}">
+		<h1>{{ .Title }}</h1>
+		{{- if .Content }}<div class="content">{{ .Content }}</div>{{ end -}}
+
+		{{- range .Data.Pages.GroupByDate "2006" }}
+		{{ $pages := len (.Pages) }}
+		{{- if gt $pages 0 -}}
+		<div class="posts-group">
+			<div class="post-year" id="{{ .Key }}">{{ .Key }}</div>
+			<ul class="posts-list">
+				{{- range .Pages }}
+				<li class="post-item">
+					<a href="{{.Permalink}}">
+						<span class="post-title">{{.Title}}</span>
+						<span class="post-day">{{ .Date.Format (default .Site.Params.dateform.ShortDate "Jan 2") }}</span>
+					</a>
+					{{- if and .Page.Params.description (in .Site.Params.listLayout "description") -}}
+					<span class="post-description">{{ .Page.Params.description }}</span>
+					{{- end -}}
+					{{- if or (in .Site.Params.listLayout "tags") (in .Site.Params.listLayout "categories") -}}<div class="post-taxonomy">
+						{{- if and .Page.Params.tags (in .Site.Params.listLayout "tags") -}}
+						<span class="post-tags">
+							{{- range .Page.Params.tags -}}
+							<a href="{{ "tags/" | absLangURL }}{{ . | urlize }}" class="tag">{{- . -}}</a>
+							{{- end -}}
+						</span>
+						{{- end -}}
+						{{- if and .Page.Params.categories (in .Site.Params.listLayout "categories") -}}
+						<span class="post-categories">
+							{{- range .Page.Params.categories -}}
+							<a href="{{ "categories/" | absLangURL }}{{ . | urlize }}" class="category">{{- . -}}</a>
+							{{- end -}}
+						</span>
+						{{- end -}}
+					</div>{{- end -}}
+				</li>
+				{{- end }}
+			</ul>
+		</div>
+		{{- end -}}
+		{{- end }}
+	</main>
+{{ end }}
+
+{{ define "footer" }}<footer id="site-footer" class="section-inner thin {{- if ne false .Site.Params.usesAnimation }} animated fadeIn faster {{- end -}}">{{- if templates.Exists "partials/list-footer.html" -}}{{- partialCached "list-footer.html" . -}}{{- else -}}{{- partial "footer.html" . -}}{{- end -}}</footer>
+{{ end }} 
