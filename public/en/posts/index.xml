@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
 	<channel>
 		<title>Posts on Cole World</title>
-		<link>http://localhost:1313/en/posts/</link>
+		<link>https://colemei.live/en/posts/</link>
 		<description>Recent content in Posts on Cole World</description>
 		<generator>Hugo -- 0.139.4</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
 		<lastBuildDate>Wed, 02 Apr 2025 13:18:30 +1100</lastBuildDate>
-		<atom:link href="http://localhost:1313/en/posts/index.xml" rel="self" type="application/rss+xml" />
+		<atom:link href="https://colemei.live/en/posts/index.xml" rel="self" type="application/rss+xml" />
 		
 		
 		<item>
 			<title>PAC Theory and VC Dimension</title>
-			<link>http://localhost:1313/en/posts/pac-theory-and-vc-dimension/</link>
-			<pubDate>Wed, 02 Apr 2025 13:18:30 +1100</pubDate><author>Cole Mei</author><guid>http://localhost:1313/en/posts/pac-theory-and-vc-dimension/</guid>
-			<description><![CDATA[COMP90051 Statistical Machine Learning]]></description><enclosure url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" length="" type="image/jpeg" />
-			<media:thumbnail url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" width="1920" height="1080" />
-			<media:content url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" medium="image" type="image/jpeg" width="1920" height="1080" >
+			<link>https://colemei.live/en/posts/pac-theory-and-vc-dimension/</link>
+			<pubDate>Wed, 02 Apr 2025 13:18:30 +1100</pubDate><author>Cole Mei</author><guid>https://colemei.live/en/posts/pac-theory-and-vc-dimension/</guid>
+			<description><![CDATA[COMP90051 Statistical Machine Learning]]></description><enclosure url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" length="" type="image/jpeg" />
+			<media:thumbnail url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" width="1920" height="1080" />
+			<media:content url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" medium="image" type="image/jpeg" width="1920" height="1080" >
 			    <media:title type="html">/560-1920x1080_9913724952418298616.jpg</media:title>
 			</media:content><content type="text/html" mode="escaped"><![CDATA[
     <aside class="admonition info">
@@ -228,11 +228,11 @@ $$E_{in}(g) - \sqrt{\frac{8}{N} \ln \left( \frac{4(2N)^{VC(H)}}{\delta} \right)}
 		
 		<item>
 			<title>New features in Blog 2.0</title>
-			<link>http://localhost:1313/en/posts/new-features-in-blog-2.0/</link>
-			<pubDate>Wed, 17 Jul 2024 15:31:50 +1000</pubDate><author>Cole Mei</author><guid>http://localhost:1313/en/posts/new-features-in-blog-2.0/</guid>
-			<description><![CDATA[This explains some implementation details of new features]]></description><enclosure url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" length="" type="image/jpeg" />
-			<media:thumbnail url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" width="1920" height="1080" />
-			<media:content url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" medium="image" type="image/jpeg" width="1920" height="1080" >
+			<link>https://colemei.live/en/posts/new-features-in-blog-2.0/</link>
+			<pubDate>Wed, 17 Jul 2024 15:31:50 +1000</pubDate><author>Cole Mei</author><guid>https://colemei.live/en/posts/new-features-in-blog-2.0/</guid>
+			<description><![CDATA[This explains some implementation details of new features]]></description><enclosure url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" length="" type="image/jpeg" />
+			<media:thumbnail url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" width="1920" height="1080" />
+			<media:content url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" medium="image" type="image/jpeg" width="1920" height="1080" >
 			    <media:title type="html">/560-1920x1080_9913724952418298616.jpg</media:title>
 			</media:content><content type="text/html" mode="escaped"><![CDATA[<h1 id="new-comment-system">New Comment System<a href="#new-comment-system" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
@@ -397,8 +397,8 @@ A = U \Lambda U^*
 		
 		<item>
 			<title>Echoes of March</title>
-			<link>http://localhost:1313/en/posts/echoes-of-march/</link>
-			<pubDate>Sat, 16 Mar 2024 00:32:06 +0800</pubDate><author>Cole Mei</author><guid>http://localhost:1313/en/posts/echoes-of-march/</guid>
+			<link>https://colemei.live/en/posts/echoes-of-march/</link>
+			<pubDate>Sat, 16 Mar 2024 00:32:06 +0800</pubDate><author>Cole Mei</author><guid>https://colemei.live/en/posts/echoes-of-march/</guid>
 			<description><![CDATA[First Year Diaries]]></description><content type="text/html" mode="escaped"><![CDATA[<h2 id="life-is-elsewhere">Life Is Elsewhere<a href="#life-is-elsewhere" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
@@ -423,11 +423,11 @@ A = U \Lambda U^*
 		
 		<item>
 			<title>Trips|North of Xinjiang 7.15-7.17</title>
-			<link>http://localhost:1313/en/posts/tripsnorth-of-xinjiang-7.15-7.17/</link>
-			<pubDate>Mon, 15 Jan 2024 15:47:31 +0800</pubDate><author>Cole Mei</author><guid>http://localhost:1313/en/posts/tripsnorth-of-xinjiang-7.15-7.17/</guid>
-			<description><![CDATA[The fifth in a series]]></description><enclosure url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" length="" type="image/jpeg" />
-			<media:thumbnail url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" width="1920" height="1080" />
-			<media:content url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" medium="image" type="image/jpeg" width="1920" height="1080" >
+			<link>https://colemei.live/en/posts/tripsnorth-of-xinjiang-7.15-7.17/</link>
+			<pubDate>Mon, 15 Jan 2024 15:47:31 +0800</pubDate><author>Cole Mei</author><guid>https://colemei.live/en/posts/tripsnorth-of-xinjiang-7.15-7.17/</guid>
+			<description><![CDATA[The fifth in a series]]></description><enclosure url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" length="" type="image/jpeg" />
+			<media:thumbnail url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" width="1920" height="1080" />
+			<media:content url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" medium="image" type="image/jpeg" width="1920" height="1080" >
 			    <media:title type="html">/560-1920x1080_9913724952418298616.jpg</media:title>
 			</media:content><content type="text/html" mode="escaped"><![CDATA[
     <aside class="admonition tip">
@@ -578,11 +578,11 @@ A = U \Lambda U^*
 		
 		<item>
 			<title>Trips|North of Xinjiang 7.12-7.14</title>
-			<link>http://localhost:1313/en/posts/tripsnorth-of-xinjiang-7.12-7.14/</link>
-			<pubDate>Fri, 12 Jan 2024 20:39:04 +0800</pubDate><author>Cole Mei</author><guid>http://localhost:1313/en/posts/tripsnorth-of-xinjiang-7.12-7.14/</guid>
-			<description><![CDATA[The fourth in a series]]></description><enclosure url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" length="" type="image/jpeg" />
-			<media:thumbnail url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" width="1920" height="1080" />
-			<media:content url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" medium="image" type="image/jpeg" width="1920" height="1080" >
+			<link>https://colemei.live/en/posts/tripsnorth-of-xinjiang-7.12-7.14/</link>
+			<pubDate>Fri, 12 Jan 2024 20:39:04 +0800</pubDate><author>Cole Mei</author><guid>https://colemei.live/en/posts/tripsnorth-of-xinjiang-7.12-7.14/</guid>
+			<description><![CDATA[The fourth in a series]]></description><enclosure url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" length="" type="image/jpeg" />
+			<media:thumbnail url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" width="1920" height="1080" />
+			<media:content url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" medium="image" type="image/jpeg" width="1920" height="1080" >
 			    <media:title type="html">/560-1920x1080_9913724952418298616.jpg</media:title>
 			</media:content><content type="text/html" mode="escaped"><![CDATA[
     <aside class="admonition tip">
@@ -836,11 +836,11 @@ A = U \Lambda U^*
 		
 		<item>
 			<title>Trips|North of Xinjiang 7.9-7.11</title>
-			<link>http://localhost:1313/en/posts/tripsnorth-of-xinjiang-7.9-7.11/</link>
-			<pubDate>Tue, 28 Nov 2023 23:30:44 +0800</pubDate><author>Cole Mei</author><guid>http://localhost:1313/en/posts/tripsnorth-of-xinjiang-7.9-7.11/</guid>
-			<description><![CDATA[The third in a series]]></description><enclosure url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" length="" type="image/jpeg" />
-			<media:thumbnail url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" width="1920" height="1080" />
-			<media:content url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" medium="image" type="image/jpeg" width="1920" height="1080" >
+			<link>https://colemei.live/en/posts/tripsnorth-of-xinjiang-7.9-7.11/</link>
+			<pubDate>Tue, 28 Nov 2023 23:30:44 +0800</pubDate><author>Cole Mei</author><guid>https://colemei.live/en/posts/tripsnorth-of-xinjiang-7.9-7.11/</guid>
+			<description><![CDATA[The third in a series]]></description><enclosure url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" length="" type="image/jpeg" />
+			<media:thumbnail url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" width="1920" height="1080" />
+			<media:content url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" medium="image" type="image/jpeg" width="1920" height="1080" >
 			    <media:title type="html">/560-1920x1080_9913724952418298616.jpg</media:title>
 			</media:content><content type="text/html" mode="escaped"><![CDATA[
     <aside class="admonition tip">
@@ -1106,11 +1106,11 @@ A = U \Lambda U^*
 		
 		<item>
 			<title>Trips|North of Xinjiang 7.4-7.8</title>
-			<link>http://localhost:1313/en/posts/tripsnorth-of-xinjiang-7.4-7.8/</link>
-			<pubDate>Mon, 20 Nov 2023 23:22:30 +0800</pubDate><author>Cole Mei</author><guid>http://localhost:1313/en/posts/tripsnorth-of-xinjiang-7.4-7.8/</guid>
-			<description><![CDATA[The second in a series]]></description><enclosure url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" length="" type="image/jpeg" />
-			<media:thumbnail url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" width="1920" height="1080" />
-			<media:content url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" medium="image" type="image/jpeg" width="1920" height="1080" >
+			<link>https://colemei.live/en/posts/tripsnorth-of-xinjiang-7.4-7.8/</link>
+			<pubDate>Mon, 20 Nov 2023 23:22:30 +0800</pubDate><author>Cole Mei</author><guid>https://colemei.live/en/posts/tripsnorth-of-xinjiang-7.4-7.8/</guid>
+			<description><![CDATA[The second in a series]]></description><enclosure url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" length="" type="image/jpeg" />
+			<media:thumbnail url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" width="1920" height="1080" />
+			<media:content url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" medium="image" type="image/jpeg" width="1920" height="1080" >
 			    <media:title type="html">/560-1920x1080_9913724952418298616.jpg</media:title>
 			</media:content><content type="text/html" mode="escaped"><![CDATA[
     <aside class="admonition tip">
@@ -1431,11 +1431,11 @@ A = U \Lambda U^*
 		
 		<item>
 			<title>Trips|North of Xinjiang 7.1-7.3</title>
-			<link>http://localhost:1313/en/posts/tripsnorth-of-xinjiang-7.1-7.3/</link>
-			<pubDate>Sat, 11 Nov 2023 16:49:29 +0800</pubDate><author>Cole Mei</author><guid>http://localhost:1313/en/posts/tripsnorth-of-xinjiang-7.1-7.3/</guid>
-			<description><![CDATA[The first in a series]]></description><enclosure url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" length="" type="image/jpeg" />
-			<media:thumbnail url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" width="1920" height="1080" />
-			<media:content url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" medium="image" type="image/jpeg" width="1920" height="1080" >
+			<link>https://colemei.live/en/posts/tripsnorth-of-xinjiang-7.1-7.3/</link>
+			<pubDate>Sat, 11 Nov 2023 16:49:29 +0800</pubDate><author>Cole Mei</author><guid>https://colemei.live/en/posts/tripsnorth-of-xinjiang-7.1-7.3/</guid>
+			<description><![CDATA[The first in a series]]></description><enclosure url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" length="" type="image/jpeg" />
+			<media:thumbnail url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" width="1920" height="1080" />
+			<media:content url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" medium="image" type="image/jpeg" width="1920" height="1080" >
 			    <media:title type="html">/560-1920x1080_9913724952418298616.jpg</media:title>
 			</media:content><content type="text/html" mode="escaped"><![CDATA[
     <aside class="admonition tip">
@@ -1664,17 +1664,17 @@ A = U \Lambda U^*
 		
 		<item>
 			<title>Recall and Review of the IELTS Test on November 6th</title>
-			<link>http://localhost:1313/en/posts/recall-and-review-of-the-ielts-test-on-november-6th/</link>
-			<pubDate>Tue, 07 Nov 2023 14:52:18 +0800</pubDate><author>Cole Mei</author><guid>http://localhost:1313/en/posts/recall-and-review-of-the-ielts-test-on-november-6th/</guid>
+			<link>https://colemei.live/en/posts/recall-and-review-of-the-ielts-test-on-november-6th/</link>
+			<pubDate>Tue, 07 Nov 2023 14:52:18 +0800</pubDate><author>Cole Mei</author><guid>https://colemei.live/en/posts/recall-and-review-of-the-ielts-test-on-november-6th/</guid>
 			<description>&lt;figure&gt;&lt;img src=&#34;https://raw.githubusercontent.com/ColeMei/Picgo/master/blog11/11.6%20Beijing%20IELTS%20Recap%20%282%29.jpg&#34;alt=&#34;image&#34;/&gt;&lt;figcaption&gt;&lt;p&gt;British Council 北京嘉华世达(崇文门)雅思机考考点&lt;/p&gt;&lt;/figcaption&gt;&lt;/figure&gt;
 &lt;h2 id=&#34;intro&#34;&gt;Intro&lt;a href=&#34;#intro&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;
       stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;
       &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;
       &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;
    &lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;自从10月初拿到了UNSW的offer，过完十一假期后，回到家总算是感受到了一点点timeline上的压迫感，于是我也终于给一直没什么进度，处于吊儿郎当状态的的雅思备考上了点儿强度。从十月中旬开始基本保持一天3-4个小时的学习时间，最后几天能达到5-6个钟（说实话单英语一科学久了确实有点儿烦，不像去年这个时候在准备考研，轻轻松松就一天坐满11、12个小时的）。&lt;/p&gt;</description><enclosure url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" length="" type="image/jpeg" />
-			<media:thumbnail url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" width="1920" height="1080" />
-			<media:content url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" medium="image" type="image/jpeg" width="1920" height="1080" >
+&lt;p&gt;自从10月初拿到了UNSW的offer，过完十一假期后，回到家总算是感受到了一点点timeline上的压迫感，于是我也终于给一直没什么进度，处于吊儿郎当状态的的雅思备考上了点儿强度。从十月中旬开始基本保持一天3-4个小时的学习时间，最后几天能达到5-6个钟（说实话单英语一科学久了确实有点儿烦，不像去年这个时候在准备考研，轻轻松松就一天坐满11、12个小时的）。&lt;/p&gt;</description><enclosure url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" length="" type="image/jpeg" />
+			<media:thumbnail url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" width="1920" height="1080" />
+			<media:content url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" medium="image" type="image/jpeg" width="1920" height="1080" >
 			    <media:title type="html">/560-1920x1080_9913724952418298616.jpg</media:title>
 			</media:content><content type="text/html" mode="escaped"><![CDATA[
 <figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog11/11.6%20Beijing%20IELTS%20Recap%20%282%29.jpg"alt="image"/><figcaption><p>British Council 北京嘉华世达(崇文门)雅思机考考点</p></figcaption></figure>
@@ -1833,16 +1833,16 @@ A = U \Lambda U^*
 		
 		<item>
 			<title>Self-host Deployment of RSSHub</title>
-			<link>http://localhost:1313/en/posts/self-host-deployment-of-rsshub/</link>
-			<pubDate>Mon, 11 Sep 2023 23:50:36 +0800</pubDate><author>Cole Mei</author><guid>http://localhost:1313/en/posts/self-host-deployment-of-rsshub/</guid>
+			<link>https://colemei.live/en/posts/self-host-deployment-of-rsshub/</link>
+			<pubDate>Mon, 11 Sep 2023 23:50:36 +0800</pubDate><author>Cole Mei</author><guid>https://colemei.live/en/posts/self-host-deployment-of-rsshub/</guid>
 			<description>&lt;h2 id=&#34;引言&#34;&gt;引言&lt;a href=&#34;#%e5%bc%95%e8%a8%80&#34; class=&#34;anchor&#34; aria-hidden=&#34;true&#34;&gt;&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34;
       stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;
       &lt;path d=&#34;M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3&#34;&gt;&lt;/path&gt;
       &lt;line x1=&#34;8&#34; y1=&#34;12&#34; x2=&#34;16&#34; y2=&#34;12&#34;&gt;&lt;/line&gt;
    &lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;说起来，我采用「RSS信息源 + 一款心仪的多平台阅读器」这样的方式获取信息已经有一年多的时间了。总的来说，它带给了我很不错体验，有效的缓解了我在Daily Input过程中的一些无奈与焦虑：一方面，它使筛选过的优质信息源尽量常驻，另一方面，它使阅读信息的过程尽量纯粹。&lt;/p&gt;</description><enclosure url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" length="" type="image/jpeg" />
-			<media:thumbnail url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" width="1920" height="1080" />
-			<media:content url="http://localhost:1313/560-1920x1080_9913724952418298616.jpg" medium="image" type="image/jpeg" width="1920" height="1080" >
+&lt;p&gt;说起来，我采用「RSS信息源 + 一款心仪的多平台阅读器」这样的方式获取信息已经有一年多的时间了。总的来说，它带给了我很不错体验，有效的缓解了我在Daily Input过程中的一些无奈与焦虑：一方面，它使筛选过的优质信息源尽量常驻，另一方面，它使阅读信息的过程尽量纯粹。&lt;/p&gt;</description><enclosure url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" length="" type="image/jpeg" />
+			<media:thumbnail url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" width="1920" height="1080" />
+			<media:content url="https://colemei.live/560-1920x1080_9913724952418298616.jpg" medium="image" type="image/jpeg" width="1920" height="1080" >
 			    <media:title type="html">/560-1920x1080_9913724952418298616.jpg</media:title>
 			</media:content><content type="text/html" mode="escaped"><![CDATA[<h2 id="引言">引言<a href="#%e5%bc%95%e8%a8%80" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
