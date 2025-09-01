@@ -1,1 +1,0 @@
-window.MathJax={tex:{displayMath:[["\\[","\\]"],["$$","$$"]],inlineMath:[["\\(","\\)"]],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:["script","noscript","style","textarea","pre"],enableMenu:!1},startup:{ready:function(){console.log("MathJax is ready"),MathJax.startup.defaultReady()}}}

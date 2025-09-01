@@ -45,30 +45,30 @@
 <p>Let&rsquo;s establish some notation and key concepts:</p>
 <ul>
 <li>
-<p>\(f_m\): The best function on our training set that minimizes empirical error (\(\arg\min \hat{R}(f)\))</p>
+<p>$f_m$: The best function on our training set that minimizes empirical error ($\arg\min \hat{R}(f)$)</p>
 </li>
 <li>
-<p>\(f^\*\): The best function within our hypothesis space \(\mathcal{H}\)</p>
+<p>$f^*$: The best function within our hypothesis space $\mathcal{H}$</p>
 </li>
 <li>
-<p>\(f\): The exact objective function (the best in all possible space)</p>
+<p>$f$: The exact objective function (the best in all possible space)</p>
 </li>
 <li>
-<p>True risk \(R(f)\): What we ultimately want to minimize</p>
+<p>True risk $R(f)$: What we ultimately want to minimize</p>
 </li>
 <li>
 <p>True risk ≈ Test error (as sample size approaches infinity)</p>
 </li>
 <li>
-<p>Excess risk = \(R(f_m) - R^\*\), which can be decomposed into:</p>
+<p>Excess risk = $R(f_m) - R^*$, which can be decomposed into:</p>
 <ul>
-<li>Estimation error: \(R(f_m) - R(f^\*)\)</li>
-<li>Approximation error: \(R(f^_) - R^_\)</li>
-<li>\(R^\*\): The Bayes risk, which represents the lowest possible risk achievable given the data distribution</li>
+<li>Estimation error: $R(f_m) - R(f^*)$</li>
+<li>Approximation error: $R(f^*) - R^*$</li>
+<li>$R^*$: The Bayes risk, which represents the lowest possible risk achievable given the data distribution</li>
 </ul>
 </li>
 </ul>
-<p>For our analysis, let&rsquo;s focus on understanding \(R(f_m)\) and its relation to other error measures.</p>
+<p>For our analysis, let&rsquo;s focus on understanding $R(f_m)$ and its relation to other error measures.</p>
 <h2 id="the-relationship-between-errors">The Relationship Between Errors<a href="#the-relationship-between-errors" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
@@ -78,13 +78,13 @@
 <figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/pac-theory-and-vc-dimension/ml_work_flows.png"alt="image"/></figure>
 <p>The key relationships we need to understand are:</p>
 <ul>
-<li>\(E\_{\text{out}}(g) = R(f_m)\): The generalization error (estimation error or true risk)</li>
-<li>\(E\_{\text{in}}(g) = \hat{R}(f_m)\): The empirical error measured on training data</li>
-<li>\(E\_{\text{out}}(f) = R(f)\): The true risk of the ideal function</li>
+<li>$E_{out}(g) = R(f_m)$: The generalization error (estimation error or true risk)</li>
+<li>$E_{in}(g) = \hat{R}(f_m)$: The empirical error measured on training data</li>
+<li>$E_{out}(f) = R(f)$: The true risk of the ideal function</li>
 </ul>
-<p>In the ideal scenario where \(R(f) = 0\) and \(f_m\) approximates \(f\) well, we want \(R(f_m) \approx 0\). This leads to the desired chain of approximations:
-\(0 = R(f) \approx R(f_m) \approx \hat{R}(f_m) \approx 0\)</p>
-<p>However, since we can&rsquo;t access the full data distribution, we can&rsquo;t calculate \(R(f_m)\) directly. Instead, we need to bound it.</p>
+<p>In the ideal scenario where $R(f) = 0$ and $fm$ approximates $f$ well, we want $R(f_m) \approx 0$. This leads to the desired chain of approximations:
+$0 = R(f) \approx R(f_m) \approx \hat{R}(f_m) \approx 0$</p>
+<p>However, since we can&rsquo;t access the full data distribution, we can&rsquo;t calculate $R(f_m)$ directly. Instead, we need to bound it.</p>
 <h2 id="bounding-the-true-risk">Bounding the True Risk<a href="#bounding-the-true-risk" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
@@ -95,10 +95,10 @@
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
-<p>\(\hat{R}(f)\) varies depending on our sample, while \(R(f)\) is fixed. Using Hoeffding&rsquo;s inequality:</p>
-$$P\left[|\nu - \mu| > \epsilon\right] \leq 2 \exp\left(-2\epsilon^2 N\right)$$<p>Where \(\nu\) represents the sample expectation and \(\mu\) is the true expectation. As our sample size \(N\) increases, \(\nu\) approaches \(\mu\).</p>
-<p>From Hoeffding&rsquo;s inequality, we can see that as \(N\) increases, the probability that the difference between \(\nu\) and \(\mu\) exceeds \(\epsilon\) approaches zero. This means the sample expectation increasingly approximates the population expectation—they become &ldquo;probably approximately correct.&rdquo;</p>
-<p>For any specific function, as \(N\) grows: \(\hat{R}(f_m) \approx R(f_m)\)</p>
+<p>$\hat{R}(f)$ varies depending on our sample, while $R(f)$ is fixed. Using Hoeffding&rsquo;s inequality:</p>
+$$P\left[|\nu - \mu| > \epsilon\right] \leq 2 \exp\left(-2\epsilon^2 N\right)$$<p>Where $\nu$ represents the sample expectation and $\mu$ is the true expectation. As our sample size $N$ increases, $\nu$ approaches $\mu$.</p>
+<p>From Hoeffding&rsquo;s inequality, we can see that as $N$ increases, the probability that the difference between $\nu$ and $\mu$ exceeds $\epsilon$ approaches zero. This means the sample expectation increasingly approximates the population expectation—they become &ldquo;probably approximately correct.&rdquo;</p>
+<p>For any specific function, as $N$ grows: $\hat{R}(f_m) \approx R(f_m)$</p>
 $$\Pr\left( |E_{\text{in}}(h) - E_{\text{out}}(h)| > \epsilon \right) \leq 2 \exp\left(-2\epsilon^2 N\right)$$<h3 id="for-a-family-of-functions-uniform-deviation-bounds">For a Family of Functions: Uniform Deviation Bounds<a href="#for-a-family-of-functions-uniform-deviation-bounds" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
@@ -107,76 +107,76 @@ $$\Pr\left( |E_{\text{in}}(h) - E_{\text{out}}(h)| > \epsilon \right) \leq 2 \ex
 <p>Why we need our bound to simultaneously (or uniformly) hold over a family of functions?</p>
 <p>Theorem: ERM’s estimation error is at most twice the uniform divergence</p>
 <p>When dealing with multiple hypotheses, we must account for the fact that rare events become likely when tried many times. Consider this example: flipping a coin 5 times and getting all heads has a probability of 1/32. But if 100 people perform this experiment, the probability that at least one person gets all heads exceeds 0.95.</p>
-<p>Using the union bound for a hypothesis space \(\mathcal{H}\) with functions \(f_1, f_2, \ldots, f_M\):</p>
-$$\forall g \in \mathcal{H}, \Pr\left( |E_{\text{in}}(g) - E_{\text{out}}(g)| > \epsilon \right) \leq 2M \exp\left(-2\epsilon^2 N\right)$$<p>This formula tells us that for any hypothesis \(g\) in \(\mathcal{H}\), the probability that the difference between \(E*{\text{in}}(g)\) and \(E*{\text{out}}(g)\) exceeds \(\epsilon\) is bounded by \(2M\exp(-2\epsilon^2 N)\). This bound heavily depends on both \(M\) (the size of the hypothesis space) and \(N\) (the sample size).</p>
+<p>Using the union bound for a hypothesis space $\mathcal{H}$ with functions $f_1, f_2, \ldots, f_M$:</p>
+$$\forall g \in \mathcal{H}, \Pr\left( |E_{\text{in}}(g) - E_{\text{out}}(g)| > \epsilon \right) \leq 2M \exp\left(-2\epsilon^2 N\right)$$<p>This formula tells us that for any hypothesis $g$ in $\mathcal{H}$, the probability that the difference between $E_{in}(g)$ and $E_{out}(g)$ exceeds $\epsilon$ is bounded by $2M\exp(-2\epsilon^2 N)$. This bound heavily depends on both $M$ (the size of the hypothesis space) and $N$ (the sample size).</p>
 <h2 id="what-makes-a-hypothesis-space-learnable">What Makes a Hypothesis Space Learnable?<a href="#what-makes-a-hypothesis-space-learnable" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
-<p>A hypothesis space \(\mathcal{H}\) is learnable if:</p>
+<p>A hypothesis space $\mathcal{H}$ is learnable if:</p>
 <ol>
-<li>Algorithm \(A\) can learn a function \(f\) from \(\mathcal{H}\) such that \(\hat{R}(f) \approx 0\)</li>
-<li>In \(\mathcal{H}\), \(M\) is finite and \(N\) is sufficiently large</li>
+<li>Algorithm $A$ can learn a function $f$ from $\mathcal{H}$ such that $\hat{R}(f) \approx 0$</li>
+<li>In $\mathcal{H}$, $M$ is finite and $N$ is sufficiently large</li>
 </ol>
-<p>When these conditions are met, the right side of our bound approaches 0, guaranteeing \(R(f) \approx \hat{R}(f)\).</p>
+<p>When these conditions are met, the right side of our bound approaches 0, guaranteeing $R(f) \approx \hat{R}(f)$.</p>
 <ul>
-<li>In training: We minimize \(\hat{R}(f)\) to find \(f_m\)</li>
-<li>In testing: We aim to minimize \(R(f)\), which should be close to \(\hat{R}(f)\)</li>
+<li>In training: We minimize $\hat{R}(f)$ to find $f_m$</li>
+<li>In testing: We aim to minimize $R(f)$, which should be close to $\hat{R}(f)$</li>
 </ul>
 <p>However, challenges arise when:</p>
 <ul>
-<li>\(M\) is too small: It becomes difficult to find the exact \(f\)</li>
-<li>\(M\) is too large: The right side doesn&rsquo;t approach 0</li>
-<li>\(M\) is infinite (which is common): This violates condition 2, making learning seemingly impossible</li>
+<li>$M$ is too small: It becomes difficult to find the exact $f$</li>
+<li>$M$ is too large: The right side doesn&rsquo;t approach 0</li>
+<li>$M$ is infinite (which is common): This violates condition 2, making learning seemingly impossible</li>
 </ul>
-<p>But wait—in most practical scenarios, \(M\) is infinite. For instance, in a 2D space, we have infinitely many possible lines. Does this mean learning is impossible? This is where VC dimension comes in.</p>
+<p>But wait—in most practical scenarios, $M$ is infinite. For instance, in a 2D space, we have infinitely many possible lines. Does this mean learning is impossible? This is where VC dimension comes in.</p>
 <h2 id="vc-dimension-making-the-infinite-manageable">VC Dimension: Making the Infinite Manageable<a href="#vc-dimension-making-the-infinite-manageable" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
-<p>The union bound can be loose because hypotheses in \(\mathcal{H}\) aren&rsquo;t completely independent—many can be categorized as essentially the same class.</p>
-<p>This means \(M\) can be rewritten as a finite &ldquo;effective(\(M\))&rdquo; depending on the sample:</p>
+<p>The union bound can be loose because hypotheses in $\mathcal{H}$ aren&rsquo;t completely independent—many can be categorized as essentially the same class.</p>
+<p>This means $M$ can be rewritten as a finite &ldquo;effective($M$)&rdquo; depending on the sample:</p>
 $$\forall g \in \mathcal{H}, \Pr\left( |E_{\text{in}}(g) - E_{\text{out}}(g)| > \epsilon \right) \leq 2 \cdot \text{effective}(M) \exp\left(-2\epsilon^2 N\right)$$<h3 id="growth-function-and-dichotomy">Growth Function and Dichotomy<a href="#growth-function-and-dichotomy" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
-<p>To understand the effective \(M\), we introduce the concepts of dichotomy and growth function. Since we don&rsquo;t want to depend on a specific data distribution \(D\), we consider the maximum number of dichotomies across any \(D\) in \(\mathcal{H}\)—this is the Growth Function.</p>
-<p>The growth function represents the maximum possible number of labeling results that the hypothesis space \(\mathcal{H}\) can assign to any \(N\) samples. In simpler terms, it represents the number of meaningfully different hypotheses that can produce distinct results—the effective hypotheses.</p>
-<p>A larger growth function indicates that \(\mathcal{H}\) can express more classifiers, which leads to the question: can we substitute the effective(\(M\)) with the Growth function?</p>
+<p>To understand the effective $M$, we introduce the concepts of dichotomy and growth function. Since we don&rsquo;t want to depend on a specific data distribution $D$, we consider the maximum number of dichotomies across any $D$ in $\mathcal{H}$—this is the Growth Function.</p>
+<p>The growth function represents the maximum possible number of labeling results that the hypothesis space $\mathcal{H}$ can assign to any $N$ samples. In simpler terms, it represents the number of meaningfully different hypotheses that can produce distinct results—the effective hypotheses.</p>
+<p>A larger growth function indicates that $\mathcal{H}$ can express more classifiers, which leads to the question: can we substitute the effective($M$) with the Growth function?</p>
 <h3 id="shattering-and-break-points">Shattering and Break Points<a href="#shattering-and-break-points" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
-<p>When a hypothesis space \(\mathcal{H}\) acting on a sample set \(D\) of size \(N\) produces \(2^N\) dichotomies (Growth Function = \(2^N\)), we say \(D\) is &ldquo;shattered&rdquo; by \(\mathcal{H}\). In other words, if \(\mathcal{H}\) can produce all possible dichotomies on a dataset, we say \(\mathcal{H}\) can shatter that dataset.</p>
-<p>The growth function helps us reduce \(M\) from infinite to being bounded by \(2^N\), but this is still too loose. We introduce the concept of a &ldquo;break point&rdquo;:</p>
-<p>Starting from \(N=1\) and gradually increasing, when we reach a value \(k\) where the growth function becomes less than \(2^N\), we say \(k\) is the break point of the hypothesis space. In other words, for any dataset of size \(N\) (where \(N \geq k\)), \(\mathcal{H}\) cannot shatter it.</p>
-<p>For example, if \(\mathcal{H}\) consists of all lines in 2D space, the break point is 4.</p>
-<p>With a break point, the upper bound becomes a polynomial \(N^{k-1}\) rather than the exponential \(2^N\). (Proof Here) <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>When a hypothesis space $\mathcal{H}$ acting on a sample set $D$ of size $N$ produces $2^N$ dichotomies (Growth Function = $2^N$), we say $D$ is &ldquo;shattered&rdquo; by $\mathcal{H}$. In other words, if $\mathcal{H}$ can produce all possible dichotomies on a dataset, we say $\mathcal{H}$ can shatter that dataset.</p>
+<p>The growth function helps us reduce $M$ from infinite to being bounded by $2^N$, but this is still too loose. We introduce the concept of a &ldquo;break point&rdquo;:</p>
+<p>Starting from $N=1$ and gradually increasing, when we reach a value $k$ where the growth function becomes less than $2^N$, we say $k$ is the break point of the hypothesis space. In other words, for any dataset of size $N$ (where $N \geq k$), $\mathcal{H}$ cannot shatter it.</p>
+<p>For example, if $\mathcal{H}$ consists of all lines in 2D space, the break point is 4.</p>
+<p>With a break point, the upper bound becomes a polynomial $N^{k-1}$ rather than the exponential $2^N$. (Proof Here) <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 $$m_H(N) \leq B(N, k) \leq \sum_{i=0}^{k-1} \binom{N}{i} \leq N^{k-1}$$<p>Then, the PAC bound with VC bound becomes (Proof Here) <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>:</p>
-$$\forall g \in \mathcal{H}, \Pr\left( |E_{\text{in}}(g) - E_{\text{out}}(g)| > \epsilon \right) \leq 4 m_{\mathcal{H}}(2N) \exp\left(-\frac{1}{8} \epsilon^2 N\right)$$<p>While we can&rsquo;t simply substitute effective \(M\) with the Growth function, they are clearly related.</p>
+$$\forall g \in \mathcal{H}, \Pr\left( |E_{\text{in}}(g) - E_{\text{out}}(g)| > \epsilon \right) \leq 4 m_{\mathcal{H}}(2N) \exp\left(-\frac{1}{8} \epsilon^2 N\right)$$<p>While we can&rsquo;t simply substitute effective $M$ with the Growth function, they are clearly related.</p>
 <h3 id="vc-dimension-defined">VC Dimension Defined<a href="#vc-dimension-defined" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
-<p>The VC dimension \(d = k-1\) (where \(k\) is the break point). The VC dimension indicates:</p>
+<p>The VC dimension $d = k-1$ (where $k$ is the break point). The VC dimension indicates:</p>
 <ul>
-<li>There exists a dataset of size \(d\) that can be shattered by hypothesis space \(\mathcal{H}\)</li>
-<li>\(\mathcal{H}\) can at most shatter \(d\) data points</li>
+<li>There exists a dataset of size $d$ that can be shattered by hypothesis space $\mathcal{H}$</li>
+<li>$\mathcal{H}$ can at most shatter $d$ data points</li>
 </ul>
-<p>It&rsquo;s important to note that this doesn&rsquo;t mean all datasets of size \(d\) can be shattered by \(\mathcal{H}\). For example, the hypothesis space of all lines in a 2D plane has a VC dimension of 3, but it cannot shatter three points lying on the same line. In fact, the VC dimension&rsquo;s definition is independent of the specific data distribution.</p>
-<p>With the growth function bounded by \(N^d\), we get:</p>
+<p>It&rsquo;s important to note that this doesn&rsquo;t mean all datasets of size $d$ can be shattered by $\mathcal{H}$. For example, the hypothesis space of all lines in a 2D plane has a VC dimension of 3, but it cannot shatter three points lying on the same line. In fact, the VC dimension&rsquo;s definition is independent of the specific data distribution.</p>
+<p>With the growth function bounded by $N^d$, we get:</p>
 $$\forall g \in \mathcal{H}, \Pr\left( |E_{\text{in}}(g) - E_{\text{out}}(g)| > \epsilon \right) \leq 4(2N)^{V(\mathcal{H})} \exp\left(-\frac{1}{8} \epsilon^2 N\right)$$<h3 id="revisiting-learnability-with-vc-dimension">Revisiting Learnability with VC Dimension<a href="#revisiting-learnability-with-vc-dimension" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
       stroke-linecap="round" stroke-linejoin="round">
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h3>
-<p>With these concepts in hand, we can redefine the second condition for learnability from &ldquo;\(M\) finite&rdquo; to &ldquo;VC dimension for \(\mathcal{H}\) is finite.&rdquo; The progression of our understanding has been:
-\(M \rightarrow \text{Effective } M \rightarrow \text{Growth Function} \rightarrow \text{VC dimension}\)</p>
+<p>With these concepts in hand, we can redefine the second condition for learnability from &ldquo;$M$ finite&rdquo; to &ldquo;VC dimension for $\mathcal{H}$ is finite.&rdquo; The progression of our understanding has been:
+$M \rightarrow \text{Effective } M \rightarrow \text{Growth Function} \rightarrow \text{VC dimension}$</p>
 <p>A larger VC dimension generally indicates a more complex model.</p>
 <p>Importantly, the VC dimension is independent of:</p>
 <ul>
@@ -190,10 +190,10 @@ $$\forall g \in \mathcal{H}, \Pr\left( |E_{\text{in}}(g) - E_{\text{out}}(g)| > 
       <path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path>
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
-<p>Finally, we can derive the relationship between \(E*{\text{in}}(g)\) and \(E*{\text{out}}(g)\), by inversely solve for</p>
-$$\epsilon = \sqrt{\frac{8}{N} \ln \left( \frac{4(2N)^{VC(H)}}{\delta} \right)}$$<p>it follows that there is a \(1-\delta\) probability that something good will happen, and the good thing,</p>
-$$E_{in}(g) - \sqrt{\frac{8}{N} \ln \left( \frac{4(2N)^{VC(H)}}{\delta} \right)} \leq E_{out}(g) \leq E_{in}(g) + \sqrt{\frac{8}{N} \ln \left( \frac{4(2N)^{VC(H)}}{\delta} \right)}$$<p>This equation describes the relationship between \(E*{\text{in}}(g)\) and \(E*{\text{out}}(g)\). The square root term can be viewed as the model complexity \(\Omega\)—the more complex the model, the larger the gap between \(E*{\text{in}}(g)\) and \(E*{\text{out}}(g)\).</p>
-<p>When we fix the sample size \(N\), as the VC dimension increases, \(E*{\text{in}}(g)\) continuously decreases while the complexity \(\Omega\) increases. The rates of increase and decrease vary at different stages, so we need to find a suitable VC dimension that balances both factors to minimize \(E*{\text{out}}(g)\).</p>
+<p>Finally, we can derive the relationship between $E_{in}(g)$ and $E_{out}(g)$, by inversely solve for</p>
+$$\epsilon = \sqrt{\frac{8}{N} \ln \left( \frac{4(2N)^{VC(H)}}{\delta} \right)}$$<p>it follows that there is a $1-\delta$ probability that something good will happen, and the good thing,</p>
+$$E_{in}(g) - \sqrt{\frac{8}{N} \ln \left( \frac{4(2N)^{VC(H)}}{\delta} \right)} \leq E_{out}(g) \leq E_{in}(g) + \sqrt{\frac{8}{N} \ln \left( \frac{4(2N)^{VC(H)}}{\delta} \right)}$$<p>This equation describes the relationship between $E_{in}(g)$ and $E_{out}(g)$. The square root term can be viewed as the model complexity $\Omega$—the more complex the model, the larger the gap between $E_{in}(g)$ and $E_{out}(g)$.</p>
+<p>When we fix the sample size $N$, as the VC dimension increases, $E_{in}(g)$ continuously decreases while the complexity $\Omega$ increases. The rates of increase and decrease vary at different stages, so we need to find a suitable VC dimension that balances both factors to minimize $E_{out}(g)$.</p>
 
 <figure><img src="https://raw.githubusercontent.com/ColeMei/Picgo/master/pac-theory-and-vc-dimension/vcdimension_error_complexity.png"alt="image"/></figure>
 <p>This relationship reveals the classic bias-variance tradeoff in machine learning: simpler models might have higher training error but generalize better, while more complex models can fit the training data perfectly but may perform poorly on unseen examples.</p>
@@ -209,7 +209,7 @@ $$E_{in}(g) - \sqrt{\frac{8}{N} \ln \left( \frac{4(2N)^{VC(H)}}{\delta} \right)}
       <line x1="8" y1="12" x2="16" y2="12"></line>
    </svg></a></h2>
 <ol>
-<li><a href="https://tangshusen.me/2018/12/09/vc-dimension/">统计学习理论之 VC 维究竟是什么 | TangShusen</a></li>
+<li><a href="https://tangshusen.me/2018/12/09/vc-dimension/">统计学习理论之VC维究竟是什么 | TangShusen</a></li>
 <li><a href="https://www.facequant.com/2020/11/13/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3-PAC-%E5%AD%A6%E4%B9%A0%E7%90%86%E8%AE%BA/">深入理解 PAC 学习理论 | 阿平的自我修养</a></li>
 </ol>
 <div class="footnotes" role="doc-endnotes">
