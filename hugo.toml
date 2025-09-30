@@ -82,7 +82,7 @@ expiryDate = ["expiryDate"]
   homeSubtitle = "To be just a little less arrogant. To have just a little critical awareness about myself and my certainties."
   footerCopyright = ' <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
   footerHideThemeName = true
-  bgImg = "https://github.com/ColeMei/Picgo/blob/master/others/wallhaven-7pr53v_3840x2160.png?raw=true"  # Homepage background-image URL
+  # bgImg = "https://github.com/ColeMei/Picgo/blob/master/others/wallhaven-7pr53v_3840x2160.png?raw=true"  # Homepage background-image URL
   # gitUrl = "https://github.com/1bl4z3r/hermit-V2/tree/staging"
 
   justifyContent = false
