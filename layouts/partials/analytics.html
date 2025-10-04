@@ -1,0 +1,13 @@
+{{/* Analytics Integration - Supports Google Analytics & Umami */}}
+
+{{/* Google Analytics 4 */}}
+{{- if .Site.Config.Services.GoogleAnalytics.ID -}} 
+{{ partial "google_analytics.html" . }}
+{{- end -}}
+
+{{/* Umami Analytics */}}
+{{- with .Site.Params.umami -}}
+  {{- if and .websiteId .scriptUrl -}}
+<script defer src="{{ .scriptUrl }}" data-website-id="{{ .websiteId }}"{{- with .hostUrl }} data-host-url="{{ . }}"{{- end }}{{- with .domains }} data-domains="{{ . }}"{{- end }}></script>
+  {{- end -}}
+{{- end -}}

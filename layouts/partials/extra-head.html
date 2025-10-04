@@ -1,3 +1,6 @@
+<!-- SEO: Open Graph & Twitter Cards -->
+{{ partial "seo.html" . }}
+
 <!-- Theme Toggle CSS and JS -->
 {{ $css := resources.Get "scss/userstyles.scss" | css.Sass | resources.Minify }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" />

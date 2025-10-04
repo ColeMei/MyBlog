@@ -1,0 +1,81 @@
+{{/* Open Graph & Twitter Cards SEO */}}
+
+{{- $title := .Title -}}
+{{- $description := .Page.Params.description | default .Site.Params.description | default .Summary -}}
+{{- $url := .Permalink -}}
+{{- $siteName := .Site.Title -}}
+{{- $author := .Params.author | default .Site.Params.author.name -}}
+
+{{- if .IsHome -}}
+  {{- $title = .Site.Title -}}
+{{- else if .IsPage -}}
+  {{- $title = printf "%s | %s" .Title .Site.Title -}}
+{{- end -}}
+
+{{/* Open Graph */}}
+<meta property="og:title" content="{{ $title }}" />
+<meta property="og:description" content="{{ $description | plainify | truncate 160 }}" />
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+<meta property="og:url" content="{{ $url }}" />
+<meta property="og:site_name" content="{{ $siteName }}" />
+<meta property="og:locale" content="{{ .Site.Language.Lang | default "en_US" }}" />
+
+{{- if .Params.images -}}
+  {{- range first 1 .Params.images -}}
+<meta property="og:image" content="{{ . | absURL }}" />
+  {{- end -}}
+{{- else if .Site.Params.images -}}
+  {{- range first 1 .Site.Params.images -}}
+<meta property="og:image" content="{{ . | absURL }}" />
+  {{- end -}}
+{{- end -}}
+
+{{- if .IsPage -}}
+  {{- with .PublishDate -}}
+<meta property="article:published_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}" />
+  {{- end -}}
+  {{- with .Lastmod -}}
+<meta property="article:modified_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}" />
+  {{- end -}}
+  {{- with .Params.tags -}}
+    {{- range . -}}
+<meta property="article:tag" content="{{ . }}" />
+    {{- end -}}
+  {{- end -}}
+  {{- with $author -}}
+<meta property="article:author" content="{{ . }}" />
+  {{- end -}}
+{{- end -}}
+
+{{/* Twitter Cards */}}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ $title }}" />
+<meta name="twitter:description" content="{{ $description | plainify | truncate 160 }}" />
+
+{{- if .Params.images -}}
+  {{- range first 1 .Params.images -}}
+<meta name="twitter:image" content="{{ . | absURL }}" />
+  {{- end -}}
+{{- else if .Site.Params.images -}}
+  {{- range first 1 .Site.Params.images -}}
+<meta name="twitter:image" content="{{ . | absURL }}" />
+  {{- end -}}
+{{- end -}}
+
+{{- with .Site.Params.socialLinks -}}
+  {{- range . -}}
+    {{- if eq .name "twitter" -}}
+<meta name="twitter:site" content="@{{ .url | replaceRE "^https?://(?:www\\.)?(?:twitter|x)\\.com/" "" | replaceRE "/" "" }}" />
+<meta name="twitter:creator" content="@{{ .url | replaceRE "^https?://(?:www\\.)?(?:twitter|x)\\.com/" "" | replaceRE "/" "" }}" />
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* Additional SEO meta tags */}}
+<link rel="canonical" href="{{ $url }}" />
+
+{{- if .IsPage -}}
+  {{- with .Params.tags -}}
+<meta name="keywords" content="{{ delimit . ", " }}" />
+  {{- end -}}
+{{- end -}}

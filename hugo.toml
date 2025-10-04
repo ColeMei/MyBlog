@@ -2,7 +2,7 @@ baseURL = 'https://colemei.live'
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 theme = "hermit-v2"
-#enableRobotsTXT = true ## set to true to enable inbuilt robots.txt
+enableRobotsTXT = true
 
 #[languages]
 #  [languages.en]
@@ -79,6 +79,11 @@ expiryDate = ["expiryDate"]
   # images = [""]
   themeColor = "#494f5c"
 
+  # Umami Analytics (https://umami.is)
+  [params.umami]
+    websiteId = "c66c8de9-42d3-4a3e-b903-5862a1336b13"
+    scriptUrl = "https://cloud.umami.is/script.js"
+
   homeSubtitle = "To be just a little less arrogant. To have just a little critical awareness about myself and my certainties."
   footerCopyright = ' <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
   footerHideThemeName = true
@@ -142,6 +147,11 @@ expiryDate = ["expiryDate"]
     name = "About"
     url = "about/"
     weight = 30
+
+  [[menu.main]]
+    name = "Tags"
+    url = "tags/"
+    weight = 40
 
   [[menu.main]]
     name = "Links"
