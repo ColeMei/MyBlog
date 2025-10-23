@@ -79,11 +79,6 @@ expiryDate = ["expiryDate"]
   # images = [""]
   themeColor = "#494f5c"
 
-  # Umami Analytics (https://umami.is)
-  [params.umami]
-    websiteId = "c66c8de9-42d3-4a3e-b903-5862a1336b13"
-    scriptUrl = "https://cloud.umami.is/script.js"
-
   homeSubtitle = "To be just a little less arrogant. To have just a little critical awareness about myself and my certainties."
   footerCopyright = ' <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
   footerHideThemeName = true
@@ -123,13 +118,18 @@ expiryDate = ["expiryDate"]
     NumDateShort = "2006-01-02"
     NumDateLong = "2006-01-02 15:04 -0700"
 
-  [[params.socialLinks]]
-    name = "telegram"
-    url = "https://t.me/Colemei"
+  # Umami Analytics (https://umami.is)
+  [params.umami]
+    websiteId = "c66c8de9-42d3-4a3e-b903-5862a1336b13"
+    scriptUrl = "https://cloud.umami.is/script.js"
 
-  [[params.socialLinks]]
-    name = "github"
-    url = "https://github.com/ColeMei"
+[[params.socialLinks]]
+  name = "telegram"
+  url = "https://t.me/Colemei"
+
+[[params.socialLinks]]
+  name = "github"
+  url = "https://github.com/ColeMei"
 
 [menu]
 
