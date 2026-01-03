@@ -10,7 +10,6 @@ scrolltotop: true
 ShowLastmod: false
 images:
   - https://picsum.photos/1920/1080/?random
-images:
 tags: 
   - Thingking&Feeling
 ---
