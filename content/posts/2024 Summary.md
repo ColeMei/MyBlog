@@ -11,6 +11,6 @@ ShowLastmod: false
 images:
   - https://picsum.photos/1920/1080/?random
 tags: 
-  - Thingking&Feeling
+  - Thinking&Feeling
 ---
 
