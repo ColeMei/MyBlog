@@ -1,4 +1,4 @@
-baseURL = 'https://colemei.live'
+baseURL = 'https://blog.colemei.com'
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 theme = "hermit-v2"
