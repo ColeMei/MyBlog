@@ -1,6 +1,6 @@
 # Cole World
 
-Welcome to **Cole World**, a place where thoughts flow like water and code blends seamlessly with life. This repository is the source of my personal blog: [colemei.live](https://colemei.live). 
+Welcome to **Cole World**, a place where thoughts flow like water and code blends seamlessly with life. This repository is the source of my personal blog: [blog.colemei.com](https://blog.colemei.com). 
 
 ## 💡 What’s Here?
 
@@ -17,7 +17,3 @@ Welcome to **Cole World**, a place where thoughts flow like water and code blend
 ## 🛠️ License
 
 This project is shared under a [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license. Feel free to explore and adapt—just keep it non-commercial.
-
----
-
-Made with 💡 by Cole.

@@ -65,6 +65,8 @@ expiryDate = ["expiryDate"]
 # Enable to get proper Mathjax support
 [markup]
   [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
     [markup.goldmark.extensions]
       [markup.goldmark.extensions.passthrough]
         enable = true
@@ -102,6 +104,7 @@ expiryDate = ["expiryDate"]
   # categorySymbol = "⊲"
   pinned = "Pinned Posts"
   # pinnedSVGname = "pin"
+  listLayout = ["description"]
   descriptionInPosts= true
   # initialPublish = "Initally Posted on: "
   # human = ["single","posts"]
