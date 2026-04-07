@@ -6,32 +6,32 @@ draft: false
 
 {{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/_site/photo_2023-03-06_16-37-15.jpg" alt="image" caption="My Status Be Like" class="right" >}}
 
-I’m Cole Mei, a 24-year-old originally from Beijing, China, and I have been living in Brunswick, Melbourne, for a year and a half.
+I'm Cole, originally from Beijing, China, now based in Melbourne, Australia.
 
-I believe that life is not measured by time, but by experience. So, just like the saying goes **_‘finite life but infinite exploring’_**
+I believe that life is not measured by time, but by experience. So, just like the saying goes **_‘Finite life, Infinite exploring’_**.
 
 > ## More About
 
 I consider myself a **geeky** person, but I don't want to define my future as a programmer in some traditional sense.
 
-I just keep trying what I'm fond of in any realms I’m interested in. To be specific, My expertise and interest lies in **Big Data,** **Deep Learning,** **Distributed System** and any **Fun Tools** that can enhance my efficiency and serve for my personal **work flow.**
+I just keep trying what I'm fond of in any realms I’m interested in. 
 
-- _Always keep an open mind, use tools you wouldn't usually use, and never give up._
+To be specific, My expertise and interest lie in **AI Agent**, **Security Research** and any **Fun Tools** that can enhance my efficiency and serve my personal **work flow**.
 
 > ## Spare Time
 
 When not buried in my text editor,
 
-- I’m a big lover of **Hiphop** and **R&B** music (Updated: I'm also a fan of **Kpop** now). J.cole and Jennie are two of my favorite artists.
+- I’m a big lover of **Hiphop** and **R&B** music (Updated: I'm also a fan of **Kpop** now). _J.Cole_ and _Jennie_ are two of my favorite artists.
 - I enjoy watching **TV series and Movies**. My favorite TV series is [Shrinking](https://www.imdb.com/title/tt15677150/) and my favorite movie is [Interstellar](https://www.imdb.com/title/tt0816692/).
 
 - Other tags :
-  - \*Big Big Fan of **Arsenal FC\***
-  - _A **Moba** expert and also a **Fps** rookie_
-  - **\*Tabletop game** lover\*
-  - \*Amateur in **Debate competition\***
-  - \*Lyrics **translator\***
-  - **\*Research Explorer** in Training\*
+  - _Big Big Fan of **Arsenal FC**_
+  - _A **MOBA** expert and also a **FPS** rookie_
+  - _**Tabletop game** lover_
+  - _Amateur in **Debate competition**_
+  - _Lyrics **translator**_
+  - _**Researcher** in Training_
 
 ---
 
@@ -44,7 +44,7 @@ When not buried in my text editor,
 
 You can visit the **_Home page_** to find out how you can get in touch. All friendly exchanges are welcome.
 
-- _Or via **email**: qmmei@student.unimelb.edu.au_
+- _Or via **email**: colemeiovo@gmail.com_
 
 ---
 
