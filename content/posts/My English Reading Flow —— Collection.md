@@ -32,9 +32,9 @@ tags:
 
 ## Database1  (For Reading Type1)
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog5/01.png" alt="image" caption="Database1 TableView" class="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/my-english-reading-flow-collection/01.png" alt="image" caption="Database1 TableView" class="" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog5/02.png" alt="image" caption="Database1 BoardView" class="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/my-english-reading-flow-collection/02.png" alt="image" caption="Database1 BoardView" class="" >}}
 
 如图所示，在Database 1 "Jornal List" 中，我作了如下设计：
 
@@ -45,7 +45,7 @@ tags:
   4. *Category：文章分类*
   5. *Words：link单词汇总的pdf文件（由Eudic的生词本自动生成）*
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog5/03.png" alt="image" caption="Words PDF" class="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/my-english-reading-flow-collection/03.png" alt="image" caption="Words PDF" class="" >}}
 
 * *View*
   1. *Table*
@@ -62,7 +62,7 @@ tags:
 
 * *标注过的文章本体，裁切后以统一格式命名（收录在文件夹：外刊精读）*
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog5/04.png" alt="image" caption="对文章本体的收录" class="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/my-english-reading-flow-collection/04.png" alt="image" caption="对文章本体的收录" class="" >}}
 
 * *生词（收录在文件夹：生词本）*
 
@@ -70,13 +70,13 @@ tags:
 
 如图所示，在Database 2 "Reading List" 中，我作了如下设计：
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog5/05.png" alt="image" caption="Database2 TableView 01" class="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/my-english-reading-flow-collection/05.png" alt="image" caption="Database2 TableView 01" class="" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog5/06.png" alt="image" caption="Database2 TableView 02" class="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/my-english-reading-flow-collection/06.png" alt="image" caption="Database2 TableView 02" class="" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog5/07.png" alt="image" caption="Database2 Gallery for Articles" class="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/my-english-reading-flow-collection/07.png" alt="image" caption="Database2 Gallery for Articles" class="" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog5/08.png" alt="image" caption="Database2 Gallery for News" class="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/my-english-reading-flow-collection/08.png" alt="image" caption="Database2 Gallery for News" class="" >}}
 
 * *Property*
 
@@ -107,9 +107,9 @@ tags:
 
 另外对于这一类阅读，将文章收录进数据库时，我还会将阅读时的一些摘录（在第二节的Type 2中讲到，由Paste实现）也一并誊抄进来，用quote block，并且用简短的一个或几个单词总结一下这段文字是在讲什么，像是这样：
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog5/09.png" alt="image" caption="Outlook" class="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/my-english-reading-flow-collection/09.png" alt="image" caption="Outlook" class="" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog5/10.png" alt="image" caption="Excerpt" class="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/my-english-reading-flow-collection/10.png" alt="image" caption="Excerpt" class="" >}}
 
 相信我，搭配Gallery View可以将你的Collection打造得**井然有序且质感十足**。
 

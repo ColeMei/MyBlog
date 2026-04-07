@@ -28,7 +28,7 @@ tags:
 
 离开巴音县，就基本代表着伊犁地区的游玩结束了，驶入独库南段，最初道路两旁还是平坦通畅的草原仿佛连通世界的尽头，开出个百来公里，窗外的景色就不太一样了，记得之前看到的某篇攻略分享说“独库南段的景观和伊犁常规景色很不一样，能够中和一路看到的空中草原森里河谷的那种审美上的疲劳感，但在后段数百公里的大片荒漠戈壁景观也比较单调”，我觉得评价的还是比较中肯的。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog16/8E04DC3C-18D3-46AB-AC26-510D2F9CD24D.jpg" alt="image" caption=" " >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-15/8E04DC3C-18D3-46AB-AC26-510D2F9CD24D.jpg" alt="image" caption=" " >}}
 
 ### 天山大峡谷
 
@@ -36,13 +36,13 @@ tags:
 
 景区还是值得一去的，设施和管理方面都比较成熟完备，景观也很有的特点。另外相比一路开来受到的暴晒高温，行走在峡谷间只觉得特别清凉舒服，算是避暑了。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog16/85F0398E-E1B6-4BF0-B008-E08DF8D6F3C7.jpg" alt="image" caption="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-15/85F0398E-E1B6-4BF0-B008-E08DF8D6F3C7.jpg" alt="image" caption="" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog16/BF3FAAB7-EA1D-42F9-8452-6D2764F1C24D.jpg" alt="image" caption="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-15/BF3FAAB7-EA1D-42F9-8452-6D2764F1C24D.jpg" alt="image" caption="" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog16/4C04EAB3-4D4A-4A95-8786-AA3DBBB8D093.jpg" alt="image" caption="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-15/4C04EAB3-4D4A-4A95-8786-AA3DBBB8D093.jpg" alt="image" caption="" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog16/3D12AD39-3E60-4951-ADC8-994FCE9E34C6.jpg" alt="image" caption="天山大峡谷" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-15/3D12AD39-3E60-4951-ADC8-994FCE9E34C6.jpg" alt="image" caption="天山大峡谷" >}}
 
 ### 库车王府
 
@@ -60,9 +60,9 @@ tags:
 
 [博斯腾湖](https://zh.wikipedia.org/zh/%E5%8D%9A%E6%96%AF%E8%85%BE%E6%B9%96)，维吾尔语意为绿洲，是中国最大的内陆淡水湖，也是我们拜访的新疆地区的最后一处湖泊。虽说在2014年全国旅游景区质量等级评定委员会批准博斯腾湖景区为国家5A级旅游景区，但是我们一路上循着地图的指引倒是一直没有找到一处真正意义上的景区的入口，没能像之前乌伦古湖那样近到湖边涉水，所以只是沿着道路在博斯腾湖的湖边放慢车速一边行驶一边感受着：古书记载此湖有“鱼、盐、蒲、苇之利”，确实留意到湖边湿地上总停留着几只伺机待发的水鸟，湖区周围也肆意生长着广茂的芦苇丛。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog16/EE91EBE2-C873-4548-A88E-EA484DD3EEF5.jpg" alt="image" caption="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-15/EE91EBE2-C873-4548-A88E-EA484DD3EEF5.jpg" alt="image" caption="" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog16/00F298CC-A517-4C6F-B6E9-FCEA5BF1AE8F.jpg" alt="image" caption="博斯腾湖" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-15/00F298CC-A517-4C6F-B6E9-FCEA5BF1AE8F.jpg" alt="image" caption="博斯腾湖" >}}
 
 {{< youtube aSkgRCxnan0>}}
 
@@ -98,9 +98,9 @@ tags:
 
 我想，所谓“离疆后遗症”，描述的就是这样一种感觉吧！
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog16/IMG_4056.jpeg" alt="image" caption="Google Map记录的足迹" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-15/IMG_4056.jpeg" alt="image" caption="Google Map记录的足迹" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog16/a9cb299401fd1c94a3809f0356943bb2.jpg" alt="image" caption="17天的总行驶里程" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-15/a9cb299401fd1c94a3809f0356943bb2.jpg" alt="image" caption="17天的总行驶里程" >}}
 
 ---
 

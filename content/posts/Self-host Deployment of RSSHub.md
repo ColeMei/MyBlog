@@ -18,7 +18,7 @@ tags:
 
 说起来，我采用「RSS信息源 + 一款心仪的多平台阅读器」这样的方式获取信息已经有一年多的时间了。总的来说，它带给了我很不错体验，有效的缓解了我在Daily Input过程中的一些无奈与焦虑：一方面，它使筛选过的优质信息源尽量常驻，另一方面，它使阅读信息的过程尽量纯粹。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog10/Feed-icon.svg.png" alt="image" caption="RSS (Stand For Really Simple Syndication)" class="">}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/self-host-deployment-of-rsshub/Feed-icon.svg.png" alt="image" caption="RSS (Stand For Really Simple Syndication)" class="">}}
 
 其实，RSS背后是由一套挺反商业的逻辑在支持，也因此，很多平台和媒体都并不提供官方的RSS订阅链接，毕竟如果每个人都在自己的一隅空间内，不去访问门户网站页面，那么用户的数据偏好从哪里得到？铺天盖地的广告往哪里投送？
 
@@ -26,7 +26,7 @@ tags:
 
 > RSSHub 是一个开源、简单易用、易于扩展的 RSS 生成器，可以给任何奇奇怪怪的内容生成 RSS 订阅源。RSSHub 借助于开源社区的力量快速发展中，目前已适配数百家网站的上千项内容
 >
-> {{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog10/CleanShot%202023-09-12%20at%2003.08.36%402x.png" alt="image" caption="RSSHub" >}}
+> {{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/self-host-deployment-of-rsshub/rsshub-intro.png" alt="image" caption="RSSHub" >}}
 
 一言以蔽之，很多并没有提供RSS功能的平台与媒体，通过RSSHub的Route(路由)，或者更简单的，利用其Radar插件，可以很方便的生成订阅源。
 
@@ -67,7 +67,7 @@ tags:
 
 运行docker的相关命令，发现：images成功运行在本地，volumes也没有忘记创建，（嗯，我Docker学的没问题！）但是不知道是不是部署在本地的原因，真正将自建的服务用到订阅源的构建时，基本全是报错。只有少数的一些静态page或是比较简单的网页能够成功的解析。碍于我在网络方面的知识储备相当匮乏，在持续扑腾了两个小时以后，我还是像一只沮丧的旱鸭子一样放弃了，并不甘心的在我的LogSeq的Daily Journal中作了如下记录：
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog10/CleanShot%202023-09-12%20at%2001.33.24%402x.png" alt="image" caption="LogSeq-Journal Page-Sep 5th" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/self-host-deployment-of-rsshub/logseq-journal-sep-5th.png" alt="image" caption="LogSeq-Journal Page-Sep 5th" >}}
 
 * #### HeroKu
 
@@ -99,7 +99,7 @@ tags:
 
 # {{< align center "Bingo！" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog10/CleanShot%202023-09-12%20at%2003.40.54%402x.png" alt="image" caption="部署成功！" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/self-host-deployment-of-rsshub/deploy-success.png" alt="image" caption="部署成功！" >}}
 
 ### 3. 自定义配置
 
@@ -118,9 +118,9 @@ tags:
 
 2. 在Vercel的Dashboard中，点击settings，在左侧栏目中选择Enviroment variables，填入对应的Keys和Values并Save。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog10/CleanShot%202023-09-12%20at%2002.20.58%402x.png" alt="image" caption="成对存在的环境变量-1" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/self-host-deployment-of-rsshub/vercel-env-vars-1.png" alt="image" caption="成对存在的环境变量-1" >}}
 
-{{< figure src="https://github.com/ColeMei/Picgo/blob/master/blog10/CleanShot%202023-09-12%20at%2002.21.21@2x.png?raw=true" alt="image" caption="成对存在的环境变量-2" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/self-host-deployment-of-rsshub/vercel-env-vars-2.png" alt="image" caption="成对存在的环境变量-2" >}}
 
 这里我选择的是第二种方法。另外值得注意的是，在每次添加新的或是修改现有的Variables后，都要Redeploy该Project才能使这些参数得以在路由中生效。
 
@@ -132,17 +132,17 @@ tags:
 2. 在域名的DNS解析服务商（我的是Cloudflare）处添加相应的DNS记录
 3. 等待redirect成功
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog10/CleanShot%202023-09-12%20at%2002.32.09%402x.png" alt="image" caption="自定义域名" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/self-host-deployment-of-rsshub/vercel-custom-domain.png" alt="image" caption="自定义域名" >}}
 
 ### 4. 成果
 
 至此，已经实现了Self-Host的全部步骤，此时，可以在RSSHub中的官方路由随意挑选几个，将其中域名 `https://rsshub.app` 的部分替换为我刚才成功自部署的域名，添加到阅读器中看看是否可以正常使用。如果你也同样和我一样使用**RSSHub Radar**的话，别忘了在设置中修改自定义RSSHub域名，像是这样：
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog10/CleanShot%202023-09-12%20at%2002.37.38%402x.png" alt="image" caption="RSSHub Radar" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/self-host-deployment-of-rsshub/rsshub-radar.png" alt="image" caption="RSSHub Radar" >}}
 
 回到我心爱的阅读器Reeder中验证一下，在新的订阅源中，看看端传媒的文章能否完整输出呢？
 
-{{< figure src="https://github.com/ColeMei/Picgo/blob/master/blog10/CleanShot%202023-09-12%20at%2002.43.21.gif?raw=true" alt="video" caption="最后的验证" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/self-host-deployment-of-rsshub/final-verification.gif" alt="video" caption="最后的验证" >}}
 
 可以看到，上面的GIF中，我先点击的是自建域名下生成的新订阅中的文章（全文），后点击的是老的订阅源中的文章（部分）
 

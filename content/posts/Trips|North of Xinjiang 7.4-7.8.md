@@ -32,7 +32,7 @@ tags:
 
 开车前往贾登峪，走的是232省道，这段路非常好看，但同时也比较考验驾驶技术，道路两侧是大片的空中草原，游荡着牧民和牛群。我们找了个缓冲区把车停在路边，短暂欣赏了下景色。这天还碰到了进疆以来的第一次雨水，气温一下子骤降，不得不掏出羽绒服和冲锋衣等等套在短袖外面，可以看到远远的目的地方向上有成团的雨水往这边压过来，天阴阴的。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/1381EB7B-683B-410F-A661-38F2EC2AFCAF.JPG" alt="image" caption="前往贾登峪途中的空中草原" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/1381EB7B-683B-410F-A661-38F2EC2AFCAF.JPG" alt="image" caption="前往贾登峪途中的空中草原" >}}
 
 ### 贾登峪
 
@@ -52,11 +52,11 @@ tags:
 
 一觉醒来，第一次露营感觉和死了没什么区别，冻的够呛，头发压的又硬又乱，鼻子不通气，在车里吹了暖风才缓过来一些。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/C5F20D57-62E1-40D2-87DB-9DCA88ED027A.JPG" alt="image" caption="第一次搭帐篷以失败告终" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/C5F20D57-62E1-40D2-87DB-9DCA88ED027A.JPG" alt="image" caption="第一次搭帐篷以失败告终" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/56EF141D-D969-4E52-9E84-1666C0F86409.JPG" alt="image" caption="干杯！" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/56EF141D-D969-4E52-9E84-1666C0F86409.JPG" alt="image" caption="干杯！" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/E4CD8E91-3A1F-44A3-B139-5633FF2C8F69.JPG" alt="image" caption="我们的小营地" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/E4CD8E91-3A1F-44A3-B139-5633FF2C8F69.JPG" alt="image" caption="我们的小营地" >}}
 
 {{< youtube MhN2eaRInQk >}}
 
@@ -80,13 +80,13 @@ tags:
 
 在店里，我写了一张白哈巴的油画明信片，亲手贴上了一块二的邮票，与老板道别后，又亲手投进了道路尽头的邮筒内，还蛮有仪式感的。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/0D01FB97-3227-494C-902E-D759BE1D78AC.JPG" alt="image" caption="喀纳斯湖码头" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/0D01FB97-3227-494C-902E-D759BE1D78AC.JPG" alt="image" caption="喀纳斯湖码头" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/9998FDC9-E91F-4DDA-9BE4-BDA75EDE1A5D.JPG" alt="image" caption="沿湖栈道徒步" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/9998FDC9-E91F-4DDA-9BE4-BDA75EDE1A5D.JPG" alt="image" caption="沿湖栈道徒步" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/79B32D06-0107-41E5-A98C-CA354FC3C290.JPG" alt="image" caption="一只可爱的小水貂" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/79B32D06-0107-41E5-A98C-CA354FC3C290.JPG" alt="image" caption="一只可爱的小水貂" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/3DF5C49D-7EC6-4933-8877-EFC22683887F.JPG" alt="image" caption="鸬鹚！被我抓到了" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/3DF5C49D-7EC6-4933-8877-EFC22683887F.JPG" alt="image" caption="鸬鹚！被我抓到了" >}}
 
 **第二站：**
 
@@ -98,17 +98,17 @@ tags:
 
 到观鱼台顶，一览喀纳斯湖全貌的那一刻，真的无法用语言形容那种色彩的美，好似神明的眼泪，一整块流动着的翡翠。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/65CDCF0F-D9ED-402D-894A-BA72F6CEB77E.JPG" alt="image" caption="前往观鱼台途中" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/65CDCF0F-D9ED-402D-894A-BA72F6CEB77E.JPG" alt="image" caption="前往观鱼台途中" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/84FDA5E4-0226-41B7-BCC3-1EB201A2793D.JPG" alt="image" caption="喀纳斯蓝" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/84FDA5E4-0226-41B7-BCC3-1EB201A2793D.JPG" alt="image" caption="喀纳斯蓝" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/6306A12A-A065-49DD-92DE-ADDF19524ED6.JPG" alt="image" caption="555/1056，爬一半噜！" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/6306A12A-A065-49DD-92DE-ADDF19524ED6.JPG" alt="image" caption="555/1056，爬一半噜！" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/F3491FAA-BD01-4C15-875F-6E513398551E.JPG" alt="image" caption="绝美的蓝色" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/F3491FAA-BD01-4C15-875F-6E513398551E.JPG" alt="image" caption="绝美的蓝色" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/32FBBC75-9EF8-48DA-8F01-2D9827AE338F.JPG" alt="image" caption="流动的翡翠" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/32FBBC75-9EF8-48DA-8F01-2D9827AE338F.JPG" alt="image" caption="流动的翡翠" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/11571409-D5D7-48F5-B710-38E2744F78DB.JPG" alt="image" caption="神明的眼泪" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/11571409-D5D7-48F5-B710-38E2744F78DB.JPG" alt="image" caption="神明的眼泪" >}}
 
 **第三站：**
 
@@ -120,19 +120,19 @@ tags:
 
 这里也出了个小插曲，最后重返栈道的时候，我太用力迈腿了，直接把心爱的一条徒步裤扯开档了，简直糗爆了！
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/BEDFFDB4-EAB8-475D-948A-97C2C759AD8A.JPG" alt="image" caption="神仙湾徒步小队-1号队员" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/BEDFFDB4-EAB8-475D-948A-97C2C759AD8A.JPG" alt="image" caption="神仙湾徒步小队-1号队员" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/CADE512C-A945-4E69-8E3B-E1C8ABC81C4F.JPG" alt="image" caption="神仙湾徒步小队-2号队员" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/CADE512C-A945-4E69-8E3B-E1C8ABC81C4F.JPG" alt="image" caption="神仙湾徒步小队-2号队员" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/427A2B19-B7C6-45FE-9CE6-2F9B28AB1413.JPG" alt="image" caption="神仙湾徒步小队-3号队员" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/427A2B19-B7C6-45FE-9CE6-2F9B28AB1413.JPG" alt="image" caption="神仙湾徒步小队-3号队员" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/A722C23D-2DEE-4F7C-9CD5-2C239F62CEB0.JPG" alt="image" caption="树木丛生，水草丰茂" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/A722C23D-2DEE-4F7C-9CD5-2C239F62CEB0.JPG" alt="image" caption="树木丛生，水草丰茂" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/F104D9AC-0DD5-4A13-9885-07C4957B31AD.JPG" alt="image" caption="向更深处走去" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/F104D9AC-0DD5-4A13-9885-07C4957B31AD.JPG" alt="image" caption="向更深处走去" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/B23AFC35-F4A7-4825-A372-4BD0915CCAE6.JPG" alt="image" caption="不时飘着小雨" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/B23AFC35-F4A7-4825-A372-4BD0915CCAE6.JPG" alt="image" caption="不时飘着小雨" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/A0AC76A2-CDE1-4444-8052-FFFD12815E19.JPG" alt="image" caption="原始森林间的一条徒步路线" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/A0AC76A2-CDE1-4444-8052-FFFD12815E19.JPG" alt="image" caption="原始森林间的一条徒步路线" >}}
 
 这天晚饭时，我们特意找了一家餐厅，专门点了很多很多绿叶菜吃来补充，调解了一下膳食平衡。
 
@@ -160,21 +160,21 @@ tags:
 
 直到今天刘叔叔还经常给我的微信运动点赞！
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/76935F8D-5E76-4F1A-AE52-371533A811C0.JPG" alt="image" caption="西北第一村" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/76935F8D-5E76-4F1A-AE52-371533A811C0.JPG" alt="image" caption="西北第一村" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/84016769-86D8-4180-9240-78B7552FE126.JPG" alt="image" caption="新村和老村" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/84016769-86D8-4180-9240-78B7552FE126.JPG" alt="image" caption="新村和老村" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/54BA73E8-CC6B-4144-B48A-C6AE1B5A9E71.jpg" alt="image" caption="Osmo录制中" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/54BA73E8-CC6B-4144-B48A-C6AE1B5A9E71.jpg" alt="image" caption="Osmo录制中" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/280D7D14-72CC-465C-878C-7F6CC2700560.JPG" alt="image" caption="阡陌交通" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/280D7D14-72CC-465C-878C-7F6CC2700560.JPG" alt="image" caption="阡陌交通" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/642AC066-FC9A-42AD-9293-300912697AE0.JPG" alt="image" caption="在建的小木屋" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/642AC066-FC9A-42AD-9293-300912697AE0.JPG" alt="image" caption="在建的小木屋" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/9622090A-2C40-42E7-AD2D-6847CC658558.JPG" alt="image" caption="村内的幼儿园" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/9622090A-2C40-42E7-AD2D-6847CC658558.JPG" alt="image" caption="村内的幼儿园" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/C40313A7-16CB-454B-9246-B0CB45BFE88A.JPG" alt="image" caption="盘旋的鸢" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/C40313A7-16CB-454B-9246-B0CB45BFE88A.JPG" alt="image" caption="盘旋的鸢" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/98CC478F-AC71-4857-92A0-C0AE466D41DB.JPG" alt="image" caption="无限接近边境！" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/98CC478F-AC71-4857-92A0-C0AE466D41DB.JPG" alt="image" caption="无限接近边境！" >}}
 
 # {{< align center "Day7" >}}
 
@@ -196,17 +196,17 @@ tags:
 
 六点钟的草原上有一股特别的气味，泥土混着水汽夹着花香扑鼻而来，那是一种让人心旷神怡的感觉，浑身疲态一扫而空，日出前的天空是淡淡的粉紫色，脖颈带着头转过180度，此时此刻的我用眼睛、用余光肆意地捕捉着眼前的每一帧光影与细节。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/IMG_3208.jpg" alt="image" caption="围炉夜话，三瓶乌苏下肚" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/IMG_3208.jpg" alt="image" caption="围炉夜话，三瓶乌苏下肚" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/DDD58473-8965-48AC-A187-2EA0AAE095A1.JPG" alt="image" caption="早上六点的草原" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/DDD58473-8965-48AC-A187-2EA0AAE095A1.JPG" alt="image" caption="早上六点的草原" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/FBF2F721-4297-4193-88CA-F40FA07075A9.JPG" alt="image" caption="朦朦一层粉色" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/FBF2F721-4297-4193-88CA-F40FA07075A9.JPG" alt="image" caption="朦朦一层粉色" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/885CF3F4-FC88-47D2-9FB9-AA0B8F88651F.JPG" alt="image" caption="房车旁等日出" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/885CF3F4-FC88-47D2-9FB9-AA0B8F88651F.JPG" alt="image" caption="房车旁等日出" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/846296E5-4106-48FD-A0A1-B7C1D7B8F154.JPG" alt="image" caption="清澈的天空中残留的月亮" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/846296E5-4106-48FD-A0A1-B7C1D7B8F154.JPG" alt="image" caption="清澈的天空中残留的月亮" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/EE0E4B2A-46DF-48BE-BDC6-4B2CD184AC1F.JPG" alt="image" caption="静谧的美好" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/EE0E4B2A-46DF-48BE-BDC6-4B2CD184AC1F.JPG" alt="image" caption="静谧的美好" >}}
 
 {{< youtube rWdDMPoZwjg >}}
 
@@ -218,15 +218,15 @@ tags:
 
 总的来说，禾木的景色还是要比白哈巴好看的。奈何今天同样天公不做美，在观景台没待多久，突然妖风四起，卷起尘土漫天，我们就匆匆下山了。在村内找了家店面解决了午饭，过油肉拌面炒的很香，现在时隔好几个月都还想回碗再吃一次呢！
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/52B69136-BB22-481A-80FF-9DC57A305056.JPG" alt="image" caption="禾木桥前的薰衣草" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/52B69136-BB22-481A-80FF-9DC57A305056.JPG" alt="image" caption="禾木桥前的薰衣草" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/D0F18A52-1EEF-4369-A5D4-E1E56A91242C.JPG" alt="image" caption="很美的村落" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/D0F18A52-1EEF-4369-A5D4-E1E56A91242C.JPG" alt="image" caption="很美的村落" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/3076796E-B429-4DB8-819E-F021D4066136.JPG" alt="image" caption="禾木村" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/3076796E-B429-4DB8-819E-F021D4066136.JPG" alt="image" caption="禾木村" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/11BA0870-E6E5-4A1C-9E74-5BB29263F34E.JPG" alt="image" caption="镜头感！" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/11BA0870-E6E5-4A1C-9E74-5BB29263F34E.JPG" alt="image" caption="镜头感！" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/55BAD1B1-757A-4A9B-A8F3-339FBDA0028C.JPG" alt="image" caption="有点儿京都市郊野的感觉" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/55BAD1B1-757A-4A9B-A8F3-339FBDA0028C.JPG" alt="image" caption="有点儿京都市郊野的感觉" >}}
 
 ### 五彩滩
 
@@ -236,25 +236,25 @@ tags:
 
 从景区走的时候，日落的余晖还没有散尽，行驶在灿烂的落日晚霞照耀下的高速公路上，让人忍不住点上一首《日落大道》。听着旋律，我们狠踩上几脚油门，向下一站驶去。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/5B644E7A-3102-48D6-9E26-EB852F923EF8.JPG" alt="image" caption="奇特的地貌与色彩" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/5B644E7A-3102-48D6-9E26-EB852F923EF8.JPG" alt="image" caption="奇特的地貌与色彩" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/1136A107-768E-4086-9AE7-51DD78F4B90A.JPG" alt="image" caption="额尔齐斯河相隔" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/1136A107-768E-4086-9AE7-51DD78F4B90A.JPG" alt="image" caption="额尔齐斯河相隔" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/CB7C9D63-3348-427C-B728-F095CE48415D.JPG" alt="image" caption="附近非常多的巨型电力风车" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/CB7C9D63-3348-427C-B728-F095CE48415D.JPG" alt="image" caption="附近非常多的巨型电力风车" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/7EFE7C36-E7E6-41E8-B333-A18822FD5791.JPG" alt="image" caption="铁索桥" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/7EFE7C36-E7E6-41E8-B333-A18822FD5791.JPG" alt="image" caption="铁索桥" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/IMG_3443.jpg" alt="image" caption="等待日落" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/IMG_3443.jpg" alt="image" caption="等待日落" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/F2D08F28-3265-4A9D-AADD-0CA752B48576.JPG" alt="image" caption="落日的光辉铺散开来" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/F2D08F28-3265-4A9D-AADD-0CA752B48576.JPG" alt="image" caption="落日的光辉铺散开来" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/9DD7A64D-B9E2-4163-BF02-62D6A8AC3EA3.JPG" alt="image" caption="太阳从云层中渐渐下沉" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/9DD7A64D-B9E2-4163-BF02-62D6A8AC3EA3.JPG" alt="image" caption="太阳从云层中渐渐下沉" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/58B908C7-D941-424C-B9A4-4172F53EE2EB.JPG" alt="image" caption="灯塔" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/58B908C7-D941-424C-B9A4-4172F53EE2EB.JPG" alt="image" caption="灯塔" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/118828D6-9CFF-45CD-99D0-CF5FAB6B94C5.JPG" alt="image" caption="层叠的光影" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/118828D6-9CFF-45CD-99D0-CF5FAB6B94C5.JPG" alt="image" caption="层叠的光影" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/1F81166B-3564-468A-AEEE-A3CFC2095ABB.JPG" alt="image" caption="与五彩滩分别" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/1F81166B-3564-468A-AEEE-A3CFC2095ABB.JPG" alt="image" caption="与五彩滩分别" >}}
 
 # {{< align center "Day8" >}}
 
@@ -276,17 +276,17 @@ tags:
 
 到了克拉玛依，我们决定找了一家电竞酒店，一周的旅途让我们仨相当疲惫。到酒店吃吃麦当劳打打游戏，像回家一样，然后再开启后半段的行程也是一种不错的选择。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/F59F6F03-4439-4BAE-BB8D-A56743B8BD86.JPG" alt="image" caption="世界魔鬼城" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/F59F6F03-4439-4BAE-BB8D-A56743B8BD86.JPG" alt="image" caption="世界魔鬼城" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/190D2856-F356-4CA0-962A-725F0F24D7CC.JPG" alt="image" caption="大片的油井" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/190D2856-F356-4CA0-962A-725F0F24D7CC.JPG" alt="image" caption="大片的油井" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/5215EC96-C2F2-44A8-AAB5-F5ADA58CF2F3.JPG" alt="image" caption="把车开进松软的土石" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/5215EC96-C2F2-44A8-AAB5-F5ADA58CF2F3.JPG" alt="image" caption="把车开进松软的土石" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/816ED175-3127-4A09-AC5B-76DCE906AAAD.JPG" alt="image" caption="越野模式派上用场咯" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/816ED175-3127-4A09-AC5B-76DCE906AAAD.JPG" alt="image" caption="越野模式派上用场咯" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/B73BD85F-8188-4645-B513-0585581FB5AB.JPG" alt="image" caption="无人旷野" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/B73BD85F-8188-4645-B513-0585581FB5AB.JPG" alt="image" caption="无人旷野" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog13/C0A2674A-85A3-466B-BB3A-5E259F542747.JPG" alt="image" caption="三连拍！" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-4/C0A2674A-85A3-466B-BB3A-5E259F542747.JPG" alt="image" caption="三连拍！" >}}
 
 ---
 

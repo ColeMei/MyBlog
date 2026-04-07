@@ -14,7 +14,7 @@ tags:
   - Expierence Sharing
 ---
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog11/11.6%20Beijing%20IELTS%20Recap%20(2).jpg" alt="image" caption="British Council 北京嘉华世达(崇文门)雅思机考考点" class="">}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/recall-and-review-of-the-ielts-test/beijing-ielts-recap.jpg" alt="image" caption="British Council 北京嘉华世达(崇文门)雅思机考考点" class="">}}
 
 
 

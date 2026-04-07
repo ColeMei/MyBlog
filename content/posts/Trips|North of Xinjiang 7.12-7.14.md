@@ -34,15 +34,15 @@ tags:
 
 前一段路并不好开，属于比较考验驾驶技术的那种临崖盘山路，后面慢慢开阔。一路上都能看到在视野前方隐约的雪山的轮廓，皑皑白雪覆盖的山峰与冰川，让人不禁联想一会儿深入夏塔景区便可以距离它们更近上一步。一路上景色相当漂亮，大片广袤的油菜花田，有些地方还有点在电视纪录片上看到的尼罗河两岸的风光。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/F99AD1C2-5FF6-4AC7-81F5-0EA9BB7CB681.jpg" alt="image" caption="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/F99AD1C2-5FF6-4AC7-81F5-0EA9BB7CB681.jpg" alt="image" caption="" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/9946CF20-4837-4523-9FF3-E6114522A79E.jpg" alt="image" caption="伊昭公路" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/9946CF20-4837-4523-9FF3-E6114522A79E.jpg" alt="image" caption="伊昭公路" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/5472B34D-F53A-43B1-9238-308E85C1FA60.jpg" alt="image" caption="有点儿像尼罗河" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/5472B34D-F53A-43B1-9238-308E85C1FA60.jpg" alt="image" caption="有点儿像尼罗河" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/C352FA7D-7F40-4667-BEB3-5D042D52B9CC.jpg" alt="image" caption="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/C352FA7D-7F40-4667-BEB3-5D042D52B9CC.jpg" alt="image" caption="" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/C07232F5-87BE-478D-80EA-EF3BCCDAA3E5.jpg" alt="image" caption="油菜花海" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/C07232F5-87BE-478D-80EA-EF3BCCDAA3E5.jpg" alt="image" caption="油菜花海" >}}
 
 ### 夏塔
 
@@ -62,7 +62,7 @@ tags:
 
 第二天早起，朋友带着我上镇上的药店买了健胃消食片和维C泡腾片，我觉得稍好些就继续上路了。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/38DE19B3-AA5E-40D5-97EE-10BE3BB179B7.jpg" alt="image" caption="把胃吃坏了" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/38DE19B3-AA5E-40D5-97EE-10BE3BB179B7.jpg" alt="image" caption="把胃吃坏了" >}}
 
 # {{< align center "Day13" >}}
 
@@ -76,15 +76,15 @@ tags:
 
 北疆地区从不缺少水，也不缺少湖泊，但是这一片水域还是美的很不一样，风吹麦浪，田野金黄，越野车轮碾过扬起尘土飞扬，待黄沙散去，只留下深蓝色的湖水随风荡漾。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/86B0823A-97ED-4F84-9468-EC4EF84F5F12.jpg" alt="image" caption="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/86B0823A-97ED-4F84-9468-EC4EF84F5F12.jpg" alt="image" caption="" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/C772B1C9-D9D3-43C9-BA22-E309CEF17020.jpg" alt="image" caption="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/C772B1C9-D9D3-43C9-BA22-E309CEF17020.jpg" alt="image" caption="" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/2978A171-8BF3-4E7C-A3FE-A290C2A37AAE.jpg" alt="image" caption="风吹麦浪，田野金黄" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/2978A171-8BF3-4E7C-A3FE-A290C2A37AAE.jpg" alt="image" caption="风吹麦浪，田野金黄" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/EAA1A1ED-ED8A-45BF-A3D9-DB65DF207FE2.jpg" alt="image" caption="高处俯瞰" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/EAA1A1ED-ED8A-45BF-A3D9-DB65DF207FE2.jpg" alt="image" caption="高处俯瞰" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/CFBB8F1C-56D6-4CDB-9BCD-4F34BD867627.jpg" alt="image" caption="色彩与线条拼贴交汇" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/CFBB8F1C-56D6-4CDB-9BCD-4F34BD867627.jpg" alt="image" caption="色彩与线条拼贴交汇" >}}
 
 ### 恰西森林公园
 
@@ -94,17 +94,17 @@ tags:
 
 随便走一走，路上我们还遇到了一只特别可爱，看上去特别有灵气的小羊，朋友们也是忍不住抱起小羊来合影留念。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/3573AC5B-C069-418D-8B50-F9A7AF3C913B.jpg" alt="image" caption="深邃的眼神" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/3573AC5B-C069-418D-8B50-F9A7AF3C913B.jpg" alt="image" caption="深邃的眼神" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/888E87D2-602E-4AD6-B656-A184C89577D8.jpg" alt="image" caption="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/888E87D2-602E-4AD6-B656-A184C89577D8.jpg" alt="image" caption="" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/77FF8DFD-AFAE-4E3E-8B57-295FEF991E5B.jpg" alt="image" caption="恰西画卷" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/77FF8DFD-AFAE-4E3E-8B57-295FEF991E5B.jpg" alt="image" caption="恰西画卷" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/05DCF24B-83A7-4F6B-9E3E-047319B23D76.jpg" alt="image" caption="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/05DCF24B-83A7-4F6B-9E3E-047319B23D76.jpg" alt="image" caption="" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/705FC203-538C-4251-A62C-E1F63E796EE3.jpg" alt="image" caption="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/705FC203-538C-4251-A62C-E1F63E796EE3.jpg" alt="image" caption="" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/E867CF68-6B4A-4294-BB5F-3BDDF7198151.jpg" alt="image" caption="有灵气的可爱小羊" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/E867CF68-6B4A-4294-BB5F-3BDDF7198151.jpg" alt="image" caption="有灵气的可爱小羊" >}}
 
 
 
@@ -112,11 +112,11 @@ tags:
 
 路线是单行道，基本也只是容纳一辆车的宽度，同时，道路起伏不断，路况条件也是参差不齐，没十足驾驶经验的人还真是开不了，好几处地方包括一些涉水点我们前方都遇到了状况，有动力不足的，有拖了底的，有不敢开的，还好大家互相帮衬照顾着，没有遇到太长时间的停留，我们车上的一位小伙伴倒是表示：这路开的很过瘾！
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/A2035CB3-4100-4A81-BBCA-2DAF24A26A27.jpg" alt="image" caption="森林河谷" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/A2035CB3-4100-4A81-BBCA-2DAF24A26A27.jpg" alt="image" caption="森林河谷" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/26D92901-47EB-4528-807A-EFE881C42432.jpg" alt="image" caption="涉水点" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/26D92901-47EB-4528-807A-EFE881C42432.jpg" alt="image" caption="涉水点" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/BBBBCE70-C586-41A0-BB09-40C631EB426E.jpg" alt="image" caption="悠哉悠哉的牛" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/BBBBCE70-C586-41A0-BB09-40C631EB426E.jpg" alt="image" caption="悠哉悠哉的牛" >}}
 
 {{< youtube jvU8J__IoMs>}} 
 
@@ -128,7 +128,7 @@ tags:
 
 县城不大，各方面条件在这十几天的行程中算是中等水平，朋友们照顾我残疾的胃，特意先暂时告别了牛羊肉，找了一家川菜馆，吃了点儿简单的，看到老板端上来的我点的青菜、糖醋里脊和雪白雪白的大米饭，我真的差点儿眼泪掉下来。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/BBE0C7DB-128B-4FED-AF82-49A937EF4789.jpg" alt="image" caption="阔别已久的川菜" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/BBE0C7DB-128B-4FED-AF82-49A937EF4789.jpg" alt="image" caption="阔别已久的川菜" >}}
 
 # {{< align center "Day14" >}}
 
@@ -144,9 +144,9 @@ tags:
 
 沿着喀什河由西向东行驶，山谷与河沟从我们身旁延展开，行驶在这样的公路上非常享受。在百里画廊观景台处我们短暂停留，上到平台，呈现出的景色虽不如恰西画卷，但也别有一番姿色。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/B071B27D-F65A-4481-B85D-C0B937263BC6.jpg" alt="image" caption="油菜花田" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/B071B27D-F65A-4481-B85D-C0B937263BC6.jpg" alt="image" caption="油菜花田" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/D9A455F2-514D-49BE-A9D5-7EA103E6862C.jpg" alt="image" caption="百里画廊观景台" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/D9A455F2-514D-49BE-A9D5-7EA103E6862C.jpg" alt="image" caption="百里画廊观景台" >}}
 
 {{< youtube 4qU4sZZyjZg>}}
 
@@ -164,9 +164,9 @@ tags:
 
 一路上翻山越岭，涉水穿过小溪潺潺，最后到达湖边时屁股已经被颠地生疼生疼的。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/0A015945-99E8-4A2A-A190-E7FD4ABF2372.jpg" alt="image" caption="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/0A015945-99E8-4A2A-A190-E7FD4ABF2372.jpg" alt="image" caption="" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/98A9E410-4205-42DA-85E1-428A222CD209.jpg" alt="image" caption="非常不错的骑马体验" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/98A9E410-4205-42DA-85E1-428A222CD209.jpg" alt="image" caption="非常不错的骑马体验" >}}
 
 说是仙女湖，其实比我这些日子见到的任何一片湖水都要小，更像是个大些的池塘，不过对于当地居民来说似是意义非凡，听说每逢节日还会遵循习俗在这边举行典礼。这里的景色还是很漂亮的，远处天边雪山轮廓清晰分明，水边开满了茂盛的种类繁多的可爱的野花。
 
@@ -176,15 +176,15 @@ tags:
 
 我们收拾好东西准备下山时，另一位朋友这才刚刚艰难抵达，不过倒也确实是完成了整段徒步，现在想想不得不在这里对他表示respect！他表示想在湖边多坐一会儿，想想也是，我们就先下山了。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/A4EE2F20-0B16-4BB1-BA83-109AFC984FC7.jpg" alt="image" caption="仙女湖" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/A4EE2F20-0B16-4BB1-BA83-109AFC984FC7.jpg" alt="image" caption="仙女湖" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/06816A1F-AF07-41F1-A679-5DF144ED45FC.jpg" alt="image" caption="骑马涉水的人" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/06816A1F-AF07-41F1-A679-5DF144ED45FC.jpg" alt="image" caption="骑马涉水的人" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/F98DA1A8-831A-4D07-8A12-E2E9B389B28A.jpg" alt="image" caption="湖边绚烂的野花" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/F98DA1A8-831A-4D07-8A12-E2E9B389B28A.jpg" alt="image" caption="湖边绚烂的野花" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/9C1C969A-5A72-46FF-B263-D6F34F245214.jpg" alt="image" caption="另一侧的景色" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/9C1C969A-5A72-46FF-B263-D6F34F245214.jpg" alt="image" caption="另一侧的景色" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/CFC7B9F4-BA76-4583-822B-5718B7048C68.jpg" alt="image" caption="我的摆烂照" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/CFC7B9F4-BA76-4583-822B-5718B7048C68.jpg" alt="image" caption="我的摆烂照" >}}
 
 下山路同样漫长，不过多了两位同行的朋友，马夫额外牵上来的那匹马倒是派上了用场。一路上马夫给我们介绍起了我们骑乘的这几匹漂亮的马，也顺便讲了些自己的故事（有一匹马因为买的时候花了三万块，因此得名“三万”），在愉快的攀谈闲聊中，我们安全抵达了山脚下。
 
@@ -204,9 +204,9 @@ tags:
 
 一路上倒是有几处观景台可供停留，我们找了一处景色最好的，上到了高处，一边俯瞰谷底同时回望刚刚来时的方向：车流不息，人影闪烁，蜿蜒盘踞群山之上的国之大道，此刻也在我心里平添了更多几分重量。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/22061C46-8072-4F28-BACB-DD4D28E97284.jpg" alt="image" caption="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/22061C46-8072-4F28-BACB-DD4D28E97284.jpg" alt="image" caption="" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog15/F2A60C4A-331B-4F3D-99EB-64BB4C91B109.jpg" alt="image" caption="独库公路中段" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-12/F2A60C4A-331B-4F3D-99EB-64BB4C91B109.jpg" alt="image" caption="独库公路中段" >}}
 
 {{< youtube t6jcGdaHMrM>}}
 

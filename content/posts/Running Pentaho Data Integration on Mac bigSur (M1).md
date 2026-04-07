@@ -78,7 +78,7 @@ tags:
 
      > 这里需要对应Kettle和JDK 版本的对应关系 非常严格
      >
-     > ![](https://raw.githubusercontent.com/ColeMei/Picgo/master/blog2/01.png)
+     > ![](https://raw.githubusercontent.com/ColeMei/Picgo/master/running-pentaho-data-integration-on-mac-bigsur-m1/01.png)
      >
      > 如果已经安装了其他版本JDK 关于mac上的多版本Java管理 
      >
@@ -93,7 +93,7 @@ tags:
 
      2. 安装完成后 查看java版本
 
-     ![查看java版本](https://raw.githubusercontent.com/ColeMei/Picgo/master/blog2/02.png)
+     ![查看java版本](https://raw.githubusercontent.com/ColeMei/Picgo/master/running-pentaho-data-integration-on-mac-bigsur-m1/02.png)
 
         如图就成功了 我采用的是**kettle9.1 + jdk8** 
 
@@ -111,7 +111,7 @@ tags:
 
      输入命令` sh spoon.sh ` 等待自动启动即可（时间可能较长）
 
-     ![启动Kettle](https://raw.githubusercontent.com/ColeMei/Picgo/master/blog2/03.png)
+     ![启动Kettle](https://raw.githubusercontent.com/ColeMei/Picgo/master/running-pentaho-data-integration-on-mac-bigsur-m1/03.png)
 
 
      看到 **Spoon -欢迎!** 字样 大功告成～ 🎉
@@ -125,7 +125,7 @@ tags:
 
      **报错如下**：
 
-     ![问题1-1](https://raw.githubusercontent.com/ColeMei/Picgo/master/blog2/04.png)
+     ![问题1-1](https://raw.githubusercontent.com/ColeMei/Picgo/master/running-pentaho-data-integration-on-mac-bigsur-m1/04.png)
 
 
      **分析：**
@@ -150,7 +150,7 @@ tags:
 
      Java JDK 版本不匹配 请下载正确对应版本 请重回 **步骤3**
 
-     ![问题2-1](https://raw.githubusercontent.com/ColeMei/Picgo/master/blog2/05.png)
+     ![问题2-1](https://raw.githubusercontent.com/ColeMei/Picgo/master/running-pentaho-data-integration-on-mac-bigsur-m1/05.png)
 
      **报错2:**
 
@@ -168,14 +168,14 @@ tags:
 
      可以看到 下图 `java -version` 显示的虽然是jdk版本没问题 但是版本架构不对
 
-     ![问题2-2](https://raw.githubusercontent.com/ColeMei/Picgo/master/blog2/06.png)
+     ![问题2-2](https://raw.githubusercontent.com/ColeMei/Picgo/master/running-pentaho-data-integration-on-mac-bigsur-m1/06.png)
 
 
   3. **Kettle mac 启动失败（闪退）报错 Unknown Source**
 
      > 参考 https://blog.csdn.net/qq_41066235/article/details/108668423
 
-     ![问题3-1](https://raw.githubusercontent.com/ColeMei/Picgo/master/blog2/07.png)
+     ![问题3-1](https://raw.githubusercontent.com/ColeMei/Picgo/master/running-pentaho-data-integration-on-mac-bigsur-m1/07.png)
 
      **分析：**
 
@@ -183,7 +183,7 @@ tags:
 
      替换路径：data-integration → libswt → osx64
 
-     ![问题3-2](https://raw.githubusercontent.com/ColeMei/Picgo/master/blog2/08.png)
+     ![问题3-2](https://raw.githubusercontent.com/ColeMei/Picgo/master/running-pentaho-data-integration-on-mac-bigsur-m1/08.png)
 
 
 ​     

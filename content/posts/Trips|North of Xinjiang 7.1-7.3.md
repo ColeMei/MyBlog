@@ -50,7 +50,7 @@ tags:
 2. 先到酒店前台取快递（是我们提前网购的露营装备，直接寄到新疆，省了一些物流成本），后至迪卡侬进行了一番装备上的查漏补缺。
 3. 超市采购。主要是水和一些即食又能补充能量的食品。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_2538.jpeg" alt="image" caption="We're Ready!" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/IMG_2538.jpeg" alt="image" caption="We're Ready!" >}}
 
 # {{< align center "Day2" >}}
 
@@ -70,41 +70,41 @@ tags:
 
 下山后由于时间原因，没能进行环湖的徒步，也没能拜访矗立在湖对岸的西王母庙是一大遗憾。只得在匆匆的不断回眸中，结束了景区的游览。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05092.jpeg" alt="image" caption="初见天池" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/DSC05092.jpeg" alt="image" caption="初见天池" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05107.jpeg" alt="image" caption="前往博格达峰途中" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/DSC05107.jpeg" alt="image" caption="前往博格达峰途中" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05114.jpeg" alt="image" caption="回头俯瞰天池" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/DSC05114.jpeg" alt="image" caption="回头俯瞰天池" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05143.jpeg" alt="image" caption="嘿嘿！" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/DSC05143.jpeg" alt="image" caption="嘿嘿！" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05171.jpeg" alt="image" caption="环草木栈道" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/DSC05171.jpeg" alt="image" caption="环草木栈道" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05173.jpeg" alt="image" caption="白白的可爱的云" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/DSC05173.jpeg" alt="image" caption="白白的可爱的云" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05176.jpeg" alt="image" caption="前往博格达峰途中" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/DSC05176.jpeg" alt="image" caption="前往博格达峰途中" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05191.jpeg" alt="image" caption="努力出片中" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/DSC05191.jpeg" alt="image" caption="努力出片中" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05193.jpeg" alt="image" caption="爬了很高很高" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/DSC05193.jpeg" alt="image" caption="爬了很高很高" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05203.jpeg" alt="image" caption="远观博格达峰" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/DSC05203.jpeg" alt="image" caption="远观博格达峰" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05217.jpeg" alt="image" caption="极目远眺" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/DSC05217.jpeg" alt="image" caption="极目远眺" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05223.jpeg" alt="image" caption="再见天池" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/DSC05223.jpeg" alt="image" caption="再见天池" >}}
 
 ### 富蕴
 
 富蕴县是我们这天晚上的住宿与修整地点。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_2716.jpeg" alt="image" caption="富蕴县" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/IMG_2716.jpeg" alt="image" caption="富蕴县" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_2724.jpeg" alt="image" caption="天价高速费" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/IMG_2724.jpeg" alt="image" caption="天价高速费" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_2731.jpeg" alt="image" caption="公路旅行" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/IMG_2731.jpeg" alt="image" caption="公路旅行" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_2726.jpeg" alt="image" caption="超香的囊坑肉" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/IMG_2726.jpeg" alt="image" caption="超香的囊坑肉" >}}
 
 # {{< align center "Day3" >}}
 
@@ -126,13 +126,13 @@ tags:
 
 总的来说这个峡谷没有太多特色。可能来可可托海更多选择的是去看看矿坑吧。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_3254_edit_443144572089151.jpg" alt="image" caption="额尔齐斯河的水" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/IMG_3254_edit_443144572089151.jpg" alt="image" caption="额尔齐斯河的水" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_3263_edit_442993852599070.jpg" alt="image" caption="山间小溪" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/IMG_3263_edit_442993852599070.jpg" alt="image" caption="山间小溪" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05240.jpeg" alt="image" caption="小花花" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/DSC05240.jpeg" alt="image" caption="小花花" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_3273_edit_443361947443805.jpg" alt="image" caption="界碑" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/IMG_3273_edit_443361947443805.jpg" alt="image" caption="界碑" >}}
 
 ### 3号矿坑
 
@@ -140,15 +140,15 @@ tags:
 
 下矿井要穿长裤长袖，倒是不用租大衣，但是我和一个伙伴任性穿着短裤也就下去了，不过确实有挺重的寒气，矿井里还引发了我的幽闭恐惧症。后来都没什么心情听讲解了，一心只想走到队伍最前面赶紧“逃”出去。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_3285_edit_443424638196400.jpg" alt="image" caption="三号矿坑" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/IMG_3285_edit_443424638196400.jpg" alt="image" caption="三号矿坑" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05256.jpeg" alt="image" caption="岗位责任制" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/DSC05256.jpeg" alt="image" caption="岗位责任制" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05258.jpeg" alt="image" caption="致敬🫡" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/DSC05258.jpeg" alt="image" caption="致敬🫡" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_3288.JPG" alt="image" caption="毛主席题字" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/IMG_3288.JPG" alt="image" caption="毛主席题字" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_3290.JPG" alt="image" caption="残留的矿坑" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/IMG_3290.JPG" alt="image" caption="残留的矿坑" >}}
 
 ### 乌伦古湖
 
@@ -162,23 +162,23 @@ tags:
 
 湖岸水很浅，水也非常清澈，伸手撩起水花朵朵，嗯，蛮凉的。奈何湖边蚊虫实在肆虐得猖狂，伙伴难以忍受，加上时间比较紧张，担心后续会开大段的夜路便没有做更多的停留。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05268.jpeg" alt="image" caption="近湖" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/DSC05268.jpeg" alt="image" caption="近湖" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05270.jpeg" alt="image" caption="辽阔的湖面" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/DSC05270.jpeg" alt="image" caption="辽阔的湖面" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05307.jpeg" alt="image" caption="真的不是摆拍！" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/DSC05307.jpeg" alt="image" caption="真的不是摆拍！" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_2899.jpg" alt="image" caption="游泳的勇士" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/IMG_2899.jpg" alt="image" caption="游泳的勇士" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05323.jpeg" alt="image" caption="把我朋友拍的帅死了！" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/DSC05323.jpeg" alt="image" caption="把我朋友拍的帅死了！" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/DSC05325.jpeg" alt="image" caption="光影的变化" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/DSC05325.jpeg" alt="image" caption="光影的变化" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_3298_edit_442733467530880.jpg" alt="image" caption="长焦拉满" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/IMG_3298_edit_442733467530880.jpg" alt="image" caption="长焦拉满" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_3330.JPG" alt="image" caption="乌伦古湖上的落日" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/IMG_3330.JPG" alt="image" caption="乌伦古湖上的落日" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog12/IMG_3314_edit_442312199271049.jpg" alt="image" caption="703" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/trips-north-of-xinjiang-7-1/IMG_3314_edit_442312199271049.jpg" alt="image" caption="703" >}}
 
 {{< youtube RAEK18H6lRI >}}
 

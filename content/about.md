@@ -4,7 +4,7 @@ date: 2023-01-02T16:20:28+08:00
 draft: false
 ---
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/others/photo_2023-03-06_16-37-15.jpg" alt="image" caption="My Status Be Like" class="right" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/_site/photo_2023-03-06_16-37-15.jpg" alt="image" caption="My Status Be Like" class="right" >}}
 
 I’m Cole Mei, a 24-year-old originally from Beijing, China, and I have been living in Brunswick, Melbourne, for a year and a half.
 

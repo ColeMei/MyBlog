@@ -30,7 +30,7 @@ tags:
 
 ### **阶段1**
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog3/01.png" alt="image" caption="分享频道" class="right" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/my-english-reading-flow-source/01.png" alt="image" caption="分享频道" class="right" >}}
 
 我是在一些国内外善良的朋友们的**分享频道**中获取到的，那时主要是把每一期的The New Yorker和The Economist找来翻翻，其中感兴趣的文章语篇裁切出来做精读，获取途径大概如下（不过一定要**仔细甄别**分享目的和盈利目的不同群组，有很多借口卖课的公众号混杂其中）
 
@@ -46,11 +46,11 @@ tags:
 
 在去年的末尾我终于订阅了垂涎已久的**Apple One**美区全家桶，其中包含的Apple News（以下简称News）无疑是我使用频率最高的增值服务，它相当于是一个各大报刊杂志的**信息聚合平台**，加持着像是For you的算法推荐和Edito's Pick的信息精炼这样的功能。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog3/02.png" alt="image" caption="News+ Menu" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/my-english-reading-flow-source/02.png" alt="image" caption="News+ Menu" >}}
 
 我也在下面罗列了一些我在关注的channel，基本上都是大名鼎鼎的报社。值得一提的是，如果你订阅了Apple News，这些出版物每一期你都是可以免费获取并下载的，安静整齐地陈列在你的Library里面，随意翻阅，阅读体验也非常纯粹流畅。所以如果News囊括的期刊中有一本是你感兴趣并想要订阅的，其一年的订阅费和News本身的订阅费也就大差不差了。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog3/03.png" alt="image" caption="News+ Library" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/my-english-reading-flow-source/03.png" alt="image" caption="News+ Library" >}}
 
 1. *The Wall Street Journal*
 2. *TIME*
@@ -70,7 +70,7 @@ tags:
 
 有的是一些作者的一周见闻，大部分是**链接推荐型**，里面有作者觉得不错的书籍，有趣的网站，新鲜的App资讯，甚至是搞笑的GIF或是Overheard on Twitter。它们不是长篇大论的文章，而是一个个链接配上简短说明，所以可以算作是别人已经帮我筛选过一遍的信息索引。就像是每周update一下在世界上另外一个角落的人们的近况，看看他们最近有什么新发现，身边又发生了哪些奇闻逸事。**见字如面**，慢慢的这些newsletter的作者就成为了你的某种朋友一样的存在。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog3/04.png" alt="image" caption="链接推荐型Newsletter" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/my-english-reading-flow-source/04.png" alt="image" caption="链接推荐型Newsletter" >}}
 
 另一些则几乎不能用语言来对他们定义类型，毕竟newsletter的种类太多了，作者想分享什么都可以，只要刚好有读者感兴趣，一拍即合。比如我订阅了一个频道专门分享**Desk Setup**的，看着别人把自己的桌面打造的整齐干净，工作环境风格统一真是一件非常舒服又享受的事情。你一定会种草很多产品，然后陷入日复一日地折腾改造你自己的桌面的漩涡中，痛并快乐着。
 
@@ -84,7 +84,7 @@ tags:
 
 ### 碎碎念
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog3/05.png" alt="image" caption="Mail Rules" class="right" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/my-english-reading-flow-source/05.png" alt="image" caption="Mail Rules" class="right" >}}
 
 总觉得自己一直不能很有效的把Mail这个工具利用起来，知道newsletter也是最近几年的事情。不知道是不是国内外的差异，两年前，newsletter就像是Podcast一样在国内**不温不火**（不过都在慢慢发展，已经有了不小的起色），基本还是以RSS订阅独立blog的方式为主。另外就是可能有我还没有进入工作的原因吧，邮箱的利用率本身也不高，我们学院导师甚至不知道有**学生邮箱stu.edu**这个东西的存在，还是我自己去信息中心申请开通的。
 

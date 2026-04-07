@@ -24,9 +24,9 @@ tags:
 
 在这一类阅读中，材料通常是从各大报刊杂志中挑选出的某一篇文章，从体裁上看，news较少，一般是**比较感兴趣的领域的Article**，文章篇幅较长。首先在当期issue的PDF文件中剪切出文章篇幅所在的那几页另存为一个新的PDF文件，以「 精读外刊 序号 + 文章标题 」的方式命名，然后在[PDF Expert](https://pdfexpert.com/)中打开，**iPad分屏，左三分之二屏幕是文章，右三分之一是Eudic词典**，然后就可以开始阅读啦。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog4/01.jpeg" alt="image" caption="如何阅读 01" class="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/my-english-reading-flow-read/01.jpeg" alt="image" caption="如何阅读 01" class="" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog4/02.jpeg" alt="image" caption="如何阅读 02" class="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/my-english-reading-flow-read/02.jpeg" alt="image" caption="如何阅读 02" class="" >}}
 
 在阅读的过程中，我会对各种词汇句子作**勾画标注和归类区分**:
 
@@ -47,7 +47,7 @@ tags:
 
 **A**：老实说，每一次读完归档的文章安安静静地陈列在文件夹里，我确实没有一次回头打开他们review。就像我之前听过的一种论调，一些人觉得：稍后读、收藏和摘录其实都是**伪需求**，存起来的文章（稍后读、或标记为想读），基本不会读，收藏起来的文章，也几乎不会看第二遍。我觉得有一定道理，但是换个角度想，在你能真正做到坚持阅读之前，需要一些仪式感来帮助你养成这个习惯，或者说你需要一些印记来证明你读过，你有在吸收、有在感受。所以**我觉得阅读的同时进行标注是必要的**（或许你拿着pencil划着文本读会读的更认真也说不定）。就像看到一个写得很优美的句子时，我忍不住把它标注出来，纵使将来再也不会回头翻看这一处标注，标注那一刻的反馈强化了我的阅读体验，这就足够了。另外收录也必不可少，看着文件夹里你精读过的文章序号慢慢变大，真的是一笔不小的**成就感**，我甚至为他们在Notion中作了专属的数据库，我们放在下一章Collection中讲。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog4/03.png" alt="image" caption="收录整理" class="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/my-english-reading-flow-read/03.png" alt="image" caption="收录整理" class="" >}}
 
 ## Type 2
 
@@ -72,7 +72,7 @@ tags:
 
 下面这张图是我阅读时的**屏幕截图**，以阅读Apple News的文章为例来说明我是如何阅读的。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog4/04.png" alt="image" caption="如何阅读" class="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/my-english-reading-flow-read/04.png" alt="image" caption="如何阅读" class="" >}}
 
 可以看到屏幕大致分为了**三个区域**：
 
@@ -86,7 +86,7 @@ tags:
 
    *翻译功能由[Bob](https://bobtranslate.com/)实现，它是一款 macOS 平台的翻译和 OCR 软件，鼠标划过并选中需要翻译的文本，按下划词翻译快捷键（默认 ⌥ + D）即可翻译，你可以在Bob中配置不同的翻译引擎，我选择的是[DeepL](https://www.deepl.com/zh/translator)（毕竟是号称全世界最准确的翻译软件），并辅助以Google 和 Open AI的translation作为参考*
 
-   {{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog4/05.png" alt="image" caption="customize翻译引擎" class="" >}}
+   {{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/my-english-reading-flow-read/05.png" alt="image" caption="customize翻译引擎" class="" >}}
 
 简而言之，当阅读遇到不认识的生词时，我只需要完成两个操作，左手按一下，右手在触控板上完成对单词在文本中的定位，即可完成查词；想知道一段语篇的大意，只需要右手在触摸板上完成对语篇的选取，左手按两个键，即可完成翻译。且2、3的查询结果都是以**悬浮窗口**的形式存在的（如图所示），我可以任意调整窗口的大小和位置，以优雅的方式布局阅读界面。悬浮窗口的好处在于，你不用去操纵分屏，也不用切出你所处的文章窗口，一切操纵都能**专注于你正在阅读的文字四周**。
 
@@ -94,11 +94,11 @@ tags:
 
 这样一来，我查询**操作的频次**变得非常低，这能最大化降低我对于原始翻译方案下频繁又恼人的查询操作所带来的反感，以免其负反馈于阅读体验本身，将外文信息阅读的体验尽量向母语阅读靠近。同时这套工具的搭配使用不受限于选择何种阅读器，无论是News+，Mail，[Reeder](https://reederapp.com/)（我在用的一款RSS阅读器）还是直接在Chrome中阅读，它都能很好的帮助我完成阅读。
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog4/06.png" alt="image" caption="在Chrome中阅读" class="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/my-english-reading-flow-read/06.png" alt="image" caption="在Chrome中阅读" class="" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog4/07.png" alt="image" caption="在Reeder中阅读" class="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/my-english-reading-flow-read/07.png" alt="image" caption="在Reeder中阅读" class="" >}}
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog4/08.png" alt="image" caption="在Mail中阅读" class="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/my-english-reading-flow-read/08.png" alt="image" caption="在Mail中阅读" class="" >}}
 
 如果你想要上面这套翻译操作再优雅一点点，那就试试[Popclip](https://pilotmoon.com/popclip/)吧，本质上讲他是一款Mac上的增强型插件。
 
@@ -114,7 +114,7 @@ tags:
 
 阅读时，我会将那些带给我启发和思考的段落复制下来，然后它们就自动进入了Paste，再利用Paste的Tag功能将段落标记并归入专门的“摘录区域”。等读完文章并将文章收录进database时（会在第三节讲到），按（⌥ + V）将摘录区域的段落再粘贴进文章对应的page并加上自己的一些小结，像是这样：
 
-{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/blog4/09.png" alt="image" caption="Excert in Paste" class="" >}}
+{{< figure src="https://raw.githubusercontent.com/ColeMei/Picgo/master/my-english-reading-flow-read/09.png" alt="image" caption="Excert in Paste" class="" >}}
 
 ## 小结
 
