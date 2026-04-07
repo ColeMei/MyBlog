@@ -47,7 +47,7 @@ These principles guided all design decisions below.
 
 At a high level, the system separates responsibility into three layers:
 
-<!-- Architecture Diagram -->
+{{< svg caption="Figure 1 — Three-layer architecture: 1Password owns the secrets, the distribution layer mediates access, and each consumption pattern enforces a different lifetime scope." >}}
 <svg viewBox="0 0 700 520" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
@@ -120,8 +120,7 @@ At a high level, the system separates responsibility into three layers:
     <text x="236" y="489" font-family="DM Sans, sans-serif" font-size="9.5" fill="#6B6A64">Consumption</text>
   </g>
 </svg>
-
-_Figure 1 — Three-layer architecture: 1Password owns the secrets, the distribution layer mediates access, and each consumption pattern enforces a different lifetime scope._
+{{< /svg >}}
 
 Long story short:
 

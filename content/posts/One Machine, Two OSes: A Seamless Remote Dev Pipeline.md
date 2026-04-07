@@ -30,7 +30,7 @@ Here's how I wired it all together.
 
 Before diving into the details, here's how all the pieces fit together:
 
-<!-- Architecture Diagram -->
+{{< svg caption="Figure 1 — High-level architecture: macOS develops, WSL2 executes, Tailscale connects the Mac to Windows, port forwarding reaches WSL2." >}}
 <svg viewBox="0 0 690 420" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
@@ -94,8 +94,7 @@ Before diving into the details, here's how all the pieces fit together:
   <text x="345" y="396" text-anchor="middle" font-family="monospace" font-size="10" fill="#5F5E5A">tmux</text>
   <text x="345" y="416" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#888780">persistent sessions</text>
 </svg>
-
-*Figure 1 — High-level architecture: macOS develops, WSL2 executes, Tailscale connects the Mac to Windows, port forwarding reaches WSL2.*
+{{< /svg >}}
 
 Each piece solves one specific annoyance: Tailscale gives stable IPs; 1Password removes key management; The port-forwarding script handles the WSL2 dynamic IP; tmux keeps experiments alive when SSH drops. 
 

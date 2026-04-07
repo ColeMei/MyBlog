@@ -1,0 +1,8 @@
+{{- $caption := .Get "caption" -}}
+{{- $class := .Get "class" | default "" -}}
+<figure class="svg-diagram {{ $class }}">
+  {{ .Inner }}
+  {{- with $caption }}
+  <figcaption>{{ . | markdownify }}</figcaption>
+  {{- end }}
+</figure>
