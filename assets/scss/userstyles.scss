@@ -5,67 +5,21 @@
    SMOOTH TRANSITION EFFECTS
    =========================== */
 
-/* Global smooth transitions for theme switching */
-* {
-  transition: 
+/*
+ * Single source of truth for theme-switch transitions.
+ * Using one rule on * avoids specificity fights between
+ * multiple selectors that each set the transition shorthand.
+ */
+*,
+*::before,
+*::after {
+  transition:
     color 0.3s ease,
     background-color 0.3s ease,
     border-color 0.3s ease,
     box-shadow 0.3s ease,
-    opacity 0.3s ease !important;
-}
-
-/* Specific smooth transitions for major layout elements */
-html,
-body,
-.site-main,
-.content,
-main,
-#site-header,
-#mobile-menu,
-pre,
-code,
-blockquote,
-table th,
-table td,
-.post-item {
-  transition: 
-    background-color 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease !important;
-}
-
-/* Smooth transitions for links and interactive elements */
-a,
-button,
-input,
-select,
-textarea,
-.hdr-btn,
-#menu-btn,
-.btn-404 a {
-  transition: 
-    color 0.2s ease,
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    text-shadow 0.2s ease !important;
-}
-
-/* Special handling for background images - slower transition */
-.bg-img {
-  transition: 
-    opacity 0.5s ease,
-    filter 0.5s ease !important;
-}
-
-/* Exclude toggle switch from global transitions */
-.theme-toggle,
-.theme-toggle *,
-.theme-slider,
-.theme-slider::before {
-  transition: all 0.3s ease !important;
+    opacity 0.3s ease,
+    filter 0.3s ease !important;
 }
 
 /* ===========================
@@ -73,10 +27,17 @@ textarea,
    =========================== */
 :root {
   /* Dark theme colors (default) */
+  --hermit-accent: #018472;
   --toggle-bg: #28292c;
   --toggle-slider: #d8dbe0;
   --toggle-border: #7d828a;
   --toggle-shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode: use accent green for link hover instead of white */
+a:hover {
+  color: #2ec4a5 !important;
+  text-shadow: none !important;
 }
 
 /* Light theme color overrides */
@@ -108,7 +69,6 @@ textarea,
 /* Force white background for light theme */
 html[data-theme="light"],
 body[data-theme="light"] {
-  background: #ffffff !important;
   background-color: #ffffff !important;
   min-height: 100vh;
 }
@@ -118,18 +78,28 @@ body[data-theme="light"] {
   color: var(--hermit-text);
 }
 
-/* Reset background for all child elements (except special cases) */
-[data-theme="light"] *:not(.bg-img):not(.theme-toggle):not(.theme-slider):not(.theme-toggle *) {
+/* Reset backgrounds for structural elements in light theme */
+[data-theme="light"] div:not(.highlight):not(.chroma):not(.svg-diagram):not(.bg-img),
+[data-theme="light"] article,
+[data-theme="light"] section,
+[data-theme="light"] nav,
+[data-theme="light"] aside,
+[data-theme="light"] header:not(#site-header),
+[data-theme="light"] footer:not(#site-footer),
+[data-theme="light"] p,
+[data-theme="light"] li,
+[data-theme="light"] ul,
+[data-theme="light"] ol,
+[data-theme="light"] h1, [data-theme="light"] h2,
+[data-theme="light"] h3, [data-theme="light"] h4,
+[data-theme="light"] h5, [data-theme="light"] h6,
+[data-theme="light"] span:not([class]),
+[data-theme="light"] .post-item,
+[data-theme="light"] .posts-group {
   background-image: none !important;
   background-color: transparent !important;
 }
 
-/* Main content areas */
-[data-theme="light"] .site-main,
-[data-theme="light"] .content,
-[data-theme="light"] main {
-  background: #ffffff !important;
-}
 
 /* ===========================
    NAVIGATION & HEADER
@@ -187,6 +157,17 @@ body[data-theme="light"] {
   text-shadow: none;
 }
 
+/* Footnote references */
+[data-theme="light"] a.footnote-ref {
+  background-color: var(--hermit-bg-tertiary) !important;
+  color: var(--hermit-accent) !important;
+}
+
+[data-theme="light"] a.footnote-ref:hover {
+  background-color: var(--hermit-accent) !important;
+  color: #ffffff !important;
+}
+
 /* Text selection */
 [data-theme="light"] ::selection {
   background: var(--hermit-border);
@@ -201,19 +182,151 @@ body[data-theme="light"] {
 /* ===========================
    CODE BLOCKS & SYNTAX
    =========================== */
-[data-theme="light"] pre {
-  background: var(--hermit-pre-bg) !important;
-  color: var(--hermit-text) !important;
+
+/* Inline code */
+[data-theme="light"] code {
+  background: #eef1f5 !important;
+  color: #476582 !important;
+  border: 1px solid #dce1e8;
 }
 
-[data-theme="light"] code {
-  background: var(--hermit-code-bg) !important;
-  color: var(--hermit-text-secondary) !important;
+/* Code blocks */
+[data-theme="light"] pre {
+  background: #f6f8fa !important;
+  color: #383a42 !important;
+  border: 1px solid #e1e4e8;
+}
+
+[data-theme="light"] pre code {
+  background: transparent !important;
+  color: inherit !important;
+  border: none;
 }
 
 [data-theme="light"] .highlight,
 [data-theme="light"] .highlight pre {
-  background: var(--hermit-pre-bg) !important;
+  background: #f6f8fa !important;
+}
+
+/* Reset all chroma span backgrounds in light mode */
+[data-theme="light"] .chroma {
+  color: #383a42 !important;
+  background-color: #f6f8fa !important;
+}
+
+[data-theme="light"] .chroma .err {
+  color: #e45649 !important;
+  background-color: transparent !important;
+}
+
+[data-theme="light"] .chroma .hl {
+  background-color: #e8eaed !important;
+}
+
+/* Keywords — purple */
+[data-theme="light"] .chroma .k,
+[data-theme="light"] .chroma .kc,
+[data-theme="light"] .chroma .kd,
+[data-theme="light"] .chroma .kp,
+[data-theme="light"] .chroma .kr,
+[data-theme="light"] .chroma .kt {
+  color: #a626a4 !important;
+}
+
+[data-theme="light"] .chroma .kn {
+  color: #e45649 !important;
+}
+
+/* Names — blue/teal */
+[data-theme="light"] .chroma .na,
+[data-theme="light"] .chroma .nc,
+[data-theme="light"] .chroma .nd,
+[data-theme="light"] .chroma .ne,
+[data-theme="light"] .chroma .nf,
+[data-theme="light"] .chroma .nx {
+  color: #4078f2 !important;
+}
+
+[data-theme="light"] .chroma .no {
+  color: #986801 !important;
+}
+
+[data-theme="light"] .chroma .nt {
+  color: #e45649 !important;
+}
+
+/* Strings — green */
+[data-theme="light"] .chroma .s,
+[data-theme="light"] .chroma .sa,
+[data-theme="light"] .chroma .sb,
+[data-theme="light"] .chroma .sc,
+[data-theme="light"] .chroma .dl,
+[data-theme="light"] .chroma .sd,
+[data-theme="light"] .chroma .s2,
+[data-theme="light"] .chroma .sh,
+[data-theme="light"] .chroma .si,
+[data-theme="light"] .chroma .sx,
+[data-theme="light"] .chroma .sr,
+[data-theme="light"] .chroma .s1,
+[data-theme="light"] .chroma .ss,
+[data-theme="light"] .chroma .ld {
+  color: #50a14f !important;
+}
+
+[data-theme="light"] .chroma .se {
+  color: #986801 !important;
+}
+
+/* Numbers — amber */
+[data-theme="light"] .chroma .l,
+[data-theme="light"] .chroma .m,
+[data-theme="light"] .chroma .mb,
+[data-theme="light"] .chroma .mf,
+[data-theme="light"] .chroma .mh,
+[data-theme="light"] .chroma .mi,
+[data-theme="light"] .chroma .il,
+[data-theme="light"] .chroma .mo {
+  color: #986801 !important;
+}
+
+/* Operators — red */
+[data-theme="light"] .chroma .o,
+[data-theme="light"] .chroma .ow {
+  color: #e45649 !important;
+}
+
+/* Comments — muted grey */
+[data-theme="light"] .chroma .c,
+[data-theme="light"] .chroma .ch,
+[data-theme="light"] .chroma .cm,
+[data-theme="light"] .chroma .c1,
+[data-theme="light"] .chroma .cs,
+[data-theme="light"] .chroma .cp,
+[data-theme="light"] .chroma .cpf {
+  color: #a0a1a7 !important;
+}
+
+/* Diff — red/green */
+[data-theme="light"] .chroma .gd {
+  color: #e45649 !important;
+}
+
+[data-theme="light"] .chroma .gi {
+  color: #50a14f !important;
+}
+
+[data-theme="light"] .chroma .gu {
+  color: #a0a1a7 !important;
+}
+
+/* Copy button */
+[data-theme="light"] .highlight-copy-btn {
+  color: #6c757d !important;
+  background-color: #e1e4e8 !important;
+}
+
+[data-theme="light"] .highlight-copy-btn:hover {
+  background-color: #ced4da !important;
 }
 
 /* ===========================
@@ -445,6 +558,39 @@ body[data-theme="light"] {
   .theme-toggle input:checked ~ .theme-slider::before {
     transform: translateX(14px);
   }
+}
+
+/* ===========================
+   SVG DIAGRAM THEME SUPPORT
+   =========================== */
+.svg-diagram {
+  margin: 1.5em 0;
+  text-align: center;
+}
+
+.svg-diagram svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.svg-diagram figcaption {
+  font-size: 0.85em;
+  margin-top: 0.5em;
+  font-style: italic;
+}
+
+[data-theme="light"] .svg-diagram figcaption {
+  color: var(--hermit-text-meta);
+}
+
+/* Dark mode: invert light-designed SVGs */
+.svg-diagram:not(.no-invert) svg {
+  filter: invert(0.88) hue-rotate(180deg);
+}
+
+/* Light mode: show SVGs naturally */
+[data-theme="light"] .svg-diagram:not(.no-invert) svg {
+  filter: none;
 }
 
 /* ===========================
