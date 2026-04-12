@@ -23,11 +23,11 @@
 		{{- end -}}
 		{{- if .Content }}<div class="content">{{ .Content }}</div>{{ end -}}
 
-		{{- if and (ge (len (where .RegularPages ".Params.pin" true)) 1) (.Site.Params.pinned) (not (or (in .Page.RelPermalink "tags") (in .Page.RelPermalink "categories"))) -}}
+		{{- if and (ge (len (where .Site.Pages ".Params.pin" true)) 1) (.Site.Params.pinned) (not (or (in .Page.RelPermalink "tags") (in .Page.RelPermalink "categories"))) -}}
 		<h2>{{- .Site.Params.pinned -}}</h2>
 		<div class="pinned-posts-group">
 			<ul class="pinned-posts-list">
-				{{- range where .RegularPages ".Params.pin" true }}
+				{{- range where .Site.Pages ".Params.pin" true }}
 				<li class="pinned-post-item">
 					{{- partial "svg.html" (dict "context" . "name" (.Site.Params.pinnedSVGname | default "pin")) }}
 					<a href="{{.Permalink}}"><span class="post-title">{{.Title}}</span></a>
