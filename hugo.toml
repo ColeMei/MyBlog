@@ -115,6 +115,10 @@ expiryDate = ["expiryDate"]
   # noIndexPages = ["404 Page not found"]
   # usesAnimation = true
 
+  [params.gallery]
+    enable    = true
+    thumbnail = "300"
+
   [params.dateform]
     LongDate = "Jan 2, 2006"
     ShortDate = "Jan 2"
