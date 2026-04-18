@@ -151,16 +151,16 @@ expiryDate = ["expiryDate"]
     weight = 20
 
   [[menu.main]]
-    name = "About"
-    url = "about/"
-    weight = 30
-
-  [[menu.main]]
     name = "Tags"
     url = "tags/"
-    weight = 40
+    weight = 30
 
   [[menu.main]]
     name = "Links"
     url = "links/"
+    weight = 40
+
+  [[menu.main]]
+    name = "About"
+    url = "about/"
     weight = 50
