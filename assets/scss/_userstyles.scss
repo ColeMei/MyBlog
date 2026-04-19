@@ -180,6 +180,42 @@ body[data-theme="light"] {
   }
 }
 
+/* Shift the ToC further right from the main content and widen it so long
+   subheadings don't wrap. Keep the scroll-up button's right edge aligned with
+   the ToC's right edge. Button width is 36px (see above).
+   Theme base (for reference): 1300px+ → margin-left 370px / max-width 220px;
+                               1800px+ → margin-left 490px / max-width 300px. */
+@media (min-width: 1300px) {
+  #toc {
+    margin-left: 400px;
+    max-width: 250px;
+  }
+  .scroll-up {
+    right: auto;
+    left: calc(50% + 400px + 250px - 36px);
+  }
+}
+
+@media (min-width: 1600px) {
+  #toc {
+    margin-left: 440px;
+    max-width: 290px;
+  }
+  .scroll-up {
+    left: calc(50% + 440px + 290px - 36px);
+  }
+}
+
+@media (min-width: 1800px) {
+  #toc {
+    margin-left: 490px;
+    max-width: 320px;
+  }
+  .scroll-up {
+    left: calc(50% + 490px + 320px - 36px);
+  }
+}
+
 /* ===========================
    TEXT & TYPOGRAPHY
    =========================== */
