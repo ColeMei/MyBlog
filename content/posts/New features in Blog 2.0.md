@@ -9,7 +9,7 @@ pin: true
 scrolltotop: true
 ShowLastmod: false
 images:
-  - https://picsum.photos/1920/1080/?random
+  - https://picsum.photos/id/76/1920/1080
 tags: 
   - Blog
 mathjax : true

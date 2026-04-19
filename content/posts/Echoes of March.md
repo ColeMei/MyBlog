@@ -9,7 +9,7 @@ description: 'First Year Diaries'
 scrolltotop: true
 ShowLastmod: false
 images:
-  - https://picsum.photos/1920/1080/?random
+  - https://picsum.photos/id/137/1920/1080
 images:
 tags: 
   - Thinking&Feeling

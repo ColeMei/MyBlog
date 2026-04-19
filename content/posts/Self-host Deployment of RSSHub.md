@@ -9,7 +9,7 @@ pin: false
 scrolltotop: true
 ShowLastmod: false
 images:
-  - https://picsum.photos/1920/1080/?random
+  - https://picsum.photos/id/695/1920/1080
 tags: 
   - Tutorial
 ---

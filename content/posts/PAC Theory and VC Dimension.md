@@ -6,7 +6,7 @@ draft: false
 description: 'COMP90051 Statistical Machine Learning'
 toc: true
 images:
-  - https://picsum.photos/1920/1080/?random
+  - https://picsum.photos/id/429/1920/1080
 tags: 
   - ML
 mathjax : true
