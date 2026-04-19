@@ -64,6 +64,10 @@ expiryDate = ["expiryDate"]
 
 # Enable to get proper Mathjax support
 [markup]
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    ordered = false
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
