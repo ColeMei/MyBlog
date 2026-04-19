@@ -3,6 +3,7 @@ title: "Choose One of Five"
 date: 2023-08-27T14:29:23+08:00
 draft: false
 toc: false
+scrolltotop: true
 images:
   - https://picsum.photos/id/436/1920/1080
 tags: 

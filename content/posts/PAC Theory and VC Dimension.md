@@ -5,6 +5,7 @@ date: 2025-04-02T13:18:30+11:00
 draft: false
 description: 'COMP90051 Statistical Machine Learning'
 toc: true
+scrolltotop: true
 images:
   - https://picsum.photos/id/429/1920/1080
 tags: 

@@ -3,6 +3,7 @@ title: "赠予今年的大学毕业生"
 date: 2023-03-23T16:20:45+08:00
 draft: false
 toc: false
+scrolltotop: true
 images:
   - https://picsum.photos/id/547/1920/1080
 tags: 

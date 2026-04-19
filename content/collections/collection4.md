@@ -3,6 +3,7 @@ title: "The Past Is Not True"
 date: 2023-07-28T16:47:18+08:00
 draft: false
 toc: false
+scrolltotop: true
 images:
   - https://picsum.photos/id/10/1920/1080
 tags: 

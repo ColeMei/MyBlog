@@ -3,6 +3,7 @@ title: "独处是一种能力"
 date: 2023-02-16T15:32:50+08:00
 draft: false
 toc: false
+scrolltotop: true
 images:
   - https://picsum.photos/id/442/1920/1080
 tags: 

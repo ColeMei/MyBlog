@@ -3,6 +3,7 @@ title: "从经典到经验"
 date: 2023-04-17T18:30:02+08:00
 draft: false
 toc: false
+scrolltotop: true
 images:
   - https://picsum.photos/id/616/1920/1080
 tags:
