@@ -28,6 +28,10 @@
 :root {
   /* Dark theme colors (default) */
   --hermit-accent: #018472;
+  --hermit-bg-secondary: rgba(255, 255, 255, 0.06);
+  --hermit-bg-tertiary: rgba(255, 255, 255, 0.1);
+  --hermit-border: rgba(255, 255, 255, 0.15);
+  --hermit-text-meta: #a8adb5;
   --toggle-bg: #28292c;
   --toggle-slider: #d8dbe0;
   --toggle-border: #7d828a;
