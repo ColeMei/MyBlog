@@ -165,12 +165,12 @@ Theme-extended `figure` with lazy loading support. Remote images work fine (no W
 Requires `[params.gallery] enable = true` in `hugo.toml` (already added).
 
 {{< gallery >}}
-https://picsum.photos/seed/a1/600/400
-https://picsum.photos/seed/b2/600/400
-https://picsum.photos/seed/c3/600/400
-https://picsum.photos/seed/d4/600/400
-https://picsum.photos/seed/e5/600/400
-https://picsum.photos/seed/f6/600/400
+  {{< figure src="https://picsum.photos/seed/a1/600/400" caption="Sample image 1" >}}
+  {{< figure src="https://picsum.photos/seed/b2/600/400" caption="Sample image 2" >}}
+  {{< figure src="https://picsum.photos/seed/c3/600/400" caption="Sample image 3" >}}
+  {{< figure src="https://picsum.photos/seed/d4/600/400" caption="Sample image 4" >}}
+  {{< figure src="https://picsum.photos/seed/e5/600/400" caption="Sample image 5" >}}
+  {{< figure src="https://picsum.photos/seed/f6/600/400" caption="Sample image 6" >}}
 {{< /gallery >}}
 
 Click any image to open the lightbox. Arrow keys navigate, `Esc` closes.
