@@ -1,26 +1,9 @@
 baseURL = 'https://blog.colemei.com'
 defaultContentLanguage = "en"
-defaultContentLanguageInSubdir = true
+defaultContentLanguageInSubdir = false
 theme = "hermit-v2"
 enableRobotsTXT = true
 
-#[languages]
-#  [languages.en]
-#    title = 'CHANGE ME'
-#    [languages.en.params]
-#      homeSubtitle = "CHANGE ME"
-#    weight = 1
-#  [languages.fr]
-#    title = 'CHANGE ME(FR)'
-#    [languages.fr.params]
-#      homeSubtitle = "CHANGE ME"
-#    weight = 2
-#  [languages.it]
-#    title = 'CHANGE ME(IT)'
-#    [languages.it.params]
-#      homeSubtitle = "CHANGE ME"
-#    weight = 3
- 
 languageCode = "en-us"
 
 [languages]
@@ -30,20 +13,12 @@ languageCode = "en-us"
 title = "Cole World"
 # enableGitInfo = true
 
-pygmentsCodefences  = true
-pygmentsUseClasses  = true
 hasCJKLanguage = true
 
 rssLimit = 10
 
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
 enableEmoji = true
-
-#[services]
-#  [services.disqus]
-#    shortname = ''
-#  [services.googleAnalytics]
-#    id = ''
 
 [frontmatter]
 date = ["date", "publishDate", "lastmod"]
@@ -56,18 +31,17 @@ expiryDate = ["expiryDate"]
   name = "Cole Mei"
   about = "about"
 
-[blackfriday]
-  # hrefTargetBlank = true
-  # noreferrerLinks = true
-  # nofollowLinks = true
-
 [taxonomies]
   tag = "tags"
+  series = "series"
   # Categories are disabled by default.
   # category = "categories"
 
 # Enable to get proper Mathjax support
 [markup]
+  [markup.highlight]
+    codeFences = true
+    noClasses = false
   [markup.tableOfContents]
     startLevel = 2
     endLevel = 4
