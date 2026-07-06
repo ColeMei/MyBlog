@@ -1,5 +1,5 @@
 ---
-title: "My English Reading Flow —— Read"
+title: "My English Reading Flow — Read"
 slug: "my-english-reading-flow--read"
 date: 2023-04-09T21:37:52+08:00
 draft: false
@@ -12,6 +12,7 @@ images:
   - https://picsum.photos/id/27/1920/1080
 tags: 
   - Expierence Sharing
+series: ["My English Reading Flow"]
 ---
 
 这是My Reading Flow （For English Source）系列博客的第二篇

@@ -1,5 +1,6 @@
 ---
 title: "The Past Is Not True"
+slug: "the-past-is-not-true"
 date: 2023-07-28T16:47:18+08:00
 draft: false
 toc: false

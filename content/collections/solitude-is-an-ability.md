@@ -1,5 +1,6 @@
 ---
 title: "独处是一种能力"
+slug: "solitude-is-an-ability"
 date: 2023-02-16T15:32:50+08:00
 draft: false
 toc: false

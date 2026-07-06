@@ -1,5 +1,5 @@
 ---
-title: "Champion Leauge Final 2026"
+title: "Champions League Final 2026"
 slug: "champion-league-final-2026"
 date: 2026-05-31T22:21:33+10:00
 draft: true

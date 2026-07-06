@@ -1,5 +1,5 @@
 ---
-title: "Trips|North of Xinjiang 7.1-7.3"
+title: "North of Xinjiang 7.1-7.3"
 slug: "tripsnorth-of-xinjiang-7.1-7.3"
 date: 2023-11-11T16:49:29+08:00
 draft: false
@@ -12,6 +12,7 @@ images:
   - https://picsum.photos/id/338/1920/1080
 tags: 
   - Trips
+series: [Trips]
 ---
 
 {{< admonition type=tip title="This is a tip" >}}

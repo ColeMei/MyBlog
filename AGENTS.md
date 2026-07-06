@@ -21,22 +21,25 @@ Hugo must be installed locally (`brew install hugo` on macOS).
 ## Architecture
 
 - **Theme**: hermit-v2 is a git submodule at `themes/hermit-v2/` (fork: ColeMei/hermit-V2). Theme overrides live in the project root's `layouts/` and `assets/` dirs, which take precedence over the theme.
-- **Config**: `hugo.toml` - single config file (not split config). Multi-language is configured but only English is active.
-- **Content types**: Two main sections - `content/posts/` (blog posts) and `content/collections/` (curated resource collections). Standalone pages: `about.md`, `links.md`. Tags taxonomy is enabled; categories are disabled.
+- **Config**: `hugo.toml` - single config file (not split config). Multi-language is configured but only English is active; the `/en/` URL prefix has been dropped (`defaultContentLanguageInSubdir = false`).
+- **Content types**: Two main sections - `content/posts/` (blog posts) and `content/collections/` (curated resource collections). Standalone pages: `about.md`, `links.md`. Tags and series taxonomies are enabled; categories are disabled.
 - **Layout overrides** (divergences from theme):
-  - `layouts/partials/comments.html` - Giscus comment system (GitHub Discussions-backed), with theme-sync logic to match light/dark mode
-  - `layouts/partials/analytics.html` - Umami analytics integration (configured via `params.umami` in hugo.toml)
-  - `layouts/partials/mathjax.html` and `assets/js/mathjax-assistant.js` - MathJax support
-  - `layouts/partials/seo.html` - SEO meta tags
+  - `layouts/_partials/comments.html` - Giscus comment system (GitHub Discussions-backed), with theme-sync logic to match light/dark mode
+  - `layouts/_partials/analytics.html` - Umami analytics integration (configured via `params.umami` in hugo.toml)
+  - `layouts/_partials/mathjax.html` and `assets/js/mathjax-assistant.js` - MathJax support
+  - `layouts/_partials/seo.html` - SEO meta tags
   - `layouts/shortcodes/align.html` - Custom alignment shortcode
   - `layouts/posts/list.html` and `layouts/collections/list.html` - Custom list templates
+  - `layouts/taxonomy.html` - term-index page (`/tags/`, `/series/`) extended to recognize the `series` taxonomy alongside `tags`/`categories`
 - **Custom styles**: `assets/scss/userstyles.scss` overrides theme styles
 - **Post frontmatter** uses TOML (`+++`) or YAML (`---`) interchangeably. Common fields: `title`, `date`, `draft`, `description`, `tags`, `toc`, `pin`, `mathjax`, `images`.
 - `public/` and `resources/` are gitignored (build artifacts).
 
 ## Content Conventions
 
-- Posts may use `|` in filenames to denote series (e.g., `Trips|North of Xinjiang 7.1-7.3.md`)
+- Posts that belong to a series use `series: [Name]` in frontmatter (e.g. `series: [Trips]`, `series: ["My English Reading Flow"]`) instead of encoding the series in the filename. This drives the `/series/` and `/series/<name>/` taxonomy pages.
+- Filenames are plain and human-readable (lowercase, hyphen-separated where practical) — avoid `|` or other characters that are illegal or awkward on Windows filesystems.
+- `slug:` in frontmatter is the source of truth for a post's URL and is independent of the filename — renaming a file never changes its live URL as long as `slug:` is preserved.
 - Pinned posts use `pin: true` in frontmatter
 - The `draft: true` flag prevents posts from appearing in production builds
 - Images are hosted externally (GitHub raw / picsum), not stored in the repo

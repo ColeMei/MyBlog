@@ -1,5 +1,5 @@
 ---
-title: "Books|The Road to Serfdom"
+title: "The Road to Serfdom"
 slug: "booksthe-road-to-serfdom"
 date: 2023-08-12T16:00:32+08:00
 draft: false
@@ -12,6 +12,7 @@ images:
   - https://picsum.photos/id/111/1920/1080
 tags: 
   - Reading
+series: [Books]
 ---
 
 # 一些关于自由主义的思考和当下现实社会的影射

@@ -1,5 +1,6 @@
 ---
 title: "Choose One of Five"
+slug: "choose-one-of-five"
 date: 2023-08-27T14:29:23+08:00
 draft: false
 toc: false

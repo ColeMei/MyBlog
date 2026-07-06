@@ -1,5 +1,5 @@
 ---
-title: "Trips|Inner Mongolia 6.10-6.15"
+title: "Inner Mongolia 6.10-6.15"
 slug: "tripsinner-mongolia-6.10-6.15"
 date: 2023-06-22T10:40:43+08:00
 draft: false
@@ -12,6 +12,7 @@ images:
   - https://picsum.photos/id/1043/1920/1080
 tags: 
   - Trips
+series: [Trips]
 ---
 
 ## Intro
