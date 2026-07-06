@@ -43,3 +43,18 @@ Hugo must be installed locally (`brew install hugo` on macOS).
 - Pinned posts use `pin: true` in frontmatter
 - The `draft: true` flag prevents posts from appearing in production builds
 - Images are hosted externally (GitHub raw / picsum), not stored in the repo
+
+## Theme updates
+
+`themes/hermit-v2` is a git submodule pointing at `ColeMei/hermit-V2` (a fork of `1bl4z3r/hermit-V2`), pinned to the `main` branch. To pull in upstream changes:
+
+1. In the fork (`ColeMei/hermit-V2`), add/update an `upstream` remote (`https://github.com/1bl4z3r/hermit-V2.git`) and merge `upstream/main` into the fork's `main`, resolving any conflicts there.
+2. Push the updated fork `main`.
+3. Back in this repo, bump the submodule pointer:
+   ```bash
+   git submodule update --remote themes/hermit-v2
+   git -C themes/hermit-v2 log --oneline -5   # sanity-check what's being pulled in
+   git add themes/hermit-v2
+   git commit -m "Bump hermit-v2 submodule"
+   ```
+4. Keep the fork's diff from upstream as small as possible: prefer overriding theme templates, partials, and assets from this repo's root `layouts/`/`assets/` (which take precedence over the theme) instead of patching the fork directly. Only touch the fork when a change genuinely can't be expressed as a root override.
