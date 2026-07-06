@@ -1,0 +1,42 @@
+[build]
+  command = "hugo --gc --minify"
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.150.1"
+
+[[redirects]]
+  from = "/en/*"
+  to = "/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/collections/collection1/"
+  to = "/collections/solitude-is-an-ability/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/collections/collection2/"
+  to = "/collections/to-this-years-graduates/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/collections/collection3/"
+  to = "/collections/from-classics-to-experience/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/collections/collection4/"
+  to = "/collections/the-past-is-not-true/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/collections/collection5/"
+  to = "/collections/choose-one-of-five/"
+  status = 301
+  force = true
