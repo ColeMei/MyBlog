@@ -19,95 +19,50 @@
 ></script>
 
 <script>
-  // Function to update Giscus theme
-  function updateGiscusTheme() {
-    const currentTheme =
-      document.documentElement.getAttribute("data-theme") || "dark";
-    const giscusTheme = currentTheme === "light" ? "light" : "dark_dimmed";
-
-    const giscusFrame = document.querySelector("iframe.giscus-frame");
-    if (giscusFrame) {
-      giscusFrame.contentWindow.postMessage(
-        {
-          giscus: {
-            setConfig: {
-              theme: giscusTheme,
-            },
-          },
-        },
-        "https://giscus.app"
-      );
-    }
-  }
-
-  // Wait for Giscus to load, then update theme
-  function initGiscusTheme() {
-    const currentTheme =
-      document.documentElement.getAttribute("data-theme") || "dark";
-    const giscusScript = document.querySelector('script[src*="giscus.app"]');
-
-    if (giscusScript) {
-      // Update the script's data-theme attribute
-      const giscusTheme = currentTheme === "light" ? "light" : "dark_dimmed";
-      giscusScript.setAttribute("data-theme", giscusTheme);
+  // Keep the (lazily loaded) Giscus iframe in sync with the page theme.
+  // A postMessage sent before the iframe's document is listening is silently
+  // dropped, so on every message Giscus sends us (it emits on load/resize)
+  // we re-assert the theme once — self-healing, no timers or DOM observers.
+  (function () {
+    function currentTheme() {
+      const page = document.documentElement.getAttribute("data-theme") || "dark";
+      return page === "light" ? "light" : "dark_dimmed";
     }
 
-    // Create observer for Giscus iframe
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        mutation.addedNodes.forEach((node) => {
-          if (
-            node.nodeType === 1 &&
-            node.classList &&
-            node.classList.contains("giscus")
-          ) {
-            // Giscus has been loaded, stop observing
-            observer.disconnect();
-
-            // Wait a bit for the iframe to be ready, then update theme
-            setTimeout(() => {
-              updateGiscusTheme();
-            }, 1000);
-          }
-        });
-      });
-    });
-
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
-    });
-  }
-
-  // Listen for theme changes and update Giscus accordingly
-  function watchThemeChanges() {
-    const targetNode = document.documentElement;
-    const config = { attributes: true, attributeFilter: ["data-theme"] };
-
-    const callback = function (mutationsList) {
-      for (let mutation of mutationsList) {
-        if (
-          mutation.type === "attributes" &&
-          mutation.attributeName === "data-theme"
-        ) {
-          updateGiscusTheme();
-        }
+    function postTheme() {
+      const frame = document.querySelector("iframe.giscus-frame");
+      if (frame && frame.contentWindow) {
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme: currentTheme() } } },
+          "https://giscus.app"
+        );
       }
-    };
+    }
 
-    const observer = new MutationObserver(callback);
-    observer.observe(targetNode, config);
-  }
+    let pendingSync = true;
 
-  // Initialize when DOM is ready
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () => {
-      initGiscusTheme();
-      watchThemeChanges();
+    function syncGiscusTheme() {
+      // Keep the loader script's attribute fresh so a not-yet-loaded
+      // (lazy) iframe starts with the right theme instead of a stale one.
+      const loader = document.querySelector('script[src*="giscus.app"]');
+      if (loader) loader.setAttribute("data-theme", currentTheme());
+      postTheme();
+      pendingSync = true;
+    }
+
+    // Runs before the async Giscus loader executes, so first paint is correct.
+    syncGiscusTheme();
+
+    new MutationObserver(syncGiscusTheme).observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
     });
-  } else {
-    initGiscusTheme();
-    watchThemeChanges();
-  }
+
+    window.addEventListener("message", (event) => {
+      if (event.origin !== "https://giscus.app" || !pendingSync) return;
+      pendingSync = false;
+      postTheme();
+    });
+  })();
 </script>
 {{- end -}} {{- end -}}

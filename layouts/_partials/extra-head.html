@@ -1,0 +1,16 @@
+{{/* Root override of the fork's extra-head partial: theme bootstrapping only.
+     The theme-switch transition rule and all toggle/scroll-button CSS live in
+     assets/scss/_userstyles.scss (single source of truth) — the fork's inline
+     <style> duplicated them with a conflicting property list. */}}
+
+{{/* Prevent flash of wrong theme by applying it before first paint */}}
+<script>
+  (function () {
+    const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+
+{{/* Root assets/js/theme-toggle.js shadows the theme's copy */}}
+{{ $themeToggle := resources.Get "js/theme-toggle.js" | minify | fingerprint }}
+<script defer src="{{ $themeToggle.Permalink }}" {{ printf "integrity=%q" $themeToggle.Data.Integrity | safeHTMLAttr }} crossorigin="anonymous"></script>
