@@ -3,6 +3,8 @@ title: "赠予今年的大学毕业生"
 slug: "to-this-years-graduates"
 date: 2023-03-23T16:20:45+08:00
 draft: false
+author: "胡适"
+collectionType: "speech"
 toc: false
 scrolltotop: true
 images:

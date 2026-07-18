@@ -32,7 +32,7 @@
 			<ul class="tag-cloud">
 				{{- range .Data.Terms.ByCount }}
 					<li>
-						<a class="tag-chip" href="{{ .Page.RelPermalink }}">
+						<a class="tag-chip" data-weight="{{ cond (ge .Count 5) "l" (cond (ge .Count 2) "m" "s") }}" href="{{ .Page.RelPermalink }}">
 							<span class="tag-chip-name">#{{ .Page.LinkTitle }}</span>
 							<span class="tag-chip-count">{{ .Count }}</span>
 						</a>

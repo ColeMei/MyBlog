@@ -1,0 +1,12 @@
+{{ define "main" }}
+	<div id="spotlight" class="error-404 {{- if ne false .Site.Params.usesAnimation }} animated fadeIn {{- end -}}">
+		<div class="banner-404">
+			<h1>4<span class="accent-404">0</span>4</h1>
+			<p class="msg-404">This page has wandered off exploring.<span class="cursor-404"></span></p>
+			<p class="btn-404">
+				<a href="#" onclick="history.back(); return false;">&#8592;&nbsp;Back</a>
+				<a href="{{ .Site.BaseURL }}">Home</a>
+			</p>
+		</div>
+	</div>
+{{ end }}

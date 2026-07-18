@@ -3,6 +3,8 @@ title: "从经典到经验"
 slug: "from-classics-to-experience"
 date: 2023-04-17T18:30:02+08:00
 draft: false
+author: "刘瑜"
+collectionType: "essay"
 toc: false
 scrolltotop: true
 images:

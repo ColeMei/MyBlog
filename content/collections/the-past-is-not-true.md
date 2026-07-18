@@ -3,6 +3,8 @@ title: "The Past Is Not True"
 slug: "the-past-is-not-true"
 date: 2023-07-28T16:47:18+08:00
 draft: false
+author: "Derek Sivers"
+collectionType: "essay"
 toc: false
 scrolltotop: true
 images:

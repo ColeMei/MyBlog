@@ -3,6 +3,8 @@ title: "独处是一种能力"
 slug: "solitude-is-an-ability"
 date: 2023-02-16T15:32:50+08:00
 draft: false
+author: "周国平"
+collectionType: "essay"
 toc: false
 scrolltotop: true
 images:

@@ -7,19 +7,36 @@
 
 /*
  * Single source of truth for theme-switch transitions.
- * Using one rule on * avoids specificity fights between
- * multiple selectors that each set the transition shorthand.
+ * Scoped to the `theme-transitioning` class that theme-toggle.js puts on
+ * <html> for ~400ms around a switch, so every component fades in lockstep
+ * during a theme change but normal hovers/animations are untouched.
+ * (The fork's extra-head.html used to inject a competing always-on * rule
+ * with a narrower property list — root layouts/_partials/extra-head.html
+ * now overrides that partial and carries no CSS.)
  */
-*,
-*::before,
-*::after {
+html.theme-transitioning,
+html.theme-transitioning *,
+html.theme-transitioning *::before,
+html.theme-transitioning *::after {
   transition:
     color 0.3s ease,
     background-color 0.3s ease,
     border-color 0.3s ease,
     box-shadow 0.3s ease,
     opacity 0.3s ease,
+    fill 0.3s ease,
+    stroke 0.3s ease,
     filter 0.3s ease !important;
+}
+
+/* Exception: the toggle's knob slides via transform, which the list above
+   would otherwise suppress mid-switch */
+html.theme-transitioning .theme-slider,
+html.theme-transitioning .theme-slider::before {
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease !important;
 }
 
 /* ===========================
@@ -38,10 +55,19 @@
   --toggle-shadow: rgba(0, 0, 0, 0.3);
 }
 
-/* Dark mode: use accent green for link hover instead of white */
+/* Use the jade accent for link hover instead of white (both themes;
+   --accent-jade resolves per theme, see DESIGN REFRESH section) */
 a:hover {
-  color: #2ec4a5 !important;
+  color: var(--accent-jade, #2ec4a5) !important;
   text-shadow: none !important;
+}
+
+/* Card-like block links keep their text color on hover — only their
+   border/background reacts (see DESIGN REFRESH section) */
+.collection-card:hover,
+.post-nav a:hover,
+.posts-group .post-item a:hover {
+  color: inherit !important;
 }
 
 /* Light theme color overrides */
@@ -70,16 +96,11 @@ a:hover {
    CORE LAYOUT & BACKGROUNDS
    =========================== */
 
-/* Force white background for light theme */
-html[data-theme="light"],
-body[data-theme="light"] {
+/* Force white background for light theme
+   (data-theme is only ever set on <html>, never on <body>) */
+html[data-theme="light"] {
   background-color: #ffffff !important;
   min-height: 100vh;
-}
-
-/* Ensure proper text color */
-body[data-theme="light"] {
-  color: var(--hermit-text);
 }
 
 /* Reset backgrounds for structural elements in light theme */
@@ -132,30 +153,43 @@ body[data-theme="light"] {
   border-right-color: var(--hermit-border);
 }
 
-/* Floating scroll-to-top button — minimal circular chevron */
+/* Floating scroll-to-top button — the conic-gradient ring doubles as a
+   reading-progress indicator (--scroll-progress is set by js/scroll-progress.js) */
 .scroll-up {
   position: fixed;
   right: calc(env(safe-area-inset-right, 0px) + 1rem);
   bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
   z-index: 2;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color: #3b3e48;
-  border: 1px solid #7d828a;
-  color: #eeeeee;
+  background: conic-gradient(var(--accent-jade, #2ec4a5) var(--scroll-progress, 0%), var(--hermit-border) 0);
+  border: 0;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
   text-decoration: none;
 }
 
+.scroll-up-inner {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #3b3e48;
+  color: #eeeeee;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 [data-theme="light"] .scroll-up {
-  background-color: var(--hermit-bg-secondary);
-  border-color: var(--hermit-border);
-  color: var(--hermit-text-meta);
   box-shadow: 0 1px 3px var(--hermit-shadow, rgba(0, 0, 0, 0.15));
+}
+
+[data-theme="light"] .scroll-up-inner {
+  background-color: var(--hermit-bg-secondary);
+  color: var(--hermit-text-meta);
 }
 
 .scroll-up .scroll {
@@ -165,24 +199,31 @@ body[data-theme="light"] {
 
 .scroll-up:hover,
 .scroll-up:active {
-  border-color: var(--hermit-accent);
-  color: var(--hermit-accent) !important;
   transform: translateY(-2px);
   text-shadow: none !important;
+}
+
+.scroll-up:hover .scroll-up-inner,
+.scroll-up:active .scroll-up-inner {
+  color: var(--accent-jade);
 }
 
 @media (max-width: 520px) {
   .scroll-up {
     right: calc(env(safe-area-inset-right, 0px) + 0.75rem);
     bottom: calc(6.5rem + env(safe-area-inset-bottom, 0px));
-    width: 34px;
-    height: 34px;
+    width: 40px;
+    height: 40px;
+  }
+  .scroll-up-inner {
+    width: 32px;
+    height: 32px;
   }
 }
 
 /* Shift the ToC further right from the main content and widen it so long
    subheadings don't wrap. Keep the scroll-up button's right edge aligned with
-   the ToC's right edge. Button width is 36px (see above).
+   the ToC's right edge. Button width is 44px (see above).
    Theme base (for reference): 1300px+ → margin-left 370px / max-width 220px;
                                1800px+ → margin-left 490px / max-width 300px. */
 @media (min-width: 1300px) {
@@ -192,7 +233,7 @@ body[data-theme="light"] {
   }
   .scroll-up {
     right: auto;
-    left: calc(50% + 400px + 250px - 36px);
+    left: calc(50% + 400px + 250px - 44px);
   }
 }
 
@@ -202,7 +243,7 @@ body[data-theme="light"] {
     max-width: 290px;
   }
   .scroll-up {
-    left: calc(50% + 440px + 290px - 36px);
+    left: calc(50% + 440px + 290px - 44px);
   }
 }
 
@@ -212,7 +253,7 @@ body[data-theme="light"] {
     max-width: 320px;
   }
   .scroll-up {
-    left: calc(50% + 490px + 320px - 36px);
+    left: calc(50% + 490px + 320px - 44px);
   }
 }
 
@@ -236,7 +277,7 @@ body[data-theme="light"] {
 }
 
 [data-theme="light"] .posts-group .post-year {
-  color: var(--hermit-text);
+  color: var(--hermit-text-meta);
 }
 
 /* Links */
@@ -245,15 +286,23 @@ body[data-theme="light"] {
   text-shadow: none;
 }
 
-/* Footnote references */
-[data-theme="light"] a.footnote-ref {
-  background-color: var(--hermit-bg-tertiary) !important;
-  color: var(--hermit-accent) !important;
+/* Footnote references — superscript pill, both themes
+   (replaces the theme's heavy indigo box; design round 3c) */
+a.footnote-ref {
+  font-size: 0.72em;
+  vertical-align: super;
+  color: var(--accent-jade-soft, #2ec4a5) !important;
+  border: 1px solid var(--hermit-border);
+  border-radius: 3px;
+  padding: 0 4px;
+  margin-left: 2px;
+  background-color: transparent !important;
 }
 
-[data-theme="light"] a.footnote-ref:hover {
-  background-color: var(--hermit-accent) !important;
-  color: #ffffff !important;
+a.footnote-ref:hover {
+  border-color: var(--accent-jade);
+  background-color: var(--accent-jade) !important;
+  color: var(--page-bg, #494f5c) !important;
 }
 
 /* Text selection */
@@ -717,8 +766,22 @@ body[data-theme="light"] {
 }
 
 .tag-chip-count {
-  color: var(--hermit-text-meta);
+  color: var(--accent-jade-soft, #2ec4a5);
   font-size: 0.85em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Weight chips by post count (data-weight set in layouts/taxonomy.html) */
+.tag-chip[data-weight="l"] {
+  font-size: 1.05em;
+  padding: 0.4em 0.85em;
+  border-color: var(--hairline-strong, rgba(255, 255, 255, 0.18));
+}
+
+.tag-chip[data-weight="s"] {
+  font-size: 0.78em;
+  padding: 0.3em 0.7em;
+  color: var(--hermit-text-meta);
 }
 
 /* ===========================
@@ -739,3 +802,665 @@ body[data-theme="light"] {
     transition: all 0.1s ease !important;
   }
 } 
+
+/* ============================================================
+   DESIGN REFRESH (rounds 1–3 of the visual suggestions doc)
+   Jade accent · CJK-aware type · hairlines instead of dashes ·
+   richer list rows · framed code · card-style extras
+   ============================================================ */
+
+/* ---------- Design tokens ---------- */
+:root {
+  --page-bg: #494f5c;
+  --accent-jade: #35c39f;      /* fallback ≈ oklch(72% 0.11 172) */
+  --accent-jade-soft: #6fccb7; /* fallback ≈ oklch(78% 0.09 172) */
+  --hairline: rgba(255, 255, 255, 0.13);
+  --hairline-strong: rgba(255, 255, 255, 0.18);
+  --tint: rgba(255, 255, 255, 0.04);
+  --tint-hover: rgba(255, 255, 255, 0.03);
+}
+
+@supports (color: oklch(72% 0.11 172)) {
+  :root {
+    --accent-jade: oklch(72% 0.11 172);
+    --accent-jade-soft: oklch(78% 0.09 172);
+  }
+}
+
+[data-theme="light"] {
+  --page-bg: #ffffff;
+  --accent-jade: #018472;
+  --accent-jade-soft: #018472;
+  --hairline: #dee2e6;
+  --hairline-strong: #ced4da;
+  --tint: rgba(0, 0, 0, 0.03);
+  --tint-hover: #f8f9fa;
+}
+
+/* ---------- Typography (1i/1j, partially reverted) ----------
+   The design doc dropped the theme's global .06em letter-spacing and raised
+   line-height; both were reverted by preference — the classic tracked look
+   stays. Kept from the design pass: CJK fallback fonts (only affect Chinese
+   glyphs on systems without PingFang) and tabular figures for dates. */
+body,
+button,
+input,
+select,
+textarea {
+  font-family: "Trebuchet MS", Verdana, "Segoe UI", Candara, "Lucida Grande",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Tahoma, sans-serif;
+}
+
+/* Tabular figures wherever dates/counts line up */
+.post-day,
+.post-year,
+.post-date,
+.home-recent-date,
+.related-post-date,
+.collection-card-date {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Home (1b) ---------- */
+#home-subtitle {
+  max-width: 60ch;
+  line-height: 1.5;
+}
+
+/* Typewriter caret in jade */
+#home-subtitle .char::after {
+  background-color: var(--accent-jade);
+}
+
+/* Tighter horizontal nav instead of the stacked list */
+#home-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.4em;
+  justify-content: center;
+  margin-top: 1em;
+  font-size: 0.8em;
+  opacity: 0.85;
+}
+
+#home-nav a {
+  display: inline-block;
+  margin-top: 0;
+}
+
+/* Recent-posts whisper */
+#home-recent {
+  margin-top: 2.6em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55em;
+  font-size: 0.55em;
+  width: Min(34em, 88vw); /* capital M so SCSS passes it through as CSS min() */
+  /* #home-center is wider than this block (its width comes from the subtitle),
+     and flex items with an explicit width align to flex-start — center it */
+  align-self: center;
+}
+
+.home-recent-title {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8em;
+  color: var(--hermit-text-meta);
+  text-align: center;
+  margin-bottom: 0.2em;
+}
+
+.home-recent-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 2em;
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 0.5em;
+}
+
+.home-recent-item:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.home-recent-date {
+  color: var(--hermit-text-meta);
+  flex-shrink: 0;
+}
+
+/* ---------- Posts list (1d/2a) ---------- */
+.posts-group .post-year {
+  color: var(--hermit-text-meta);
+  opacity: 1;
+  padding-top: 10px;
+}
+
+.posts-group .post-item {
+  border-bottom: 1px solid var(--hairline);
+  border-left: 2px solid transparent;
+  margin-left: -14px;
+  padding-left: 12px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+}
+
+.posts-group .post-item:hover {
+  border-left-color: var(--accent-jade);
+  background-color: var(--tint-hover);
+}
+
+.posts-group .post-item > a {
+  grid-column: 1 / -1;
+  padding: 11px 0;
+}
+
+.posts-group .post-item .post-description {
+  grid-column: 1;
+  font-size: 12px;
+  opacity: 1;
+  color: var(--hermit-text-meta);
+  margin-top: -5px;
+  padding-bottom: 11px;
+}
+
+.posts-group .post-item .post-taxonomy {
+  grid-column: 2;
+  margin-top: -5px;
+  padding-bottom: 11px;
+}
+
+.posts-group .post-day {
+  color: var(--hermit-text-meta);
+  opacity: 1;
+  font-size: 0.9em;
+}
+
+.posts-group .post-tags {
+  opacity: 1;
+  font-size: x-small;
+}
+
+.posts-group .post-tags a {
+  color: var(--accent-jade-soft);
+}
+
+/* Pinned block: small uppercase label, jade pin */
+.site-main > h2:has(+ .pinned-posts-group) {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72em;
+  color: var(--hermit-text-meta);
+  margin: 1.6em 0 0.4em;
+}
+
+.pinned-posts-group {
+  border-bottom-color: var(--hairline-strong);
+}
+
+.pinned-posts-group svg {
+  color: var(--accent-jade);
+}
+
+/* ---------- Single post meta line (1f) ---------- */
+.post-description {
+  opacity: 1;
+}
+
+.post-info-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35em 0.6em;
+  font-size: 12px;
+  color: var(--hermit-text-meta);
+  margin-top: 0.7em;
+}
+
+.post-info-item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.post-info-item + .post-info-item::before {
+  content: "·";
+  opacity: 0.5;
+  margin-right: 0.6em;
+}
+
+.post-info-tag {
+  font-size: 11px;
+  color: var(--accent-jade-soft);
+  border: 1px solid var(--hermit-border);
+  border-radius: 4px;
+  padding: 1px 8px;
+  background-color: var(--hermit-bg-secondary);
+}
+
+.post-info-desc {
+  font-style: italic;
+}
+
+.post-description .post-info-tag:hover {
+  border-color: var(--accent-jade);
+  border-bottom: 1px solid var(--accent-jade);
+}
+
+/* Short jade rule under the meta instead of the wide dashed hr */
+hr.post-end {
+  width: 64px;
+  margin: 1.6em auto 1em 0;
+  border-style: solid;
+  border-bottom-width: 2px;
+  border-color: var(--accent-jade);
+  background: transparent;
+  opacity: 0.6;
+}
+
+/* Three fading jade dots close the article (2d) */
+article .content::after {
+  content: "";
+  display: block;
+  width: 39px;
+  height: 5px;
+  margin-top: 2.2em;
+  background:
+    radial-gradient(circle closest-side, var(--accent-jade) 99%, transparent) 0 50% / 5px 5px no-repeat,
+    radial-gradient(circle closest-side, color-mix(in srgb, var(--accent-jade) 55%, transparent) 99%, transparent) 17px 50% / 5px 5px no-repeat,
+    radial-gradient(circle closest-side, color-mix(in srgb, var(--accent-jade) 30%, transparent) 99%, transparent) 34px 50% / 5px 5px no-repeat;
+}
+
+/* ---------- Framed code blocks with language header (1f) ---------- */
+.content .highlight {
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.content .highlight pre {
+  margin: 0;
+  border-radius: 0;
+}
+
+.content .highlight pre code {
+  display: block;
+}
+
+.content .highlight pre code[data-lang]::before {
+  content: attr(data-lang);
+  display: block;
+  margin: -0.7em -1.1em 0.8em;
+  padding: 6px 14px;
+  background-color: rgba(0, 0, 0, 0.18);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--hermit-text-meta);
+}
+
+[data-theme="light"] .content .highlight pre code[data-lang]::before {
+  background-color: #eef1f5;
+  border-bottom-color: #e1e4e8;
+}
+
+.highlight-copy-btn {
+  top: 4px;
+  right: 10px;
+  bottom: auto;
+  border: 0;
+  background-color: transparent !important;
+  color: var(--hermit-text-meta) !important;
+  opacity: 1;
+  min-width: 0;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+
+.highlight-copy-btn:hover {
+  color: var(--accent-jade) !important;
+}
+
+/* ---------- Table of contents (1f) ---------- */
+.toc-title {
+  margin-left: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72em;
+  color: var(--hermit-text-meta);
+  margin-bottom: 0.6em;
+}
+
+#TableOfContents {
+  opacity: 1;
+}
+
+#TableOfContents ul {
+  padding: 0;
+}
+
+#TableOfContents a {
+  display: inline-block;
+  border-left: 2px solid var(--hairline-strong);
+  padding: 0.25em 0 0.25em 12px;
+  color: var(--hermit-text-meta);
+}
+
+#TableOfContents ul ul a {
+  padding-left: 24px;
+}
+
+#TableOfContents a:hover,
+#TableOfContents :target-current {
+  border-left-color: var(--accent-jade);
+  border-bottom: none;
+  color: inherit;
+}
+
+/* ---------- Post navigation cards (1f) ---------- */
+.post-nav {
+  gap: 16px;
+  margin-top: 2em;
+  font-size: 1em;
+}
+
+.post-nav a {
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+}
+
+.post-nav .next-post,
+.post-nav .prev-post {
+  padding: 12px 16px;
+}
+
+.post-nav a:hover {
+  border-color: var(--accent-jade);
+}
+
+.post-nav .post-nav-label {
+  font-size: 0.7em;
+  color: var(--hermit-text-meta);
+  letter-spacing: 0.12em;
+  opacity: 1;
+}
+
+/* ---------- Collections cards (2b) ---------- */
+.collection-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 1.8em;
+}
+
+.collection-card {
+  display: block;
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  padding: 16px 20px;
+}
+
+.collection-card:hover {
+  border-color: var(--accent-jade);
+}
+
+.collection-card-title {
+  display: block;
+  font-family: Georgia, "Songti SC", "SimSun", serif;
+  font-size: 1.15em;
+}
+
+.collection-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1em;
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--hermit-text-meta);
+}
+
+.collection-card-date {
+  flex-shrink: 0;
+}
+
+/* ---------- Related posts: hairline card (2d) ---------- */
+.related-posts {
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  padding: 16px 20px;
+  font-size: 13px;
+}
+
+.related-posts h2 {
+  font-size: 14px;
+}
+
+.related-posts ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.related-posts li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1em;
+}
+
+.related-post-date {
+  color: var(--hermit-text-meta);
+  flex-shrink: 0;
+}
+
+/* ---------- Content styles: blockquote & tables (3c) ---------- */
+blockquote {
+  border-left: 3px solid var(--accent-jade);
+  margin: 1em 0;
+  padding: 0.7em 1.2em;
+  background-color: var(--tint);
+}
+
+blockquote cite {
+  display: block;
+  text-align: right;
+  font-size: 0.85em;
+  margin-top: 0.5em;
+  color: var(--hermit-text-meta);
+}
+
+/* About-page section marks: `> ## Heading` renders as a blockquote-wrapped h2 —
+   restyle those as a jade-dash heading instead of a quote (3a) */
+blockquote:has(> h2:only-child) {
+  border-left: 0;
+  background: transparent;
+  padding: 0;
+  margin: 1.4em 0 0.5em;
+  font-style: normal;
+}
+
+blockquote:has(> h2:only-child) h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2em;
+  margin: 0;
+}
+
+blockquote:has(> h2:only-child) h2::before {
+  content: "";
+  width: 16px;
+  height: 2px;
+  background-color: var(--accent-jade);
+  flex-shrink: 0;
+}
+
+/* Heading anchors sit in the left gutter via negative margin; that clashes
+   with the flex layout above, so keep them inline after the text here */
+blockquote:has(> h2:only-child) h2 .anchor {
+  margin-left: 4px;
+}
+
+table {
+  font-size: 0.9em;
+}
+
+table th,
+table td {
+  border: 0;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+table th {
+  border-bottom: 2px solid var(--hairline-strong);
+  background-color: var(--hermit-bg-secondary);
+}
+
+table td {
+  border-bottom: 1px solid var(--hairline);
+}
+
+/* ---------- Admonitions: flat tint, thicker cue bar (2d) ---------- */
+.admonition {
+  border-radius: 0;
+  box-shadow: none;
+  border-left-width: 3px;
+}
+
+.admonition .admonition-title {
+  background-color: transparent !important;
+  border-bottom: 0 !important;
+  padding: 10px 16px 0;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.admonition .admonition-content {
+  padding: 2px 16px 12px;
+}
+
+/* ---------- 404 (3b) ---------- */
+#spotlight.error-404 {
+  flex-direction: column;
+  text-align: center;
+}
+
+#spotlight.error-404 .banner-404 {
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#spotlight.error-404 .banner-404 h1 {
+  font-size: 5em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+  margin: 0;
+}
+
+.banner-404 .accent-404 {
+  color: var(--accent-jade);
+}
+
+.banner-404 .msg-404 {
+  margin: 0.4em 0 0;
+  font-size: 1.1em;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.banner-404 .cursor-404 {
+  display: inline-block;
+  width: 0.4em;
+  height: 1em;
+  margin-left: 2px;
+  background-color: var(--accent-jade);
+  vertical-align: text-bottom;
+  animation: blink 1s infinite;
+}
+
+#spotlight.error-404 .btn-404 {
+  display: flex;
+  gap: 14px;
+  margin-top: 2.2em;
+  font-size: 0.9em;
+  justify-content: center;
+}
+
+#spotlight.error-404 .btn-404 a {
+  border-width: 1px;
+  border-radius: 6px;
+  padding: 8px 18px;
+  margin-right: 0;
+}
+
+#spotlight.error-404 .btn-404 a:hover {
+  border-color: var(--accent-jade);
+  color: var(--accent-jade-soft);
+}
+
+/* ---------- Share pane: quieter hairline card (3d) ---------- */
+#share-links {
+  background-color: #3b3e48 !important;
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+}
+
+[data-theme="light"] #share-links {
+  background-color: #f8f9fa !important;
+}
+
+#share-links a {
+  color: var(--hermit-text-meta);
+}
+
+/* ---------- Mobile posts list (2c) ---------- */
+@media (max-width: 684px) {
+  .posts-group {
+    flex-direction: column;
+  }
+
+  .posts-group .post-year {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: var(--page-bg);
+    padding: 0.4em 0 0.2em;
+    margin: 1em 0 0;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+  }
+
+  /* The :not() chain only exists to out-specific the light-mode
+     "reset backgrounds" rule so the sticky label stays opaque */
+  [data-theme="light"] .posts-group .post-year:not(.bg-img):not(.chroma):not(.svg-diagram) {
+    background-color: var(--page-bg) !important;
+  }
+
+  .posts-group .post-item {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .posts-group .post-item > a {
+    padding: 14px 0;
+  }
+
+  .posts-group .post-item .post-title {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+}

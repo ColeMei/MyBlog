@@ -1,0 +1,40 @@
+{{- /* Compact one-line post meta: author · tags · series/description · words + reading time.
+     Overrides the theme's stacked multi-row block (design round 1f). */ -}}
+<div class="post-info-line">
+  {{- with $author := default .Site.Params.author.name .Params.author -}}
+    <span class="post-info-item post-info-author">
+      {{- partial "svg.html" (dict "context" . "name" "author") -}}
+      {{- if eq $author $.Site.Params.author.name -}}
+        {{- with $.Site.Params.author.about -}}
+          <a href="{{ ref $.Page . }}" target="_blank" rel="noopener">{{ $author }}</a>
+        {{- else -}}
+          {{ $author }}
+        {{- end -}}
+      {{- else -}}
+        {{ $author }}
+      {{- end -}}
+    </span>
+  {{- end -}}
+  {{- with .Params.tags -}}
+    <span class="post-info-item post-info-tags">
+      {{- range . -}}
+        <a class="post-info-tag" href="{{ "tags/" | absLangURL }}{{ . | urlize }}">#{{ . }}</a>
+      {{- end -}}
+    </span>
+  {{- end -}}
+  {{- with .Params.description -}}
+    <span class="post-info-item post-info-desc">{{ . }}</span>
+  {{- end -}}
+  <span class="post-info-item post-info-words">{{ .WordCount }}&nbsp;Words {{ partial "readTime.html" . }}</span>
+  {{- if .Page.Params.ShowLastmod -}}
+    {{- $open := default "[" $.Site.Params.pages.LastmodOpen -}}
+    {{- $close := default "]" $.Site.Params.pages.LastmodClose -}}
+    {{- if and .GitInfo .Site.Params.gitUrl }}
+      <span class="post-info-item">{{ $open }}{{- partial "svg.html" (dict "context" . "name" "posts_single_git_commit") -}}<a href="{{ .Site.Params.gitUrl -}}{{ .GitInfo.Hash }}" target="_blank" rel="noopener">{{ .GitInfo.AbbreviatedHash -}}</a> @ {{ dateFormat (default "2006-01-02" .Site.Params.dateform.NumDateShort) .GitInfo.AuthorDate.Local -}}{{ $close }}</span>
+    {{- else if not (eq .Lastmod .Date ) }}
+      <span class="post-info-item">{{ $open }}{{ $.Site.Params.pages.lastUpdatedOn | default "Last updated on: " }} {{ dateFormat (default "2006-01-02 15:04 -0700" .Site.Params.dateform.NumDateLong) .Lastmod.Local -}}{{ $close }}</span>
+    {{- else }}
+      {{ errorf "Lastmod is not found in Page Frontmatter or Lastmod is same as Date in %s" .Permalink }}
+    {{- end -}}
+  {{- end -}}
+</div>

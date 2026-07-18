@@ -1,0 +1,12 @@
+{{- /* Hairline card with title + date rows instead of the theme's dashed box (design round 2d). */ -}}
+{{- $related := .Site.RegularPages.Related . | first 5 }}
+{{ with $related }}
+<div class="related-posts thin">
+	<h2>{{- if fileExists "i18n" -}} {{ i18n "seeAlso" }} {{- else -}} Related {{- end -}}</h2>
+	<ul>
+	{{ range . }}
+	<li><a href="{{ .RelPermalink }}"><span class="related-post-title">{{ .Title }}</span><span class="related-post-date">{{ .Date.Format "Jan 2006" }}</span></a></li>
+	{{ end }}
+	</ul>
+</div>
+{{ end -}}
